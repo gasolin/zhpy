@@ -29,18 +29,16 @@ You could use easy_install command to install zhpy::
 Usage
 -----
 
-::
+You could use zhpy instead of python in command line::
 
     $ zhpy hello.py
     hello, world!
 
-You could assign a file name to export the zhpy source to the normal python source (english)
-
-::
+You could assign a file name to export the zhpy source to the normal python source (english)::
 
     $ zhpy hello.py nhello.py
 
-::
+Then run the exported file as normal python source::
 
     $ python nhello.py
     hello, world!
