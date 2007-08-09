@@ -21,7 +21,6 @@ setup(
     version=version,
     author=author,
     author_email=email,
-    download_url="http://hg.python.org.tw/mopowg",
     license=license,
     description=description,
     long_description=long_description,

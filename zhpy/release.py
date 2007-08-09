@@ -4,8 +4,9 @@ author = "Fred Lin"
 email = "gasolin+zhpy@gmail.com"
 copyright = "Copyright 2007 Fred Lin and contributors"
 license = "MIT <http://www.opensource.org/licenses/mit-license.php>"
-url = "http://hg.python.org.tw/zhpy"
-description="write python code in chinese"
+url = "http://code.google.com/p/zhpy/"
+download_url="http://code.google.com/p/zhpy/"
+description="Write python language in chinese"
 long_description = """zhpy is an toy convertor to translate chinese (Traditional and Simplified) python code 
 to nature python code (english).
 
@@ -14,11 +15,14 @@ translate them back to python.
 
 zhpy refactored the origin code from HYRY.
 
-Install mopowg
+Check examples_ here.
+ 
+.. _examples: "http://code.google.com/p/zhpy/wiki/ExampleHello"
+
+Install zhpy
 --------------
 
 You could use easy_install command to install zhpy::
-
 
     $ easy_install zhpy
 
