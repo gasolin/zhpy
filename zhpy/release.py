@@ -34,7 +34,7 @@ Usage
     $ zhpy hello.py
     hello, world!
 
-Export normal python code (english)
+You could assign a file name to export the zhpy source to the normal python source (english)
 
 ::
 
@@ -44,5 +44,13 @@ Export normal python code (english)
 
     $ python nhello.py
     hello, world!
-    
+
+Programming
+-----------
+
+You could mix original english keywords and Chinese keywords in your zhpy source.
+
+Reserved keywords are listed here_
+
+.. _here: http://code.google.com/p/zhpy/wiki/KeyWords
 """
