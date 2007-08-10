@@ -18,6 +18,13 @@ Mopowg Changelog
   
 *Features*
 
+* More keywords
+  * "真": "True", "假":"False" 
+  * "實": "True", "虛":"False" 
+  * "空":"None"
+  * "是":"is", "為":"is", "不是":"not"
+  * "或":"or", "和":"and", "且":"and"
+
 * More Documents
 
 *Fixes*

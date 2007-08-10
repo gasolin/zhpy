@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-version = "0.2"
+version = "0.3"
 author = "Fred Lin"
 email = "gasolin+zhpy@gmail.com"
 copyright = "Copyright 2007 Fred Lin and contributors"
@@ -51,4 +51,5 @@ You could mix original english keywords and Chinese keywords in your zhpy source
 Reserved keywords are listed here_
 
 .. _here: http://code.google.com/p/zhpy/wiki/KeyWords
+
 """
