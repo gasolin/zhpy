@@ -1,0 +1,48 @@
+Mopowg Changelog
+====================
+
+
+0.3 (Unreleased):
+------------------
+
+*Changes*
+
+* Trad keyword changes: elif: '不然' -> '假使' or '否則如果'
+
+*Features*
+
+* More Documents
+
+*Fixes*
+
+*Project Updates*
+
+* Zoom Quiet joined as the project member
+
+*Contributors*
+
+Fred Lin
+
+0.2 (08/9/2007):
+------------------
+
+*Changes*
+
+* Refactored from HYRY's original script
+* Add Traditional Chinese keywords
+
+*Features*
+
+* easy_install-abled
+* executable command line
+* export python source from zhpy
+
+*Fixes*
+
+*Project Updates*
+
+* host on google code project
+
+*Contributors*
+
+Fred Lin, HYRY
