@@ -7,8 +7,15 @@ Mopowg Changelog
 
 *Changes*
 
-* Trad keyword changes: elif: '不然' -> '假使' or '否則如果'
+* Trad keyword changes: 
+  * "假使":"elif" and "否則如果":"elif" instead of '不然'
+  * "方程式":"lambda" instead of "函式": lambda
+  * "產生":"yield" instead of  "圈":"yield"
 
+* Smpl keyword changes:
+  * "函数":"lambda"
+  * "产生":"yield",
+  
 *Features*
 
 * More Documents
