@@ -38,6 +38,7 @@ Mopowg Changelog
 *Project Updates*
 
 * Removed python version requirement
+* Add ez_setup.py in project incase user haven't installed easy_install command
 * Zoom Quiet joined as the project member
 
 *Contributors*
