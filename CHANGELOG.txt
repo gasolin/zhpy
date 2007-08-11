@@ -8,13 +8,19 @@ Mopowg Changelog
 *Changes*
 
 * Trad keyword changes: 
+  * "傳回":"return"
   * "假使":"elif" and "否則如果":"elif" instead of '不然'
-  * "方程式":"lambda" instead of "函式": lambda
-  * "產生":"yield" instead of  "圈":"yield"
+  * "中止":"break"
+  * "方程式":"lambda" instead of "函式"
+  * "產生":"yield" instead of  "圈"
+  * "示警":"raise" instead of "舉出"
+  * "共用":"global" instead of "全域"
 
 * Smpl keyword changes:
   * "函数":"lambda"
   * "产生":"yield",
+  * "继续":"continue"
+  ＊ "传回":"return"
   
 *Features*
 
@@ -31,6 +37,7 @@ Mopowg Changelog
 
 *Project Updates*
 
+* Removed python version requirement
 * Zoom Quiet joined as the project member
 
 *Contributors*

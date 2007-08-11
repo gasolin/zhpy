@@ -7,10 +7,12 @@ license = "MIT <http://www.opensource.org/licenses/mit-license.php>"
 url = "http://code.google.com/p/zhpy/"
 download_url="http://code.google.com/p/zhpy/"
 description="Write python language in chinese"
-long_description = """zhpy is an toy convertor to translate chinese (Traditional and Simplified) python code 
+long_description = """zhpy is a python module and a source convertor to translate chinese (Traditional and Simplified) python code 
 to nature python code (english).
 
-zhpy use pyparsing to detect chinese keywords, class name, methods, arguments, variables and 
+Use 'zhpy' command instead of "python" in command line to execute source code mixed in Chinese and English.
+
+zhpy use pyparsing module to detect chinese keywords, class name, methods, arguments, variables and 
 translate them back to python.
 
 zhpy refactored the origin code from HYRY.
