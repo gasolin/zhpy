@@ -4,6 +4,7 @@ Mopowg Changelog
 
 0.3 (Unreleased):
 ------------------
+code name: jojo
 
 *Changes*
 
@@ -21,15 +22,23 @@ Mopowg Changelog
   * "产生":"yield",
   * "继续":"continue"
   ＊ "传回":"return"
+
+* Removed keywords:
+  * "加":"+", "減":"-", "乘":"*", "除":"/","取餘數":"%"
+  * "一":"1", "百":"100", # numbers
   
 *Features*
 
+* allow to dynamic add keywords by append ini files in same folder
+* catalog keywords
 * More keywords
   * "真": "True", "假":"False" 
   * "實": "True", "虛":"False" 
   * "空":"None"
   * "是":"is", "為":"is", "不是":"not"
   * "或":"or", "和":"and", "且":"and"
+  * "開始字串":"startswith", "結束字串":"endswith"
+  * "开始为":"startswith","结束为":"endswith"
 
 * More Documents
 
@@ -47,6 +56,7 @@ Fred Lin
 
 0.2 (08/9/2007):
 ------------------
+code name: zhou
 
 *Changes*
 
