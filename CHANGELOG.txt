@@ -48,6 +48,7 @@ code name: jojo
 
 * Removed python version requirement
 * Add ez_setup.py in project incase user haven't installed easy_install command
+* Add module version info while import
 * Zoom Quiet joined as the project member
 
 *Contributors*
