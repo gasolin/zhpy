@@ -2,7 +2,7 @@ Mopowg Changelog
 ====================
 
 
-0.3 (Unreleased):
+0.3 (08/13/2007):
 ------------------
 code name: jojo
 

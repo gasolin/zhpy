@@ -7,19 +7,21 @@ license = "MIT <http://www.opensource.org/licenses/mit-license.php>"
 url = "http://code.google.com/p/zhpy/"
 download_url="http://code.google.com/p/zhpy/"
 description="Write python language in chinese"
-long_description = """zhpy is a python module and a source convertor to translate chinese (Traditional and Simplified) python code 
-to nature python code (english).
+long_description = """zhpy is python on Chinese, which good for Taiwan and China beginners to 
+learn python in their native language.
 
-Use 'zhpy' command instead of "python" in command line to execute source code mixed in Chinese and English.
+zhpy is a lightweight python module and a source convertor, which provides a command line 
+tool to translate python code. The python code written by traditional and simplified 
+chinese would be translated to nature python code (english).
 
-zhpy use pyparsing module to detect chinese keywords, class name, methods, arguments, variables and 
-translate them back to python.
+zhpy use pyparsing module to detect chinese keywords, class name, methods, arguments, v
+ariables and translate them back to python.
 
-zhpy refactored the origin code from HYRY.
+It's possible for developers to port zhpy to python on korean or python on japenese.
 
 Check examples_ here.
  
-.. _examples: "http://code.google.com/p/zhpy/wiki/ExampleHello"
+.. _examples: "http://code.google.com/p/zhpy/wiki/ZhpyExample"
 
 Install zhpy
 --------------
@@ -28,10 +30,15 @@ You could use easy_install command to install zhpy::
 
     $ easy_install zhpy
 
+or check instructions_ for detail.
+
+.. _instructions: "http://code.google.com/p/zhpy/wiki/DownloadInstall"
+
 Usage
 -----
 
-You could use zhpy instead of python in command line::
+You could use 'zhpy' command instead of "python" in command line to 
+execute source code mixed in Chinese and English.::
 
     $ zhpy hello.py
     hello, world!
