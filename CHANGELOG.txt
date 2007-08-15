@@ -12,7 +12,10 @@ code name: Dio
 
 *Features*
 
-* Enhanced command parser
+* Enhanced command parser with 2 basic option
+  * add "-i": input option
+  * add "-o": output option
+* add "-p": "compile to python and run" option, which generate python source with 'n_' prefix.
 * More keywords
   * "數組":"tuple", "類組":"set"
   * "数组":"tuple", "类组":"set"
