@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-version = "0.3"
+version = "0.4"
 author = "Fred Lin"
 email = "gasolin+zhpy@gmail.com"
 copyright = "Copyright 2007 Fred Lin and contributors"
@@ -8,14 +8,14 @@ url = "http://code.google.com/p/zhpy/"
 download_url="http://code.google.com/p/zhpy/"
 description="Write python language in chinese"
 long_description = """zhpy is python on Chinese, which good for Taiwan and China beginners to 
-learn python in their native language.
+learn python in your native language.
 
 zhpy is a lightweight python module and a source convertor, which provides a command line 
 tool to translate python code. The python code written by traditional and simplified 
-chinese would be translated to nature python code (english).
+chinese could be translated to nature python code (english).
 
-zhpy use pyparsing module to detect chinese keywords, class name, methods, arguments, v
-ariables and translate them back to python.
+zhpy use pyparsing module to detect chinese keywords, class name, methods, arguments, 
+variables and translate them back to python.
 
 It's possible for developers to port zhpy to python on korean or python on japenese.
 

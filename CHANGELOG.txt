@@ -1,10 +1,29 @@
 Mopowg Changelog
 ====================
 
+0.4 (Unreleased):
+------------------
+code name: Dio
+
+*Changes*
+
+*Features*
+
+* More keywords
+  * "編碼":"encoding", "解碼":"decoding",
+  * "编码":"encoding", "解码":"decoding",
+            
+*Fixes*
+
+*Project Updates*
+
+*Contributors*
+
+Fred Lin
 
 0.3 (08/13/2007):
 ------------------
-code name: jojo
+code name: JoJo
 
 *Changes*
 
