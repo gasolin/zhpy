@@ -52,6 +52,10 @@ Then run the exported file as normal python source::
     $ python nhello.py
     hello, world!
 
+check the BasicUsage_ for detail.
+
+.. _BasicUsage: "http://code.google.com/p/zhpy/wiki/BasicUsage"
+
 Programming
 -----------
 
@@ -60,5 +64,9 @@ You could mix original english keywords and Chinese keywords in your zhpy source
 Reserved keywords are listed here_
 
 .. _here: http://code.google.com/p/zhpy/wiki/KeyWords
+
+You could view the ChangeLog_ to see what's new in these version
+
+.. _ChangeLog: http://code.google.com/p/zhpy/wiki/ChangeLog
 
 """

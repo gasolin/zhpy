@@ -30,10 +30,12 @@ setup(
     zhpy = zhpy.zhpy:commandtool
     """,
     classifiers = [
-        'Development Status :: 3 - Alpha',
+        'Development Status :: 4 - Beta',
         'Environment :: Console',
-        'Intended Audience :: Developers',
+        'Intended Audience :: Education',
         'License :: OSI Approved :: MIT License',
+        'Natural Language :: Chinese (Traditional)',
+        'Natural Language :: Chinese (Simplified)',
         'Operating System :: OS Independent',
         'Programming Language :: Python',
         'Topic :: Software Development :: Libraries :: Python Modules'],

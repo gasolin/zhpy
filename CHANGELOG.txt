@@ -1,7 +1,7 @@
 Mopowg Changelog
 ====================
 
-0.4 (Unreleased):
+0.4 (08/16/2007):
 ------------------
 code name: Dio
 
@@ -21,9 +21,11 @@ code name: Dio
   * "数组":"tuple", "类组":"set"
   * "編碼":"encoding", "解碼":"decoding"
   * "编码":"encoding", "解码":"decoding"
-  * "開啟":"open", "讀取":"read", "寫入":"write", 
-  * "讀一行":"readline", "讀多行":"readlines",
-     
+  * "開啟":"open", "讀取":"read", "寫入":"write" 
+  * "讀一行":"readline", "讀多行":"readlines"
+  * "接合":"join", "分離":"split"
+  * "分离":"split"
+                 
 *Fixes*
 
 *Project Updates*
