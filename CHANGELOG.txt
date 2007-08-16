@@ -1,6 +1,22 @@
 Mopowg Changelog
 ====================
 
+0.5 (Unreleased):
+------------------
+code name: StarPlatinum
+
+*Changes*
+
+*Features*
+
+*Fixes*
+
+*Project Updates*
+
+*Contributors*
+
+Fred Lin
+
 0.4 (08/16/2007):
 ------------------
 code name: Dio

@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-version = "0.4"
+version = "0.5"
 author = "Fred Lin"
 email = "gasolin+zhpy@gmail.com"
 copyright = "Copyright 2007 Fred Lin and contributors"
@@ -67,6 +67,6 @@ Reserved keywords are listed here_
 
 You could view the ChangeLog_ to see what's new in these version
 
-.. _ChangeLog: http://code.google.com/p/zhpy/wiki/ChangeLog
+.. _ChangeLog: http://zhpy.googlecode.com/svn/trunk/CHANGELOG.txt
 
 """
