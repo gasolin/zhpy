@@ -7,8 +7,8 @@ license = "MIT <http://www.opensource.org/licenses/mit-license.php>"
 url = "http://code.google.com/p/zhpy/"
 download_url="http://code.google.com/p/zhpy/"
 description="Write python language in chinese"
-long_description = """zhpy is python on Chinese, which good for Taiwan and China beginners to 
-learn python in your native language.
+long_description = """zhpy is the python on Chinese, 
+which good for Taiwan and China beginners to learn python in our native language.
 
 zhpy is a lightweight python module and a source convertor, which provides a command line 
 tool to translate python code. The python code written by traditional and simplified 
@@ -20,7 +20,7 @@ variables and translate them back to python.
 It's possible for developers to port zhpy to python on korean or python on japenese.
 
 Check examples_ here.
- 
+
 .. _examples: "http://code.google.com/p/zhpy/wiki/ZhpyExample"
 
 Install zhpy

@@ -9,7 +9,11 @@ code name: StarPlatinum
 
 *Features*
 
+* add zh_exec, the zhpy exec
+
 *Fixes*
+
+* Now parser matches all quotes (single quote, double quote, triple quote)
 
 *Project Updates*
 
