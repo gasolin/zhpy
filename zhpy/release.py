@@ -8,7 +8,7 @@ url = "http://code.google.com/p/zhpy/"
 download_url="http://code.google.com/p/zhpy/"
 description="Write python language in chinese"
 long_description = """zhpy is the python on Chinese, 
-which good for Taiwan and China beginners to learn python in our native language.
+which is good for Taiwan and China beginners to learn python in our native language.
 
 zhpy is a lightweight python module and a source convertor, which provides a command line 
 tool to translate python code. The python code written by traditional and simplified 

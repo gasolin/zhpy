@@ -18,6 +18,9 @@ code name: StarPlatinum
 
 *Project Updates*
 
+* Add README file
+* Add tests folder
+
 *Contributors*
 
 Fred Lin
