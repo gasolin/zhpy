@@ -1,6 +1,22 @@
 Mopowg Changelog
 ====================
 
+0.6 (Unreleased):
+------------------
+code name: CrazyDiomand
+
+*Changes*
+
+*Features*
+
+*Fixes*
+
+*Project Updates*
+
+*Contributors*
+
+Fred Lin
+
 0.5 (08/19/2007):
 ------------------
 code name: StarPlatinum
