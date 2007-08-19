@@ -37,6 +37,15 @@ or check instructions_ for detail.
 Usage
 -----
 
+You could use interpretor to test zhpy with zh_exec_ method::
+
+    $ python
+    >>> from zhpy import zh_exec
+    >>> zh_exec("print hello") # execute zhpy here, pypi not allow non ascii code.
+    hello
+
+.. _zh_exec: http://code.google.com/p/zhpy/wiki/EmbededInPython
+
 You could use 'zhpy' command instead of "python" in command line to 
 execute source code mixed in Chinese and English.::
 
@@ -45,12 +54,19 @@ execute source code mixed in Chinese and English.::
 
 You could assign a file name to export the zhpy source to the normal python source (english)::
 
-    $ zhpy hello.py nhello.py
+    $ zhpy hello.py n_hello.py
 
 Then run the exported file as normal python source::
 
-    $ python nhello.py
+    $ python n_hello.py
     hello, world!
+
+Or you could combine these two steps in one command (with '-p' option)::
+
+    $ python -p hello.py
+    hello, world!
+    $ ls
+    hello.py n_hello.py
 
 check the BasicUsage_ for detail.
 
@@ -63,7 +79,7 @@ You could mix original english keywords and Chinese keywords in your zhpy source
 
 Reserved keywords are listed here_
 
-.. _here: http://code.google.com/p/zhpy/wiki/KeyWords
+.. _here: http://code.google.com/p/zhpy/wiki/KeyWords 
 
 You could view the ChangeLog_ to see what's new in these version
 
