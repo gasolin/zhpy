@@ -15,6 +15,7 @@ code name: StarPlatinum
 *Fixes*
 
 * Now parser matches all quotes (single quote, double quote, triple quote)
+* fix game example
 
 *Project Updates*
 
