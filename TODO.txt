@@ -1,0 +1,11 @@
+TODO
+======
+
+    * python source to zhpy source
+    * documents
+    * advocation
+    * some useful module ini
+    * work with pypi interpreter
+    * catch up most syntax in http://www.chinesepython.org/doc/ref.html
+    * recognize embeded worddict in header docstring
+    * python 3000 compatible 
