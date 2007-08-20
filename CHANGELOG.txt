@@ -22,6 +22,7 @@ code name: CrazyDiomand
 * Update setup information
 * Add docs/
 * Increase cheesecake_ rating
+* Add example test runner
 
 .. _cheesecake: http://www.pycheesecake.org/
 
