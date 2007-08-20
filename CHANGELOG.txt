@@ -17,6 +17,9 @@ code name: CrazyDiomand
 * Remove redundent files
 * Update setup information
 * Add docs/
+* Increase cheesecake_ rating
+
+.. _cheesecake: http://www.pycheesecake.org/
 
 *Contributors*
 
@@ -42,7 +45,6 @@ code name: StarPlatinum
 
 * Add README file
 * Add tests folder
-* Increase cheesecake rate
 
 *Contributors*
 
