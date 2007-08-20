@@ -1,0 +1,57 @@
+= 安裝 =
+
+請使用命令行(command line) 執行命令以安裝 zhpy:
+
+== 1. 安裝 Python 程式 ====
+
+首先您需安裝 python 程式語言。
+
+python 程式語言是自由軟體，您不需付錢給某公司來取得 python 程式語言的使用權利。
+除了 Windows 作業系統之外, 其他作業系統都已經預先安裝好 Python 程式語言.
+
+Windows 使用者請前往[http://www.python.org python 程式語言官方網站]下載安裝檔案.
+
+當您在系統中已經安裝好 python 程式語言後, 請下載適合
+
+== 2. 安裝 zhpy ==
+
+=== 線上安裝 ===
+
+如果沒有安裝過 easy_install 命令模組的話, 請下載 [http://peak.telecommunity.com/dist/ez_setup.py ez_setup.py] 檔案並執行以下指令：
+
+{{{
+$ python ez_setup.py zhpy
+}}}
+
+此指令會透過網路自動安裝 easy_install 命令(用來線上安裝 Python 模組的工具) 與 zhpy 模組。
+
+如果已安裝過 easy_install 命令模組的話, 請直接執行以下指令安裝 zhpy 模組：
+
+{{{
+$ easy_install zhpy
+}}}
+
+此指令會透過網路自動安裝 zhpy 模組。
+
+
+=== 原始碼安裝 ===
+
+自 [http://pypi.python.org/pypi/zhpy/ pypi] 下載 zip 格式壓縮的原始碼, 
+使用 zip 解壓縮程式解開後, 使用命令列執行以下指令安裝 zhpy 模組：
+
+{{{
+$ python setup.py install
+}}}
+
+== 驗證 ==
+
+開啟命令行以確認目前安裝的版本:
+
+{{{
+$ python
+>>> import zhpy
+>>> zhpy.__version__
+0.5
+>>> zhpy.zh_exec("印出 '哈囉'")
+哈囉
+}}}
