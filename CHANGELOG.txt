@@ -7,7 +7,11 @@ code name: CrazyDiomand
 
 *Changes*
 
+* internal refactor the try_run method
+
 *Features*
+
+* add "-r/--raw": "input raw zhpy source and run" option for scripting usage
 
 *Fixes*
 
