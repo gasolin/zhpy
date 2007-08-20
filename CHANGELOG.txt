@@ -13,6 +13,8 @@ code name: CrazyDiomand
 
 *Project Updates*
 
+* Add license statement
+
 *Contributors*
 
 Fred Lin
@@ -37,6 +39,7 @@ code name: StarPlatinum
 
 * Add README file
 * Add tests folder
+* Increase cheesecake rate
 
 *Contributors*
 
