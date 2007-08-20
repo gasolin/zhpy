@@ -14,6 +14,7 @@ code name: CrazyDiomand
 *Project Updates*
 
 * Add license statement
+* Remove redundent files
 
 *Contributors*
 
