@@ -12,6 +12,9 @@ code name: CrazyDiomand
 *Features*
 
 * add "-r/--raw": "input raw zhpy source and run" option for scripting usage
+* add keyword:
+  * "实": "True"
+* add simplified chinese test cases
 
 *Fixes*
 

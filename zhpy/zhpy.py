@@ -43,6 +43,7 @@ worddict = {"印出":"print", "輸入":"raw_input", #io
             "等於":"==", "不等於":"!=", "等于":"==", "不等于":"!=", #operators
             "是":"is", "為":"is", "不是":"not", "或":"or", "和":"and", "且":"and", #boolean
             "真": "True", "假":"False", "實": "True", "虛":"False", "空":"None",
+            "实": "True",
             "型別":"type", #build in methods
             "長度":"len" ,"长度":"len",
             "字串":"str", "字符串":"str", # build-in types
