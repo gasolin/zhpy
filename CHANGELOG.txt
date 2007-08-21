@@ -8,13 +8,15 @@ code name: CrazyDiomand
 *Changes*
 
 * internal refactor the try_run method
+* rename traditional chinese test cases
 
 *Features*
 
 * add "-r/--raw": "input raw zhpy source and run" option for scripting usage
+* add simplified chinese test cases
+* Add doctests
 * add keyword:
   * "实": "True"
-* add simplified chinese test cases
 
 *Fixes*
 
@@ -25,7 +27,6 @@ code name: CrazyDiomand
   * Add todo list
   * Add authors list
   * Add docs/
-* Add doctests 
 * Add example test runner
 * Remove redundent files
 * Update setup information
