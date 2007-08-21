@@ -1,7 +1,7 @@
 Mopowg Changelog
 ====================
 
-0.6 (Unreleased):
+0.6 (08/22/2007):
 ------------------
 code name: CrazyDiomand
 
@@ -9,6 +9,7 @@ code name: CrazyDiomand
 
 * internal refactor the try_run method
 * rename traditional chinese test cases
+* "不是":"is not" instead of "不是":"not"
 
 *Features*
 

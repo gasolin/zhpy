@@ -30,3 +30,11 @@ def test_try():
     """
     assert convertor("嘗試: 導入 a; 異常 ImportError, e: 印出 e") == \
                 "try: import a; except ImportError, e: print e"
+
+def test_is():
+    """
+    test is, is not statement
+    """
+    assert convertor("4 為 4") == ("4 is 4")
+    assert convertor("4 是 4") == ("4 is 4")
+    assert convertor("4 不是 2") == ("4 is not 2")
