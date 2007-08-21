@@ -29,7 +29,8 @@ def test_string():
     """
     same as print test
     """
-    pass
+    assert convertor("s.开始为('he')") == "s.startswith('he')"
+    assert convertor("s.结束为('he')") == "s.endswith('he')"
 
 def test_list():
     """

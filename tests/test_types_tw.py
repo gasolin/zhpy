@@ -29,8 +29,10 @@ def test_string():
     """
     same as print test
     """
-    pass
-
+    s = "hello.py"
+    assert convertor("s.開始字串('he')") == "s.startswith('he')"
+    assert convertor("s.結束字串('he')") == "s.endswith('he')"
+    
 def test_list():
     """
     test list type
