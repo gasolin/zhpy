@@ -59,3 +59,15 @@ def test_set():
     """
     assert convertor("类组([1,2,3,4]) = set([1, 2, 3, 4])") == \
                     "set([1,2,3,4]) = set([1, 2, 3, 4])"
+
+def test_file():
+    """
+    test file type
+    """
+    assert convertor('fd = 打开("ReadMe_test.txt", "r")') == \
+                    'fd = open("ReadMe_test.txt", "r")'
+    assert convertor('temp = fd.读一行()') == 'temp = fd.readline()'
+    assert convertor('temp = fd.读多行()') == 'temp = fd.readlines()'
+    assert convertor('temp = fd.读取()') == 'temp = fd.read()'
+    assert convertor('fd.写入(temp)') == 'fd.write(temp)'
+    assert convertor('fd.关闭()') == 'fd.close()'

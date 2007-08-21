@@ -23,7 +23,9 @@ code name: CrazyDiomand
   * "类型":"type"
   * "读取":"read", "写入":"write"
   * "读一行":"readline", "读多行":"readlines"
-
+  * "开启":"open", "打开":"open",
+  * "關閉":"close", "关闭":"close"
+  
 *Fixes*
 
 *Project Updates*
