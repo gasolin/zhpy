@@ -1,7 +1,8 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
-"""zhpy is an convertor to translate chinese python code to 
-nature python code(english) and vice versa.
+"""zhpy is an convertor to translate chinese python code to nature python 
+code (english) and vice versa.
+
 zhpy refactored the origin code from HYRY.
 
 fredlin 2007, gasolin+mopowg@gmail.com

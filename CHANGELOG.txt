@@ -17,12 +17,15 @@ code name: CrazyDiomand
 
 *Project Updates*
 
-* Add license statement
+* Increase cheesecake_ rating
+  * Add license statement
+  * Add todo list
+  * Add authors list
+  * Add docs/
+* Add doctests 
+* Add example test runner
 * Remove redundent files
 * Update setup information
-* Add docs/
-* Increase cheesecake_ rating
-* Add example test runner
 
 .. _cheesecake: http://www.pycheesecake.org/
 
