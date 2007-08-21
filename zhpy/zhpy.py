@@ -83,7 +83,23 @@ def merger(anno_dict):
     """
     merge extra bindings into worddict
     
-    #this function is not functional yet
+    merge could accept list input:
+    
+    >>> keys = [('遊戲', 'pygame'), ('系統', 'sys')]
+    >>> merger(keys)
+    add 遊戲=pygame
+    add 系統=sys
+    >>> worddict.has_key('遊戲')
+    True
+    
+    merge could accept dict input:
+    
+    >>> keydic = {'作業系統':'os', '路徑':'path'}
+    >>> merger(keydic)
+    add 路徑=path
+    add 作業系統=os
+    >>> worddict.has_key('系統')
+    True
     """
     if type(anno_dict) == type([]):
         for k,v in anno_dict:
@@ -94,36 +110,12 @@ def merger(anno_dict):
                 print "already has key: %s, %s" % (k, v)
             
     if type(anno_dict) == type({}):
-        for tmp in anno_dict.keys:
+        for tmp in anno_dict.keys():
             if not worddict.has_key(tmp):
                 worddict[tmp] = anno_dict[tmp]
                 print "add %s=%s"%(tmp, anno_dict[tmp])
             else:
                 print "already has key: %s, %s" % (tmp, anno_dict[tmp])
-
-vnum = 0
-
-def convertToEnglish(s,l,t):
-    """search dict to match keywords
-    
-    if not in keyword, replace the chinese variable/argument/function name/class name/method name to a variable with prefix 'p'
-    
-    TODO: able to convert pretty code by annotate dict
-    """
-    global vnum
-    tmp = t[0].encode("utf8")
-    #print tmp
-    if not worddict.has_key(tmp):
-        worddict[tmp] = "p" + str(vnum)
-        vnum += 1
-    english = worddict[tmp]
-    return english.decode("utf8")
-
-chineseChars = srange(r"[\0x0080-\0xfe00]")
-#chineseChars = srange(r"[\0x2E80-\0x2FA1D]")
-chineseWord = Word(chineseChars)
-chineseWord.setParseAction(convertToEnglish)
-pythonWord = quotedString | chineseWord
 
 import os
 import ConfigParser
@@ -150,6 +142,30 @@ def annotator():
         for sect in sects:
             print "sect:", sect
             merger(conf.items(sect))
+
+vnum = 0
+
+def convertToEnglish(s,l,t):
+    """search dict to match keywords
+    
+    if not in keyword, replace the chinese variable/argument/function name/class name/method name to a variable with prefix 'p'
+    
+    TODO: able to convert pretty code by annotate dict
+    """
+    global vnum
+    tmp = t[0].encode("utf8")
+    #print tmp
+    if not worddict.has_key(tmp):
+        worddict[tmp] = "p" + str(vnum)
+        vnum += 1
+    english = worddict[tmp]
+    return english.decode("utf8")
+
+chineseChars = srange(r"[\0x0080-\0xfe00]")
+#chineseChars = srange(r"[\0x2E80-\0x2FA1D]")
+chineseWord = Word(chineseChars)
+chineseWord.setParseAction(convertToEnglish)
+pythonWord = quotedString | chineseWord
 
 def convertor(test):
     """
