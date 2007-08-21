@@ -14,7 +14,7 @@ code name: CrazyDiomand
 
 *Features*
 
-* add "-r/--raw": "input raw zhpy source and run" option for scripting usage
+* add "-r/--raw": "input raw zhpy source and run" option for scripting usage, idea from Jiahua Huang
 * add simplified chinese test cases
 * Add doctests
 * add keyword:
@@ -37,7 +37,7 @@ code name: CrazyDiomand
 
 *Contributors*
 
-Fred Lin
+Fred Lin, Jiahua Huang
 
 0.5 (08/19/2007):
 ------------------
