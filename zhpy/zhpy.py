@@ -173,6 +173,8 @@ def convertor(test):
     
     >>> convertor("印出 'hello'")
     "print 'hello'"
+    
+    more keyword test cases are in /tests folder.
     """
     for k, v in replacedict.items():
         test = test.replace(k,v)
