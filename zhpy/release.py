@@ -7,7 +7,7 @@ license = "MIT <http://www.opensource.org/licenses/mit-license.php>"
 url = "http://code.google.com/p/zhpy/"
 download_url="http://code.google.com/p/zhpy/"
 description="Write python language in chinese"
-long_description = """zhpy is the python on Chinese, 
+long_description = """zhpy is the *python on Chinese*, 
 which is good for Taiwan and China beginners to learn python in our native language.
 
 zhpy is a lightweight python module and a source convertor, which provides a command line 

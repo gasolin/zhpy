@@ -36,12 +36,14 @@ setup(
         'Environment :: Console',
         'Intended Audience :: Education',
         'Intended Audience :: Developers',
+        'Intended Audience :: System Administrators',
         'License :: OSI Approved :: MIT License',
         'Natural Language :: Chinese (Traditional)',
         'Natural Language :: Chinese (Simplified)',
         'Operating System :: OS Independent',
         'Programming Language :: Python',
-        'Topic :: Software Development :: Libraries :: Python Modules'],
+        'Topic :: Software Development :: Libraries :: Python Modules',
+        'Topic :: Software Development :: Code Generators'],
     test_suite = 'nose.collector',
     )
 

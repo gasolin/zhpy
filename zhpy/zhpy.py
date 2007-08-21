@@ -154,7 +154,7 @@ def convertToEnglish(s,l,t):
     
     if not in keyword, replace the chinese variable/argument/function name/class name/method name to a variable with prefix 'p'
     
-    TODO: able to convert pretty code by annotate dict
+    TODO: able to convert code by annotate dict
     """
     global vnum
     tmp = t[0].encode("utf8")
