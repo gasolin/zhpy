@@ -10,7 +10,8 @@ def test_if():
     """
     assert convertor("如果 a: 略過") == "if a: pass"
     assert convertor("如果 a: 略過; 否則: 略過") == "if a: pass; else: pass"
-    assert convertor("如果 a: 略過; 假使 b: 略過; 否則: 略過") == "if a: pass; elif b: pass; else: pass"
+    assert convertor("如果 a: 略過; 假使 b: 略過; 否則: 略過") == \
+                    "if a: pass; elif b: pass; else: pass"
 
 def test_for_loop():
     """

@@ -53,7 +53,9 @@ worddict = {"印出":"print", "輸入":"raw_input", #io
             "整数":"int", "小数":"float",
             "開啟":"open", 
             "讀取":"read", "寫入":"write", #file methods
+            "读取":"read", "写入":"write",
             "讀一行":"readline", "讀多行":"readlines",
+            "读一行":"readline", "读多行":"readlines",
             "加入":"append", "追加":"append", #list methods
             "開始字串":"startswith", "結束字串":"endswith", #string methods
             "开始为":"startswith","结束为":"endswith",

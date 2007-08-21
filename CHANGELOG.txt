@@ -11,6 +11,7 @@ code name: CrazyDiomand
 * rename traditional chinese test cases
 * "不是":"is not" instead of "不是":"not"
 * Online documents update
+* zhpy.py use normal unix \n instead of mac \r, thanks Jiahua Huang
 
 *Features*
 
@@ -20,6 +21,8 @@ code name: CrazyDiomand
 * add keyword:
   * "实": "True"
   * "类型":"type"
+  * "读取":"read", "写入":"write"
+  * "读一行":"readline", "读多行":"readlines"
 
 *Fixes*
 

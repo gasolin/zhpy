@@ -36,22 +36,26 @@ def test_list():
     test list type
     """
     assert convertor("列表((1,2,3,4)) == [1,2,3,4]") == "list((1,2,3,4)) == [1,2,3,4]"
-    assert convertor("a = []; a.加入(2); 宣告 a == [2]") == "a = []; a.append(2); assert a == [2]"
+    assert convertor("a = []; a.加入(2); 宣告 a == [2]") == \
+                    "a = []; a.append(2); assert a == [2]"
     
 def test_dict():
     """
     test dict type
     """
-    assert convertor("字典(a=1, b=2) == {'a':1, 'b':2}") == "dict(a=1, b=2) == {'a':1, 'b':2}"
+    assert convertor("字典(a=1, b=2) == {'a':1, 'b':2}") == \
+                    "dict(a=1, b=2) == {'a':1, 'b':2}"
 
 def test_tuple():
     """
     test tuple type
     """
-    assert convertor("数组([1,2,3,4]) == (1,2,3,4)") == "tuple([1,2,3,4]) == (1,2,3,4)"
+    assert convertor("数组([1,2,3,4]) == (1,2,3,4)") == \
+                    "tuple([1,2,3,4]) == (1,2,3,4)"
 
 def test_set():
     """
     test set type
     """
-    assert convertor("类组([1,2,3,4]) = set([1, 2, 3, 4])") == "set([1,2,3,4]) = set([1, 2, 3, 4])"
+    assert convertor("类组([1,2,3,4]) = set([1, 2, 3, 4])") == \
+                    "set([1,2,3,4]) = set([1, 2, 3, 4])"
