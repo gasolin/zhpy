@@ -44,7 +44,7 @@ worddict = {"印出":"print", "輸入":"raw_input", #io
             "是":"is", "為":"is", "不是":"is not", "或":"or", "和":"and", "且":"and", #boolean
             "真": "True", "假":"False", "實": "True", "虛":"False", "空":"None",
             "实": "True",
-            "型別":"type", #build in methods
+            "型別":"type", "类型":"type",#build in methods
             "長度":"len" ,"长度":"len",
             "字串":"str", "字符串":"str", # build-in types
             "列表": "list", "字典":"dict", "數組":"tuple", "類組":"set",

@@ -19,6 +19,7 @@ code name: CrazyDiomand
 * Add doctests
 * add keyword:
   * "实": "True"
+  * "类型":"type"
 
 *Fixes*
 

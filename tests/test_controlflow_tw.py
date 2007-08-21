@@ -22,7 +22,7 @@ def test_while_loop():
     """
     test while loop
     """
-    assert convertor("當 1: 印出 'hello'") == "while 1: print 'hello'"
+    assert convertor("當 1: 印出 'hello'; 跳出") == "while 1: print 'hello'; break"
 
 def test_try():
     """
