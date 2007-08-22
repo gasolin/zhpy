@@ -33,7 +33,7 @@ worddict = {"印出":"print", "輸入":"raw_input", #io
             "传回":"return", "略过":"pass", "继续":"continue",
             "如果":"if", "假使":"elif", "否則如果":"elif", "否則":"else",#control
             "若":"if", "否则如果":"elif", "否则":"else",
-            "取":"for", "自":"in", "在":"in", #for loop
+            "取":"for", "自":"in", "在":"in", "不在":"not in",#for loop
             "當":"while", "跳出":"break", "中止":"break",#while loop
             "当":"while", "中断":"break",
             "嘗試":"try", "異常":"except", "最後":"finally", #try

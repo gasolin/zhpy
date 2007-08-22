@@ -3,7 +3,7 @@ zhpy Changelog
 
 0.7 (Unreleased):
 ------------------
-code name: GoldExperience
+code name: Gold Experience
 
 *Changes*
 
@@ -14,7 +14,9 @@ code name: GoldExperience
 
 *Features*
   
-  
+* add keyword:  
+  * "不在":"not in"
+
 *Fixes*
 
 *Project Updates*
@@ -25,15 +27,13 @@ Fred Lin
 
 0.6 (08/22/2007):
 ------------------
-code name: CrazyDiomand
+code name: Crazy Diomand
 
 *Changes*
 
 * internal refactor the try_run method
 * rename traditional chinese test cases
-* "不是":"is not" instead of "不是":"not"
 * Online documents update
-* zhpy.py use normal unix \n instead of mac \r, thanks Jiahua Huang
 
 *Features*
 
@@ -49,6 +49,9 @@ code name: CrazyDiomand
   * "關閉":"close", "关闭":"close"
   
 *Fixes*
+
+* "不是":"is not" instead of "不是":"not"
+* zhpy.py use normal unix \n instead of mac \r, thanks Jiahua Huang
 
 *Project Updates*
 
@@ -69,7 +72,7 @@ Fred Lin, Jiahua Huang
 
 0.5 (08/19/2007):
 ------------------
-code name: StarPlatinum
+code name: Star Platinum
 
 *Changes*
 
