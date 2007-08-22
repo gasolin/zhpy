@@ -153,7 +153,7 @@ def annotator():
 vnum = 0
 
 def convertToEnglish(s,l,t):
-    """search dict to match keywords
+    """search worddict to match keywords
     
     if not in keyword, replace the chinese variable/argument/
     function name/class name/method name to a variable with prefix 'p'
@@ -168,7 +168,7 @@ def convertToEnglish(s,l,t):
         vnum += 1
     english = worddict[tmp]
     return english.decode("utf8")
-
+    
 chineseChars = srange(r"[\0x0080-\0xfe00]")
 #chineseChars = srange(r"[\0x2E80-\0x2FA1D]")
 chineseWord = Word(chineseChars)
@@ -283,7 +283,6 @@ def commandtool():
             try_run(result)
     else:
         print """please type "zhpy --help" for help"""
-
   
 if __name__=="__main__":
     commandtool()
