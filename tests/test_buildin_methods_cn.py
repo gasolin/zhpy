@@ -9,7 +9,7 @@ def test_type():
     test type method
     """
     assert convertor('类型("sting") == 类型("abc")') == \
-                    'type("sting") == type("abc")' 
+                    'type("sting") == type("abc")'
     
 def test_len():
     """

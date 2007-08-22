@@ -16,7 +16,8 @@ def test_input():
     """
     test input statement
     """
-    assert convertor("name = 输入字符串('your name:')") == "name = raw_input('your name:')"
+    assert convertor("name = 输入字符串('your name:')") == \
+                    "name = raw_input('your name:')"
 
 def test_variable():
     """

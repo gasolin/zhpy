@@ -8,25 +8,29 @@ url = "http://code.google.com/p/zhpy/"
 download_url="http://code.google.com/p/zhpy/"
 description="Write python language in chinese"
 long_description = """zhpy is the *python on Chinese*, 
-which is good for Taiwan and China beginners to learn python in our native language.
+which is good for Taiwan and China beginners to learn python in 
+our native language.
 
-zhpy is a lightweight python module and a source convertor, which provides a command line 
-tool to translate python code. The python code written by traditional and simplified 
+zhpy is a lightweight python module and a source convertor, which 
+provides a command line tool to translate python code. 
+The python code written by traditional and simplified 
 chinese could be translated to nature python code (english).
 
-zhpy support full python syntax. Code written in zhpy could be converted to natual python and 
-be used in normal python programs.
+zhpy support full python syntax. Code written in zhpy could be 
+converted to natual python and be used in normal python programs.
 
-After v0.5, zhpy provide a method 'zh_exec' that allow to embed chinese script in python
+After v0.5, zhpy provide a method 'zh_exec' that allow to embed 
+chinese script in python
 
 After v0.6, zhpy could be used as the chinese script in shell as well.
 
 zhpy is fully tested, which use ~50 test cases to test the small(<10k) source.
 
-zhpy use pyparsing module to detect chinese keywords, class name, methods, arguments, 
-variables and translate them back to python.
+zhpy use pyparsing module to detect chinese keywords, class name, methods, 
+arguments, variables and translate them back to python.
 
-It's possible for developers to port zhpy to python on korean or python on japenese.
+It's possible for developers to port zhpy to python on korean or 
+python on japenese.
 
 Check examples_ here.
 
@@ -61,7 +65,8 @@ execute source code mixed in Chinese and English.::
     $ zhpy hello.py
     hello, world!
 
-You could assign a file name to export the zhpy source to the normal python source (english)::
+You could assign a file name to export the zhpy source to the normal 
+python source (english)::
 
     $ zhpy hello.py n_hello.py
 
@@ -84,7 +89,8 @@ check the BasicUsage_ for detail.
 Programming
 -----------
 
-You could mix original english keywords and Chinese keywords in your zhpy source.
+You could mix original english keywords and Chinese keywords in 
+your zhpy source.
 
 Reserved keywords are listed here_
 

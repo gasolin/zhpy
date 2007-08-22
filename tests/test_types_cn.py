@@ -6,10 +6,10 @@ from zhpy import convertor
 
 def test_int():
     """
-    test int type 
+    test int type
     """
     assert convertor("整数(2.0)") == "int(2.0)"
-    
+
 def test_float():
     """
     test float type
@@ -24,7 +24,7 @@ def test_boolean():
     assert convertor("p = 假") == "p = False"
     assert convertor("q = 实") == "q = True"
     assert convertor("r = 虛") == "r = False"
-        
+
 def test_string():
     """
     same as print test
@@ -42,7 +42,7 @@ def test_list():
                     "a = []; a.append(2); assert a == [2]"
     p = "h,e,l,l,o"
     assert convertor('p.分离(",")') == 'p.split(",")'
-        
+
 def test_dict():
     """
     test dict type
