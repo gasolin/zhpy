@@ -28,7 +28,8 @@ worddict = {"印出":"print", "輸入":"raw_input", #io
             "共用":"global", "全局变量":"global", #global
             "從":"from", "導入":"import", "取名":"as", #import
             "从":"from", "载入":"import",
-            "返回":"return", "傳回":"return", "略過":"pass", "示警":"raise", "繼續":"continue", #flow
+            "返回":"return", "傳回":"return", "略過":"pass", 
+            "示警":"raise", "繼續":"continue", #flow
             "传回":"return", "略过":"pass", "继续":"continue",
             "如果":"if", "假使":"elif", "否則如果":"elif", "否則":"else",#control
             "若":"if", "否则如果":"elif", "否则":"else",
@@ -41,7 +42,8 @@ worddict = {"印出":"print", "輸入":"raw_input", #io
             "方程式":"lambda", "產生":"yield", "伴隨":"with",
             "函数":"lambda", "产生":"yield",
             "等於":"==", "不等於":"!=", "等于":"==", "不等于":"!=", #operators
-            "是":"is", "為":"is", "不是":"is not", "或":"or", "和":"and", "且":"and", #boolean
+            "是":"is", "為":"is", "不是":"is not", 
+            "或":"or", "和":"and", "且":"and", #boolean
             "真": "True", "假":"False", "實": "True", "虛":"False", "空":"None",
             "实": "True",
             "型別":"type", "类型":"type",#build in methods
@@ -63,8 +65,8 @@ worddict = {"印出":"print", "輸入":"raw_input", #io
             "开始为":"startswith","结束为":"endswith",
             "接合":"join", "分離":"split",
             "分离":"split",
-            "有關鍵字":"has_key", "列出關鍵字":"keys","列出值":"values", "列出項目": "items", #dict methods
-            "有关键字":"has_key", "关键字列表":"keys", "值列表":"values", "项目列表":"items",
+            "列出關鍵字":"keys","列出值":"values", "列出項目": "items", #dict methods
+            "关键字列表":"keys", "值列表":"values", "项目列表":"items",
             "編碼":"encoding", "解碼":"decoding", #encoding
             "编码":"encoding", "解码":"decoding",
             "範圍":"range", "范围":"range", # preloaded modules
@@ -93,7 +95,7 @@ def merger(anno_dict):
     >>> merger(keys)
     add 遊戲=pygame
     add 系統=sys
-    >>> worddict.has_key('遊戲')
+    >>> '遊戲' in worddict
     True
     
     merge could accept dict input:
@@ -102,12 +104,12 @@ def merger(anno_dict):
     >>> merger(keydic)
     add 路徑=path
     add 作業系統=os
-    >>> worddict.has_key('系統')
+    >>> '系統' in worddict
     True
     """
     if type(anno_dict) == type([]):
         for k,v in anno_dict:
-            if not worddict.has_key(k):
+            if k not in worddict:
                 worddict[k] = v
                 print "add %s=%s"%(k, v)
             else:
@@ -115,7 +117,7 @@ def merger(anno_dict):
             
     if type(anno_dict) == type({}):
         for tmp in anno_dict.keys():
-            if not worddict.has_key(tmp):
+            if tmp not in worddict:
                 worddict[tmp] = anno_dict[tmp]
                 print "add %s=%s"%(tmp, anno_dict[tmp])
             else:
@@ -129,7 +131,8 @@ def annotator():
     provide two ways to expand the worddict:
     
     1. inifiles
-        find ini files and use keywords defined in ini during convertion progress.
+        find ini files and use keywords defined in ini during 
+        convertion progress.
     
     2. head docsting annotator（TODO）
     """
@@ -152,14 +155,15 @@ vnum = 0
 def convertToEnglish(s,l,t):
     """search dict to match keywords
     
-    if not in keyword, replace the chinese variable/argument/function name/class name/method name to a variable with prefix 'p'
+    if not in keyword, replace the chinese variable/argument/
+    function name/class name/method name to a variable with prefix 'p'
     
     TODO: able to convert code by annotate dict
     """
     global vnum
     tmp = t[0].encode("utf8")
     #print tmp
-    if not worddict.has_key(tmp):
+    if tmp not in worddict:
         worddict[tmp] = "p" + str(vnum)
         vnum += 1
     english = worddict[tmp]

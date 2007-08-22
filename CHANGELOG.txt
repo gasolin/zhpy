@@ -1,5 +1,25 @@
-Mopowg Changelog
+zhpy Changelog
 ====================
+
+0.7 (Unreleased):
+------------------
+code name: CrazyDiomand
+
+*Changes*
+
+* remove keyword
+  * "有關鍵字":"has_key", "有关键字":"has_key"
+* .has_key() is deprecated, use 'in'
+
+*Features*
+  
+*Fixes*
+
+*Project Updates*
+
+*Contributors*
+
+Fred Lin
 
 0.6 (08/22/2007):
 ------------------
