@@ -23,7 +23,7 @@ def test_variable():
     """
     variable is tested in keywords_tw
     """
-    pass
+    assert convertor("代码 = 'zhpy'") == "p_4ee3_7801_v = 'zhpy'"
 
 def test_operators():
     """

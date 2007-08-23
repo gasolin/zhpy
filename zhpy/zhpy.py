@@ -268,9 +268,11 @@ def commandtool():
     parser.add_option("-p", "--python",
             help="compile to python and run",
             dest="compile", default = None)
+    #prepare to deprecated
     parser.add_option("-r", "--raw",
             help="input raw zhpy source and run (plz use -c instead)",
             dest="raw", default = None)
+    #
     parser.add_option("-c", "--cmd",
             help="input zhpy program as string and run",
             dest="raw", default = None)
