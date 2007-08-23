@@ -7,15 +7,17 @@ code name: Gold Experience
 
 *Changes*
 
+* variables are changed to "p_[var]_v" syntax instead of p[num], 
+  thanks Jiahua Huang
+* .has_key() is deprecated, use 'in'
 * remove keyword
   * "有關鍵字":"has_key", "有关键字":"has_key"
-* .has_key() is deprecated, use 'in'
 * remove trail space for pep8
-* variables are changed to "p_[var]_v" syntax
 
 *Features*
 
-* universe reference identifier (uri) for variable/constant/class/methods
+* use universe reference identifier (uri) for 
+  variable/constant/class/methods instead of vnum, thanks Jiahua Huang
 * add keyword:
   * "不在":"not in"
 
@@ -25,7 +27,7 @@ code name: Gold Experience
 
 *Contributors*
 
-Fred Lin
+Fred Lin, Jiahua Huang
 
 0.6 (08/22/2007):
 ------------------
@@ -39,7 +41,8 @@ code name: Crazy Diomand
 
 *Features*
 
-* add "-r/--raw": "input raw zhpy source and run" option for scripting usage, idea from Jiahua Huang
+* add "-r/--raw": "input raw zhpy source and run" option for 
+  scripting usage, idea from Jiahua Huang
 * add simplified chinese test cases
 * Add doctests
 * add keyword:
@@ -80,7 +83,8 @@ code name: Star Platinum
 
 *Features*
 
-* implement zh_exec, now it's possible to test zhpy in interpretor, or embeded zhpy in python source
+* implement zh_exec, now it's possible to test zhpy in interpretor, or 
+  embeded zhpy in python source
 * add test cases
 
 *Fixes*
@@ -111,7 +115,8 @@ code name: Dio
 * Enhanced command parser with 2 basic option
   * add "-i": input option
   * add "-o": output option
-* add "-p": "compile to python and run" option, which generate python source with 'n_' prefix.
+* add "-p": "compile to python and run" option, which generate 
+  python source with 'n_' prefix.
 * More keywords
   * "數組":"tuple", "類組":"set"
   * "数组":"tuple", "类组":"set"
