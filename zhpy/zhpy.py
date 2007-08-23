@@ -150,8 +150,6 @@ def annotator():
             print "sect:", sect
             merger(conf.items(sect))
 
-vnum = 0
-
 def variable_to_number(tmp):
     """
     convert variable to hex number
@@ -169,6 +167,8 @@ def variable_to_number(tmp):
         word_list.append(ori)
     return "_".join(word_list)
 
+#vnum = 0
+
 def convertToEnglish(s,l,t):
     """search worddict to match keywords
     
@@ -177,9 +177,8 @@ def convertToEnglish(s,l,t):
     
     TODO: able to convert code by annotate dict
     """
-    global vnum
+    #global vnum
     tmp = t[0].encode("utf8")
-    #print tmp
     """if tmp not in worddict:
         worddict[tmp] = "p_" + str(vnum)
         vnum += 1
