@@ -179,18 +179,18 @@ def convertToEnglish(s,l,t):
     """
     #global vnum
     tmp = t[0].encode("utf8")
-    """if tmp not in worddict:
-        worddict[tmp] = "p_" + str(vnum)
-        vnum += 1
-    english = worddict[tmp]
-    return english.decode("utf8")"""
+#    if tmp not in worddict:
+#        worddict[tmp] = "p_" + str(vnum)
+#        vnum += 1
+#    english = worddict[tmp]
+#    return english.decode("utf8")
     if tmp in worddict:
-        return worddict[tmp].decode("utf8")
+        word = worddict[tmp].decode("utf8")
     else:
-        return 'p_' + variable_to_number(t[0]) + '_v'
-    
+        word = 'p_' + variable_to_number(t[0]) + '_v'
+    return word
+
 chineseChars = srange(r"[\0x0080-\0xfe00]")
-#chineseChars = srange(r"[\0x2E80-\0x2FA1D]")
 chineseWord = Word(chineseChars)
 chineseWord.setParseAction(convertToEnglish)
 pythonWord = quotedString | chineseWord

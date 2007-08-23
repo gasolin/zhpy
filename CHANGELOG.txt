@@ -13,6 +13,7 @@ code name: Gold Experience
 * remove keyword
   * "有關鍵字":"has_key", "有关键字":"has_key"
 * remove trail space for pep8
+* rename run.sh to test_example.sh
 
 *Features*
 
@@ -22,6 +23,7 @@ code name: Gold Experience
   * "不在":"not in"
 * add "-c/--cmd" option instead of "-r/--raw" to correspond the python command, 
   "-r/--raw" will be deprecate in next release.
+* add test for command line (test_example.sh)
 
 *Fixes*
 
