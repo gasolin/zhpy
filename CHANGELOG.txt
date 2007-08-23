@@ -20,6 +20,8 @@ code name: Gold Experience
   variable/constant/class/methods instead of vnum, thanks Jiahua Huang
 * add keyword:
   * "不在":"not in"
+* add "-c/--cmd" option instead of "-r/--raw" to correspond the python command, 
+  "-r/--raw" will be deprecate in next release.
 
 *Fixes*
 

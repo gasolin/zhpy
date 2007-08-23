@@ -259,17 +259,20 @@ def commandtool():
     from optparse import OptionParser
     parser = OptionParser(
             usage="zhpy source [output]")
-    parser.add_option("-i", "--input", 
+    parser.add_option("-i", "--input",
             help="speficy the input source",
             dest="input", default = None)
-    parser.add_option("-o", "--output", 
+    parser.add_option("-o", "--output",
             help="speficy the output source",
             dest="output", default = None)
-    parser.add_option("-p", "--python", 
+    parser.add_option("-p", "--python",
             help="compile to python and run",
             dest="compile", default = None)
-    parser.add_option("-r", "--raw", 
-            help="input raw zhpy source and run",
+    parser.add_option("-r", "--raw",
+            help="input raw zhpy source and run (plz use -c instead)",
+            dest="raw", default = None)
+    parser.add_option("-c", "--cmd",
+            help="input zhpy program as string and run",
             dest="raw", default = None)
     (options, args) = parser.parse_args()
     
