@@ -288,7 +288,7 @@ def commandtool():
         return
     #run as command
     if len(sys.argv) >= 2:
-        if (options.input is None) and sys.argv[1].endswith(".py"):
+        if (options.input is None) and sys.argv[1].endswith("py"):
             options.input = sys.argv[1]
         if options.compile:
             options.input = options.compile
@@ -297,11 +297,12 @@ def commandtool():
         annotator()
         result = convertor(test)
         if len(sys.argv) == 3:
-            if sys.argv[1].endswith(".py") and sys.argv[2].endswith(".py"):
+            if sys.argv[1].endswith("py") and sys.argv[2].endswith("py"):
                 options.output = sys.argv[2]
             if options.compile:
-                file("n_"+options.compile,"w").write(result)
-                print "compile to python and run: %s"%("n_"+options.compile)
+                filename = os.path.splitext(options.compile)[0]
+                file("n_"+filename+".py","w").write(result)
+                print "compile to python and run: %s"%("n_"+filename+".py")
         if options.output:
             file(options.output,"w").write(result)
         else:
