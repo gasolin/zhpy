@@ -23,7 +23,7 @@ def test_variable():
     """
     test variable
     """
-    assert convertor("代號 = 'gasolin'") == "p0 = 'gasolin'"
+    assert convertor("代號 = 'gasolin'") == "p_4ee3_865f_v = 'gasolin'"
 
 def test_operators():
     """

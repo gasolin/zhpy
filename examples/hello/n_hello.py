@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # this is a sample Python program
-def p0_1(p1,p2):
-   for p3 in range(p2):
-       print "哈囉, %s!" % p1
+def p_7bc4_4f8b_v_1(p_8a0a_606f_v,p_6b21_6578_v):
+   for p_6578_v in range(p_6b21_6578_v):
+       print "哈囉, %s!" % p_8a0a_606f_v
 
-p0_1("世界", 100)
+p_7bc4_4f8b_v_1("世界", 100)

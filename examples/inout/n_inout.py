@@ -1,3 +1,3 @@
 # -*- coding: utf-8 -*-
-p0 = raw_input("輸入姓名: ")
-print "歡迎,", p0
+p_8cc7_6599_v = raw_input("輸入姓名: ")
+print "歡迎,", p_8cc7_6599_v

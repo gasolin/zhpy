@@ -152,6 +152,23 @@ def annotator():
 
 vnum = 0
 
+def variable_to_number(tmp):
+    """
+    convert variable to hex number
+    
+    >>> '範例'.decode("utf8")
+    u'\u7bc4\u4f8b'
+    >>> s = '範例'.decode("utf8")
+    >>> variable_to_number(s)
+    '7bc4_4f8b'
+    """
+    #return 'p_' + '_'.join(map(lambda i:str(ord(i)), t[0])) + '_v'
+    word_list=[]
+    for i in tmp:
+        ori = str(hex(ord(i)))[2:]
+        word_list.append(ori)
+    return "_".join(word_list)
+
 def convertToEnglish(s,l,t):
     """search worddict to match keywords
     
@@ -163,11 +180,15 @@ def convertToEnglish(s,l,t):
     global vnum
     tmp = t[0].encode("utf8")
     #print tmp
-    if tmp not in worddict:
-        worddict[tmp] = "p" + str(vnum)
+    """if tmp not in worddict:
+        worddict[tmp] = "p_" + str(vnum)
         vnum += 1
     english = worddict[tmp]
-    return english.decode("utf8")
+    return english.decode("utf8")"""
+    if tmp in worddict:
+        return worddict[tmp].decode("utf8")
+    else:
+        return 'p_' + variable_to_number(t[0]) + '_v'
     
 chineseChars = srange(r"[\0x0080-\0xfe00]")
 #chineseChars = srange(r"[\0x2E80-\0x2FA1D]")

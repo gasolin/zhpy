@@ -11,10 +11,12 @@ code name: Gold Experience
   * "有關鍵字":"has_key", "有关键字":"has_key"
 * .has_key() is deprecated, use 'in'
 * remove trail space for pep8
+* variables are changed to "p_[var]_v" syntax
 
 *Features*
-  
-* add keyword:  
+
+* universe reference identifier (uri) for variable/constant/class/methods
+* add keyword:
   * "不在":"not in"
 
 *Fixes*

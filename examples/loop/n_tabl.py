@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-def p0(p1):
-    for p2 in range(1, p1+1):
-        for p3 in range(1, p1+1):
-            print "%d*%d=%d"%(p2,p3,p2*p3)
+def p_7b97_8868_v(p_8868_683c_5927_5c0f_v):
+    for p_7b2c_4e00_500b_6578_v in range(1, p_8868_683c_5927_5c0f_v+1):
+        for p_7b2c_4e8c_500b_6578_v in range(1, p_8868_683c_5927_5c0f_v+1):
+            print "%d*%d=%d"%(p_7b2c_4e00_500b_6578_v,p_7b2c_4e8c_500b_6578_v,p_7b2c_4e00_500b_6578_v*p_7b2c_4e8c_500b_6578_v)
 
-p0(3)
+p_7b97_8868_v(3)

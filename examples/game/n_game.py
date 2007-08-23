@@ -1,21 +1,21 @@
 #coding=utf-8
 import sys, pygame
-p0 = p1,p2=320,240
-p3 = [2,2]
-p4 = 255,255,255
-p5 = pygame.display.set_mode(p0)
-p6 = pygame.image.load("pygame_icon.bmp")
-p7 = p6.get_rect()
+p_5927_5c0f_v = p_5bec_v,p_9577_v=320,240
+p_901f_5ea6_v = [2,2]
+p_984f_8272_v = 255,255,255
+p_87a2_5e55_v = pygame.display.set_mode(p_5927_5c0f_v)
+p_7269_9ad4_v = pygame.image.load("pygame_icon.bmp")
+p_7269_9ad4_908a_754c_v = p_7269_9ad4_v.get_rect()
 while 1:
     for event in pygame.event.get():
         if event.type == pygame.QUIT: sys.exit()
 
-    p7 = p7.move(p3)
-    if p7.left < 0 or p7.right > p1:
-        p3[0] = -p3[0]
-    if p7.top < 0 or p7.bottom > p2:
-        p3[1] = -p3[1]
+    p_7269_9ad4_908a_754c_v = p_7269_9ad4_908a_754c_v.move(p_901f_5ea6_v)
+    if p_7269_9ad4_908a_754c_v.left < 0 or p_7269_9ad4_908a_754c_v.right > p_5bec_v:
+        p_901f_5ea6_v[0] = -p_901f_5ea6_v[0]
+    if p_7269_9ad4_908a_754c_v.top < 0 or p_7269_9ad4_908a_754c_v.bottom > p_9577_v:
+        p_901f_5ea6_v[1] = -p_901f_5ea6_v[1]
 
-    p5.fill(p4)
-    p5.blit(p6,p7)
+    p_87a2_5e55_v.fill(p_984f_8272_v)
+    p_87a2_5e55_v.blit(p_7269_9ad4_v,p_7269_9ad4_908a_754c_v)
     pygame.display.flip()
