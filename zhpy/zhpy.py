@@ -422,11 +422,6 @@ def commandtool():
     (options, args) = parser.parse_args()
     
     os.chdir(os.getcwd())
-    # no args
-    if len(sys.argv) == 1:
-        from zhipy import interpreter
-        interpreter()
-        sys.exit()
     #run as script
     if options.raw:
         test = options.raw
