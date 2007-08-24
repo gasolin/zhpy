@@ -220,7 +220,8 @@ def try_run(result):
     hello
     """
     try:
-        exec result
+        locals = {"__name__": "__main__", "__doc__": None}
+        exec result in locals
     except Exception, e:
         print result
         s = str(e)

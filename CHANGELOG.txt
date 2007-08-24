@@ -23,11 +23,15 @@ code name: Gold Experience
   * "不在":"not in"
 * add "-c/--cmd" option instead of "-r/--raw" to correspond the python command, 
   "-r/--raw" will be deprecate in next release.
-* add test for command line (test_example.sh)
+* also test command line options (test_example.sh)
 
 *Fixes*
 
+* able to run zhpy in main loop, thanks Jiahua Huang
+
 *Project Updates*
+
+* use .twpy, .cnpy as zhpy subname to distinguish the coding
 
 *Contributors*
 
