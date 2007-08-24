@@ -24,7 +24,7 @@ chinese script in python
 
 After v0.6, zhpy could be used as the chinese script in shell as well.
 
-zhpy is fully tested, which use ~50 test cases to test the small(<10k) source.
+zhpy is fully tested, which use ~50 test cases to test the small(<15k) source.
 
 zhpy use pyparsing module to detect chinese keywords, class name, methods, 
 arguments, variables and translate them back to python.

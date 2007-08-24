@@ -18,7 +18,7 @@ code name: Gold Experience
   * "關鍵字列表" instead of "列出關鍵字"
   * "值列表" instead of "列出值"
   * "項目列表" instead of "列出項目"
-* variables are changed to "p_[var]_v" syntax instead of p[num], 
+* variables are changed to "p_[var]_v" syntax instead of p[num],
   thanks Jiahua Huang
 * .has_key() is deprecated, use 'in'
 * remove keyword
@@ -28,10 +28,11 @@ code name: Gold Experience
 * remove trail space for pep8
 * rename run.sh to test_example.sh
 * maintain tw, cn keyword in seperate dict
+* Online documents update
 
 *Features*
 
-* use universe reference identifier (uri) for 
+* use universe reference identifier (uri) for
   variable/constant/class/methods instead of vnum, thanks Jiahua Huang
 * add keyword:
   * "作为":"as"
@@ -39,7 +40,7 @@ code name: Gold Experience
   * "宣告":"assert", "刪除":"del", "执行":"exec"
   * "或者":"or","并且":"and",
   * "不在":"not in"
-* add "-c/--cmd" option instead of "-r/--raw" to correspond the python command, 
+* add "-c/--cmd" option instead of "-r/--raw" to correspond the python command,
   "-r/--raw" will be deprecate in next release.
 * also test command line options (test_example.sh)
 * add contact example (cn) in loop/
@@ -68,7 +69,7 @@ code name: Crazy Diomand
 
 *Features*
 
-* add "-r/--raw": "input raw zhpy source and run" option for 
+* add "-r/--raw": "input raw zhpy source and run" option for
   scripting usage, idea from Jiahua Huang
 * add simplified chinese test cases
 * Add doctests
@@ -110,7 +111,7 @@ code name: Star Platinum
 
 *Features*
 
-* implement zh_exec, now it's possible to test zhpy in interpretor, or 
+* implement zh_exec, now it's possible to test zhpy in interpretor, or
   embeded zhpy in python source
 * add test cases
 
