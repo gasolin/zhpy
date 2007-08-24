@@ -208,7 +208,7 @@ cndict = {# io
           }
 
 # Traditional chinese and simplized chinese keywords
-worddict = twdict
+worddict = twdict.copy()
 for i in cndict:
     if i in twdict:
         continue

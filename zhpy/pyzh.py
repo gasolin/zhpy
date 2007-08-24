@@ -83,6 +83,8 @@ def python_convertor(test, lang='tw'):
     convert python source to zhpy source
     'print': '\xe6\x89\x93\xe5\x8d\xb0'
     
+    >>> print python_convertor("print 'hello'", 'tw')
+    印出 'hello'
     >>> print python_convertor("print 'hello'", 'cn')
     打印 'hello'
     """
