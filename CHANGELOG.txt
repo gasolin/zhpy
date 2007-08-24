@@ -1,7 +1,7 @@
 zhpy Changelog
 ====================
 
-0.7 (08/x/2007):
+0.7 (08/25/2007):
 ------------------
 code name: Gold Experience
 
@@ -27,6 +27,7 @@ code name: Gold Experience
   * "開啟":"open", "开启":"open"
 * remove trail space for pep8
 * rename run.sh to test_example.sh
+* maintain tw, cn keyword in seperate dict
 
 *Features*
 
@@ -34,7 +35,6 @@ code name: Gold Experience
   variable/constant/class/methods instead of vnum, thanks Jiahua Huang
 * add keyword:
   * "作为":"as"
-  * "警告":"raise"
   * "最后":"finally"
   * "宣告":"assert", "刪除":"del", "执行":"exec"
   * "或者":"or","并且":"and",

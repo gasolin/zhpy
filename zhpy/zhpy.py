@@ -132,7 +132,7 @@ cndict = {# io
           # flow
           "传回":"return",
           "略过":"pass",
-          "警告":"raise",
+          "示警":"raise",
           "继续":"continue",
           # control
           "如果":"if",
@@ -150,6 +150,7 @@ cndict = {# io
           # try
           "尝试":"try",
           "异常":"except",
+          "最后":"finally",
           # else
           "宣告":"assert",
           "刪除":"del",
