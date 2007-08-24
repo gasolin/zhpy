@@ -50,5 +50,5 @@ def test_import():
     test import statement with from/import/as
     """
     assert convertor("導入 sys") == "import sys"
-    assert convertor("導入 sys 取名 unix") == "import sys as unix"
-    assert convertor("從 os 導入 path 取名 url") == "from os import path as url"
+    assert convertor("導入 sys 作為 unix") == "import sys as unix"
+    assert convertor("從 os 導入 path 作為 url") == "from os import path as url"

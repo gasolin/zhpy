@@ -20,57 +20,199 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 """
 from pyparsing import *
 
+# Traditional chinese keywords
+twdict = {# io
+          "印出":"print",
+          "輸入":"raw_input",
+          # def
+          "定義":"def",
+          "類別":"class",
+          # global
+          "共用":"global",
+          # import
+          "從":"from",
+          "導入":"import",
+          "作為":"as",
+          # flow
+          "返回":"return",
+          "傳回":"return",
+          "略過":"pass", 
+          "示警":"raise",
+          "繼續":"continue",
+          # control
+          "如果":"if",
+          "假使":"elif",
+          "否則如果":"elif",
+          "否則":"else",
+          # for loop
+          "取":"for",
+          "在":"in",
+          "自":"in",
+          "不在":"not in",
+          # while loop
+          "當":"while",
+          "跳出":"break",
+          "中止":"break",
+          # try
+          "嘗試":"try",
+          "異常":"except",
+          "最後":"finally",
+          # else
+          "宣告":"assert",
+          "刪除":"del",
+          "執行":"exec",
+          "方程式":"lambda",
+          "產生":"yield",
+          "伴隨":"with",
+          # logic
+          "等於":"==",
+          "不等於":"!=",
+          "是":"is",
+          "為":"is",
+          "不是":"is not",
+          "或":"or",
+          "和":"and",
+          "且":"and",
+          "真":"True",
+          "假":"False",
+          "實":"True",
+          "虛":"False",
+          "空":"None",
+          # build in methods
+          "型別":"type",
+          "長度":"len",
+          # build-in types
+          "字串":"str",
+          "列表": "list",
+          "字典":"dict",
+          "數組":"tuple",
+          "集合":"set",
+          "整數":"int",
+          "浮點數":"float",
+          # file methods
+          "打開":"open",
+          "讀取":"read",
+          "寫入":"write",
+          "讀一行":"readline",
+          "讀多行":"readlines",
+          "關閉":"close",
+          # list methods
+          "加入":"append",
+          "追加":"append",
+          # string methods
+          "開始字串":"startswith",
+          "結束字串":"endswith",
+          "連接":"join",
+          "分離":"split",
+          # dict methods
+          "關鍵字列表":"keys",
+          "值列表":"values",
+          "項目列表": "items",
+          # encoding
+          "編碼":"encoding",
+          "解碼":"decoding",
+          # preloaded modules
+          "範圍":"range",
+          }
+
+# Simplized chinese keywords
+cndict = {# io
+          "打印":"print",
+          "输入字符串":"raw_input",
+          # def
+          "定义":"def",
+          "类":"class",
+          # global
+          "共用":"global",
+          "全局":"global",
+          # import
+          "从":"from",
+          "导入":"import",
+          "作为":"as",
+          # flow
+          "传回":"return",
+          "略过":"pass",
+          "警告":"raise",
+          "继续":"continue",
+          # control
+          "如果":"if",
+          "否则如果":"elif",
+          "否则":"else",
+          # for loop
+          "取":"for",
+          "在":"in",
+          "自":"in",
+          "不在":"not in",
+          # while loop
+          "当":"while",
+          "跳出":"break",
+          "中断":"break",
+          # try
+          "尝试":"try",
+          "异常":"except",
+          # else
+          "宣告":"assert",
+          "刪除":"del",
+          "执行":"exec",
+          "函数":"lambda",
+          "产生":"yield",
+          "伴隨":"with",
+          # logic
+          "等于":"==",
+          "不等于":"!=",
+          "是":"is",
+          "不是":"is not",
+          "或者":"or",
+          "并且":"and",
+          "真": "True",
+          "假":"False",
+          "实":"True",
+          "虛":"False",
+          "空":"None",          
+          # build in methods
+          "类型":"type",
+          "长度":"len",
+          # build-in types
+          "字符串":"str",
+          "列表": "list",
+          "字典":"dict",
+          "数组":"tuple",
+          "集合":"set",
+          "整数":"int",
+          "小数":"float",
+          # file methods
+          "打开":"open",
+          "读取":"read",
+          "写入":"write",
+          "读一行":"readline",
+          "读多行":"readlines",
+          "关闭":"close",
+          # list methods
+          "加入":"append",
+          "追加":"append",
+          # string methods
+          "开始为":"startswith",
+          "结束为":"endswith",
+          "连接":"join",
+          "分离":"split",
+          # dict methods
+          "关键字列表":"keys",
+          "值列表":"values",
+          "项目列表":"items",
+          # encoding
+          "编码":"encoding",
+          "解码":"decoding",
+          # preloaded modules
+          "范围":"range",
+          }
+
 # Traditional chinese and simplized chinese keywords
-worddict = {"印出":"print", "輸入":"raw_input", #io
-            "打印":"print", "输入字符串":"raw_input",
-            "定義":"def", "類別":"class", #def
-            "定义":"def", "类":"class",
-            "共用":"global", "全局变量":"global", #global
-            "從":"from", "導入":"import", "取名":"as", #import
-            "从":"from", "载入":"import",
-            "返回":"return", "傳回":"return", "略過":"pass", 
-            "示警":"raise", "繼續":"continue", #flow
-            "传回":"return", "略过":"pass", "继续":"continue",
-            "如果":"if", "假使":"elif", "否則如果":"elif", "否則":"else",#control
-            "若":"if", "否则如果":"elif", "否则":"else",
-            "取":"for", "自":"in", "在":"in", "不在":"not in",#for loop
-            "當":"while", "跳出":"break", "中止":"break",#while loop
-            "当":"while", "中断":"break",
-            "嘗試":"try", "異常":"except", "最後":"finally", #try
-            "试运行":"try", "错误处理":"except",
-            "宣告":"assert", "刪除":"del", "執行":"exec", #else
-            "方程式":"lambda", "產生":"yield", "伴隨":"with",
-            "函数":"lambda", "产生":"yield",
-            "等於":"==", "不等於":"!=", "等于":"==", "不等于":"!=", #operators
-            "是":"is", "為":"is", "不是":"is not", 
-            "或":"or", "和":"and", "且":"and", #boolean
-            "真": "True", "假":"False", "實": "True", "虛":"False", "空":"None",
-            "实": "True",
-            "型別":"type", "类型":"type",#build in methods
-            "長度":"len" ,"长度":"len",
-            "字串":"str", "字符串":"str", # build-in types
-            "列表": "list", "字典":"dict", "數組":"tuple", "類組":"set",
-            "数组":"tuple", "类组":"set",
-            "整數":"int", "浮點數":"float",
-            "整数":"int", "小数":"float",
-            "開啟":"open", "打開":"open",
-            "开启":"open", "打开":"open",
-            "讀取":"read", "寫入":"write", #file methods
-            "读取":"read", "写入":"write",
-            "讀一行":"readline", "讀多行":"readlines",
-            "读一行":"readline", "读多行":"readlines",
-            "關閉":"close", "关闭":"close",
-            "加入":"append", "追加":"append", #list methods
-            "開始字串":"startswith", "結束字串":"endswith", #string methods
-            "开始为":"startswith","结束为":"endswith",
-            "接合":"join", "分離":"split",
-            "分离":"split",
-            "列出關鍵字":"keys","列出值":"values", "列出項目": "items", #dict methods
-            "关键字列表":"keys", "值列表":"values", "项目列表":"items",
-            "編碼":"encoding", "解碼":"decoding", #encoding
-            "编码":"encoding", "解码":"decoding",
-            "範圍":"range", "范围":"range", # preloaded modules
-            }
+worddict = twdict
+for i in cndict:
+    if i in twdict:
+        continue
+    else:
+        worddict[i]= cndict[i]
 
 replacedict = {
     "（":"(",
@@ -280,6 +422,11 @@ def commandtool():
     (options, args) = parser.parse_args()
     
     os.chdir(os.getcwd())
+    # no args
+    if len(sys.argv) == 1:
+        from zhipy import interpreter
+        interpreter()
+        sys.exit()
     #run as script
     if options.raw:
         test = options.raw

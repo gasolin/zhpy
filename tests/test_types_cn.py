@@ -61,7 +61,7 @@ def test_set():
     """
     test set type
     """
-    assert convertor("类组([1,2,3,4]) = set([1, 2, 3, 4])") == \
+    assert convertor("集合([1,2,3,4]) = set([1, 2, 3, 4])") == \
                     "set([1,2,3,4]) = set([1, 2, 3, 4])"
 
 def test_file():

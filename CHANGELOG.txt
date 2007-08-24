@@ -1,17 +1,30 @@
 zhpy Changelog
 ====================
 
-0.7 (Unreleased):
+0.7 (08/x/2007):
 ------------------
 code name: Gold Experience
 
 *Changes*
 
+* keywords changes
+  * "全局" instead of "全局变量"
+  * "导入" instead of "载入"
+  * "作為" instead of "取名"
+  * "尝试" instead of "试运行"
+  * "异常" instead of "错误处理"
+  * "集合" instead of , "类组"
+  * "連接" instead of "接合"
+  * "關鍵字列表" instead of "列出關鍵字"
+  * "值列表" instead of "列出值"
+  * "項目列表" instead of "列出項目"
 * variables are changed to "p_[var]_v" syntax instead of p[num], 
   thanks Jiahua Huang
 * .has_key() is deprecated, use 'in'
 * remove keyword
   * "有關鍵字":"has_key", "有关键字":"has_key"
+  * "若":"if"
+  * "開啟":"open", "开启":"open"
 * remove trail space for pep8
 * rename run.sh to test_example.sh
 
@@ -20,14 +33,20 @@ code name: Gold Experience
 * use universe reference identifier (uri) for 
   variable/constant/class/methods instead of vnum, thanks Jiahua Huang
 * add keyword:
+  * "作为":"as"
+  * "警告":"raise"
+  * "最后":"finally"
+  * "宣告":"assert", "刪除":"del", "执行":"exec"
+  * "或者":"or","并且":"and",
   * "不在":"not in"
 * add "-c/--cmd" option instead of "-r/--raw" to correspond the python command, 
   "-r/--raw" will be deprecate in next release.
 * also test command line options (test_example.sh)
+* add contact example (cn) in loop/
 
 *Fixes*
 
-* able to run zhpy in main loop, thanks Jiahua Huang
+* able to run zhpy in __main__, thanks Jiahua Huang
 
 *Project Updates*
 
