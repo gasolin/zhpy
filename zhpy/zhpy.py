@@ -232,7 +232,7 @@ def merger(anno_dict):
     """
     merge extra bindings into worddict
     
-    merge could accept list input:
+    merger could accept list input:
     
     >>> keys = [('遊戲', 'pygame'), ('系統', 'sys')]
     >>> merger(keys)
@@ -241,7 +241,7 @@ def merger(anno_dict):
     >>> '遊戲' in worddict
     True
     
-    merge could accept dict input:
+    merger could accept dict input:
     
     >>> keydic = {'作業系統':'os', '路徑':'path'}
     >>> merger(keydic)
@@ -273,7 +273,7 @@ def annotator():
     """
     provide two ways to expand the worddict:
     
-    1. inifiles
+    1. inifiles:
         find ini files and use keywords defined in ini during 
         convertion progress.
     
@@ -309,6 +309,28 @@ def variable_to_number(tmp):
         ori = str(hex(ord(i)))[2:]
         word_list.append(ori)
     return "_".join(word_list)
+
+hexval = '0123456789abcdef'
+
+def number_to_variable(tmp):
+    """
+    convert number back to variable
+    
+    >>> number_to_variable('7bc4_4f8b')
+    u'\u7bc4\u4f8b'
+    
+    #'範例'
+    """
+    word_list = tmp.split('_')
+    term = ''
+    for i in word_list:
+        ori = 0
+        for a, b in enumerate(i[::-1]):
+            for i, s in enumerate(hexval):
+                if b == s:
+                    ori += i*16**a
+        term +=  unichr(ori)
+    return term
 
 #vnum = 0
 

@@ -1,6 +1,28 @@
 zhpy Changelog
 ====================
 
+0.8 (09/*/2007):
+------------------
+code name: Stone Free
+
+*Changes*
+
+
+*Features*
+
+* implement number_to_variable, now we have
+  bi-directional variable <-> number function
+
+*Fixes*
+
+
+*Project Updates*
+
+
+*Contributors*
+
+Fred Lin
+
 0.7 (08/25/2007):
 ------------------
 code name: Gold Experience
