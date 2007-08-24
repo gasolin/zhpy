@@ -303,36 +303,12 @@ def variable_to_number(tmp):
     >>> variable_to_number(s)
     '7bc4_4f8b'
     """
-    #return 'p_' + '_'.join(map(lambda i:str(ord(i)), t[0])) + '_v'
+    #return '_'.join(map(lambda i:str(ord(i)), t[0]))
     word_list=[]
     for i in tmp:
         ori = str(hex(ord(i)))[2:]
         word_list.append(ori)
     return "_".join(word_list)
-
-hexval = '0123456789abcdef'
-
-def number_to_variable(tmp):
-    """
-    convert number back to variable
-    
-    >>> number_to_variable('7bc4_4f8b')
-    u'\u7bc4\u4f8b'
-    
-    #'範例'
-    """
-    word_list = tmp.split('_')
-    term = ''
-    for i in word_list:
-        ori = 0
-        for a, b in enumerate(i[::-1]):
-            for i, s in enumerate(hexval):
-                if b == s:
-                    ori += i*16**a
-        term +=  unichr(ori)
-    return term
-
-#vnum = 0
 
 def convertToEnglish(s,l,t):
     """search worddict to match keywords
@@ -340,15 +316,9 @@ def convertToEnglish(s,l,t):
     if not in keyword, replace the chinese variable/argument/
     function name/class name/method name to a variable with prefix 'p'
     
-    TODO: able to convert code by annotate dict
+    #TODO: able to convert code by annotate dict
     """
-    #global vnum
     tmp = t[0].encode("utf8")
-#    if tmp not in worddict:
-#        worddict[tmp] = "p_" + str(vnum)
-#        vnum += 1
-#    english = worddict[tmp]
-#    return english.decode("utf8")
     if tmp in worddict:
         word = worddict[tmp].decode("utf8")
     else:
@@ -362,7 +332,7 @@ pythonWord = quotedString | chineseWord
 
 def convertor(test):
     """
-    convert Chinese source to Python Source 
+    convert zhpy source (Chinese) to Python Source 
     
     >>> convertor("印出 'hello'")
     "print 'hello'"

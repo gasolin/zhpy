@@ -10,8 +10,7 @@ code name: Stone Free
 
 *Features*
 
-* implement number_to_variable, now we have
-  bi-directional variable <-> number function
+* bi-directional variable <-> number function
 
 *Fixes*
 
