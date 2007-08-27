@@ -404,7 +404,7 @@ def commandtool():
             dest="output", default = None)
     parser.add_option("-p", "--python",
             help="compile to python and run",
-            dest="compile", default = None)
+            dest="python", default = None)
     parser.add_option("-c", "--cmd",
             help="input zhpy program as string and run",
             dest="cmp", default = None)
@@ -419,12 +419,13 @@ def commandtool():
         try_run(result)
         return
     #run as command
+    #TODO: accept args
     argv = sys.argv[1:]
     if len(argv) >= 1:
         if (options.input is None) and argv[0].endswith("py"):
             options.input = argv[0]
-        if options.compile:
-            options.input = options.compile
+        if options.python:
+            options.input = options.python
         #if options.input:
         test = file(options.input, "r").read()
         annotator()
@@ -432,8 +433,8 @@ def commandtool():
         if len(argv) == 2:
             if argv[0].endswith("py") and argv[1].endswith("py"):
                 options.output = argv[1]
-            if options.compile:
-                filename = os.path.splitext(options.compile)[0]
+            if options.python:
+                filename = os.path.splitext(options.python)[0]
                 file("n_"+filename+".py","w").write(result)
                 print "compile to python and run: %s"%("n_"+filename+".py")
         if options.output:
@@ -441,6 +442,7 @@ def commandtool():
         else:
             try_run(result)
     else:
+        #TODO: start interpreter here
         print """please type "zhpy --help" for help"""
   
 if __name__=="__main__":
