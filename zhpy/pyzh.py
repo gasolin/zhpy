@@ -22,11 +22,62 @@ def _indict(lang_dict):
     
     return rev_dict
 
+# make reverse dicts
 rev_twdict = _indict(twdict)
 rev_cndict = _indict(cndict)
 
 hexval = '0123456789abcdef'
 
+def rev_merger(anno_dict, use_dict):
+    """
+    merge extra bindings into reverse dict
+    
+    >>> keys = [('遊戲', 'pygame'), ('系統', 'sys')]
+    >>> rev_merger(keys, rev_twdict)
+    add pygame=遊戲
+    add sys=系統
+    >>> 'pygame' in rev_twdict
+    True
+    
+    >>> keys = [('游戏', 'pygame'), ('系统', 'sys')]
+    >>> rev_merger(keys, rev_cndict)
+    add pygame=游戏
+    add sys=系统
+    >>> 'pygame' in rev_cndict
+    True
+    """
+    if type(anno_dict) == type([]):
+        for k,v in anno_dict:
+            if v not in use_dict:
+                use_dict[v] = k
+                print "add %s=%s"%(v, k)
+            else:
+                print "already has key: %s, %s" % (v, k)
+
+def rev_annotator(lang='tw'):
+    """
+    To expand the reverse dict
+    
+    lang:
+        tw or cn
+    """
+    if lang == 'tw':
+        use_dict = rev_twdict
+    if lang == 'cn':
+        use_dict = rev_cndict
+    inifiles = []
+    for x in os.listdir("."):
+        if x.endswith(".ini"):
+            inifiles.append(x)
+    for f in inifiles:
+        print "file", f
+        conf = ConfigParser.ConfigParser()
+        conf.read(f)
+        sects = conf.sections()
+        for sect in sects:
+            print "sect:", sect
+            rev_merger(conf.items(sect), use_dict)
+    
 def number_to_variable(tmp):
     """
     convert number back to variable
@@ -88,6 +139,9 @@ def python_convertor(test, lang='tw'):
     """
     convert python source to zhpy source
     'print': '\xe6\x89\x93\xe5\x8d\xb0'
+    
+    lang:
+        tw or cn
     
     >>> print python_convertor("print 'hello'", 'tw')
     印出 'hello'

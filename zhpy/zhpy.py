@@ -279,6 +279,7 @@ def merger(anno_dict):
     """
     if type(anno_dict) == type([]):
         for k,v in anno_dict:
+            #worddict.update({k:v})
             if k not in worddict:
                 worddict[k] = v
                 print "add %s=%s"%(k, v)
