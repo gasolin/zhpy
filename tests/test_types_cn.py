@@ -16,10 +16,11 @@ def test_float():
     """
     assert convertor("小数(2)") == "float(2)"
 
-def test_boolean():
+def test_bool():
     """
     test boolean type
     """
+    assert convertor("布尔(1)") == "bool(1)"
     assert convertor("n = 真") == "n = True"
     assert convertor("p = 假") == "p = False"
     assert convertor("q = 实") == "q = True"
@@ -29,8 +30,8 @@ def test_string():
     """
     same as print test
     """
-    assert convertor("s.开始为('he')") == "s.startswith('he')"
-    assert convertor("s.结束为('he')") == "s.endswith('he')"
+    assert convertor("s.开头为('he')") == "s.startswith('he')"
+    assert convertor("s.结尾为('he')") == "s.endswith('he')"
 
 def test_list():
     """

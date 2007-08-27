@@ -81,14 +81,18 @@ twdict = {# io
           # build in methods
           "型別":"type",
           "長度":"len",
+          "執行":"exec",
           # build-in types
           "字串":"str",
+          "布林":"bool",
           "列表": "list",
           "字典":"dict",
           "數組":"tuple",
           "集合":"set",
+          # number methods
           "整數":"int",
           "浮點數":"float",
+          "絕對值":"abs",
           # file methods
           "打開":"open",
           "讀取":"read",
@@ -99,9 +103,14 @@ twdict = {# io
           # list methods
           "加入":"append",
           "追加":"append",
+          "擴展":"extend",
+          "插入":"insert",
+          "彈出":"pop",
+          "移除":"remove",
+          "排序":"sort",
           # string methods
-          "開始字串":"startswith",
-          "結束字串":"endswith",
+          "開頭為":"startswith",
+          "結尾為":"endswith",
           "連接":"join",
           "分離":"split",
           # dict methods
@@ -113,6 +122,9 @@ twdict = {# io
           "解碼":"decoding",
           # preloaded modules
           "範圍":"range",
+          "列舉":"enumerate",
+          "過濾":"filter",
+          "打包":"zip",
           }
 
 # Simplized chinese keywords
@@ -169,18 +181,22 @@ cndict = {# io
           "假":"False",
           "实":"True",
           "虛":"False",
-          "空":"None",          
+          "空":"None", 
           # build in methods
           "类型":"type",
           "长度":"len",
+          "执行":"exec",
           # build-in types
           "字符串":"str",
+          "布尔":"bool",
           "列表": "list",
           "字典":"dict",
           "数组":"tuple",
           "集合":"set",
+          # number methods
           "整数":"int",
           "小数":"float",
+          "绝对值":"abs",
           # file methods
           "打开":"open",
           "读取":"read",
@@ -191,9 +207,15 @@ cndict = {# io
           # list methods
           "加入":"append",
           "追加":"append",
+          "扩展":"extend",
+          "插入":"insert",
+          "弹出":"pop",
+          "移除":"remove",
+          "逆转":"reverse",
+          "排序":"sort",
           # string methods
-          "开始为":"startswith",
-          "结束为":"endswith",
+          "开头为":"startswith",
+          "结尾为":"endswith",
           "连接":"join",
           "分离":"split",
           # dict methods
@@ -205,6 +227,9 @@ cndict = {# io
           "解码":"decoding",
           # preloaded modules
           "范围":"range",
+          "列举":"enumerate",
+          "过滤":"filter",
+          "打包":"zip",
           }
 
 # Traditional chinese and simplized chinese keywords
@@ -395,7 +420,8 @@ def commandtool():
     from optparse import OptionParser
     from release import version
     parser = OptionParser(
-            usage="usage: %prog [-i|-p] input [-o] output", version="zhpy %s"%version)
+            usage="usage: %prog [-i|-p] input [-o output]",
+            version="zhpy %s"%version)
     parser.add_option("-i", "--input",
             help="speficy the input source",
             dest="input", default = None)

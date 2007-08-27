@@ -8,17 +8,33 @@ code name: Stone Free
 *Changes*
 
 *remove -r option, use -c instead
+* keyword changes
+ * "開頭為" instead of "開始字串", 
+ * "开头为" instead of "开始为"
+ * "结尾为" instead of "结束为"
+ * "結尾為" instead of "結束字串"
 
 *Features*
 
 * bi-directional variable <-> number function
-
+* add keyword:
+  * "執行":"exec", "执行":"exec"
+  * "布林":"bool", "布尔":"bool"
+  * "絕對值":"abs", "绝对值":"abs"
+  * "列舉":"enumerate", "列举":"enumerate"
+  * "過濾":"filter", "过滤":"filter"
+  * "打包":"zip"
+  * "擴展":"extend", "扩展":"extend"
+  * "插入":"insert", "移除":"remove","排序":"sort"
+  * "彈出":"pop", "弹出":"pop",
+  
 *Fixes*
 
 * keep twdict clean, worddict now real copy from twdict
 
 *Project Updates*
 
+* use .tw.py, .cn.py as another zhpy subname to distinguish the coding
 
 *Contributors*
 
@@ -30,7 +46,7 @@ code name: Gold Experience
 
 *Changes*
 
-* keywords changes
+* keyword changes
   * "全局" instead of "全局变量"
   * "导入" instead of "载入"
   * "作為" instead of "取名"
