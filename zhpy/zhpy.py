@@ -419,18 +419,19 @@ def commandtool():
         try_run(result)
         return
     #run as command
-    if len(sys.argv) >= 2:
-        if (options.input is None) and sys.argv[1].endswith("py"):
-            options.input = sys.argv[1]
+    argv = sys.argv[1:]
+    if len(argv) >= 1:
+        if (options.input is None) and argv[0].endswith("py"):
+            options.input = argv[0]
         if options.compile:
             options.input = options.compile
         #if options.input:
         test = file(options.input, "r").read()
         annotator()
         result = convertor(test)
-        if len(sys.argv) == 3:
-            if sys.argv[1].endswith("py") and sys.argv[2].endswith("py"):
-                options.output = sys.argv[2]
+        if len(argv) == 2:
+            if argv[0].endswith("py") and argv[1].endswith("py"):
+                options.output = argv[1]
             if options.compile:
                 filename = os.path.splitext(options.compile)[0]
                 file("n_"+filename+".py","w").write(result)
