@@ -387,14 +387,15 @@ def commandtool():
         speficy the output source
     python:
         compile to python and run
-    raw:
+    cmp:
         input raw zhpy source and run
     """
     import os
     import sys
     from optparse import OptionParser
+    from release import version
     parser = OptionParser(
-            usage="zhpy source [output]")
+            usage="usage: %prog [-i|-p] input [-o] output", version="zhpy %s"%version)
     parser.add_option("-i", "--input",
             help="speficy the input source",
             dest="input", default = None)
@@ -406,13 +407,13 @@ def commandtool():
             dest="compile", default = None)
     parser.add_option("-c", "--cmd",
             help="input zhpy program as string and run",
-            dest="raw", default = None)
+            dest="cmp", default = None)
     (options, args) = parser.parse_args()
     
     os.chdir(os.getcwd())
     #run as script
-    if options.raw:
-        test = options.raw
+    if options.cmp:
+        test = options.cmp
         annotator()
         result = convertor(test)
         try_run(result)
