@@ -7,14 +7,20 @@ Convert python source to zhpy source
 
 from zhpy import *
 
-def _indict(dic):
-    '''indict({'a':'1'})  -> {'1':'a'}
-    '''
-    d = {}
-    dick = dic.keys()
-    dick.reverse()
-    map(d.update, map(lambda i: {dic[i]:i}, dick))
-    return d
+def _indict(lang_dict):
+    """make a reverse dictionary from the input dictionary
+    
+    >>> _indict({'a':'1', 'b':'2'})
+    {'1': 'a', '2': 'b'}
+    """
+    rev_dict = {}
+    dict_keys = lang_dict.keys()
+    dict_keys.reverse()
+    #map(rev_dict.update, map(lambda i: {lang_dict[i]:i}, dict_keys))
+    for i in dict_keys:
+        rev_dict.update({lang_dict[i]:i})
+    
+    return rev_dict
 
 rev_twdict = _indict(twdict)
 rev_cndict = _indict(cndict)

@@ -117,6 +117,7 @@ twdict = {# io
           "關鍵字列表":"keys",
           "值列表":"values",
           "項目列表": "items",
+          "更新":"update",
           # encoding
           "編碼":"encoding",
           "解碼":"decoding",
@@ -222,6 +223,7 @@ cndict = {# io
           "关键字列表":"keys",
           "值列表":"values",
           "项目列表":"items",
+          "更新":"update",
           # encoding
           "编码":"encoding",
           "解码":"decoding",

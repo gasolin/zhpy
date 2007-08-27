@@ -19,12 +19,10 @@ chinese could be translated to nature python code (english).
 zhpy support full python syntax. Code written in zhpy could be 
 converted to natual python and be used in normal python programs.
 
-After v0.5, zhpy provide a method 'zh_exec' that allow to embed 
-chinese script in python
+zhpy provide a method 'zh_exec' that allow to embed 
+chinese script in python, zhpy could be used as the chinese script in shell as well.
 
-After v0.6, zhpy could be used as the chinese script in shell as well.
-
-zhpy is fully tested, which use ~50 test cases to test the small(<15k) source.
+zhpy is fully tested, which use ~60 test cases to test the small(<15k) source.
 
 zhpy use pyparsing module to detect chinese keywords, class name, methods, 
 arguments, variables and translate them back to python.
