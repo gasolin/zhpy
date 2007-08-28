@@ -82,8 +82,8 @@ def commandtool():
         else:
             try_run(result)
     else:
-        #TODO: start interpreter here
-        print """please type "zhpy --help" for help"""
+        from zhipy import interpreter
+        interpreter()
   
 if __name__=="__main__":
     commandtool()
