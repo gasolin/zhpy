@@ -246,6 +246,7 @@ for i in cndict:
     else:
         worddict[i]= cndict[i]
 
+# punctuations
 replacedict = {
     "（":"(",
     "）":")",
