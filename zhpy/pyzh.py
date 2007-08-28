@@ -5,7 +5,7 @@ Convert python source to zhpy source
 
 """
 #TODO: make import explicit 
-from zhpy import twdict, cndict
+from zhdc import twdict, cndict
 
 def _indict(lang_dict):
     """make a reverse dictionary from the input dictionary
