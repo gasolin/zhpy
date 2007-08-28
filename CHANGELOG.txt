@@ -18,7 +18,7 @@ code name: Stone Free
 
 *Features*
 
-* implement zhpy -> python libraries
+* implement zhpy -> python libraries in pyzh.py
   * bi-directional uri variable <-> number function
 * add keyword:
   * "執行":"exec", "执行":"exec"

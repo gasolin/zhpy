@@ -5,26 +5,7 @@ Convert python source to zhpy source
 
 """
 #TODO: make import explicit 
-from zhdc import twdict, cndict
-
-def _indict(lang_dict):
-    """make a reverse dictionary from the input dictionary
-    
-    >>> _indict({'a':'1', 'b':'2'})
-    {'1': 'a', '2': 'b'}
-    """
-    rev_dict = {}
-    dict_keys = lang_dict.keys()
-    dict_keys.reverse()
-    #map(rev_dict.update, map(lambda i: {lang_dict[i]:i}, dict_keys))
-    for i in dict_keys:
-        rev_dict.update({lang_dict[i]:i})
-    
-    return rev_dict
-
-# make reverse dicts
-rev_twdict = _indict(twdict)
-rev_cndict = _indict(cndict)
+from zhdc import rev_twdict, rev_cndict
 
 hexval = '0123456789abcdef'
 
