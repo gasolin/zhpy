@@ -11,13 +11,15 @@ long_description = """zhpy is the *python on Chinese*,
 which is good for Taiwan and China beginners to learn python in 
 our native language.
 
-zhpy is a lightweight python module and a source convertor, which 
-provides a command line tool to translate python code. 
+zhpy is a lightweight python module and a chinese source convertor on python, which 
+provides interpreter and command line tool to translate zhpy code to python. 
 The python code written by traditional and simplified 
-chinese could be translated to nature python code (english).
+chinese could be translated and execute as nature python code.
 
 zhpy support full python syntax. Code written in zhpy could be 
 converted to natual python and be used in normal python programs.
+
+zhpy provide interpreter, which allow execise zhpy and python interactivily.
 
 zhpy provide a method 'zh_exec' that allow to embed 
 chinese script in python, zhpy could be used as the chinese script in shell as well.
@@ -48,7 +50,17 @@ or check instructions_ for detail.
 Usage
 -----
 
-You could use interpretor to test zhpy with zh_exec_ method::
+You could use zhpy interpreter to test zhpy::
+
+    $ zhpy
+    >>> print 'hello'
+    hello
+
+Browse project_ homepage to get examples in chinese.
+
+.. _project: http://code.google.com/p/zhpy/
+
+You could use python interpretor to test zhpy with zh_exec_ method::
 
     $ python
     >>> from zhpy import zh_exec
