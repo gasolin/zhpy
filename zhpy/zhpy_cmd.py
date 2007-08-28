@@ -82,7 +82,7 @@ def commandtool():
         else:
             try_run(result)
     else:
-        from zhipy import interpreter
+        from zhpyi import interpreter
         interpreter()
   
 if __name__=="__main__":

@@ -19,7 +19,7 @@ code name: Stone Free
 
 *Features*
 
-* zhpy interpretor, thanks Jiahua Huang
+* zhpy interpreter, thanks Jiahua Huang
 * implement zhpy -> python libraries in pyzh.py
   * bi-directional uri variable <-> number function, prototype by Jiahua Huang
 * add keyword:
