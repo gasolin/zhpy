@@ -29,7 +29,7 @@ setup(
     packages=find_packages(exclude=["ez_setup"]),
     entry_points = """
     [console_scripts]
-    zhpy = zhpy.zhpy:commandtool
+    zhpy = zhpy.zhpy_cmd:commandtool
     """,
     classifiers = [
         'Development Status :: 4 - Beta',

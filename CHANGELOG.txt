@@ -8,6 +8,7 @@ code name: Stone Free
 *Changes*
 
 * move all dictionaries to zhdc.py
+* move command line tool to zhpy_cmd.py
 * use implicit imports
 * remove -r option, use -c instead
 * keyword changes

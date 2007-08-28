@@ -22,7 +22,7 @@ converted to natual python and be used in normal python programs.
 zhpy provide a method 'zh_exec' that allow to embed 
 chinese script in python, zhpy could be used as the chinese script in shell as well.
 
-zhpy is fully tested, which use ~60 test cases to test the small(<15k) source.
+zhpy is fully tested, which use ~60 test cases to test the small(<10k) source.
 
 zhpy use pyparsing module to detect chinese keywords, class name, methods, 
 arguments, variables and translate them back to python.
