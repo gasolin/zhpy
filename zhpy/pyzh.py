@@ -4,7 +4,7 @@
 Convert python source to zhpy source
 
 """
-
+#TODO: make import explicit 
 from zhpy import *
 
 def _indict(lang_dict):
@@ -60,6 +60,7 @@ def rev_annotator(lang='tw'):
     
     lang:
         tw or cn
+        
     """
     if lang == 'tw':
         use_dict = rev_twdict

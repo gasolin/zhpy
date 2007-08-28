@@ -18,6 +18,7 @@ The above copyright notice and this permission notice shall be included in all c
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 """
+#TODO: make import explicit
 from pyparsing import *
 
 # Traditional chinese keywords
@@ -49,10 +50,12 @@ twdict = {# io
           "在":"in",
           "自":"in",
           "不在":"not in",
+          "下一筆":"next",
           # while loop
           "當":"while",
           "跳出":"break",
           "中止":"break",
+          "例外":"Exception",
           # try
           "嘗試":"try",
           "異常":"except",
@@ -126,6 +129,9 @@ twdict = {# io
           "列舉":"enumerate",
           "過濾":"filter",
           "打包":"zip",
+          # error
+          "停止迭代":"StopIteration",
+          "型別錯誤":"TypeError",
           }
 
 # Simplized chinese keywords
@@ -156,6 +162,7 @@ cndict = {# io
           "在":"in",
           "自":"in",
           "不在":"not in",
+          "下一笔":"next",
           # while loop
           "当":"while",
           "跳出":"break",
@@ -164,6 +171,7 @@ cndict = {# io
           "尝试":"try",
           "异常":"except",
           "最后":"finally",
+          "例外":"Exception",
           # else
           "宣告":"assert",
           "刪除":"del",
@@ -232,6 +240,9 @@ cndict = {# io
           "列举":"enumerate",
           "过滤":"filter",
           "打包":"zip",
+          # error
+          "停止迭代":"StopIteration",
+          "类型错误":"TypeError",
           }
 
 # Traditional chinese and simplized chinese keywords

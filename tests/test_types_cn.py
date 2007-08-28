@@ -32,6 +32,8 @@ def test_string():
     """
     assert convertor("s.开头为('he')") == "s.startswith('he')"
     assert convertor("s.结尾为('he')") == "s.endswith('he')"
+    assert convertor("items = 'zero one two three'.分离()") == "items = 'zero one two three'.split()"
+    assert convertor("''.连接(s)") == "''.join(s)"
 
 def test_list():
     """

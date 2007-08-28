@@ -29,14 +29,27 @@ def test_bool():
 def test_string():
     """
     same as print test
+    >>> s = "hello.py"
+    >>> s.startswith('he')
+    True
+    >>> s.endswith('he')
+    True
+    >>> s = ['one', 'two']
+    >>> ''.join(s)
+    'onetwo'
     """
-    s = "hello.py"
     assert convertor("s.開頭為('he')") == "s.startswith('he')"
     assert convertor("s.結尾為('he')") == "s.endswith('he')"
+    assert convertor("items = 'zero one two three'.分離()") == "items = 'zero one two three'.split()"
+    s = ['one', 'two']
+    assert convertor("''.連接(s)") == "''.join(s)"
 
 def test_list():
     """
     test list type
+    
+    >>> list((1,2,3,4)) == [1,2,3,4]
+    True
     """
     assert convertor("列表((1,2,3,4)) == [1,2,3,4]") == \
                     "list((1,2,3,4)) == [1,2,3,4]"
@@ -55,6 +68,9 @@ def test_dict():
 def test_tuple():
     """
     test tuple type
+    
+    >>> tuple([1,2,3,4]) == (1,2,3,4)
+    True
     """
     assert convertor("數組([1,2,3,4]) == (1,2,3,4)") == \
                     "tuple([1,2,3,4]) == (1,2,3,4)"
@@ -62,6 +78,9 @@ def test_tuple():
 def test_set():
     """
     test set type
+    
+    >>> set([1,2,3,4]) = set([1, 2, 3, 4])
+    True
     """
     assert convertor("集合([1,2,3,4]) = set([1, 2, 3, 4])") == \
                     "set([1,2,3,4]) = set([1, 2, 3, 4])"
