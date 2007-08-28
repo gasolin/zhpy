@@ -5,7 +5,7 @@ Convert python source to zhpy source
 
 """
 #TODO: make import explicit 
-from zhpy import *
+from zhpy import twdict, cndict
 
 def _indict(lang_dict):
     """make a reverse dictionary from the input dictionary
@@ -98,6 +98,8 @@ def number_to_variable(tmp):
                     ori += i*16**a
         term +=  unichr(ori)
     return term
+
+from pyparsing import srange, Word, quotedString
 
 def convertToTW(s,l,t):
     """

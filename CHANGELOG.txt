@@ -13,6 +13,7 @@ code name: Stone Free
  * "开头为" instead of "开始为"
  * "结尾为" instead of "结束为"
  * "結尾為" instead of "結束字串"
+* use implicit imports
 
 *Features*
 
