@@ -53,44 +53,12 @@ Usage
 You could use zhpy interpreter to test zhpy::
 
     $ zhpy
-    >>> print 'hello'
-    hello
+    >>> print 'hello in chinese'
+    hello in chinese
 
 Browse project_ homepage to get examples in chinese.
 
 .. _project: http://code.google.com/p/zhpy/
-
-You could use python interpretor to test zhpy with zh_exec_ method::
-
-    $ python
-    >>> from zhpy import zh_exec
-    >>> zh_exec("print hello") # execute zhpy here, pypi not allow non ascii code.
-    hello
-
-.. _zh_exec: http://code.google.com/p/zhpy/wiki/EmbededInPython
-
-You could use 'zhpy' command instead of "python" in command line to 
-execute source code mixed in Chinese and English.::
-
-    $ zhpy hello.py
-    hello, world!
-
-You could assign a file name to export the zhpy source to the normal 
-python source (english)::
-
-    $ zhpy hello.py n_hello.py
-
-Then run the exported file as normal python source::
-
-    $ python n_hello.py
-    hello, world!
-
-Or you could combine these two steps in one command (with '-p' option)::
-
-    $ python -p hello.py
-    hello, world!
-    $ ls
-    hello.py n_hello.py
 
 check the BasicUsage_ for detail.
 
