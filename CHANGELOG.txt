@@ -23,6 +23,7 @@ code name: Stone Free
 * implement zhpy -> python libraries in pyzh.py
   * bi-directional uri variable <-> number function, prototype by Jiahua Huang
 * auto detect encodings, now interpreter works on tw/cn windows
+* add "-e/--encoding" option to customize the encoding for parsing
 * add keyword:
   * "執行":"exec", "执行":"exec"
   * "布林":"bool", "布尔":"bool"

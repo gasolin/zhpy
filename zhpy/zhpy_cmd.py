@@ -48,6 +48,9 @@ def commandtool():
     parser.add_option("-c", "--cmd",
             help="input zhpy program as string and run",
             dest="cmp", default = None)
+    parser.add_option("-e", "--encoding",
+            help="specify the encoding",
+            dest="encoding", default = "")
     (options, args) = parser.parse_args()
     
     os.chdir(os.getcwd())
@@ -55,7 +58,10 @@ def commandtool():
     if options.cmp:
         test = options.cmp
         annotator()
-        result = convertor(test)
+        if options.encoding:
+            result = convertor(test, options.encoding)
+        else:
+            result = convertor(test)
         try_run(result)
         return
     #run as command
@@ -67,9 +73,14 @@ def commandtool():
         if options.python:
             options.input = options.python
         #if options.input:
+        
         test = file(options.input, "r").read()
         annotator()
-        result = convertor(test)
+        if options.encoding:
+            result = convertor(test, options.encoding)
+        else:
+            result = convertor(test)
+            
         if len(argv) == 2:
             if argv[0].endswith("py") and argv[1].endswith("py"):
                 options.output = argv[1]
