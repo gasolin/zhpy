@@ -13,6 +13,10 @@ echo "command shortcut zhpy [in] [out]"
 zhpy hello.twpy n_hello.py
 echo "hello example:"
 zhpy -p hello.twpy
+echo "big5 example:"
+zhpy -p hello_big5.twpy
+echo "gbk example:"
+zhpy -p hello_gb.cnpy
 cd ..
 
 echo "zhpy in/out example..."
