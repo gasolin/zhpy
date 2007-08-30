@@ -40,6 +40,8 @@ code name: Stone Free
   * "下一筆":"next", "下一笔":"next"
   * "例外":"Exception"
   * "停止迭代":"StopIteration"
+  * "解碼錯誤":"UnicodeDecodeError","解码错误":"UnicodeDecodeError",
+  * "導入錯誤":"ImportError","导入错误":"ImportError"
 
 * add zhpy featured keyword
   * "主程式":'if __name__=="__main__"', "主程序":'if __name__=="__main__"'

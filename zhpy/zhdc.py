@@ -126,6 +126,8 @@ twdict = {# io
           # error
           "停止迭代":"StopIteration",
           "型別錯誤":"TypeError",
+          "解碼錯誤":"UnicodeDecodeError",
+          "導入錯誤":"ImportError",
           # zhpy only
           "主程式":'if __name__=="__main__"',
           }
@@ -241,6 +243,8 @@ cndict = {# io
           # error
           "停止迭代":"StopIteration",
           "类型错误":"TypeError",
+          "解码错误":"UnicodeDecodeError",
+          "导入错误":"ImportError",
           # zhpy only
           "主程序":'if __name__=="__main__"',
           }
