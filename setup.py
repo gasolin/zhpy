@@ -10,7 +10,8 @@ import glob
 execfile(os.path.join('zhpy', 'release.py'))
 
 # setup params
-install_requires = ["pyparsing >=1.4.7"]
+install_requires = ["pyparsing >=1.4.7",
+                    "chardet >=1.0"]
 
 
 setup(

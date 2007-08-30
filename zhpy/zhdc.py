@@ -125,6 +125,8 @@ twdict = {# io
           # error
           "停止迭代":"StopIteration",
           "型別錯誤":"TypeError",
+          # zhpy only
+          "主程式":'if __name__=="__main__"',
           }
 
 # Simplized chinese keywords
@@ -236,6 +238,8 @@ cndict = {# io
           # error
           "停止迭代":"StopIteration",
           "类型错误":"TypeError",
+          # zhpy only
+          "主程序":'if __name__=="__main__"',
           }
 
 # Traditional chinese and simplized chinese keywords

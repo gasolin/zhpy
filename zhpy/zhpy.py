@@ -125,6 +125,11 @@ chineseWord = Word(chineseChars)
 chineseWord.setParseAction(convertToEnglish)
 pythonWord = quotedString | chineseWord
 
+try:
+    import chardet
+except:
+    pass
+
 def convertor(test):
     """
     convert zhpy source (Chinese) to Python Source 
@@ -137,7 +142,17 @@ def convertor(test):
     for k, v in replacedict.items():
         test = test.replace(k,v)
     
-    utest = test.decode("utf8")
+    encoding = 'utf-8'
+    try:
+        #detect encoding
+        encoding = chardet.detect(test)['encoding']
+    except UnicodeDecodeError, e:
+        print "can't recognize your language"
+    
+    utest = test.decode(encoding)
+    if encoding != 'utf-8':
+        print "source was encoded in %s, utf-8 is recommand"%encoding
+    
     result = pythonWord.transformString(utest)
     result = result.encode("utf8")
     return result

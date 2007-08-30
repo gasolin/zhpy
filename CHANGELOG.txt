@@ -22,6 +22,7 @@ code name: Stone Free
 * zhpy interpreter, thanks Jiahua Huang
 * implement zhpy -> python libraries in pyzh.py
   * bi-directional uri variable <-> number function, prototype by Jiahua Huang
+* auto detect encodings, now interpreter works on tw/cn windows
 * add keyword:
   * "執行":"exec", "执行":"exec"
   * "布林":"bool", "布尔":"bool"
@@ -39,7 +40,10 @@ code name: Stone Free
   * "下一筆":"next", "下一笔":"next"
   * "例外":"Exception"
   * "停止迭代":"StopIteration"
-  
+
+* add zhpy featured keyword
+  * "主程式":'if __name__=="__main__"', "主程序":'if __name__=="__main__"'
+
 *Fixes*
 
 * keep twdict clean, worddict now real copy from twdict
@@ -47,6 +51,7 @@ code name: Stone Free
 *Project Updates*
 
 * use .tw.py, .cn.py as another zhpy subname to distinguish the coding
+* add chardet dependency
 
 *Contributors*
 
