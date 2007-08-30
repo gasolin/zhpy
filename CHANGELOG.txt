@@ -96,6 +96,8 @@ code name: Gold Experience
   * "宣告":"assert", "刪除":"del", "执行":"exec"
   * "或者":"or","并且":"and",
   * "不在":"not in"
+  * "不為":"is not", "为":"is", "不为":"is not"
+  
 * add "-c/--cmd" option instead of "-r/--raw" to correspond the python command,
   "-r/--raw" will be deprecate in next release.
 * also test command line options (test_example.sh)

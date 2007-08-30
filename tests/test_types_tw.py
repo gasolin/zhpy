@@ -21,10 +21,10 @@ def test_bool():
     test boolean type
     """
     assert convertor("布林(1)") == "bool(1)"
-    assert convertor("n = 真") == "n = True"
-    assert convertor("p = 假") == "p = False"
-    assert convertor("q = 實") == "q = True"
-    assert convertor("r = 虛") == "r = False"
+    assert convertor("n 是 真") == "n is True"
+    assert convertor("p 為 假") == "p is False"
+    assert convertor("q 不是 實") == "q is not True"
+    assert convertor("r 不為 虛") == "r is not False"
 
 def test_string():
     """
