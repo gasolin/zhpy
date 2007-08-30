@@ -56,8 +56,6 @@ twdict = {# io
           # else
           "宣告":"assert",
           "刪除":"del",
-          "執行":"exec",
-          "方程式":"lambda",
           "產生":"yield",
           "伴隨":"with",
           # logic
@@ -79,6 +77,7 @@ twdict = {# io
           "型別":"type",
           "長度":"len",
           "執行":"exec",
+          "方程式":"lambda",
           # build-in types
           "字串":"str",
           "布林":"bool",
@@ -173,8 +172,6 @@ cndict = {# io
           # else
           "宣告":"assert",
           "刪除":"del",
-          "执行":"exec",
-          "函数":"lambda",
           "产生":"yield",
           "伴隨":"with",
           # logic
@@ -195,6 +192,7 @@ cndict = {# io
           "类型":"type",
           "长度":"len",
           "执行":"exec",
+          "函数":"lambda",
           # build-in types
           "字符串":"str",
           "布尔":"bool",

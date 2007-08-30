@@ -130,11 +130,14 @@ try:
 except:
     pass
 
-def convertor(test):
+def convertor(test, encoding=""):
     """
     convert zhpy source (Chinese) to Python Source 
     
     >>> convertor("印出 'hello'")
+    "print 'hello'"
+    
+    >>> convertor("印出 'hello'", encoding="utf8")
     "print 'hello'"
     
     more keyword test cases are in /tests folder.
@@ -142,19 +145,19 @@ def convertor(test):
     for k, v in replacedict.items():
         test = test.replace(k,v)
     
-    try:
-        #detect encoding
-        encoding = chardet.detect(test)['encoding']
+    if encoding:
         utest = test.decode(encoding)
-    except UnicodeDecodeError, e:
-        print "can't recognize your language, set to utf-8"
-        utest = test.decode('utf-8')
-    except ImportError, e:
-        #no chardet mode
-        utest = test.decode('utf-8')
-
-    if encoding != 'utf-8':
-        print "source was encoded in %s, utf-8 is recommand"%encoding
+    else:
+        try:
+            #detect encoding
+            encoding = chardet.detect(test)['encoding']
+            utest = test.decode(encoding)
+        except UnicodeDecodeError, e:
+            print "can't recognize your language, set to utf-8"
+            utest = test.decode('utf8')
+        except ImportError, e:
+            #no chardet mode
+            utest = test.decode('utf8')
     
     result = pythonWord.transformString(utest)
     result = result.encode("utf8")
