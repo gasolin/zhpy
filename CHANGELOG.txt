@@ -1,6 +1,26 @@
 zhpy Changelog
 ====================
 
+0.9 (09/*/2007):
+------------------
+code name: The World
+
+*Changes*
+
+
+*Features*
+
+
+*Fixes*
+
+
+*Project Updates*
+
+
+*Contributors*
+
+Fred Lin
+
 0.8 (08/30/2007):
 ------------------
 code name: Stone Free
