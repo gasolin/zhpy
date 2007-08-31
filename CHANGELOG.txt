@@ -1,12 +1,13 @@
 zhpy Changelog
 ====================
 
-0.9 (09/*/2007):
+0.8.1 (09/*/2007):
 ------------------
 code name: The World
 
 *Changes*
 
+* update example test cases
 
 *Features*
 
@@ -16,6 +17,7 @@ code name: The World
 
 *Project Updates*
 
+* Jiahwa Huang joined as the project member
 
 *Contributors*
 

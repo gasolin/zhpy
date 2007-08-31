@@ -214,4 +214,4 @@ def zh_exec(content):
 
 if __name__=="__main__":
     from zhpyc import commandtool
-    commandtool()
+    commandtool

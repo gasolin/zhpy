@@ -30,7 +30,7 @@ THE SOFTWARE.
 from code import InteractiveConsole
 from zhpy import convertor
 
-class Shell(InteractiveConsole):
+class ZhPyConsole(InteractiveConsole):
     """
     Wrapper around Python and filter input/output to the shell
     """
@@ -56,6 +56,6 @@ def interpreter():
         readline.parse_and_bind("tab: complete")
     except:
         pass
-    con = Shell()
-    banner = 'zhpy %s on Python %s'%(version, sys.version)
+    con = ZhPyConsole()
+    banner = 'zhpy %s in %s on top of Python %s'%(version, sys.platform, sys.version.split()[0])
     con.interact(banner)
