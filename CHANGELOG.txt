@@ -7,6 +7,7 @@ code name: The World
 
 *Changes*
 
+* rename zhpyi.py to zhpy_interpreter.py
 * update example test cases
 
 *Features*

@@ -54,8 +54,9 @@ def interpreter():
         import readline
         import rlcompleter
         readline.parse_and_bind("tab: complete")
-    except:
+    except ImportError:
         pass
+
     con = ZhPyConsole()
     banner = 'zhpy %s in %s on top of Python %s'%(version, sys.platform, sys.version.split()[0])
     con.interact(banner)
