@@ -44,9 +44,11 @@ def commandtool():
         compile to python and run
     cmp:
         input raw zhpy source and run
+    encoding:
+        specify the encoding
     """
     parser = OptionParser(
-            usage="usage: %prog [-i|-p] input [-o output]",
+            usage="usage: %prog [-i|-p] input [-o] [output] [--e] [encoding]",
             version="zhpy %s"%version)
     parser.add_option("-i", "--input",
             help="speficy the input source",
