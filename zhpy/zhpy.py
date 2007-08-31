@@ -1,12 +1,15 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
-"""zhpy is an convertor to translate chinese python code to nature python 
+"""zhpy is the full feature python with chinese keywords, variables, and 
+parameters support, independent on python version.
+
+zhpy is an convertor to translate chinese python code to nature python
 code (english) and vice versa.
 
-zhpy refactored the origin code from HYRY.
+zhpy is motivated by HYRY's origin code.
 
-fredlin 2007, gasolin+mopowg@gmail.com
+fredlin 2007, gasolin+zhpy@gmail.com
 
 This is the MIT license:
 http://www.opensource.org/licenses/mit-license.php

@@ -58,7 +58,7 @@ def commandtool():
             help="compile to python and run",
             dest="python", default = None)
     parser.add_option("-c", "--cmd",
-            help="input zhpy program as string and run",
+            help="input raw zhpy source and run",
             dest="cmp", default = None)
     parser.add_option("-e", "--encoding",
             help="specify the encoding",
