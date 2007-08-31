@@ -44,6 +44,7 @@ class Shell(InteractiveConsole):
         return more
 
 import sys
+from release import version
 
 def interpreter():
     """
@@ -56,5 +57,5 @@ def interpreter():
     except:
         pass
     con = Shell()
-    banner = 'Chinese Interactive Python shell on\nPython %s'%(sys.version)
+    banner = 'zhpy %s on Python %s'%(version, sys.version)
     con.interact(banner)
