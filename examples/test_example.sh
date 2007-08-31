@@ -1,3 +1,8 @@
+rm -rf hello/*.py
+rm -rf inout/*.py
+rm -rf loop/*.py
+rm -rf game/*.py
+
 echo "test zhpy as script, total: 2"
 zhpy -c "印出 '哈囉'"
 zhpy -c "打印 '哈啰'"
@@ -11,9 +16,9 @@ echo "simple command zhpy [in]"
 zhpy hello.twpy
 echo "input command zhpy [in]"
 zhpy -i hello.twpy
-echo "input command zhpy [in] [encoding]"
+echo "input command zhpy [in] [encoding]:"
 zhpy -i hello.twpy -e 'utf8'
-echo "command shortcut zhpy [in] [out]"
+echo "command shortcut zhpy [in] [out]:"
 zhpy hello.twpy n_hello.py
 echo "hello example:"
 zhpy -p hello.twpy
