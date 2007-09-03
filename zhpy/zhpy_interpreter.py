@@ -57,5 +57,6 @@ def interpreter():
         pass
 
     con = ZhPyConsole()
-    banner = 'zhpy %s in %s on top of Python %s'%(version, sys.platform, sys.version.split()[0])
+    banner = 'zhpy %s in %s on top of Python %s'%(version, sys.platform,
+                                                  sys.version.split()[0])
     con.interact(banner)

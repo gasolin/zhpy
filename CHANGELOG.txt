@@ -1,7 +1,27 @@
 zhpy Changelog
 ====================
 
-0.8.1 (09/*/2007):
+0.8.2 (09/*/2007):
+------------------
+code name: The World
+
+*Changes*
+
+
+*Features*
+
+
+*Fixes*
+
+* use encoding utf8 as default encoding while auto detection in low confidence(<0.8)
+
+*Project Updates*
+
+*Contributors*
+
+Fred Lin
+
+0.8.1 (09/03/2007):
 ------------------
 code name: The World
 
@@ -9,6 +29,7 @@ code name: The World
 
 * rename zhpyi.py to zhpy_interpreter.py
 * update example test cases
+* update interpreter banner
 
 *Features*
 

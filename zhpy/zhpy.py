@@ -168,7 +168,12 @@ def convertor(test, encoding=""):
     else:
         try:
             #detect encoding
-            encoding = chardet.detect(test)['encoding']
+            det = chardet.detect(test)
+            if det['confidence'] >= 0.8:
+                encoding = chardet.detect(test)['encoding']
+            else :
+                print 'low confidence encoding detection, use utf8 encoding'
+                encoding = 'utf8'
             utest = test.decode(encoding)
         except UnicodeDecodeError, e:
             print "can't recognize your language, set to utf-8"

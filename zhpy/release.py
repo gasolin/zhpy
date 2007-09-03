@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-version = "0.8.1"
+version = "0.8.2"
 author = "Fred Lin"
 email = "gasolin+zhpy@gmail.com"
 copyright = "Copyright 2007 Fred Lin and contributors"
@@ -13,9 +13,9 @@ variables, and parameters support.
 zhpy on python is good for Taiwan and China beginners to learn python in 
 our native language.
 
-zhpy is a lightweight python module and a chinese source convertor on python, which 
-provides interpreter and command line tool to translate zhpy code to python. 
-The python code written by traditional and simplified 
+zhpy is a lightweight python module and a chinese source convertor on python, 
+which provides interpreter and command line tool to translate zhpy code to 
+python. The python code written by traditional and simplified 
 chinese could be translated and execute as nature python code.
 
 zhpy support full python syntax. Code written in zhpy could be 
