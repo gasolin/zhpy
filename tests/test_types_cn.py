@@ -21,6 +21,7 @@ def test_bool():
     test boolean type
     """
     assert convertor("布尔(1)") == "bool(1)"
+    assert convertor("n is 真") == "n is True"
     assert convertor("n 是 真") == "n is True"
     assert convertor("p 为 假") == "p is False"
     assert convertor("q 不是 实") == "q is not True"
