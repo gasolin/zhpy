@@ -1,0 +1,11 @@
+Installation
+============
+
+Use ::
+
+    $ easy_install zhpy 
+    
+to install zhpy.
+
+or follow the detail installation guide on 
+http://code.google.com/p/zhpy/wiki/DownloadInstall

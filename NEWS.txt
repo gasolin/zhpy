@@ -1,0 +1,5 @@
+NEWS
+------
+
+check news on
+http://code.google.com/p/zhpy/wiki/RoadMap 

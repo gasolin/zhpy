@@ -1,0 +1,5 @@
+FAQ
+----
+
+check FAQs on
+http://code.google.com/p/zhpy/wiki/AboutZhpy
