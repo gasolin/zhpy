@@ -7,6 +7,9 @@ from zhpy import convertor
 def test_print():
     """
     test output statement and string types
+    
+    >>> print "hello"
+    hello
     """
     assert convertor("印出 'hello'") == "print 'hello'"
     assert convertor('印出 "hello"') == 'print "hello"'
@@ -28,6 +31,9 @@ def test_variable():
 def test_operators():
     """
     test operators
+    
+    >>> 1 == 1
+    True
     """
     assert convertor("a 等於 b") == "a == b"
     assert convertor("a 不等於 b") == "a != b"

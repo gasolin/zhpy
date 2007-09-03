@@ -7,6 +7,11 @@ from zhpy import convertor
 def test_int():
     """
     test int type
+    
+    >>> int(2.0)
+    2
+    >>> int(3.1415926)
+    3
     """
     assert convertor("整数(2.0)") == "int(2.0)"
 
@@ -30,6 +35,15 @@ def test_bool():
 def test_string():
     """
     same as print test
+    
+    >>> s = "hello.py"
+    >>> s.startswith('he')
+    True
+    >>> s.endswith('py')
+    True
+    >>> s = ['one', 'two']
+    >>> ''.join(s)
+    'onetwo'
     """
     assert convertor("s.开头为('he')") == "s.startswith('he')"
     assert convertor("s.结尾为('py')") == "s.endswith('py')"
@@ -39,6 +53,9 @@ def test_string():
 def test_list():
     """
     test list type
+    
+    >>> list((1,2,3,4)) == [1,2,3,4]
+    True
     """
     assert convertor("列表((1,2,3,4)) == [1,2,3,4]") == \
                     "list((1,2,3,4)) == [1,2,3,4]"
@@ -50,6 +67,9 @@ def test_list():
 def test_dict():
     """
     test dict type
+    
+    >>> dict(a=1, b=2) == {'a':1, 'b':2}
+    True
     """
     assert convertor("字典(a=1, b=2) == {'a':1, 'b':2}") == \
                     "dict(a=1, b=2) == {'a':1, 'b':2}"
@@ -57,6 +77,9 @@ def test_dict():
 def test_tuple():
     """
     test tuple type
+    
+    >>> tuple([1,2,3,4]) == (1,2,3,4)
+    True
     """
     assert convertor("数组([1,2,3,4]) == (1,2,3,4)") == \
                     "tuple([1,2,3,4]) == (1,2,3,4)"
@@ -64,6 +87,9 @@ def test_tuple():
 def test_set():
     """
     test set type
+    
+    >>> set([1,2,3,4]) == set([1, 2, 3, 4])
+    True
     """
     assert convertor("集合([1,2,3,4]) == set([1, 2, 3, 4])") == \
                     "set([1,2,3,4]) == set([1, 2, 3, 4])"

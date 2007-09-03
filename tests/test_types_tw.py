@@ -7,6 +7,11 @@ from zhpy import convertor
 def test_int():
     """
     test int type
+    
+    >>> int(2.0)
+    2
+    >>> int(3.1415926)
+    3
     """
     assert convertor("整數(2.0)") == "int(2.0)"
 
@@ -19,6 +24,7 @@ def test_float():
 def test_bool():
     """
     test boolean type
+    
     """
     assert convertor("布林(1)") == "bool(1)"
     assert convertor("n is 真") == "n is True"
@@ -30,6 +36,7 @@ def test_bool():
 def test_string():
     """
     same as print test
+    
     >>> s = "hello.py"
     >>> s.startswith('he')
     True
@@ -62,6 +69,9 @@ def test_list():
 def test_dict():
     """
     test dict type
+    
+    >>> dict(a=1, b=2) == {'a':1, 'b':2}
+    True
     """
     assert convertor("字典(a=1, b=2) == {'a':1, 'b':2}") == \
                     "dict(a=1, b=2) == {'a':1, 'b':2}"
