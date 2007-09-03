@@ -38,7 +38,7 @@ THE SOFTWARE.
 
 from zhdc import worddict, replacedict
 
-def merger(anno_dict):
+def merger(anno_dict, use_dict=worddict):
     """
     merge extra bindings into worddict
     
@@ -63,15 +63,15 @@ def merger(anno_dict):
     if type(anno_dict) == type([]):
         for k,v in anno_dict:
             #worddict.update({k:v})
-            if k not in worddict:
-                worddict[k] = v
+            if k not in use_dict:
+                use_dict[k] = v
                 print "add %s=%s"%(k, v)
             else:
                 print "already has key: %s, %s" % (k, v)
 
     if type(anno_dict) == type({}):
         for tmp in anno_dict.keys():
-            if tmp not in worddict:
+            if tmp not in use_dict:
                 worddict[tmp] = anno_dict[tmp]
                 print "add %s=%s"%(tmp, anno_dict[tmp])
             else:
