@@ -33,14 +33,14 @@ def test_string():
     >>> s = "hello.py"
     >>> s.startswith('he')
     True
-    >>> s.endswith('he')
+    >>> s.endswith('py')
     True
     >>> s = ['one', 'two']
     >>> ''.join(s)
     'onetwo'
     """
     assert convertor("s.開頭為('he')") == "s.startswith('he')"
-    assert convertor("s.結尾為('he')") == "s.endswith('he')"
+    assert convertor("s.結尾為('py')") == "s.endswith('py')"
     assert convertor("items = 'zero one two three'.分離()") == "items = 'zero one two three'.split()"
     s = ['one', 'two']
     assert convertor("''.連接(s)") == "''.join(s)"
@@ -80,11 +80,11 @@ def test_set():
     """
     test set type
     
-    >>> set([1,2,3,4]) = set([1, 2, 3, 4])
+    >>> set([1,2,3,4]) == set([1, 2, 3, 4])
     True
     """
-    assert convertor("集合([1,2,3,4]) = set([1, 2, 3, 4])") == \
-                    "set([1,2,3,4]) = set([1, 2, 3, 4])"
+    assert convertor("集合([1,2,3,4]) == set([1, 2, 3, 4])") == \
+                    "set([1,2,3,4]) == set([1, 2, 3, 4])"
 
 def test_file():
     """
