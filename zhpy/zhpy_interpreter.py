@@ -35,10 +35,9 @@ class ZhPyConsole(InteractiveConsole):
     Wrapper around Python and filter input/output to the shell
     """
     def push(self, line):
-        line = convertor(line)
         self.buffer.append(line)
         source = "\n".join(self.buffer)
-        more = self.runsource(source, self.filename)
+        more = self.runsource(convertor(source), self.filename)
         if not more:
             self.resetbuffer()
         return more

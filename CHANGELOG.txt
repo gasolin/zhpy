@@ -15,6 +15,7 @@ code name: The World
 
 *Fixes*
 
+* fix interpreter multiline exception bug
 
 *Project Updates*
 
