@@ -1,7 +1,7 @@
 zhpy Changelog
 ====================
 
-0.8.2 (09/*/2007):
+0.9 (09/*/2007):
 ------------------
 code name: The World
 
@@ -11,6 +11,7 @@ code name: The World
 
 *Features*
 
+* module keyword library plug-in system
 
 *Fixes*
 

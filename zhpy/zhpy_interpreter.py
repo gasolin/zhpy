@@ -28,7 +28,7 @@ THE SOFTWARE.
 
 
 from code import InteractiveConsole
-from zhpy import convertor
+from zhpy import convertor, annotator
 
 class ZhPyConsole(InteractiveConsole):
     """
@@ -59,4 +59,5 @@ def interpreter():
     con = ZhPyConsole()
     banner = 'zhpy %s in %s on top of Python %s'%(version, sys.platform,
                                                   sys.version.split()[0])
+    annotator()
     con.interact(banner)

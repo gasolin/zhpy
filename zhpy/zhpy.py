@@ -79,6 +79,7 @@ def merger(anno_dict, use_dict=worddict):
 
 import os
 import ConfigParser
+import pkg_resources
 
 def annotator():
     """
@@ -87,8 +88,13 @@ def annotator():
     1. inifiles:
         find ini files and use keywords defined in ini during 
         convertion progress.
-    
-    2. head docsting annotator（TODO）
+        
+    2. module plugin system.
+       possible entrypoints are:
+         
+         * zhpy.twdict
+         * zhpy.cndict
+
     """
     #inifiles = [x for x in os.listdir(".") if x.endswith(".ini")]
     inifiles = []
@@ -103,6 +109,13 @@ def annotator():
         for sect in sects:
             print "sect:", sect
             merger(conf.items(sect))
+    
+    for entrypoints in pkg_resources.iter_entry_points("zhpy.twdict"):
+        tool = entrypoints.load()
+        merger(tool)
+    for entrypoints in pkg_resources.iter_entry_points("zhpy.cndict"):
+        tool = entrypoints.load()
+        merger(tool)
 
 def variable_to_number(tmp):
     """
@@ -128,8 +141,6 @@ def convertToEnglish(s,l,t):
     
     if not in keyword, replace the chinese variable/argument/
     function name/class name/method name to a variable with prefix 'p'
-    
-    #TODO: able to convert code by annotate dict
     """
     tmp = t[0].encode("utf8")
     if tmp in worddict:
