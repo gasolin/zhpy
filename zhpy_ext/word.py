@@ -6,7 +6,7 @@ zh_module plugin
 
 
 #enter traditional chinese dict here
-tw_dict = {"traditional":"english"}
+tw_dict = {"系統":"sys", "版本":"version"}
 
 #enter simplified chinese dict here
-cn_dict = {"Simplified":"english"}
+cn_dict = {"系统":"sys", "版本":"version"}

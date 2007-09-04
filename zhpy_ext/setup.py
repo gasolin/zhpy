@@ -22,9 +22,9 @@ setup(
     packages=find_packages(exclude=["ez_setup"]),
     entry_points = """
     [zhpy.twdict]
-    word:tw_dict
+    tw_module_name = word:tw_dict
     [zhpy.cndict]
-    word:cn_dict
+    cn_module_name = word:cn_dict
     """,
     classifiers = [
         'License :: OSI Approved :: MIT License',
