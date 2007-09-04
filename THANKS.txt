@@ -2,8 +2,13 @@ THANKS
 ---------
 
 Thanks Glace, the Chinese python author made an early progress on chinese programming on python.
-
 Thanks HYRY, his little script make this project come true.
+Thanks JiaHua Huang, he brings universal variable and interpreter into my vision,
+For all of you let zhpy could catch up with python's exciting features.
+
+Thanks Swroop C. H for his wonderful book "Byte of Python",
+thanks C.C. license to let me able to made the free Traditional Chinese version.
+For all of this contribution we could get part of "Byte of zhpy" in a short period of time.
 
 Thanks people who intrested in zhpy and give me helpful advices to improve zhpy.
 

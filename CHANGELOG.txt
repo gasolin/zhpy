@@ -16,6 +16,10 @@ code name: The World
 * annotation support in interpreter
 * add command line option '-V/info' for zhpy complete information
 * add zhpy_ext as sample plugin template
+* add keyword
+  * "幫助":"help", "帮助":"help"
+  * "说明":"help"
+* Start 'byte of zhpy' doc
 
 *Fixes*
 

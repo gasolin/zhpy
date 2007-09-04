@@ -136,6 +136,9 @@ twdict = {# io
           "列舉":"enumerate",
           "過濾":"filter",
           "打包":"zip",
+          "說明":"help",
+          "幫助":"help",
+          "说明":"help",
           # error
           "停止迭代":"StopIteration",
           "型別錯誤":"TypeError",
@@ -252,6 +255,8 @@ cndict = {# io
           "列举":"enumerate",
           "过滤":"filter",
           "打包":"zip",
+          "帮助":"help",
+          "说明":"help",
           # error
           "停止迭代":"StopIteration",
           "类型错误":"TypeError",
