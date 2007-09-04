@@ -72,7 +72,7 @@ def merger(anno_dict, use_dict=worddict):
     if type(anno_dict) == type({}):
         for tmp in anno_dict.keys():
             if tmp not in use_dict:
-                worddict[tmp] = anno_dict[tmp]
+                use_dict[tmp] = anno_dict[tmp]
                 print "add %s=%s"%(tmp, anno_dict[tmp])
             else:
                 print "already has key: %s, %s" % (tmp, anno_dict[tmp])
@@ -96,6 +96,7 @@ def annotator():
          * zhpy.cndict
 
     """
+    # ini
     #inifiles = [x for x in os.listdir(".") if x.endswith(".ini")]
     inifiles = []
     for x in os.listdir("."):
@@ -110,9 +111,11 @@ def annotator():
             print "sect:", sect
             merger(conf.items(sect))
     
+    # tw plugin
     for entrypoints in pkg_resources.iter_entry_points("zhpy.twdict"):
         tool = entrypoints.load()
         merger(tool)
+    # cn plugin
     for entrypoints in pkg_resources.iter_entry_points("zhpy.cndict"):
         tool = entrypoints.load()
         merger(tool)

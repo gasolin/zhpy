@@ -50,6 +50,20 @@ def rev_merger(anno_dict, use_dict):
     add sys=系统
     >>> 'pygame' in rev_cndict
     True
+    
+    >>> keys = {"作業系統":"os", "選項解析":"optparse"}
+    >>> rev_merger(keys, rev_twdict)
+    add optparse=選項解析
+    add os=作業系統
+    >>> 'os' in rev_twdict
+    True
+    
+    >>> keys = {"作业系统":"os", "选项解析":"optparse"}
+    >>> rev_merger(keys, rev_cndict)
+    add os=作业系统
+    add optparse=选项解析
+    >>> 'os' in rev_cndict
+    True
     """
     if type(anno_dict) == type([]):
         for k,v in anno_dict:
@@ -58,19 +72,42 @@ def rev_merger(anno_dict, use_dict):
                 print "add %s=%s"%(v, k)
             else:
                 print "already has key: %s, %s" % (v, k)
-
+    if type(anno_dict) == type({}):
+        for num, tmp in enumerate(anno_dict.values()):
+            if tmp not in use_dict:
+                use_dict[tmp] = anno_dict.keys()[num]
+                print "add %s=%s"%(tmp, anno_dict.keys()[num])
+            else:
+                print "already has key: %s, %s" % (tmp, anno_dict.keys()[num]) 
+                
+        
 def rev_annotator(lang='tw'):
     """
     To expand the reverse dict
     
     lang:
         tw or cn
-        
+    
+    2 ways to extend the reverse dict
+    
+    1. plugins as modules
+    
+    2. ini file in local directory
+    
     """
     if lang == 'tw':
         use_dict = rev_twdict
+        # tw plugin
+        for entrypoints in pkg_resources.iter_entry_points("zhpy.twdict"):
+            tool = entrypoints.load()
+            rev_merger(tool, use_dict)
     if lang == 'cn':
         use_dict = rev_cndict
+        # cn plugin
+        for entrypoints in pkg_resources.iter_entry_points("zhpy.cndict"):
+            tool = entrypoints.load()
+            rev_merger(tool, use_dict)
+    # ini
     inifiles = []
     for x in os.listdir("."):
         if x.endswith(".ini"):

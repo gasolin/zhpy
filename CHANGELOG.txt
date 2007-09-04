@@ -11,11 +11,14 @@ code name: The World
 
 *Features*
 
-* module keyword library plug-in system
+* module keyword library plug-in system by annotator
+* plug-in support for rev_annotator
+* annotation support in interpreter
 
 *Fixes*
 
 * use encoding utf8 as default encoding while auto detection in low confidence(<0.8)
+* fix tests cases' doctest
 
 *Project Updates*
 
@@ -25,7 +28,7 @@ Fred Lin
 
 0.8.1 (09/03/2007):
 ------------------
-code name: The World
+code name: Hermit Purple
 
 *Changes*
 
