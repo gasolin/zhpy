@@ -14,6 +14,7 @@ code name: The World
 * module keyword library plug-in system by annotator
 * plug-in support for rev_annotator
 * annotation support in interpreter
+* add command line option '-V/info' for zhpy complete information
 
 *Fixes*
 

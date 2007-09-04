@@ -9,7 +9,7 @@ code (english) and vice versa.
 
 zhpy is motivated by HYRY's origin code.
 
-fredlin 2007, gasolin+zhpy@gmail.com
+gasolin+zhpy@gmail.com
 
 This is the MIT license:
 http://www.opensource.org/licenses/mit-license.php

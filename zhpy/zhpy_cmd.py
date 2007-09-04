@@ -32,7 +32,7 @@ import sys
 from optparse import OptionParser
 from release import version
 from zhpy import annotator, convertor, try_run
-
+    
 def commandtool():
     """command line tool method
     
@@ -46,6 +46,8 @@ def commandtool():
         input raw zhpy source and run
     encoding:
         specify the encoding
+    info:
+        zhpy information
     """
     parser = OptionParser(
             usage="usage: %prog [-i|-p] input [-o] [output] [--e] [encoding]",
@@ -65,7 +67,15 @@ def commandtool():
     parser.add_option("-e", "--encoding",
             help="specify the encoding",
             dest="encoding", default = "")
+    parser.add_option("-V", "--info",
+            help="zhpy information",
+            action="store_true", dest="info")
     (options, args) = parser.parse_args()
+    
+    if options.info:
+        from zhpy_info import info
+        info()
+        return
     
     os.chdir(os.getcwd())
     #run as script
