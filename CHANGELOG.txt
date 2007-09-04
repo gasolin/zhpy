@@ -15,6 +15,7 @@ code name: The World
 * plug-in support for rev_annotator
 * annotation support in interpreter
 * add command line option '-V/info' for zhpy complete information
+* add zhpy_ext as sample plugin template
 
 *Fixes*
 
