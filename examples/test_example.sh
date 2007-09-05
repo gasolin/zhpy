@@ -12,9 +12,9 @@ echo "test zhpy examples: total: 11"
 echo "zhpy hello example..."
 
 cd hello
-echo "simple command zhpy [in]"
+echo "simple command zhpy [in]:"
 zhpy hello.twpy
-echo "input command zhpy [in]"
+echo "input command zhpy [in]:"
 zhpy -i hello.twpy
 echo "input command zhpy [in] [encoding]:"
 zhpy -i hello.twpy -e 'utf8'
@@ -32,6 +32,8 @@ echo "zhpy in/out example..."
 cd inout
 zhpy -i inout.twpy -o n_inout.py
 zhpy -p inout.twpy
+echo "run in/out as script:"
+./inout
 cd ..
 
 echo "zhpy loop example..."

@@ -25,6 +25,7 @@ code name: The World
 
 * use encoding utf8 as default encoding while auto detection in low confidence(<0.8)
 * fix tests cases' doctest
+* able to run as script without subname
 
 *Project Updates*
 

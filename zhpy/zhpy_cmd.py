@@ -91,13 +91,16 @@ def commandtool():
     #run as command
     #TODO: accept args
     argv = sys.argv[1:]
+    print argv
     if len(argv) >= 1:
-        if (options.input is None) and argv[0].endswith("py"):
-            options.input = argv[0]
         if options.python:
             options.input = options.python
+        # able to run as script without subname
+        if (options.input is None):
+            options.input = argv[0]
+
         #if options.input:
-        
+        print "input", options.input
         test = file(options.input, "r").read()
         annotator()
         if options.encoding:
