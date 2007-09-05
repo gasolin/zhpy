@@ -91,7 +91,6 @@ def commandtool():
     #run as command
     #TODO: accept args
     argv = sys.argv[1:]
-    print argv
     if len(argv) >= 1:
         if options.python:
             options.input = options.python
