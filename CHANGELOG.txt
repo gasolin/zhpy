@@ -1,6 +1,26 @@
 zhpy Changelog
 ====================
 
+0.9.1 (09/*/2007):
+--------------------
+code name: Magician Red
+
+*Changes*
+
+*Features*
+
+* add keyword:
+  * "周蟒":"zhpy"
+  * "中文執行":"zh_exec", "中文执行":"zh_exec"
+
+*Fixes*
+
+*Project Updates*
+
+*Contributors*
+
+Fred Lin
+
 0.9 (09/05/2007):
 ------------------
 code name: The World

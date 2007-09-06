@@ -145,7 +145,10 @@ twdict = {# io
           "解碼錯誤":"UnicodeDecodeError",
           "導入錯誤":"ImportError",
           # zhpy only
+          "周蟒":"zhpy",
           "主程式":'if __name__=="__main__"',
+          # must do 'from zhpy import zh_exec'/'從 周蟒 導入 中文執行' first
+          "中文執行":"zh_exec",
           }
 
 # Simplized chinese keywords
@@ -263,7 +266,10 @@ cndict = {# io
           "解码错误":"UnicodeDecodeError",
           "导入错误":"ImportError",
           # zhpy only
+          "周蟒":"zhpy",
           "主程序":'if __name__=="__main__"',
+          # must do 'from zhpy import zh_exec'/'从 周蟒 导入 中文执行' first
+          "中文执行":"zh_exec",
           }
 
 # Traditional chinese and simplized chinese keywords
