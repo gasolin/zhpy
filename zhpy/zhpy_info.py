@@ -26,9 +26,10 @@ THE SOFTWARE.
 """
 
 import pkg_resources
-
-entrypoints = {"TW Keyword Dictionaries":"zhpy.twdict",
-                "CN Keyword Dictionaries":"zhpy.cndict"}
+import sys
+    
+entrypoints = {"Traditional Chinese Keywords":"zhpy.twdict",
+                "Simplified Chinese Keywords":"zhpy.cndict"}
     
 def retrieve_info():
     """
@@ -46,17 +47,19 @@ def info():
     """
     from TurboGears2 tginfo command
     """
-    print """zhpy Complete Version Information
-    
+    print """
+Complete zhpy Version Information
+
 zhpy requires:
-    """
-    
+"""
+    print "  * python ",sys.version.split()[0] 
     packages, plugins = retrieve_info()
     for p in packages:
-        print '*', p
+        print '  *', p
     
-    print "\nzhpy extends:"
+    print """\nzhpy extends:"""
     for name, pluginlist in plugins.items():
         print "\n", name, "\n"
         for plugin in pluginlist:
-            print '*', plugin
+            print '  *', plugin
+    print ""

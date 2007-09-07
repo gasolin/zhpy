@@ -16,9 +16,11 @@ code name: Magician Red
   * "假使":"elif"
   * "周蟒":"zhpy"
   * "中文執行":"zh_exec", "中文执行":"zh_exec"
-* 'byte of zhpy' doc update
 
 *Fixes*
+
+* better formatted "zhpy --info" command
+* 'byte of zhpy' doc update
 
 *Project Updates*
 
