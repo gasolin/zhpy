@@ -38,7 +38,7 @@ THE SOFTWARE.
 
 from zhdc import worddict, replacedict
 
-def merger(anno_dict, use_dict=worddict):
+def merger(anno_dict, use_dict=worddict, verbose=True):
     """
     merge extra bindings into worddict
     
@@ -65,23 +65,27 @@ def merger(anno_dict, use_dict=worddict):
             #worddict.update({k:v})
             if k not in use_dict:
                 use_dict[k] = v
-                print "add %s=%s"%(k, v)
+                if verbose:
+                    print "add %s=%s"%(k, v)
             else:
-                print "already has key: %s, %s" % (k, v)
+                if verbose:
+                    print "already has key: %s, %s" % (k, v)
 
     if type(anno_dict) == type({}):
         for tmp in anno_dict.keys():
             if tmp not in use_dict:
                 use_dict[tmp] = anno_dict[tmp]
-                print "add %s=%s"%(tmp, anno_dict[tmp])
+                if verbose:
+                    print "add %s=%s"%(tmp, anno_dict[tmp])
             else:
-                print "already has key: %s, %s" % (tmp, anno_dict[tmp])
+                if verbose:
+                    print "already has key: %s, %s" % (tmp, anno_dict[tmp])
 
 import os
 import ConfigParser
 import pkg_resources
 
-def annotator():
+def annotator(verbose=True):
     """
     provide two ways to expand the worddict:
     
@@ -103,22 +107,24 @@ def annotator():
         if x.endswith(".ini"):
             inifiles.append(x)
     for f in inifiles:
-        print "file", f
+        if verbose:
+            print "file", f
         conf = ConfigParser.ConfigParser()
         conf.read(f)
         sects = conf.sections()
         for sect in sects:
-            print "sect:", sect
+            if verbose:
+                print "sect:", sect
             merger(conf.items(sect))
     
     # tw plugin
     for entrypoints in pkg_resources.iter_entry_points("zhpy.twdict"):
         tool = entrypoints.load()
-        merger(tool)
+        merger(tool, verbose=False)
     # cn plugin
     for entrypoints in pkg_resources.iter_entry_points("zhpy.cndict"):
         tool = entrypoints.load()
-        merger(tool)
+        merger(tool, verbose=False)
 
 def variable_to_number(tmp):
     """
@@ -164,8 +170,11 @@ except:
 
 def convertor(test, encoding=""):
     """
-    convert zhpy source (Chinese) to Python Source 
+    convert zhpy source (Chinese) to Python Source.
     
+    always run annotator before access convertor
+    
+    >>> annotator()
     >>> convertor("印出 'hello'")
     "print 'hello'"
     

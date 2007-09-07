@@ -172,6 +172,7 @@ cndict = {# io
           "继续":"continue",
           # control
           "如果":"if",
+          "假使":"elif",
           "否则如果":"elif",
           "否则":"else",
           # for loop
@@ -272,13 +273,9 @@ cndict = {# io
           "中文执行":"zh_exec",
           }
 
-# Traditional chinese and simplized chinese keywords
-worddict = twdict.copy()
-for i in cndict:
-    if i in twdict:
-        continue
-    else:
-        worddict[i]= cndict[i]
+# Universal keywords repository
+# always run annotator before access worddict
+worddict = {}
 
 # punctuations
 replacedict = {

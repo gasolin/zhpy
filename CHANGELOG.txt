@@ -7,15 +7,21 @@ code name: Magician Red
 
 *Changes*
 
+* twdict, cndict now shown in plugin
+* worddict now totally dynimically formed
+
 *Features*
 
 * add keyword:
+  * "假使":"elif"
   * "周蟒":"zhpy"
   * "中文執行":"zh_exec", "中文执行":"zh_exec"
+* 'byte of zhpy' doc update
 
 *Fixes*
 
 *Project Updates*
+
 
 *Contributors*
 

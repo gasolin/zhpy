@@ -31,6 +31,10 @@ setup(
     entry_points = """
     [console_scripts]
     zhpy = zhpy.zhpy_cmd:commandtool
+    [zhpy.twdict]
+    twdict = zhpy.zhdc:twdict
+    [zhpy.cndict]
+    cndict = zhpy.zhdc:cndict
     """,
     classifiers = [
         'Development Status :: 4 - Beta',
