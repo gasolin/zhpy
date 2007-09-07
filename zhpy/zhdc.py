@@ -61,7 +61,7 @@ twdict = {# io
           # while loop
           "當":"while",
           "跳出":"break",
-          "中止":"break",
+          "中斷":"break",
           "例外":"Exception",
           # try
           "嘗試":"try",
