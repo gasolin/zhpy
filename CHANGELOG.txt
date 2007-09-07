@@ -24,6 +24,7 @@ code name: Magician Red
 
 *Project Updates*
 
+* add download url
 
 *Contributors*
 
