@@ -7,33 +7,29 @@ license = "MIT <http://www.opensource.org/licenses/mit-license.php>"
 url = "http://code.google.com/p/zhpy/"
 download_url="http://code.google.com/p/zhpy/"
 description="Write python language in chinese"
-long_description = """zhpy is the full feature python with chinese keywords, 
-variables, and parameters support.
+long_description = """zhpy is the full feature python language with 
+fully tested chinese keywords, variables, and parameters support, 
+independent on python version,
+bundle with command line tool, interpreter, pluggable keyword system and 
+great document.
 
 zhpy on python is good for Taiwan and China beginners to learn python in 
 our native language.
 
-zhpy is a lightweight python module and a chinese source convertor on python, 
+The core of zhpy is a lightweight python module and a chinese source convertor 
+based on python, 
 which provides interpreter and command line tool to translate zhpy code to 
-python. The python code written by traditional and simplified 
-chinese could be translated and execute as nature python code.
+python. zhpy integrated a setuptools-based plugin system for keyword reuse.
+The zhpy code written in traditional and simplified 
+chinese could be translated and converted to natual python code.
+Thus it could be execute as nature python code and be used in normal 
+python programs.
 
-zhpy support full python syntax. Code written in zhpy could be 
-converted to natual python and be used in normal python programs.
-
-zhpy provide interpreter, which allow execise zhpy and python interactivily.
+Use 'zhpy' command instead of "python" in command line to execute source code wrote in Chinese and English.
 
 zhpy provide a method 'zh_exec' that allow to embed 
-chinese script in python, zhpy could be used as the chinese script in 
+chinese script in python, and zhpy could be used as the chinese script in 
 shell as well.
-
-zhpy is fully tested, which use ~60 test cases to test the small(<10k) source.
-
-zhpy use pyparsing module to detect chinese keywords, class name, methods, 
-arguments, variables and translate them back to python.
-
-It's possible for developers to port zhpy to python on korean or 
-python on japenese.
 
 Check examples_ here.
 
@@ -67,15 +63,17 @@ check the BasicUsage_ for detail.
 
 .. _BasicUsage: "http://code.google.com/p/zhpy/wiki/BasicUsage"
 
-Programming
------------
+Programming Guide
+-------------------
 
-You could mix original english keywords and Chinese keywords in 
-your zhpy source.
+An C.C licensed zhpy book "A Byte of Zhpy"_ is in progress. You could freely view it online.
+The book is based on "A Byte of python"_
 
-Reserved keywords are listed here_
+.. _"A Byte of Zhpy": http://code.google.com/p/zhpy/wiki/ByteOfZhpy
+.. _"A Byte of python": http://swaroopch.info/text/Byte_of_Python:Main_Page
 
-.. _here: http://code.google.com/p/zhpy/wiki/KeyWords 
+Change Log
+-------------
 
 You could view the ChangeLog_ to see what's new in these version
 
