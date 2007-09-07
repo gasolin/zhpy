@@ -28,6 +28,24 @@ THE SOFTWARE.
 """
 
 
+# Universal keywords repository
+# always run annotator before access worddict
+worddict = {}
+
+# punctuations
+replacedict = {
+    "（":"(",
+    "）":")",
+    "。":".",
+    """:'"',
+    """:'"',
+    "'":"'",
+    "'":"'",
+    "，":",",
+    "：":":",
+    "！":"!",
+    }
+
 # Traditional chinese keywords
 twdict = {# io
           "印出":"print",
@@ -272,24 +290,6 @@ cndict = {# io
           # must do 'from zhpy import zh_exec'/'从 周蟒 导入 中文执行' first
           "中文执行":"zh_exec",
           }
-
-# Universal keywords repository
-# always run annotator before access worddict
-worddict = {}
-
-# punctuations
-replacedict = {
-    "（":"(",
-    "）":")",
-    "。":".",
-    """:'"',
-    """:'"',
-    "'":"'",
-    "'":"'",
-    "，":",",
-    "：":":",
-    "！":"!",
-    }
 
 def _indict(lang_dict):
     """make a reverse dictionary from the input dictionary
