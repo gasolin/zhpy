@@ -8,7 +8,7 @@ code name: Magician Red
 *Changes*
 
 * twdict, cndict now shown in plugin
-* worddict now totally dynimically formed
+* worddict formed dynamically without exceptions
 * keyword changes
   * "中斷" instead of "中止"
   
