@@ -36,7 +36,7 @@ THE SOFTWARE.
 """
 
 
-from zhdc import worddict, replacedict
+from zhdc import worddict, twdict, cndict, replacedict
 
 def merger(anno_dict, use_dict=worddict, verbose=True):
     """
@@ -120,11 +120,14 @@ def annotator(verbose=True):
     # tw plugin
     for entrypoints in pkg_resources.iter_entry_points("zhpy.twdict"):
         tool = entrypoints.load()
-        merger(tool, verbose=False)
+        merger(tool, use_dict=twdict, verbose=False)
+    merger(twdict, verbose=False)
     # cn plugin
     for entrypoints in pkg_resources.iter_entry_points("zhpy.cndict"):
         tool = entrypoints.load()
-        merger(tool, verbose=False)
+        merger(tool, use_dict=cndict, verbose=False)
+    merger(cndict, verbose=False)
+    
 
 def variable_to_number(tmp):
     """

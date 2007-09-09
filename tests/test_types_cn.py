@@ -19,7 +19,7 @@ def test_float():
     """
     test float type
     """
-    assert convertor("小数(2)") == "float(2)"
+    assert convertor("浮点数(2)") == "float(2)"
 
 def test_bool():
     """

@@ -47,13 +47,24 @@ replacedict = {
     }
 
 # Traditional chinese keywords
-twdict = {# io
-          "印出":"print",
-          "輸入":"raw_input",
+tw_keyword = {
+          # logic
+          "和":"and",
+          "且":"and",
+          "或":"or",
+          "非":"not",
+          "是":"is",
+          "為":"is",
+          "不是":"is not",
+          "不為":"is not",
+          "真":"True",
+          "假":"False",
+          "實":"True",
+          "虛":"False",
+          "空":"None",
           # def
           "定義":"def",
           "類別":"class",
-          # global
           "共用":"global",
           # import
           "從":"from",
@@ -61,7 +72,6 @@ twdict = {# io
           "作為":"as",
           # flow
           "返回":"return",
-          "傳回":"return",
           "略過":"pass", 
           "示警":"raise",
           "繼續":"continue",
@@ -75,41 +85,28 @@ twdict = {# io
           "在":"in",
           "自":"in",
           "不在":"not in",
-          "下一筆":"next",
           # while loop
           "當":"while",
           "跳出":"break",
           "中斷":"break",
-          "例外":"Exception",
           # try
           "嘗試":"try",
           "異常":"except",
           "最後":"finally",
-          # else
           "宣告":"assert",
-          "刪除":"del",
-          "產生":"yield",
-          "伴隨":"with",
-          # logic
-          "等於":"==",
-          "不等於":"!=",
-          "是":"is",
-          "為":"is",
-          "不是":"is not",
-          "不為":"is not",
-          "或":"or",
-          "和":"and",
-          "且":"and",
-          "真":"True",
-          "假":"False",
-          "實":"True",
-          "虛":"False",
-          "空":"None",
           # build in methods
-          "型別":"type",
-          "長度":"len",
           "執行":"exec",
           "方程式":"lambda",
+          "印出":"print",
+          
+          "伴隨":"with",
+          "產生":"yield",
+          "刪除":"del",
+          }
+
+tw_buildin_method={
+          "輸入":"input",
+          "輸入字串":"raw_input",
           # build-in types
           "字串":"str",
           "布林":"bool",
@@ -117,10 +114,44 @@ twdict = {# io
           "字典":"dict",
           "數組":"tuple",
           "集合":"set",
+          "字符":"chr",
+          "文件":"file",
           # number methods
           "整數":"int",
           "浮點數":"float",
+          "複數":"complex",
+          "十六進位":"hex",
           "絕對值":"abs",
+          "比較":"cmp",
+          # OO
+          "可調用":"callable",
+          "列出屬性":"dir",
+          "取屬性":"getattr",
+          "有屬性":"hasattr",
+          # build in methods
+          "列舉":"enumerate",
+          "求值":"eval",
+          "過濾":"filter",
+          "長度":"len",
+          "映射":"map",
+          }
+
+tw_zhpy = {
+          "周蟒":"zhpy",
+          "主程式":'if __name__=="__main__"',
+          # must do 'from zhpy import zh_exec'/'從 周蟒 導入 中文執行' first
+          "中文執行":"zh_exec",
+          # logic
+          "等於":"==",
+          "不等於":"!=",
+          }
+
+twdict = {# io
+          "下一筆":"next",
+          "例外":"Exception",
+          # build in methods
+          "型別":"type",
+          
           # file methods
           "打開":"open",
           "讀取":"read",
@@ -151,8 +182,8 @@ twdict = {# io
           "解碼":"decoding",
           # preloaded modules
           "範圍":"range",
-          "列舉":"enumerate",
-          "過濾":"filter",
+          
+          
           "打包":"zip",
           "說明":"help",
           "幫助":"help",
@@ -162,23 +193,27 @@ twdict = {# io
           "型別錯誤":"TypeError",
           "解碼錯誤":"UnicodeDecodeError",
           "導入錯誤":"ImportError",
-          # zhpy only
-          "周蟒":"zhpy",
-          "主程式":'if __name__=="__main__"',
-          # must do 'from zhpy import zh_exec'/'從 周蟒 導入 中文執行' first
-          "中文執行":"zh_exec",
           }
 
-# Simplized chinese keywords
-cndict = {# io
-          "打印":"print",
-          "输入字符串":"raw_input",
+cn_keyword = {
+          # logic
+          "和":"and",
+          "且":"and",
+          "或":"or",
+          "非": "not",
+          "是":"is",
+          "为":"is",
+          "不是":"is not",
+          "不为":"is not",
+          "真": "True",
+          "假":"False",
+          "实":"True",
+          "虛":"False",
+          "空":"None",
           # def
           "定义":"def",
           "类":"class",
-          # global
           "共用":"global",
-          "全局":"global",
           # import
           "从":"from",
           "导入":"import",
@@ -198,7 +233,6 @@ cndict = {# io
           "在":"in",
           "自":"in",
           "不在":"not in",
-          "下一笔":"next",
           # while loop
           "当":"while",
           "跳出":"break",
@@ -207,31 +241,19 @@ cndict = {# io
           "尝试":"try",
           "异常":"except",
           "最后":"finally",
-          "例外":"Exception",
-          # else
           "宣告":"assert",
-          "刪除":"del",
-          "产生":"yield",
-          "伴隨":"with",
-          # logic
-          "等于":"==",
-          "不等于":"!=",
-          "是":"is",
-          "为":"is",
-          "不是":"is not",
-          "不为":"is not",
-          "或者":"or",
-          "并且":"and",
-          "真": "True",
-          "假":"False",
-          "实":"True",
-          "虛":"False",
-          "空":"None", 
           # build in methods
-          "类型":"type",
-          "长度":"len",
           "执行":"exec",
           "函数":"lambda",
+          "打印":"print",
+          "伴隨":"with",
+          "产生":"yield",
+          "刪除":"del",
+         }
+
+cn_buildin_method = {
+          "输入":"input",
+          "输入字符串":"raw_input",
           # build-in types
           "字符串":"str",
           "布尔":"bool",
@@ -239,10 +261,46 @@ cndict = {# io
           "字典":"dict",
           "数组":"tuple",
           "集合":"set",
+          "字符":"chr",
+          "文件":"file",
           # number methods
           "整数":"int",
-          "小数":"float",
+          "浮点数":"float",
+          "复数":"complex",
+          "十六进制":"hex",
           "绝对值":"abs",
+          "比较":"cmp",
+          # OO
+          "可调用":"callable",
+          "列出属性":"dir",
+          "取属性":"getattr",
+          "有属性":"hasattr",
+          # build in methods
+          "列举":"enumerate",
+          "求值":"eval",
+          "过滤":"filter",
+          "长度":"len",
+          "映射":"map",
+         }
+
+cn_zhpy = {
+          "周蟒":"zhpy",
+          "主程序":'if __name__=="__main__"',
+          # must do 'from zhpy import zh_exec'/'从 周蟒 导入 中文执行' first
+          "中文执行":"zh_exec",
+          # logic
+          "等于":"==",
+          "不等于":"!=",
+         }
+
+# Simplized chinese keywords
+cndict = {# io
+          "例外":"Exception",
+          # else
+          "下一笔":"next",
+          # build in methods
+          "类型":"type",
+          
           # file methods
           "打开":"open",
           "读取":"read",
@@ -274,8 +332,7 @@ cndict = {# io
           "解码":"decoding",
           # preloaded modules
           "范围":"range",
-          "列举":"enumerate",
-          "过滤":"filter",
+          
           "打包":"zip",
           "帮助":"help",
           "说明":"help",
@@ -284,17 +341,12 @@ cndict = {# io
           "类型错误":"TypeError",
           "解码错误":"UnicodeDecodeError",
           "导入错误":"ImportError",
-          # zhpy only
-          "周蟒":"zhpy",
-          "主程序":'if __name__=="__main__"',
-          # must do 'from zhpy import zh_exec'/'从 周蟒 导入 中文执行' first
-          "中文执行":"zh_exec",
           }
 
-def _indict(lang_dict):
+def revert_dict(lang_dict):
     """make a reverse dictionary from the input dictionary
     
-    >>> _indict({'a':'1', 'b':'2'})
+    >>> revert_dict({'a':'1', 'b':'2'})
     {'1': 'a', '2': 'b'}
     """
     rev_dict = {}
@@ -304,8 +356,3 @@ def _indict(lang_dict):
     for i in dict_keys:
         rev_dict.update({lang_dict[i]:i})
     return rev_dict
-
-# make reverse traditional chinese dicts
-rev_twdict = _indict(twdict)
-# make reverse simplified chinese dicts
-rev_cndict = _indict(cndict)

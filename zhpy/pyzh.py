@@ -27,12 +27,18 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 """
 
-
-#TODO: make import explicit 
-from zhdc import rev_twdict, rev_cndict
+ 
+from zhpy import annotator
+from zhdc import twdict, cndict, revert_dict
 
 hexval = '0123456789abcdef'
 
+annotator()
+# make reverse traditional chinese dicts
+rev_twdict = revert_dict(twdict)
+# make reverse simplified chinese dicts
+rev_cndict = revert_dict(cndict)
+    
 def rev_merger(anno_dict, use_dict):
     """
     merge extra bindings into reverse dict
@@ -143,6 +149,7 @@ def number_to_variable(tmp):
 
 from pyparsing import srange, Word, quotedString
 
+import re
 def convertToTW(s,l,t):
     """
     search rev_twdict to match keywords

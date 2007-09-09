@@ -33,9 +33,13 @@ setup(
     [console_scripts]
     zhpy = zhpy.zhpy_cmd:commandtool
     [zhpy.twdict]
-    twdict = zhpy.zhdc:twdict
+    twkeyword = zhpy.zhdc:tw_keyword
+    twmethod = zhpy.zhdc:tw_buildin_method
+    twzhpy= zhpy.zhdc:tw_zhpy
     [zhpy.cndict]
-    cndict = zhpy.zhdc:cndict
+    cnkeyword = zhpy.zhdc:cn_keyword
+    cnmethod = zhpy.zhdc:cn_buildin_method
+    cnzhpy = zhpy.zhdc:cn_zhpy
     """,
     classifiers = [
         'Development Status :: 4 - Beta',

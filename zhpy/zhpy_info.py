@@ -52,7 +52,7 @@ Complete zhpy Version Information
 
 zhpy requires:
 """
-    print "  * python ",sys.version.split()[0] 
+    print "  * python",sys.version.split()[0] 
     packages, plugins = retrieve_info()
     for p in packages:
         print '  *', p

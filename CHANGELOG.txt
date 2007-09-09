@@ -1,6 +1,47 @@
 zhpy Changelog
 ====================
 
+0.9.2 (09/*/2007):
+--------------------
+code name: Hierophant Green
+
+*Changes*
+
+* seperate twdict, cndict into plugins
+* keyword change
+  * "和":"and", "且":"and" instead of "并且":"and"
+  *"或":"or" instead of "或者":"or"
+  * "輸入字串":"raw_input" instead of "輸入":"raw_input"
+  * "浮点数":"float" instead of "小数":"float"
+* remove keyword
+  * "傳回":"return"
+  * "全局":"global"
+
+*Features*
+
+* add keyword
+  * "非":"not"
+  * "可調用":"callable", "可调用":"callable"
+  * "字符":"chr"
+  * "比較":"cmp","比较":"cmp"
+  * "複數":"complex","复数":"complex"
+  * "十六進位":"hex", "十六进制":"hex"
+  * "列出屬性":"dir", "列出属性":"dir"
+  * "求值":"eval"
+  * "文件":"file"
+  * "输入":"input"
+  * "取屬性":"getattr", "取属性":"getattr"
+  * "有屬性":"hasattr", "有属性":"hasattr"
+  * "映射":"map"
+          
+*Fixes*
+
+*Project Updates*
+
+*Contributors*
+
+Fred Lin
+
 0.9.1 (09/08/2007):
 --------------------
 code name: Magician Red
