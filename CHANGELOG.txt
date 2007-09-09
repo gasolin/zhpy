@@ -7,11 +7,11 @@ code name: Hierophant Green
 
 *Changes*
 
-* seperate twdict, cndict into plugins
+* move twdict, cndict keyword into plugins
 * keyword change
   * "和":"and", "且":"and" instead of "并且":"and"
   *"或":"or" instead of "或者":"or"
-  * "輸入字串":"raw_input" instead of "輸入":"raw_input"
+  * "輸入":"raw_input" instead of "输入字符串":"raw_input"
   * "浮点数":"float" instead of "小数":"float"
 * remove keyword
   * "傳回":"return"
@@ -22,7 +22,8 @@ code name: Hierophant Green
 * add keyword
   * "非":"not"
   * "可調用":"callable", "可调用":"callable"
-  * "字符":"chr"
+  * "符號":"chr", "符号":"chr"
+  * "符號轉整數":"ord", "符号转整数":"ord"
   * "比較":"cmp","比较":"cmp"
   * "複數":"complex","复数":"complex"
   * "十六進位":"hex", "十六进制":"hex"
@@ -32,11 +33,21 @@ code name: Hierophant Green
   * "输入":"input"
   * "取屬性":"getattr", "取属性":"getattr"
   * "有屬性":"hasattr", "有属性":"hasattr"
+  * "設定屬性":"setattr", "设定属性":"setattr"
   * "映射":"map"
-          
+  * "最大":"max",
+  * "最小":"min",
+  * "總和":"sum", "总和":"sum"
+  * "快速範圍":"xrange", "快速范围":"xrange"
+  * "計數":"count", "计数":"count"
+  * "索引":"index"
+  
 *Fixes*
 
 *Project Updates*
+
+register "twkeyword", "twmethod", "tw_exception", "twzhpy",
+"cnkeyword", "cnmethod", "cn_exception", "cnzhpy" as plugin
 
 *Contributors*
 

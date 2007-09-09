@@ -20,8 +20,6 @@ def test_input():
     test input statement
     """
     assert convertor("name = 輸入('your name:')") == \
-                    "name = input('your name:')"
-    assert convertor("name = 輸入字串('your name:')") == \
                     "name = raw_input('your name:')"
 
 def test_variable():

@@ -31,6 +31,10 @@ THE SOFTWARE.
 # Universal keywords repository
 # always run annotator before access worddict
 worddict = {}
+# Traditional Chinese keywords repository
+twdict = {}
+# Simplified Chinese keywords repository
+cndict = {}
 
 # punctuations
 replacedict = {
@@ -105,16 +109,16 @@ tw_keyword = {
           }
 
 tw_buildin_method={
-          "輸入":"input",
-          "輸入字串":"raw_input",
+          "輸入":"raw_input",
           # build-in types
           "字串":"str",
           "布林":"bool",
-          "列表": "list",
+          "列表":"list",
           "字典":"dict",
           "數組":"tuple",
           "集合":"set",
-          "字符":"chr",
+          "符號":"chr",
+          "符號轉整數":"ord",
           "文件":"file",
           # number methods
           "整數":"int",
@@ -123,17 +127,66 @@ tw_buildin_method={
           "十六進位":"hex",
           "絕對值":"abs",
           "比較":"cmp",
+          "最大":"max",
+          "最小":"min",
+          # string methods
+          "開頭為":"startswith",
+          "結尾為":"endswith",
+          "連接":"join",
+          "分離":"split",
+          "編碼":"encoding",
+          "解碼":"decoding",
+          # list methods
+          "加入":"append",
+          "追加":"append",
+          "擴展":"extend",
+          "插入":"insert",
+          "彈出":"pop",
+          "下一筆":"next",
+          "移除":"remove",
+          "計數":"count",
+          "索引":"index",
+          "排序":"sort",
+          # file methods
+          "打開":"open",
+          "讀取":"read",
+          "寫入":"write",
+          "讀一行":"readline",
+          "讀多行":"readlines",
+          "關閉":"close",
+          # dict methods
+          "關鍵字列表":"keys",
+          "值列表":"values",
+          "項目列表": "items",
+          "更新":"update",
           # OO
           "可調用":"callable",
           "列出屬性":"dir",
           "取屬性":"getattr",
           "有屬性":"hasattr",
+          "設定屬性":"setattr",
           # build in methods
           "列舉":"enumerate",
           "求值":"eval",
           "過濾":"filter",
           "長度":"len",
           "映射":"map",
+          "範圍":"range",
+          "快速範圍":"xrange",
+          "總和":"sum",
+          "型別":"type",
+          "打包":"zip",
+          "說明":"help",
+          "幫助":"help",
+          }
+
+tw_exception = {
+          "例外":"Exception",
+          # error
+          "停止迭代":"StopIteration",
+          "型別錯誤":"TypeError",
+          "解碼錯誤":"UnicodeDecodeError",
+          "導入錯誤":"ImportError",
           }
 
 tw_zhpy = {
@@ -146,55 +199,7 @@ tw_zhpy = {
           "不等於":"!=",
           }
 
-twdict = {# io
-          "下一筆":"next",
-          "例外":"Exception",
-          # build in methods
-          "型別":"type",
-          
-          # file methods
-          "打開":"open",
-          "讀取":"read",
-          "寫入":"write",
-          "讀一行":"readline",
-          "讀多行":"readlines",
-          "關閉":"close",
-          # list methods
-          "加入":"append",
-          "追加":"append",
-          "擴展":"extend",
-          "插入":"insert",
-          "彈出":"pop",
-          "移除":"remove",
-          "排序":"sort",
-          # string methods
-          "開頭為":"startswith",
-          "結尾為":"endswith",
-          "連接":"join",
-          "分離":"split",
-          # dict methods
-          "關鍵字列表":"keys",
-          "值列表":"values",
-          "項目列表": "items",
-          "更新":"update",
-          # encoding
-          "編碼":"encoding",
-          "解碼":"decoding",
-          # preloaded modules
-          "範圍":"range",
-          
-          
-          "打包":"zip",
-          "說明":"help",
-          "幫助":"help",
-          "说明":"help",
-          # error
-          "停止迭代":"StopIteration",
-          "型別錯誤":"TypeError",
-          "解碼錯誤":"UnicodeDecodeError",
-          "導入錯誤":"ImportError",
-          }
-
+# Simplized chinese keywords
 cn_keyword = {
           # logic
           "和":"and",
@@ -252,8 +257,7 @@ cn_keyword = {
          }
 
 cn_buildin_method = {
-          "输入":"input",
-          "输入字符串":"raw_input",
+          "输入":"raw_input",
           # build-in types
           "字符串":"str",
           "布尔":"bool",
@@ -261,7 +265,8 @@ cn_buildin_method = {
           "字典":"dict",
           "数组":"tuple",
           "集合":"set",
-          "字符":"chr",
+          "符号":"chr",
+          "符号转整数":"ord",
           "文件":"file",
           # number methods
           "整数":"int",
@@ -270,17 +275,67 @@ cn_buildin_method = {
           "十六进制":"hex",
           "绝对值":"abs",
           "比较":"cmp",
+          "最大":"max",
+          "最小":"min",
+          # string methods
+          "开头为":"startswith",
+          "结尾为":"endswith",
+          "连接":"join",
+          "分离":"split",
+          "编码":"encoding",
+          "解码":"decoding",
+          # list methods
+          "加入":"append",
+          "追加":"append",
+          "扩展":"extend",
+          "插入":"insert",
+          "弹出":"pop",
+          "下一笔":"next",
+          "移除":"remove",
+          "逆转":"reverse",
+          "计数":"count",
+          "索引":"index",
+          "排序":"sort",
+          # file methods
+          "打开":"open",
+          "读取":"read",
+          "写入":"write",
+          "读一行":"readline",
+          "读多行":"readlines",
+          "关闭":"close",
+          # dict methods
+          "关键字列表":"keys",
+          "值列表":"values",
+          "项目列表":"items",
+          "更新":"update",
           # OO
           "可调用":"callable",
           "列出属性":"dir",
           "取属性":"getattr",
           "有属性":"hasattr",
+          "设定属性":"setattr",
           # build in methods
           "列举":"enumerate",
           "求值":"eval",
           "过滤":"filter",
           "长度":"len",
           "映射":"map",
+          "范围":"range",
+          "快速范围":"xrange",
+          "总和":"sum",
+          "类型":"type",
+          "打包":"zip",
+          "帮助":"help",
+          "说明":"help",
+         }
+
+cn_exception = {
+          "例外":"Exception",
+          # error
+          "停止迭代":"StopIteration",
+          "类型错误":"TypeError",
+          "解码错误":"UnicodeDecodeError",
+          "导入错误":"ImportError",
          }
 
 cn_zhpy = {
@@ -292,56 +347,6 @@ cn_zhpy = {
           "等于":"==",
           "不等于":"!=",
          }
-
-# Simplized chinese keywords
-cndict = {# io
-          "例外":"Exception",
-          # else
-          "下一笔":"next",
-          # build in methods
-          "类型":"type",
-          
-          # file methods
-          "打开":"open",
-          "读取":"read",
-          "写入":"write",
-          "读一行":"readline",
-          "读多行":"readlines",
-          "关闭":"close",
-          # list methods
-          "加入":"append",
-          "追加":"append",
-          "扩展":"extend",
-          "插入":"insert",
-          "弹出":"pop",
-          "移除":"remove",
-          "逆转":"reverse",
-          "排序":"sort",
-          # string methods
-          "开头为":"startswith",
-          "结尾为":"endswith",
-          "连接":"join",
-          "分离":"split",
-          # dict methods
-          "关键字列表":"keys",
-          "值列表":"values",
-          "项目列表":"items",
-          "更新":"update",
-          # encoding
-          "编码":"encoding",
-          "解码":"decoding",
-          # preloaded modules
-          "范围":"range",
-          
-          "打包":"zip",
-          "帮助":"help",
-          "说明":"help",
-          # error
-          "停止迭代":"StopIteration",
-          "类型错误":"TypeError",
-          "解码错误":"UnicodeDecodeError",
-          "导入错误":"ImportError",
-          }
 
 def revert_dict(lang_dict):
     """make a reverse dictionary from the input dictionary
