@@ -86,7 +86,30 @@ def rev_merger(anno_dict, use_dict):
             else:
                 print "already has key: %s, %s" % (tmp, anno_dict.keys()[num]) 
                 
-        
+def rev_ini_annotator(use_dict):
+    """
+    """
+    # ini
+    inifiles = []
+    for x in os.listdir("."):
+        if x.endswith(".ini"):
+            inifiles.append(x)
+    for f in inifiles:
+        print "file", f
+        conf = ConfigParser.ConfigParser()
+        conf.read(f)
+        sects = conf.sections()
+        for sect in sects:
+            print "sect:", sect
+            rev_merger(conf.items(sect), use_dict)
+
+def rev_py_annotator(use_dict, entry_point):
+    """
+    """
+    for entrypoints in pkg_resources.iter_entry_points():
+        tool = entrypoints.load()
+        rev_merger(tool, use_dict)
+               
 def rev_annotator(lang='tw'):
     """
     To expand the reverse dict
@@ -103,29 +126,17 @@ def rev_annotator(lang='tw'):
     """
     if lang == 'tw':
         use_dict = rev_twdict
+        entry_point = "zhpy.twdict"
         # tw plugin
-        for entrypoints in pkg_resources.iter_entry_points("zhpy.twdict"):
-            tool = entrypoints.load()
-            rev_merger(tool, use_dict)
+        rev_py_annotator(use_dict, entry_point)
+
     if lang == 'cn':
         use_dict = rev_cndict
+        entry_point = "zhpy.cndict"
         # cn plugin
-        for entrypoints in pkg_resources.iter_entry_points("zhpy.cndict"):
-            tool = entrypoints.load()
-            rev_merger(tool, use_dict)
+        rev_py_annotator(use_dict, entry_point)
     # ini
-    inifiles = []
-    for x in os.listdir("."):
-        if x.endswith(".ini"):
-            inifiles.append(x)
-    for f in inifiles:
-        print "file", f
-        conf = ConfigParser.ConfigParser()
-        conf.read(f)
-        sects = conf.sections()
-        for sect in sects:
-            print "sect:", sect
-            rev_merger(conf.items(sect), use_dict)
+    rev_ini_annotator(use_dict)
     
 def number_to_variable(tmp):
     """

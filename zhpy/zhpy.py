@@ -85,20 +85,10 @@ import os
 import ConfigParser
 import pkg_resources
 
-def annotator(verbose=True):
+def ini_annotator(verbose=True):
     """
-    provide two ways to expand the worddict:
-    
-    1. inifiles:
-        find ini files and use keywords defined in ini during 
-        convertion progress.
-        
-    2. module plugin system.
-       possible entrypoints are:
-         
-         * zhpy.twdict
-         * zhpy.cndict
-
+    find ini files and use keywords defined in ini during 
+    convertion progress.
     """
     # ini
     #inifiles = [x for x in os.listdir(".") if x.endswith(".ini")]
@@ -115,19 +105,37 @@ def annotator(verbose=True):
         for sect in sects:
             if verbose:
                 print "sect:", sect
-            merger(conf.items(sect))
+            merger(conf.items(sect))    
+
+def py_annotator(verbose=False):
+    """
+    find python keyword plugins and update to dicts
     
+    the verbose argument is only for debug(will generate too mush messages).
+    """
     # tw plugin
     for entrypoints in pkg_resources.iter_entry_points("zhpy.twdict"):
         tool = entrypoints.load()
         merger(tool, use_dict=twdict, verbose=False)
     merger(twdict, verbose=False)
+    
     # cn plugin
     for entrypoints in pkg_resources.iter_entry_points("zhpy.cndict"):
         tool = entrypoints.load()
         merger(tool, use_dict=cndict, verbose=False)
     merger(cndict, verbose=False)
     
+def annotator(verbose=True):
+    """
+    provide two ways to expand the worddict:
+    
+    1. ini files
+        
+    2. python plugin system.
+
+    """
+    ini_annotator(verbose)
+    py_annotator(verbose=False)
 
 def variable_to_number(tmp):
     """

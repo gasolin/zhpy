@@ -16,6 +16,7 @@ code name: Hierophant Green
 * remove keyword
   * "傳回":"return"
   * "全局":"global"
+* refactory annotator
 
 *Features*
 
