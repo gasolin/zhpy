@@ -111,7 +111,7 @@ def py_annotator(verbose=False):
     """
     find python keyword plugins and update to dicts
     
-    the verbose argument is only for debug(will generate too mush messages).
+    'verbose' argument is only for debug(will generate too mush messages).
     """
     # tw plugin
     for entrypoints in pkg_resources.iter_entry_points("zhpy.twdict"):
@@ -132,7 +132,7 @@ def annotator(verbose=True):
     1. ini files
         
     2. python plugin system.
-
+    
     """
     ini_annotator(verbose)
     py_annotator(verbose=False)

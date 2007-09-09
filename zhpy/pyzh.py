@@ -88,6 +88,7 @@ def rev_merger(anno_dict, use_dict):
                 
 def rev_ini_annotator(use_dict):
     """
+    update revert dict by ini files
     """
     # ini
     inifiles = []
@@ -105,6 +106,7 @@ def rev_ini_annotator(use_dict):
 
 def rev_py_annotator(use_dict, entry_point):
     """
+    update revert dict by python plugins
     """
     for entrypoints in pkg_resources.iter_entry_points():
         tool = entrypoints.load()
@@ -119,7 +121,7 @@ def rev_annotator(lang='tw'):
     
     2 ways to extend the reverse dict
     
-    1. plugins as modules
+    1. python keyword plugins
     
     2. ini file in local directory
     
@@ -164,7 +166,6 @@ import re
 def convertToTW(s,l,t):
     """
     search rev_twdict to match keywords
-    
     """
     tmp = t[0]
     if tmp in rev_twdict:
@@ -177,7 +178,6 @@ def convertToTW(s,l,t):
 def convertToCN(s,l,t):
     """
     search rev_cndict to match keywords
-    
     """
     tmp = t[0]
     if tmp in rev_cndict:
