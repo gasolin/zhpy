@@ -18,6 +18,7 @@ code name: Hierophant Green
   * "傳回":"return"
   * "全局":"global"
 * refactory annotator
+* update zhpy_ext plugin sample
 
 *Features*
 

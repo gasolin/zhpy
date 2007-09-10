@@ -52,11 +52,17 @@ replacedict = {
 
 
 class ZhpyPlugin(object):
+    """
+    basic plugin class
+    """
     pass
 
 
 # Traditional chinese keywords
 class tw_keyword(ZhpyPlugin):
+    """
+    python tw keyword
+    """
     title = "內建關鍵詞"
     description = "Python 內建關鍵詞"
     keyword = {
@@ -118,6 +124,9 @@ class tw_keyword(ZhpyPlugin):
 
 
 class tw_buildin_method(ZhpyPlugin):
+    """
+    python tw methods
+    """
     title = "其他關鍵詞"
     description = "其他 Python 內建關鍵詞"
     keyword = {
@@ -194,6 +203,9 @@ class tw_buildin_method(ZhpyPlugin):
 
 
 class tw_exception(ZhpyPlugin):
+    """
+    python tw exceptions
+    """
     title = "例外關鍵詞"
     description = "Python 內建例外關鍵詞"
     keyword = {
@@ -207,6 +219,9 @@ class tw_exception(ZhpyPlugin):
 
 
 class tw_zhpy(ZhpyPlugin):
+    """
+    zhpy tw keyword plugin
+    """
     title = "周蟒關鍵詞"
     description = "周蟒內建關鍵詞"
     keyword = {
@@ -222,6 +237,9 @@ class tw_zhpy(ZhpyPlugin):
 
 # Simplized chinese keywords
 class cn_keyword(ZhpyPlugin):
+    """
+    python cn keyword
+    """
     title = "内建关键词"
     description = "Python 内建关键词"
     keyword = {
@@ -282,6 +300,9 @@ class cn_keyword(ZhpyPlugin):
 
 
 class cn_buildin_method(ZhpyPlugin):
+    """
+    python cn methods
+    """
     title = "其他内建关键词"
     description = "其他 Python 内建关键词"
     keyword = {
@@ -359,6 +380,9 @@ class cn_buildin_method(ZhpyPlugin):
 
 
 class cn_exception(ZhpyPlugin):
+    """
+    python cn exceptions
+    """
     title = "例外关键词"
     description = "Python 内建例外关键词"
     keyword = {
@@ -372,6 +396,9 @@ class cn_exception(ZhpyPlugin):
 
 
 class cn_zhpy(ZhpyPlugin):
+    """
+    zhpy cn keyword plugin
+    """
     title = "周蟒关键词"
     description = "周蟒内建关键词"
     keyword = {

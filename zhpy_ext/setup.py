@@ -3,11 +3,11 @@ use_setuptools()
 from setuptools import setup, find_packages
 from pkg_resources import DistributionNotFound
 
-install_requires = ["zhpy>=0.9"]
+install_requires = ["zhpy>=0.9.2"]
 
 setup(
     name="zh_module_name",
-    version=0.1,
+    version=0.2,
     author="gasolin",
     author_email="gasolin+zhpy@gmail.com",
     license="MIT",
@@ -22,9 +22,9 @@ setup(
     packages=find_packages(exclude=["ez_setup"]),
     entry_points = """
     [zhpy.twdict]
-    tw_module_name = word:tw_dict
+    tw_module_name = word:tw_module
     [zhpy.cndict]
-    cn_module_name = word:cn_dict
+    cn_module_name = word:cn_module
     """,
     classifiers = [
         'License :: OSI Approved :: MIT License',
