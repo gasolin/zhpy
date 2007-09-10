@@ -127,8 +127,8 @@ class tw_buildin_method(ZhpyPlugin):
     """
     python tw methods
     """
-    title = "其他關鍵詞"
-    description = "其他 Python 內建關鍵詞"
+    title = "內部函數"
+    description = "Python 內部函數"
     keyword = {
           "輸入":"raw_input",
           # build-in types
@@ -206,7 +206,7 @@ class tw_exception(ZhpyPlugin):
     """
     python tw exceptions
     """
-    title = "例外關鍵詞"
+    title = "例外"
     description = "Python 內建例外關鍵詞"
     keyword = {
           "例外":"Exception",
@@ -222,7 +222,7 @@ class tw_zhpy(ZhpyPlugin):
     """
     zhpy tw keyword plugin
     """
-    title = "周蟒關鍵詞"
+    title = "周蟒"
     description = "周蟒內建關鍵詞"
     keyword = {
           "周蟒":"zhpy",
@@ -303,8 +303,8 @@ class cn_buildin_method(ZhpyPlugin):
     """
     python cn methods
     """
-    title = "其他内建关键词"
-    description = "其他 Python 内建关键词"
+    title = "内部函数"
+    description = "Python 内部函数"
     keyword = {
           "输入":"raw_input",
           # build-in types
@@ -383,7 +383,7 @@ class cn_exception(ZhpyPlugin):
     """
     python cn exceptions
     """
-    title = "例外关键词"
+    title = "例外"
     description = "Python 内建例外关键词"
     keyword = {
           "例外":"Exception",
@@ -399,7 +399,7 @@ class cn_zhpy(ZhpyPlugin):
     """
     zhpy cn keyword plugin
     """
-    title = "周蟒关键词"
+    title = "周蟒"
     description = "周蟒内建关键词"
     keyword = {
           "周蟒":"zhpy",
