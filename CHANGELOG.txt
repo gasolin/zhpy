@@ -1,13 +1,14 @@
 zhpy Changelog
 ====================
 
-0.9.2 (09/*/2007):
+0.9.2 (09/10/2007):
 --------------------
 code name: Hierophant Green
 
 *Changes*
 
 * move twdict, cndict keyword into plugins
+* plugin use object instead of dict to contain more information
 * keyword change
   * "和":"and", "且":"and" instead of "并且":"and"
   *"或":"or" instead of "或者":"or"

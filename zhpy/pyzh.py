@@ -39,7 +39,7 @@ rev_twdict = revert_dict(twdict)
 # make reverse simplified chinese dicts
 rev_cndict = revert_dict(cndict)
     
-def rev_merger(anno_dict, use_dict):
+def rev_merger(anno_dict, use_dict, verbose=True):
     """
     merge extra bindings into reverse dict
     
@@ -75,18 +75,22 @@ def rev_merger(anno_dict, use_dict):
         for k,v in anno_dict:
             if v not in use_dict:
                 use_dict[v] = k
-                print "add %s=%s"%(v, k)
+                if verbose:
+                    print "add %s=%s"%(v, k)
             else:
-                print "already has key: %s, %s" % (v, k)
+                if verbose:
+                    print "already has key: %s, %s" % (v, k)
     if type(anno_dict) == type({}):
         for num, tmp in enumerate(anno_dict.values()):
             if tmp not in use_dict:
                 use_dict[tmp] = anno_dict.keys()[num]
-                print "add %s=%s"%(tmp, anno_dict.keys()[num])
+                if verbose:
+                    print "add %s=%s"%(tmp, anno_dict.keys()[num])
             else:
-                print "already has key: %s, %s" % (tmp, anno_dict.keys()[num]) 
+                if verbose:
+                    print "already has key: %s, %s" % (tmp, anno_dict.keys()[num]) 
                 
-def rev_ini_annotator(use_dict):
+def rev_ini_annotator(use_dict, verbose=True):
     """
     update revert dict by ini files
     """
@@ -96,23 +100,29 @@ def rev_ini_annotator(use_dict):
         if x.endswith(".ini"):
             inifiles.append(x)
     for f in inifiles:
-        print "file", f
+        if verbose:
+            print "file", f
         conf = ConfigParser.ConfigParser()
         conf.read(f)
         sects = conf.sections()
         for sect in sects:
-            print "sect:", sect
+            if verbose:
+                print "sect:", sect
             rev_merger(conf.items(sect), use_dict)
 
-def rev_py_annotator(use_dict, entry_point):
+def rev_py_annotator(use_dict, entry_point, verbose=False):
     """
     update revert dict by python plugins
+    
+    'verbose' argument is only for debug(will generate too mush messages).
     """
     for entrypoints in pkg_resources.iter_entry_points():
         tool = entrypoints.load()
-        rev_merger(tool, use_dict)
+        if verbose:
+            print tool.title
+        rev_merger(tool.keyword, use_dict)
                
-def rev_annotator(lang='tw'):
+def rev_annotator(lang='tw', verbose=True):
     """
     To expand the reverse dict
     
@@ -130,15 +140,15 @@ def rev_annotator(lang='tw'):
         use_dict = rev_twdict
         entry_point = "zhpy.twdict"
         # tw plugin
-        rev_py_annotator(use_dict, entry_point)
+        rev_py_annotator(use_dict, entry_point, verbose=False)
 
     if lang == 'cn':
         use_dict = rev_cndict
         entry_point = "zhpy.cndict"
         # cn plugin
-        rev_py_annotator(use_dict, entry_point)
+        rev_py_annotator(use_dict, entry_point, verbose=False)
     # ini
-    rev_ini_annotator(use_dict)
+    rev_ini_annotator(use_dict, verbose)
     
 def number_to_variable(tmp):
     """

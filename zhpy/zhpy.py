@@ -116,14 +116,18 @@ def py_annotator(verbose=False):
     # tw plugin
     for entrypoints in pkg_resources.iter_entry_points("zhpy.twdict"):
         tool = entrypoints.load()
-        merger(tool, use_dict=twdict, verbose=False)
-    merger(twdict, verbose=False)
+        if verbose:
+            print tool.title
+        merger(tool.keyword, use_dict=twdict, verbose=verbose)
+    merger(twdict, verbose=verbose)
     
     # cn plugin
     for entrypoints in pkg_resources.iter_entry_points("zhpy.cndict"):
         tool = entrypoints.load()
-        merger(tool, use_dict=cndict, verbose=False)
-    merger(cndict, verbose=False)
+        if verbose:
+            print tool.title
+        merger(tool.keyword, use_dict=cndict, verbose=verbose)
+    merger(cndict, verbose=verbose)
     
 def annotator(verbose=True):
     """

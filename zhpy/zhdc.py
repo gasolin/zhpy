@@ -50,8 +50,16 @@ replacedict = {
     "！":"!",
     }
 
+
+class ZhpyPlugin(object):
+    pass
+
+
 # Traditional chinese keywords
-tw_keyword = {
+class tw_keyword(ZhpyPlugin):
+    title = "內建關鍵詞"
+    description = "Python 內建關鍵詞"
+    keyword = {
           # logic
           "和":"and",
           "且":"and",
@@ -108,7 +116,11 @@ tw_keyword = {
           "刪除":"del",
           }
 
-tw_buildin_method={
+
+class tw_buildin_method(ZhpyPlugin):
+    title = "其他關鍵詞"
+    description = "其他 Python 內建關鍵詞"
+    keyword = {
           "輸入":"raw_input",
           # build-in types
           "字串":"str",
@@ -180,7 +192,11 @@ tw_buildin_method={
           "幫助":"help",
           }
 
-tw_exception = {
+
+class tw_exception(ZhpyPlugin):
+    title = "例外關鍵詞"
+    description = "Python 內建例外關鍵詞"
+    keyword = {
           "例外":"Exception",
           # error
           "停止迭代":"StopIteration",
@@ -189,7 +205,11 @@ tw_exception = {
           "導入錯誤":"ImportError",
           }
 
-tw_zhpy = {
+
+class tw_zhpy(ZhpyPlugin):
+    title = "周蟒關鍵詞"
+    description = "周蟒內建關鍵詞"
+    keyword = {
           "周蟒":"zhpy",
           "主程式":'if __name__=="__main__"',
           # must do 'from zhpy import zh_exec'/'從 周蟒 導入 中文執行' first
@@ -199,8 +219,12 @@ tw_zhpy = {
           "不等於":"!=",
           }
 
+
 # Simplized chinese keywords
-cn_keyword = {
+class cn_keyword(ZhpyPlugin):
+    title = "内建关键词"
+    description = "Python 内建关键词"
+    keyword = {
           # logic
           "和":"and",
           "且":"and",
@@ -256,7 +280,11 @@ cn_keyword = {
           "刪除":"del",
          }
 
-cn_buildin_method = {
+
+class cn_buildin_method(ZhpyPlugin):
+    title = "其他内建关键词"
+    description = "其他 Python 内建关键词"
+    keyword = {
           "输入":"raw_input",
           # build-in types
           "字符串":"str",
@@ -329,7 +357,11 @@ cn_buildin_method = {
           "说明":"help",
          }
 
-cn_exception = {
+
+class cn_exception(ZhpyPlugin):
+    title = "例外关键词"
+    description = "Python 内建例外关键词"
+    keyword = {
           "例外":"Exception",
           # error
           "停止迭代":"StopIteration",
@@ -338,7 +370,11 @@ cn_exception = {
           "导入错误":"ImportError",
          }
 
-cn_zhpy = {
+
+class cn_zhpy(ZhpyPlugin):
+    title = "周蟒关键词"
+    description = "周蟒内建关键词"
+    keyword = {
           "周蟒":"zhpy",
           "主程序":'if __name__=="__main__"',
           # must do 'from zhpy import zh_exec'/'从 周蟒 导入 中文执行' first
