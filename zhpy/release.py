@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-version = "0.9.2"
+version = "0.9.3"
 author = "Fred Lin"
 email = "gasolin+zhpy@gmail.com"
 copyright = "Copyright 2007 Fred Lin and contributors"

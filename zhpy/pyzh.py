@@ -126,15 +126,13 @@ def rev_annotator(lang='tw', verbose=True):
     """
     To expand the reverse dict
     
-    lang:
-        tw or cn
+    lang: tw or cn
     
     2 ways to extend the reverse dict
     
-    1. python keyword plugins
+      1. python keyword plugins
     
-    2. ini file in local directory
-    
+      2. ini file in local directory
     """
     if lang == 'tw':
         use_dict = rev_twdict
@@ -213,8 +211,7 @@ def python_convertor(test, lang='tw'):
     convert python source to zhpy source
     'print': '\xe6\x89\x93\xe5\x8d\xb0'
     
-    lang:
-        tw or cn
+    lang: tw or cn
     
     >>> print python_convertor("print 'hello'", 'tw')
     印出 'hello'

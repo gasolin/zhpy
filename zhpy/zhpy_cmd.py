@@ -36,18 +36,17 @@ from zhpy import annotator, convertor, try_run
 def commandtool():
     """command line tool method
     
-    input:
-        speficy the input source
-    output:
-        speficy the output source
-    python:
-        compile to python and run
-    cmp:
-        input raw zhpy source and run
-    encoding:
-        specify the encoding
-    info:
-        zhpy information
+    input: speficy the input source
+
+    output: speficy the output source
+    
+    python: compile to python and run
+    
+    cmp: input raw zhpy source and run
+    
+    encoding: specify the encoding
+    
+    info: zhpy information
     """
     parser = OptionParser(
             usage="usage: %prog [-i|-p] input [-o] [output] [--e] [encoding]",

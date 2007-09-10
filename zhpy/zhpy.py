@@ -133,9 +133,9 @@ def annotator(verbose=True):
     """
     provide two ways to expand the worddict:
     
-    1. ini files
+      1. ini files
         
-    2. python plugin system.
+      2. python plugin system.
     
     """
     ini_annotator(verbose)
