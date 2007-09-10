@@ -9,6 +9,8 @@ code name: Hierophant Green
 
 * move twdict, cndict keyword into plugins
 * plugin use object instead of dict to contain more information
+* refactory annotator
+* update zhpy_ext plugin sample
 * keyword change
   * "和":"and", "且":"and" instead of "并且":"and"
   *"或":"or" instead of "或者":"or"
@@ -17,8 +19,6 @@ code name: Hierophant Green
 * remove keyword
   * "傳回":"return"
   * "全局":"global"
-* refactory annotator
-* update zhpy_ext plugin sample
 
 *Features*
 

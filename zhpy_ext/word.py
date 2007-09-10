@@ -6,7 +6,7 @@ zh_module plugin
 from zhpy.zhdc import ZhpyPlugin
 
 #enter traditional chinese dict here
-class tw_dict(ZhpyPlugin):
+class tw_module(ZhpyPlugin):
     """
     繁體中文 關鍵詞插件
     """
@@ -16,7 +16,7 @@ class tw_dict(ZhpyPlugin):
 
 
 #enter simplified chinese dict here
-class cn_dict(ZhpyPlugin):
+class cn_module(ZhpyPlugin):
     """
     简体中文 关键词插件
     """
