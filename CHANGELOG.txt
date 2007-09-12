@@ -17,6 +17,8 @@ code name: Gray Tower
 
 *Project Updates*
 
+* update ez_setup.py to 0.6c7
+
 *Contributors*
 
 Fred Lin
