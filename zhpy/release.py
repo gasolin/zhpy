@@ -16,24 +16,24 @@ great document.
 zhpy on python is good for Taiwan and China beginners to learn python in 
 our native language.
 
-The core of zhpy is a lightweight python module and a chinese source convertor 
+The core of zhpy is a lightweight python module and a chinese source convertor
 based on python, 
-which provides interpreter and command line tool to translate zhpy code to 
+which provides interpreter and command line tool to translate zhpy code to
 python. zhpy integrated a setuptools-based plugin system for keyword reuse.
-The zhpy code written in traditional and simplified 
+The zhpy code written in traditional and simplified
 chinese could be translated and converted to natual python code.
-Thus it could be execute as nature python code and be used in normal 
+Thus it could be execute as nature python code and be used in normal
 python programs.
 
-Use 'zhpy' command instead of "python" in command line to execute source code wrote in Chinese and English.
+Use 'zhpy' command instead of "python" in command line to execute source
+code wrote in Chinese and English.
 
-zhpy provide a method 'zh_exec' that allow to embed 
-chinese script in python, and zhpy could be used as the chinese script in 
+zhpy provide a method 'zh_exec' that allow to embed
+chinese script in python, and zhpy could be used as the chinese script in
 shell as well.
 
-Check examples_ here.
-
-.. _examples: "http://code.google.com/p/zhpy/wiki/ZhpyExample"
+Check examples here.
+http://code.google.com/p/zhpy/wiki/ZhpyExample
 
 Install zhpy
 --------------
@@ -42,9 +42,8 @@ You could use easy_install command to install zhpy::
 
     $ easy_install zhpy
 
-or check instructions_ for detail.
-
-.. _instructions: "http://code.google.com/p/zhpy/wiki/DownloadInstall"
+or check instructions for detail.
+http://code.google.com/p/zhpy/wiki/DownloadInstall
 
 Usage
 -----
@@ -55,28 +54,26 @@ You could use zhpy interpreter to test zhpy::
     >>> print 'hello in chinese'
     hello in chinese
 
-Browse project_ homepage to get examples in chinese.
-
-.. _project: http://code.google.com/p/zhpy/
+Browse project homepage to get examples in chinese.
+http://code.google.com/p/zhpy/
 
 check the BasicUsage_ for detail.
-
-.. _BasicUsage: "http://code.google.com/p/zhpy/wiki/BasicUsage"
+http://code.google.com/p/zhpy/wiki/BasicUsage
 
 Programming Guide
 -------------------
 
-An C.C licensed zhpy book "A Byte of Zhpy"_ is in progress. You could freely view it online.
-The book is based on "A Byte of python"_
+An C.C licensed zhpy book "A Byte of Zhpy" is in progress.
+You could freely view it online.
+The book is based on "A Byte of python"
 
-.. _"A Byte of Zhpy": http://code.google.com/p/zhpy/wiki/ByteOfZhpy
-.. _"A Byte of python": http://swaroopch.info/text/Byte_of_Python:Main_Page
+ * http://code.google.com/p/zhpy/wiki/ByteOfZhpy
+ * http://swaroopch.info/text/Byte_of_Python:Main_Page
 
 Change Log
 -------------
 
-You could view the ChangeLog_ to see what's new in these version
-
-.. _ChangeLog: http://zhpy.googlecode.com/svn/trunk/CHANGELOG.txt
+You could view the ChangeLog to see what's new in these version.
+http://zhpy.googlecode.com/svn/trunk/CHANGELOG.txt
 
 """
