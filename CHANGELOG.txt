@@ -9,6 +9,10 @@ code name: Gray Tower
 
 *Features*
 
+* catch up exception definitions http://www.chinesepython.org/doc/ref.html
+* add keyword:
+  * "區域變量":"local", "区域变量":"local"
+
 *Fixes*
 
 *Project Updates*
