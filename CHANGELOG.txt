@@ -15,6 +15,8 @@ code name: Gray Tower
 
 *Fixes*
 
+* make incorrect ini file not cause exception
+
 *Project Updates*
 
 * update ez_setup.py to 0.6c7

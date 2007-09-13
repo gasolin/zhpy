@@ -100,12 +100,15 @@ def ini_annotator(verbose=True):
         if verbose:
             print "file", f
         conf = ConfigParser.ConfigParser()
-        conf.read(f)
-        sects = conf.sections()
-        for sect in sects:
-            if verbose:
-                print "sect:", sect
-            merger(conf.items(sect))    
+        try:
+            conf.read(f)
+            sects = conf.sections()
+            for sect in sects:
+                if verbose:
+                    print "sect:", sect
+                merger(conf.items(sect))
+        except:
+            print "!%s is not a valid keyword file"%f
 
 def py_annotator(verbose=False):
     """
