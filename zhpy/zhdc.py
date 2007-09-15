@@ -36,8 +36,21 @@ twdict = {}
 # Simplified Chinese keywords repository
 cndict = {}
 
-# punctuations
-replacedict = {
+
+
+class ZhpyPlugin(object):
+    """
+    basic plugin class
+    """
+    pass
+
+class replacedict(ZhpyPlugin):
+    """
+    chinese punctuations
+    """
+    title = "標點符號"
+    description = "標點符號"
+    keyword = {
     '，':',',
     '。':'.',
     '；':';',
@@ -52,14 +65,6 @@ replacedict = {
     '【':'[',
     '】':']',
     }
-
-
-class ZhpyPlugin(object):
-    """
-    basic plugin class
-    """
-    pass
-
 
 # Traditional chinese keywords
 class tw_keyword(ZhpyPlugin):

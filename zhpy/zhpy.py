@@ -201,8 +201,8 @@ def convertor(test, encoding=""):
     
     more keyword test cases are in /tests folder.
     """
-    for k, v in replacedict.items():
-        test = test.replace(k,v)
+    #for k, v in replacedict.items():
+    #    test = test.replace(k,v)
     
     if encoding:
         utest = test.decode(encoding)

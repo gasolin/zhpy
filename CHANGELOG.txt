@@ -10,12 +10,16 @@ code name: Gray Tower
 *Features*
 
 * catch up exception definitions http://www.chinesepython.org/doc/ref.html
+* make chinese punctuation be a plugin
 * add keyword:
   * "區域變量":"local", "区域变量":"local"
+* Downloadable API Doc
 
 *Fixes*
 
 * make incorrect ini file not cause exception
+* fix replacedict
+* fix miss-replaced punctuations in quotestring
 
 *Project Updates*
 
