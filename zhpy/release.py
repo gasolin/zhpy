@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-version = "0.9.3"
+version = "0.9.4"
 author = "Fred Lin"
 email = "gasolin+zhpy@gmail.com"
 copyright = "Copyright 2007 Fred Lin and contributors"
@@ -67,8 +67,8 @@ An C.C licensed zhpy book "A Byte of Zhpy" is in progress.
 You could freely view it online.
 The book is based on "A Byte of python"
 
- * http://code.google.com/p/zhpy/wiki/ByteOfZhpy
- * http://swaroopch.info/text/Byte_of_Python:Main_Page
+  * http://code.google.com/p/zhpy/wiki/ByteOfZhpy
+  * http://swaroopch.info/text/Byte_of_Python:Main_Page
 
 Change Log
 -------------

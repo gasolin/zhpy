@@ -1,7 +1,23 @@
 zhpy Changelog
 ====================
 
-0.9.3 (09/*/2007):
+0.9.4 (10/*/2007):
+--------------------
+code name: Silver Chariot
+
+*Changes*
+
+*Features*
+
+*Fixes*
+
+*Project Updates*
+
+*Contributors*
+
+Fred Lin
+
+0.9.3 (09/15/2007):
 --------------------
 code name: Gray Tower
 
@@ -18,7 +34,7 @@ code name: Gray Tower
 *Fixes*
 
 * make incorrect ini file not cause exception
-* fix replacedict
+* fix replacedict, thanks renhbo
 * fix miss-replaced punctuations in quotestring
 
 *Project Updates*
@@ -27,7 +43,7 @@ code name: Gray Tower
 
 *Contributors*
 
-Fred Lin
+Fred Lin, renhbo
 
 0.9.2 (09/10/2007):
 --------------------
