@@ -11,6 +11,8 @@ code name: Silver Chariot
 
 *Fixes*
 
+* fix comment shouldn't be translated
+
 *Project Updates*
 
 *Contributors*

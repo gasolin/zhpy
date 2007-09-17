@@ -90,7 +90,6 @@ def ini_annotator(verbose=True):
     find ini files and use keywords defined in ini during 
     convertion progress.
     """
-    # ini
     #inifiles = [x for x in os.listdir(".") if x.endswith(".ini")]
     inifiles = []
     for x in os.listdir("."):
@@ -161,7 +160,7 @@ def variable_to_number(tmp):
         word_list.append(ori)
     return "_".join(word_list)
 
-from pyparsing import srange, Word, quotedString
+from pyparsing import srange, Word, quotedString, pythonStyleComment
 
 def convertToEnglish(s,l,t):
     """search worddict to match keywords
@@ -179,7 +178,7 @@ def convertToEnglish(s,l,t):
 chineseChars = srange(r"[\0x0080-\0xfe00]")
 chineseWord = Word(chineseChars)
 chineseWord.setParseAction(convertToEnglish)
-pythonWord = quotedString | chineseWord
+pythonWord = quotedString | pythonStyleComment | chineseWord
 
 try:
     import chardet
@@ -201,9 +200,6 @@ def convertor(test, encoding=""):
     
     more keyword test cases are in /tests folder.
     """
-    #for k, v in replacedict.items():
-    #    test = test.replace(k,v)
-    
     if encoding:
         utest = test.decode(encoding)
     else:
