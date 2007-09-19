@@ -12,6 +12,7 @@ code name: Silver Chariot
 *Fixes*
 
 * fix comment shouldn't be translated
+* fix signals couldn't be translated
 
 *Project Updates*
 
