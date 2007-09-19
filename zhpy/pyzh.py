@@ -168,7 +168,7 @@ def number_to_variable(tmp):
         term +=  unichr(ori)
     return term
 
-from pyparsing import srange, Word, quotedString
+from pyparsing import srange, Word, quotedString, pythonStyleComment
 
 import re
 def convertToTW(s,l,t):
@@ -200,11 +200,11 @@ englishChars = srange('[0-z]')
 
 twenWord = Word(englishChars)
 twenWord.setParseAction(convertToTW)
-twpyWord = quotedString | twenWord
+twpyWord = quotedString | pythonStyleComment | twenWord
 
 cnenWord = Word(englishChars)
 cnenWord.setParseAction(convertToCN)
-cnpyWord = quotedString | cnenWord 
+cnpyWord = quotedString | pythonStyleComment | cnenWord 
 
 def python_convertor(test, lang='tw'):
     """
@@ -217,6 +217,8 @@ def python_convertor(test, lang='tw'):
     印出 'hello'
     >>> print python_convertor("print 'hello'", 'cn')
     打印 'hello'
+    >>> print python_convertor("# print 'hello'", 'tw')
+    # print 'hello'
     """
     if lang == 'tw':
         result = twpyWord.transformString(test)
