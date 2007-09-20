@@ -36,7 +36,7 @@ THE SOFTWARE.
 """
 
 
-from zhdc import worddict, twdict, cndict, replacedict
+from zhdc import worddict, twdict, cndict
 
 def merger(anno_dict, use_dict=worddict, verbose=True):
     """

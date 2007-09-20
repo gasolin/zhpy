@@ -37,13 +37,11 @@ setup(
     twmethod = zhpy.zhdc:tw_buildin_method
     twexception = zhpy.zhdc:tw_exception
     twzhpy= zhpy.zhdc:tw_zhpy
-    twreplacedict= zhpy.zhdc:replacedict
     [zhpy.cndict]
     cnkeyword = zhpy.zhdc:cn_keyword
     cnmethod = zhpy.zhdc:cn_buildin_method
     cnexception = zhpy.zhdc:cn_exception
     cnzhpy = zhpy.zhdc:cn_zhpy
-    cnreplacedict= zhpy.zhdc:replacedict
     """,
     classifiers = [
         'Development Status :: 4 - Beta',

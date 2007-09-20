@@ -44,28 +44,6 @@ class ZhpyPlugin(object):
     """
     pass
 
-class replacedict(ZhpyPlugin):
-    """
-    chinese punctuations
-    """
-    title = "標點符號"
-    description = "標點符號"
-    keyword = {
-    '，':',',
-    '。':'.',
-    '；':';',
-    '：':':',
-    '！':'!',
-    '（':'(',
-    '）':')',
-    '‘':"'",
-    '’':"'",
-    '“':'"',
-    '”':'"',
-    '【':'[',
-    '】':']',
-    }
-
 # Traditional chinese keywords
 class tw_keyword(ZhpyPlugin):
     """
