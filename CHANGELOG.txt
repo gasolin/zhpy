@@ -11,6 +11,9 @@ code name: Silver Chariot
 
 *Features*
 
+* add keyword:
+  * "其":"self"
+  
 *Fixes*
 
 * fixed comment shouldn't be translated

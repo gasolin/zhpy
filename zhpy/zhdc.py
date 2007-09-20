@@ -69,6 +69,7 @@ class tw_keyword(ZhpyPlugin):
           # def
           "定義":"def",
           "類別":"class",
+          "其":"self",
           "共用":"global",
           # import
           "從":"from",
@@ -283,6 +284,7 @@ class cn_keyword(ZhpyPlugin):
           # def
           "定义":"def",
           "类":"class",
+          "其":"self",
           "共用":"global",
           # import
           "从":"from",
