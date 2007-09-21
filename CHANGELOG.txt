@@ -8,6 +8,8 @@ code name: Silver Chariot
 *Changes*
 
 * remove chinese punctuations
+* change keyword
+  * use "檔案", "档案" instead of "文件":"file"
 
 *Features*
 

@@ -127,7 +127,7 @@ class tw_buildin_method(ZhpyPlugin):
           "集合":"set",
           "符號":"chr",
           "符號轉整數":"ord",
-          "文件":"file",
+          "檔案":"file",
           # number methods
           "整數":"int",
           "浮點數":"float",
@@ -256,6 +256,8 @@ class tw_zhpy(ZhpyPlugin):
           # logic
           "等於":"==",
           "不等於":"!=",
+          # private
+          "文件":"doc",
           }
 
 
@@ -341,7 +343,7 @@ class cn_buildin_method(ZhpyPlugin):
           "集合":"set",
           "符号":"chr",
           "符号转整数":"ord",
-          "文件":"file",
+          "档案":"file",
           # number methods
           "整数":"int",
           "浮点数":"float",
@@ -471,6 +473,7 @@ class cn_zhpy(ZhpyPlugin):
           # logic
           "等于":"==",
           "不等于":"!=",
+          # private          "文件":"doc",
          }
 
 def revert_dict(lang_dict):
