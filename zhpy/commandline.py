@@ -47,6 +47,11 @@ def commandtool():
     encoding: specify the encoding
     
     info: zhpy information
+    
+    $ zhpy input.py (.twpy, .cnpy)
+    $ zhpy -i input.py (.twpy, .cnpy)
+    $ zhpy -i input.py -o output.py (.twpy, .cnpy)
+    $ zhpy -p input.py
     """
     parser = OptionParser(
             usage="usage: %prog [-i|-p] input [-o] [output] [--e] [encoding]",
@@ -72,7 +77,7 @@ def commandtool():
     (options, args) = parser.parse_args()
     
     if options.info:
-        from zhpy_info import info
+        from info import info
         info()
         return
     

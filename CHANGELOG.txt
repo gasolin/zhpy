@@ -25,6 +25,7 @@ code name: Silver Chariot
 
 * rename zhpy_interpreter.py to interpreter.py
 * rename zhpy_cmd.py to commandline.py
+* rename zhpy_info.py to info.py
 
 *Contributors*
 
