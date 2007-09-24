@@ -118,7 +118,7 @@ def commandtool():
         else:
             try_run(result)
     else:
-        from zhpy_interpreter import interpreter
+        from interpreter import interpreter
         interpreter()
   
 if __name__=="__main__":

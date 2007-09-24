@@ -22,6 +22,9 @@ code name: Silver Chariot
 
 *Project Updates*
 
+* rename zhpy_interpreter.py to interpreter.py
+* rename zhpy_cmd.py to commandline.py
+
 *Contributors*
 
 Fred Lin
