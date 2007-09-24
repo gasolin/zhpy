@@ -10,6 +10,7 @@ code name: Silver Chariot
 * remove chinese punctuations
 * change keyword
   * use "檔案", "档案" instead of "文件":"file"
+  * use "返回" instead of "传回":"return"
 
 *Features*
 

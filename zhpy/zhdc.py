@@ -293,7 +293,7 @@ class cn_keyword(ZhpyPlugin):
           "导入":"import",
           "作为":"as",
           # flow
-          "传回":"return",
+          "返回":"return",
           "略过":"pass",
           "示警":"raise",
           "继续":"continue",
