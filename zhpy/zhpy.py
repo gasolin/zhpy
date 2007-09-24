@@ -175,7 +175,7 @@ def convertToEnglish(s,l,t):
         word = 'p_' + variable_to_number(t[0]) + '_v'
     return word
 
-chineseChars = srange(r"[\0x0080-\0xff1b]")
+chineseChars = srange(r"[\0x0080-\0xfe00]")
 chineseWord = Word(chineseChars)
 chineseWord.setParseAction(convertToEnglish)
 pythonWord = quotedString | pythonStyleComment | chineseWord
