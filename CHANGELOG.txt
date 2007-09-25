@@ -7,16 +7,17 @@ code name: Silver Chariot
 
 *Changes*
 
-* remove chinese punctuations
+* remove chinese punctuations support
 * change keyword
   * use "檔案", "档案" instead of "文件":"file"
   * use "返回" instead of "传回":"return"
+  * use "組合", "组合" instead of "數組":"tuple"
 
 *Features*
 
 * add keyword:
   * "其":"self"
-  
+
 *Fixes*
 
 * fixed comment shouldn't be translated
