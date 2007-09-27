@@ -21,6 +21,7 @@ code name: Silver Chariot
 *Fixes*
 
 * fixed comment shouldn't be translated
+* 'byte of zhpy' doc update
 
 *Project Updates*
 
