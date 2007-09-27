@@ -31,7 +31,7 @@ setup(
     packages=find_packages(exclude=["ez_setup"]),
     entry_points = """
     [console_scripts]
-    zhpy = zhpy.commandline:commandtool
+    zhpy = zhpy.commandline:commandline
     [zhpy.twdict]
     twkeyword = zhpy.zhdc:tw_keyword
     twmethod = zhpy.zhdc:tw_buildin_method

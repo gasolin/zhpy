@@ -32,99 +32,129 @@ import sys
 from optparse import OptionParser
 from release import version
 from zhpy import annotator, convertor, try_run
-    
-def commandtool():
-    """command line tool method
-    
-    input: speficy the input source
 
+def commandline():
+    """zhpy, the python language on chinese
+    
+Accept options:
+    input: speficy the input source
     output: speficy the output source
-    
     python: compile to python and run
-    
     cmp: input raw zhpy source and run
-    
     encoding: specify the encoding
-    
     info: zhpy information
+    verbose: show zhpy progress in detail
+    # zhpy: compile python code to zhpy
+
+help:
+    command usage: zhpy [-i|-p] input [-o] [output] [-e] [encoding] [-v]
+    script usage: zhpy [-c] source [-e] [encoding] [-v]
     
-    $ zhpy input.py (.twpy, .cnpy)
+    $ zhpy input.py (.twpy, .cnpy) [arguments]
     $ zhpy -i input.py (.twpy, .cnpy)
     $ zhpy -i input.py -o output.py (.twpy, .cnpy)
-    $ zhpy -p input.py
+    $ zhpy -p input.py   
+    
     """
-    parser = OptionParser(
-            usage="usage: %prog [-i|-p] input [-o] [output] [--e] [encoding]",
-            version="zhpy %s"%version)
-    parser.add_option("-i", "--input",
-            help="speficy the input source",
-            dest="input", default = None)
-    parser.add_option("-o", "--output",
-            help="speficy the output source",
-            dest="output", default = None)
-    parser.add_option("-p", "--python",
-            help="compile to python and run",
-            dest="python", default = None)
-    parser.add_option("-c", "--cmd",
-            help="input raw zhpy source and run",
-            dest="cmp", default = None)
-    parser.add_option("-e", "--encoding",
-            help="specify the encoding",
-            dest="encoding", default = "")
-    parser.add_option("-V", "--info",
-            help="zhpy information",
-            action="store_true", dest="info")
-    (options, args) = parser.parse_args()
-    
-    if options.info:
-        from info import info
-        info()
-        return
-    
-    os.chdir(os.getcwd())
-    #run as script
-    if options.cmp:
-        test = options.cmp
-        annotator()
-        if options.encoding:
-            result = convertor(test, options.encoding)
-        else:
-            result = convertor(test)
-        try_run(result)
-        return
-    #run as command
-    #TODO: accept args
     argv = sys.argv[1:]
-    if len(argv) >= 1:
-        if options.python:
-            options.input = options.python
-        # able to run as script without subname
-        if (options.input is None):
-            options.input = argv[0]
-
-        #if options.input:
-        print "input", options.input
-        test = file(options.input, "r").read()
-        annotator()
-        if options.encoding:
-            result = convertor(test, options.encoding)
-        else:
-            result = convertor(test)
-            
-        if len(argv) == 2:
-            if argv[0].endswith("py") and argv[1].endswith("py"):
-                options.output = argv[1]
-            if options.python:
-                filename = os.path.splitext(options.python)[0]
-                file("n_"+filename+".py","w").write(result)
-                print "compile to python and run: %s"%("n_"+filename+".py")
-        if options.output:
-            file(options.output,"w").write(result)
-        else:
-            try_run(result)
-    else:
+    os.chdir(os.getcwd())
+    
+    source = None
+    target = None
+    encoding = None
+    raw_source = None
+    verbose = False
+    python = False
+    
+    # run as interpreter
+    if len(argv) == 0:
         from interpreter import interpreter
         interpreter()
-  
+        sys.exit()
+    # run as script
+    # not accept any option
+    elif not argv[0].startswith('-'):
+        source = argv[0]
+        sys.argv = argv
+    # run as command
+    # accept "-i -o -e" or "-p -e" or "-c -e"
+    elif len(argv)==1:
+        if argv[0] == '--info':
+            from info import info
+            info()
+            sys.exit()
+        if argv[0] == '-h' or argv[0] == '--help':
+            print commandline.__doc__
+            sys.exit()
+    elif len(argv)>=2:
+        if argv[0] == '-c' or argv[0] == '--cmp':
+            raw_source = argv[1]
+            del(argv[:2])
+            if len(argv)>=2 and (argv[0] == '-e' or argv[0] == '--encoding'):
+                encoding = argv[1]
+                del(argv[:2])
+                if not len(argv) and (argv[0] == '-v' or argv[0] == '--verbose'):
+                    verbose = True
+
+        elif argv[0] == '-i' or argv[0] == '--input':
+            source = argv[1]
+            del(argv[:2])
+            if len(argv)>=2 and (argv[0] == '-o' or argv[0] == '--output'):
+                target = argv[1]
+                del(argv[:2])
+                if len(argv)>=2 and (argv[0] == '-e' or argv[0] == '--encoding'):
+                    encoding = argv[1]
+                    del(argv[:2])
+                    if not len(argv) and (argv[0] == '-v' or argv[0] == '--verbose'):
+                        verbose = True
+        elif argv[0] == '-p' or argv[0] == '--python':
+            source = argv[1]
+            filename = os.path.splitext(source)[0]
+            del(argv[:2])
+            target = "n_"+filename+".py"
+            python = True
+            print "compile to python and run: %s"%("n_"+filename+".py")
+            if len(argv)>=2 and (argv[0] == '-e' or argv[0] == '--encoding'):
+                encoding = argv[1]
+                del(argv[:2])
+                if not len(argv) and (argv[0] == '-v' or argv[0] == '--verbose'):
+                    verbose = True
+    else:
+        print commandline.__doc__
+        sys.exit()    
+    #convert
+    if raw_source:
+        if verbose:
+            print "run raw_source", raw_source
+        annotator()
+        if encoding:
+            result = convertor(raw_source, encoding)
+        else:
+            result = convertor(raw_source)
+        try_run(result)
+        sys.exit()
+    
+    if encoding:
+        print "encoding", encoding
+
+    if source:
+        if verbose:
+            print "input", source
+        # convertor
+        test = file(source, "r").read()
+        annotator()
+        if encoding:
+            result = convertor(test, encoding)
+        else:
+            result = convertor(test)
+    if target:
+        if verbose:
+            print "output", target
+        file(target,"w").write(result)
+        if python:
+            try_run(result)
+    else:
+        try_run(result)
+
 if __name__=="__main__":
-    commandtool()
+    commandline()

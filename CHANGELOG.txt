@@ -15,8 +15,10 @@ code name: Silver Chariot
 
 *Features*
 
+* allow zhpy script with commandline arguments
 * add keyword:
   * "其":"self"
+  * "我":"self"
 
 *Fixes*
 
@@ -28,6 +30,9 @@ code name: Silver Chariot
 * rename zhpy_interpreter.py to interpreter.py
 * rename zhpy_cmd.py to commandline.py
 * rename zhpy_info.py to info.py
+* new commandline utility
+* remove command shortcut: "zhpy [input] [output]", use "zhpy -i [input] -o [output]" or
+   "zhpy -p [input]"
 
 *Contributors*
 
