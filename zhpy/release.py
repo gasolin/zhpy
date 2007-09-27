@@ -43,10 +43,10 @@ You could use easy_install command to install zhpy::
     $ easy_install zhpy
 
 or check instructions for detail.
-http://code.google.com/p/zhpy/wiki/DownloadInstall
+  * http://code.google.com/p/zhpy/wiki/DownloadInstall
 
 Usage
------
+-------
 
 You could use zhpy interpreter to test zhpy::
 
@@ -55,7 +55,7 @@ You could use zhpy interpreter to test zhpy::
     hello in chinese
 
 Browse project homepage to get examples in chinese.
-http://code.google.com/p/zhpy/
+  * http://code.google.com/p/zhpy/
 
 check the BasicUsage_ for detail.
 http://code.google.com/p/zhpy/wiki/BasicUsage
@@ -65,7 +65,7 @@ Programming Guide
 
 An C.C licensed zhpy book "A Byte of Zhpy" is in progress.
 You could freely view it online.
-The book is based on "A Byte of python"
+The book is based on "A Byte of python".
 
   * http://code.google.com/p/zhpy/wiki/ByteOfZhpy
   * http://swaroopch.info/text/Byte_of_Python:Main_Page
