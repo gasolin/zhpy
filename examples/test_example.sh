@@ -7,7 +7,7 @@ echo "test zhpy as script, total: 2"
 zhpy -c "印出 '哈囉'"
 zhpy -c "打印 '哈啰'"
 
-echo "test zhpy examples: total: 11"
+echo "test zhpy examples: total: 12"
 
 echo "zhpy hello example..."
 
@@ -18,14 +18,14 @@ echo "input command zhpy [in]:"
 zhpy -i hello.twpy
 echo "input command zhpy [in] [encoding]:"
 zhpy -i hello.twpy -e 'utf8'
-echo "command shortcut zhpy [in] [out]:"
-zhpy hello.twpy n_hello.py
 echo "hello example:"
 zhpy -p hello.twpy
 echo "big5 example:"
 zhpy -p hello_big5.twpy
 echo "gbk example:"
 zhpy -p hello_gb.cnpy
+echo "run hello as script with arguments:"
+./hello_arg.py hello world
 cd ..
 
 echo "zhpy in/out example..."
