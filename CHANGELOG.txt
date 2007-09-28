@@ -13,6 +13,8 @@ code name: Dark Blue Moon
 
 *Project Updates*
 
+* update Download Install doc
+
 *Contributors*
 
 Fred Lin
