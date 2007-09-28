@@ -92,7 +92,6 @@ help:
         source = argv[0]
         sys.argv = argv
     # run as command
-    # accept "-i -o -e" or "-p -e" or "-c -e"
     elif len(argv)==1:
         if argv[0] == '--info':
             from info import info
@@ -113,6 +112,7 @@ help:
         else:
            print commandline.__doc__
            sys.exit()
+    # accept "-c -e -v" or "-i -o -e -v" or "-p -e" or "-c -e -v"
     elif len(argv)>=2:
         if argv[0] == '-c' or argv[0] == '--cmp':
             raw_source = argv[1]
