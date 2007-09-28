@@ -61,7 +61,10 @@ help:
         zhpy [-c] source [-e] [encoding] [-v]
     
     ::
-    
+        $ zhpy
+        $ zhpy --tw
+        $ zhpy --cn
+
         $ zhpy input.py (.twpy, .cnpy) [arguments]
         $ zhpy -i input.py (.twpy, .cnpy)
         $ zhpy -i input.py -o output.py (.twpy, .cnpy)
@@ -95,18 +98,21 @@ help:
             from info import info
             info()
             sys.exit()
-        if argv[0] == '-h' or argv[0] == '--help':
+        elif argv[0] == '-h' or argv[0] == '--help':
             print commandline.__doc__
             sys.exit()
         # run as native interpreter
-        if argv[0] == '--tw':
+        elif argv[0] == '--tw':
             from interpreter import interpreter
             interpreter('tw')
             sys.exit()
-        if argv[0] == '--cn':
+        elif argv[0] == '--cn':
             from interpreter import interpreter
             interpreter('cn')
             sys.exit()
+        else:
+           print commandline.__doc__
+           sys.exit()
     elif len(argv)>=2:
         if argv[0] == '-c' or argv[0] == '--cmp':
             raw_source = argv[1]
@@ -142,7 +148,7 @@ help:
                     verbose = True
     else:
         print commandline.__doc__
-        sys.exit()    
+        sys.exit()
     #convert
     if raw_source:
         if verbose:
@@ -162,12 +168,16 @@ help:
         if verbose:
             print "input", source
         # convertor
-        test = file(source, "r").read()
-        annotator()
-        if encoding:
-            result = convertor(test, encoding)
-        else:
-            result = convertor(test)
+        try:
+            test = file(source, "r").read()
+            annotator()
+            if encoding:
+                result = convertor(test, encoding)
+            else:
+                result = convertor(test)
+        except:
+            print "zhpy Exception: you may input unproper source"
+            sys.exit() 
     if target:
         if verbose:
             print "output", target
