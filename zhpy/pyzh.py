@@ -42,6 +42,14 @@ rev_cndict = revert_dict(cndict)
 def rev_merger(anno_dict, use_dict, verbose=True):
     """
     merge extra bindings into reverse dict
+
+Accept args:
+    anno_dict:
+        source dict
+    use_dict:
+        target dict to be merged
+    verbose:
+        show detail message, default: True
     
     >>> keys = [('遊戲', 'pygame'), ('系統', 'sys')]
     >>> rev_merger(keys, rev_twdict)
@@ -93,6 +101,13 @@ def rev_merger(anno_dict, use_dict, verbose=True):
 def rev_ini_annotator(use_dict, verbose=True):
     """
     update revert dict by ini files
+    
+Accept args:
+    use_dict:
+        target dict to be merged
+    verbose:
+        show detail message, default: True
+
     """
     # ini
     inifiles = []
@@ -125,14 +140,17 @@ def rev_py_annotator(use_dict, entry_point, verbose=False):
 def rev_annotator(lang='tw', verbose=True):
     """
     To expand the reverse dict
-    
-    lang: tw or cn
-    
-    2 ways to extend the reverse dict
-    
+
+    ther are 2 ways to extend the reverse dict
+
       1. python keyword plugins
-    
+
       2. ini file in local directory
+
+Accept args:
+    lang:
+        'tw' or 'cn'
+
     """
     if lang == 'tw':
         use_dict = rev_twdict
@@ -154,8 +172,6 @@ def number_to_variable(tmp):
     
     >>> number_to_variable('7bc4_4f8b')
     u'\u7bc4\u4f8b'
-    
-    #'範例'
     """
     word_list = tmp.split('_')
     term = ''
@@ -209,9 +225,10 @@ cnpyWord = quotedString | pythonStyleComment | cnenWord
 def python_convertor(test, lang='tw'):
     """
     convert python source to zhpy source
-    'print': '\xe6\x89\x93\xe5\x8d\xb0'
-    
-    lang: tw or cn
+
+Accept args:
+    lang:
+        'tw' or 'cn'
     
     >>> print python_convertor("print 'hello'", 'tw')
     印出 'hello'

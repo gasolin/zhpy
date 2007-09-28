@@ -1,7 +1,9 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
-"""zhpy is the python language with chinese native keywords, variables, and 
+"""Convert zhpy source to python source
+
+zhpy is the python language with chinese native keywords, variables, and 
 parameters support, independent on python's version.
 
 zhpy's core function is a convertor to translate chinese python code to nature python
@@ -41,7 +43,15 @@ from zhdc import worddict, twdict, cndict
 def merger(anno_dict, use_dict=worddict, verbose=True):
     """
     merge extra bindings into worddict
-    
+
+Accept args:
+    anno_dict:
+        source dict
+    use_dict:
+        target dict to be merged, default: 'worddict'
+    verbose:
+        show detail message, default: True
+
     merger could accept list input:
     
     >>> keys = [('遊戲', 'pygame'), ('系統', 'sys')]
@@ -89,6 +99,11 @@ def ini_annotator(verbose=True):
     """
     find ini files and use keywords defined in ini during 
     convertion progress.
+    
+Accept args:
+    verbose:
+        show detail message, default: True
+    
     """
     #inifiles = [x for x in os.listdir(".") if x.endswith(".ini")]
     inifiles = []
@@ -113,6 +128,10 @@ def py_annotator(verbose=False):
     """
     find python keyword plugins and update to dicts
     
+Accept args:
+    verbose:
+        show detail message, default: False
+
     'verbose' argument is only for debug(will generate too mush messages).
     """
     # tw plugin
@@ -138,7 +157,11 @@ def annotator(verbose=True):
       1. ini files
         
       2. python plugin system.
-    
+
+Accept args:
+    verbose:
+        show detail message, default: True
+
     """
     ini_annotator(verbose)
     py_annotator(verbose=False)
@@ -191,6 +214,12 @@ def convertor(test, encoding=""):
     
     always run annotator before access convertor
     
+Accept args:
+    test:
+        source to be converted
+    encoding:
+        codec for encoding
+
     >>> annotator()
     >>> convertor("印出 'hello'")
     "print 'hello'"
@@ -227,6 +256,10 @@ def try_run(result):
     """
     execute result and catch exceptions
     
+Accept args:
+    result:
+        the converted source to be executed
+
     >>> try_run("print 'hello'")
     hello
     """
@@ -247,6 +280,10 @@ def zh_exec(content):
     """
     the zhpy exec
     
+Accept args:
+    content:
+        the source to be converted and executed with zhpy
+        
     >>> zh_exec("印出 'hello'")
     hello
     """

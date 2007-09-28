@@ -1,5 +1,5 @@
 """
-zhpy Complete Version Information
+zhpy package and plugin information
 
 This is the MIT license:
 http://www.opensource.org/licenses/mit-license.php
