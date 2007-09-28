@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
-"""Convert zhpy source to python source
+"""Transform zhpy source to python source
 
 zhpy is the python language with chinese native keywords, variables, and 
 parameters support, independent on python's version.

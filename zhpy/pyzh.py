@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
-"""Convert python source to zhpy source
+"""Transform python source to zhpy source
 
 This is the MIT license:
 http://www.opensource.org/licenses/mit-license.php
