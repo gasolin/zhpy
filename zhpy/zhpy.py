@@ -253,7 +253,3 @@ def zh_exec(content):
     annotator()
     result = convertor(content)
     try_run(result)
-
-if __name__=="__main__":
-    from zhpyc import commandtool
-    commandtool
