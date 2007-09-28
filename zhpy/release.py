@@ -1,4 +1,8 @@
 # -*- coding: utf-8 -*-
+
+"""Release information"""
+
+
 version = "0.9.5"
 author = "Fred Lin"
 email = "gasolin+zhpy@gmail.com"

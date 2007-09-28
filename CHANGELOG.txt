@@ -14,6 +14,7 @@ code name: Dark Blue Moon
 *Project Updates*
 
 * update Download Install doc
+* format inline docs for APIDOC
 
 *Contributors*
 
