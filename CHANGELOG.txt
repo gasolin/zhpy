@@ -9,6 +9,8 @@ code name: Dark Blue Moon
 
 *Features*
 
+* add native interpreter banner
+
 *Fixes*
 
 *Project Updates*

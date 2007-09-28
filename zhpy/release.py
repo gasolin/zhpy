@@ -74,6 +74,9 @@ The book is based on "A Byte of python".
   * http://code.google.com/p/zhpy/wiki/ByteOfZhpy
   * http://swaroopch.info/text/Byte_of_Python:Main_Page
 
+There's the API document available in zhpy download list
+  * http://code.google.com/p/zhpy/downloads/list
+
 Change Log
 -------------
 

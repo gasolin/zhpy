@@ -96,6 +96,15 @@ help:
         if argv[0] == '-h' or argv[0] == '--help':
             print commandline.__doc__
             sys.exit()
+        # run as native interpreter
+        if argv[0] == '--tw':
+            from interpreter import interpreter
+            interpreter('tw')
+            sys.exit()
+        if argv[0] == '--cn':
+            from interpreter import interpreter
+            interpreter('cn')
+            sys.exit()
     elif len(argv)>=2:
         if argv[0] == '-c' or argv[0] == '--cmp':
             raw_source = argv[1]
