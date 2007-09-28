@@ -53,6 +53,8 @@ Accept options:
         show zhpy progress in detail
     
 help:
+    interpreter usage:
+        zhpy [--tw | --cn]
     command usage:
         zhpy [-i|-p] input [-o] [output] [-e] [encoding] [-v]
     script usage:
