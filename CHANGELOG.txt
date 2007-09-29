@@ -7,6 +7,9 @@ code name: Dark Blue Moon
 
 *Changes*
 
+* replace keyword
+  * "鍵列表" instead of "關鍵字列表":"keys"
+
 *Features*
 
 * add native interpreter banner

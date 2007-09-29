@@ -165,7 +165,7 @@ class tw_buildin_method(ZhpyPlugin):
           "讀多行":"readlines",
           "關閉":"close",
           # dict methods
-          "關鍵字列表":"keys",
+          "鍵列表":"keys",
           "值列表":"values",
           "項目列表": "items",
           "更新":"update",
