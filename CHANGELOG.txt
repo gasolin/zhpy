@@ -10,6 +10,8 @@ code name: Dark Blue Moon
 *Features*
 
 * add native interpreter banner
+* add keyword
+  * "代換":"replace", "代换":"replace"
 
 *Fixes*
 

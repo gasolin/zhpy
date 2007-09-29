@@ -143,6 +143,7 @@ class tw_buildin_method(ZhpyPlugin):
           "結尾為":"endswith",
           "連接":"join",
           "分離":"split",
+          "代換":"replace",
           "編碼":"encoding",
           "解碼":"decoding",
           # list methods
@@ -360,6 +361,7 @@ class cn_buildin_method(ZhpyPlugin):
           "结尾为":"endswith",
           "连接":"join",
           "分离":"split",
+          "代换":"replace",
           "编码":"encoding",
           "解码":"decoding",
           # list methods
