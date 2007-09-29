@@ -189,6 +189,7 @@ class tw_buildin_method(ZhpyPlugin):
           "說明":"help",
           "幫助":"help",
           "區域變量":"local",
+          "類別方法":"classmethod",
           }
 
 
@@ -260,6 +261,7 @@ class tw_zhpy(ZhpyPlugin):
           "不等於":"!=",
           # private
           "文件":"doc",
+          "初始化":"init",
           }
 
 
@@ -408,6 +410,7 @@ class cn_buildin_method(ZhpyPlugin):
           "帮助":"help",
           "说明":"help",
           "区域变量":"local",
+          "类方法":"classmethod",
          }
 
 
@@ -478,6 +481,7 @@ class cn_zhpy(ZhpyPlugin):
           "等于":"==",
           "不等于":"!=",
           # private          "文件":"doc",
+          "初始化":"init",
          }
 
 def revert_dict(lang_dict):

@@ -1,7 +1,7 @@
 zhpy Changelog
 ====================
 
-0.9.5 (10/*/2007):
+1.0Beta1 (10/*/2007):
 --------------------
 code name: Dark Blue Moon
 
@@ -15,7 +15,11 @@ code name: Dark Blue Moon
 
 * add native interpreter banner
 * add keyword
-  * "代換":"replace", "代换":"replace"
+  * "代換":"replace"
+  * "代换":"replace"
+  * "初始化":"init",
+  * "類別方法":"classmethod"
+  * "类方法":"classmethod"
 
 *Fixes*
 
