@@ -384,7 +384,7 @@ class cn_buildin_method(ZhpyPlugin):
           "读多行":"readlines",
           "关闭":"close",
           # dict methods
-          "关键字列表":"keys",
+          "键列表":"keys",
           "值列表":"values",
           "项目列表":"items",
           "更新":"update",

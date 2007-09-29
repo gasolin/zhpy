@@ -9,6 +9,7 @@ code name: Dark Blue Moon
 
 * replace keyword
   * "鍵列表" instead of "關鍵字列表":"keys"
+  * "键列表" instead of "关键字列表":"keys"
 
 *Features*
 
