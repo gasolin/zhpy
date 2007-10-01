@@ -31,7 +31,8 @@ def test_try():
     """
     assert convertor("嘗試: 導入 a; 異常 ImportError, e: 印出 e") == \
                 "try: import a; except ImportError, e: print e"
-
+    assert convertor("引發 例外") == "raise Exception"
+    
 def test_is():
     """
     test is, is not statement

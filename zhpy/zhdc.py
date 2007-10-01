@@ -79,7 +79,7 @@ class tw_keyword(ZhpyPlugin):
           # flow
           "返回":"return",
           "略過":"pass", 
-          "示警":"raise",
+          "引發":"raise",
           "繼續":"continue",
           # control
           "如果":"if",
@@ -300,7 +300,7 @@ class cn_keyword(ZhpyPlugin):
           # flow
           "返回":"return",
           "略过":"pass",
-          "示警":"raise",
+          "引发":"raise",
           "继续":"continue",
           # control
           "如果":"if",

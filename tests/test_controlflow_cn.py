@@ -31,6 +31,7 @@ def test_try():
     """
     assert convertor("尝试: 导入 a; 异常 ImportError, e: 打印 e") == \
                 "try: import a; except ImportError, e: print e"
+    assert convertor("引发 例外") == "raise Exception"
 
 def test_is():
     """
