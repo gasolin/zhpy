@@ -47,7 +47,9 @@ def retrieve_info():
 
 def info():
     """
-    from TurboGears2 tginfo command
+    show zhpy informations including version and plugins
+    
+    ported from TurboGears2 tginfo command
     """
     print """
 Complete zhpy Version Information

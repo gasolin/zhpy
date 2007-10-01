@@ -37,38 +37,48 @@ def commandline():
     """zhpy, the python language on chinese
     
 Accept options:
-    input:
+    -i --input:
         speficy the input source
-    output:
+    -o --output:
         speficy the output source
-    python:
+    -p --python:
         compile to python and run
-    cmp:
+    -c --cmp:
         input raw zhpy source and run
-    encoding:
+    -e --encoding:
         specify the encoding
-    info:
+    --info:
         zhpy information
-    verbose:
+    -v --verbose:
         show zhpy progress in detail
     
 help:
-    interpreter usage:
-        zhpy [--tw | --cn]
-    command usage:
-        zhpy [-i|-p] input [-o] [output] [-e] [encoding] [-v]
-    script usage:
-        zhpy [-c] source [-e] [encoding] [-v]
-    
+    get information:
+        
     ::
+    
+        $ zhpy --info
+
+    interpreter usage:
+
+    ::
+          
         $ zhpy
         $ zhpy --tw
         $ zhpy --cn
 
+    command usage:
+        zhpy [-i|-p] input [-o] [output] [-e] [encoding] [-v]
+
+    ::
+    
         $ zhpy input.py (.twpy, .cnpy) [arguments]
         $ zhpy -i input.py (.twpy, .cnpy)
         $ zhpy -i input.py -o output.py (.twpy, .cnpy)
         $ zhpy -p input.py   
+
+    script usage:
+        zhpy [-c] source [-e] [encoding] [-v]
     
     """
     argv = sys.argv[1:]
