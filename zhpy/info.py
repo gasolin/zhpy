@@ -38,7 +38,9 @@ def retrieve_info():
     packages=['%s' % i for i in pkg_resources.require("zhpy")]
     plugins = {}
     for name, pointname in entrypoints.items():
-        plugins[name] = ["%s (%s)" % (entrypoint.name, str(entrypoint.dist))
+        plugins[name] = ["%s (%s) - %d" % (entrypoint.name, \
+                                           str(entrypoint.dist), \
+                                           len(entrypoint.load().keyword))
             for entrypoint in pkg_resources.iter_entry_points(pointname)
         ]
     return packages, plugins

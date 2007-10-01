@@ -17,6 +17,7 @@ code name: Dark Blue Moon
 
 * complete "Byte of Zhpy" book
 * add native interpreter banner "zhpy --tw" or "zhpy --cn"
+* show keyword number of each plugin in "zhpy --info" command
 * add keyword
   * "代換":"replace"
   * "代换":"replace"
