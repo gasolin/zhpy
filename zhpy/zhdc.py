@@ -201,6 +201,7 @@ class tw_exception(ZhpyPlugin):
     description = "Python 內建例外關鍵詞"
     keyword = {
           "例外":"Exception",
+          "錯誤":"Error",
           # error
           "運算錯誤":"ArithmeticError",
           "宣告錯誤":"AssertionError",
@@ -422,6 +423,7 @@ class cn_exception(ZhpyPlugin):
     description = "Python 内建例外关键词"
     keyword = {
           "例外":"Exception",
+          "错误":"Error",
           # error
           "运算错误":"ArithmeticError",
           "宣告错误":"AssertionError",

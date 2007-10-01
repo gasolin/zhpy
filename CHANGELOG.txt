@@ -11,6 +11,7 @@ code name: Dark Blue Moon
   * "鍵列表" instead of "關鍵字列表":"keys"
   * "键列表" instead of "关键字列表":"keys"
   * "引發","引发" instead of "示警":"raise"
+
 *Features*
 
 * add native interpreter banner
@@ -20,6 +21,8 @@ code name: Dark Blue Moon
   * "初始化":"init",
   * "類別方法":"classmethod"
   * "类方法":"classmethod"
+  * "錯誤":"Error"
+  * "错误":"Error",
 
 *Fixes*
 
