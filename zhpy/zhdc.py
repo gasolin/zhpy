@@ -107,7 +107,6 @@ class tw_keyword(ZhpyPlugin):
           
           "伴隨":"with",
           "產生":"yield",
-          "刪除":"del",
           }
 
 
@@ -177,7 +176,7 @@ class tw_buildin_method(ZhpyPlugin):
           "設定屬性":"setattr",
           # build in methods
           "列舉":"enumerate",
-          "求值":"eval",
+          "評估":"eval",
           "過濾":"filter",
           "長度":"len",
           "映射":"map",
@@ -263,6 +262,8 @@ class tw_zhpy(ZhpyPlugin):
           # private
           "文件":"doc",
           "初始化":"init",
+          "刪除":"del",
+          "描述":"repr",
           }
 
 
@@ -328,7 +329,6 @@ class cn_keyword(ZhpyPlugin):
           "打印":"print",
           "伴隨":"with",
           "产生":"yield",
-          "刪除":"del",
          }
 
 
@@ -399,7 +399,7 @@ class cn_buildin_method(ZhpyPlugin):
           "设定属性":"setattr",
           # build in methods
           "列举":"enumerate",
-          "求值":"eval",
+          "评估":"eval",
           "过滤":"filter",
           "长度":"len",
           "映射":"map",
@@ -484,6 +484,8 @@ class cn_zhpy(ZhpyPlugin):
           "不等于":"!=",
           # private          "文件":"doc",
           "初始化":"init",
+          "刪除":"del",
+          "描述":"repr",
          }
 
 def revert_dict(lang_dict):

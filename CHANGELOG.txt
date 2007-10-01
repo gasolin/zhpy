@@ -11,10 +11,12 @@ code name: Dark Blue Moon
   * "鍵列表" instead of "關鍵字列表":"keys"
   * "键列表" instead of "关键字列表":"keys"
   * "引發","引发" instead of "示警":"raise"
+  * "評估","评估" instead of "求值":"eval"
 
 *Features*
 
-* add native interpreter banner
+* complete "Byte of Zhpy" book
+* add native interpreter banner "zhpy --tw" or "zhpy --cn"
 * add keyword
   * "代換":"replace"
   * "代换":"replace"
@@ -22,7 +24,8 @@ code name: Dark Blue Moon
   * "類別方法":"classmethod"
   * "类方法":"classmethod"
   * "錯誤":"Error"
-  * "错误":"Error",
+  * "错误":"Error"
+  * "描述":"repr"
 
 *Fixes*
 
