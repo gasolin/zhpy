@@ -138,6 +138,11 @@ help:
             del(argv[:2])
             if (len(argv)!=0) and (argv[0] == '-v' or argv[0] == '--verbose'):
                 verbose = True
+            if len(argv)>=2 and (argv[0] == '-e' or argv[0] == '--encoding'):
+                encoding = argv[1]
+                del(argv[:2])
+                if (len(argv)!=0) and (argv[0] == '-v' or argv[0] == '--verbose'):
+                    verbose = True
             if len(argv)>=2 and (argv[0] == '-o' or argv[0] == '--output'):
                 target = argv[1]
                 del(argv[:2])
