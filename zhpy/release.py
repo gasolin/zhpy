@@ -61,7 +61,7 @@ You could use zhpy interpreter to test zhpy::
 Browse project homepage to get examples in chinese.
   * http://code.google.com/p/zhpy/
 
-check the BasicUsage_ for detail.
+check the BasicUsage for detail.
 http://code.google.com/p/zhpy/wiki/BasicUsage
 
 Programming Guide
