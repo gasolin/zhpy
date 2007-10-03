@@ -14,7 +14,7 @@
 !define PRODUCT_NAME "zhpy"
 !define PRODUCT_PUBLISHER "Fred Lin"
 !define PRODUCT_WEB_SITE "http://code.google.com/p/zhpy"
-!define BUILD "14"
+!define BUILD "16"
 
 XPStyle on
 SetCompressor lzma
@@ -91,9 +91,8 @@ Function .onInit
 	    !endif
 	oops:
 	    MessageBox MB_OK "$StrNoUsablePythonFound"
-	    ;Quit
 		Call DownloadPython
-		MessageBox MB_OK "Python was downloaded.\nClick OK to install Python"
+		MessageBox MB_OK "Python was downloaded.$\r$\nClick OK to install Python"
 		Call InstallPython
 	ok:
 	    MessageBox MB_OK "Found Python executable at '$8'"
