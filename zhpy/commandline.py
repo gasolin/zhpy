@@ -174,9 +174,9 @@ help:
             print "run raw_source", raw_source
         annotator()
         if encoding:
-            result = convertor(raw_source, encoding)
+            result = convertor(raw_source, verbose, encoding)
         else:
-            result = convertor(raw_source)
+            result = convertor(raw_source, verbose)
         try_run(result)
         sys.exit()
     
@@ -191,9 +191,9 @@ help:
             test = file(source, "r").read()
             annotator()
             if encoding:
-                result = convertor(test, encoding)
+                result = convertor(test, verbose, encoding)
             else:
-                result = convertor(test)
+                result = convertor(test, verbose)
         except:
             print "zhpy Exception: you may input unproper source"
             sys.exit() 

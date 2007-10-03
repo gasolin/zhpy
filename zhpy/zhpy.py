@@ -208,7 +208,7 @@ try:
 except:
     pass
 
-def convertor(test, encoding=""):
+def convertor(test, verbose=False, encoding=""):
     """
     convert zhpy source (Chinese) to Python Source.
     
@@ -217,6 +217,8 @@ def convertor(test, encoding=""):
 Accept args:
     test:
         source to be converted
+    verbose:
+        show detail message, default: False
     encoding:
         codec for encoding
 
@@ -235,6 +237,8 @@ Accept args:
         try:
             #detect encoding
             det = chardet.detect(test)
+            if verbose:
+                print "chardet", det
             if det['confidence'] >= 0.8:
                 encoding = chardet.detect(test)['encoding']
             else :
