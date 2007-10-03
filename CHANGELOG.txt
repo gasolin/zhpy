@@ -1,6 +1,22 @@
 zhpy Changelog
 ====================
 
+1.0.1 (10/*/2007):
+--------------------
+code name: Cat Plant
+
+*Changes*
+
+*Fixes*
+
+* fix verbose options in commandline tool
+
+*Project Updates*
+
+*Contributors*
+
+Fred Lin
+
 1.0 (10/3/2007):
 --------------------
 code name: Killer Queen

@@ -39,6 +39,7 @@ ShowInstDetails show
 !define STRING_PYTHON_CURRENT_USER_FOUND "Python is installed for the current user only. $\n$\n${PRODUCT_NAME} does not support use with Python so configured. $\n$\nClick OK to cancel installation and remove installation Files."
 
 ; Refer to leo's python detection code
+; http://leo.tigris.org/source/browse/leo/dist/leo-4-3.nsi
 ; Location where the Installer finds a Pythonw.exe
 ; set by the .onInit function
 var PythonExecutable

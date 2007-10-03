@@ -136,25 +136,29 @@ help:
         elif argv[0] == '-i' or argv[0] == '--input':
             source = argv[1]
             del(argv[:2])
+            if (len(argv)!=0) and (argv[0] == '-v' or argv[0] == '--verbose'):
+                verbose = True
             if len(argv)>=2 and (argv[0] == '-o' or argv[0] == '--output'):
                 target = argv[1]
                 del(argv[:2])
                 if len(argv)>=2 and (argv[0] == '-e' or argv[0] == '--encoding'):
                     encoding = argv[1]
                     del(argv[:2])
-                    if not len(argv) and (argv[0] == '-v' or argv[0] == '--verbose'):
+                    if (len(argv)!=0) and (argv[0] == '-v' or argv[0] == '--verbose'):
                         verbose = True
         elif argv[0] == '-p' or argv[0] == '--python':
             source = argv[1]
             filename = os.path.splitext(source)[0]
-            del(argv[:2])
+            del(argv[:2])            
             target = "n_"+filename+".py"
             python = True
             print "compile to python and run: %s"%("n_"+filename+".py")
+            if (len(argv)!=0) and (argv[0] == '-v' or argv[0] == '--verbose'):
+                verbose = True
             if len(argv)>=2 and (argv[0] == '-e' or argv[0] == '--encoding'):
                 encoding = argv[1]
                 del(argv[:2])
-                if not len(argv) and (argv[0] == '-v' or argv[0] == '--verbose'):
+                if (len(argv)!=0) and (argv[0] == '-v' or argv[0] == '--verbose'):
                     verbose = True
     else:
         print commandline.__doc__
