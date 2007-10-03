@@ -1,9 +1,12 @@
-; example1.nsi
+; zhpy.nsi
 ;
-; This script is perhaps one of the simplest NSIs you can make. All of the
-; optional settings are left to their default settings. The installer simply 
-; prompts the user asking them where to install, and drops a copy of example1.nsi
-; there. 
+;
+; How to create an installer for zhpy using this script:
+;	1. Install NSIS 2.03(from http://www.nullsoft.com)
+;	2. Download Nsisunz (from http://nsis.sourceforge.net/Nsisunz_plug-in ) and put 
+;      nsisunz.dll into NSIS/plugins folder.
+;	3. Right-click on the zhpy.nsi file and choose "Compile"
+;
 
 XPStyle on
 
@@ -32,6 +35,7 @@ ShowInstDetails show
 !define STRING_PYTHON_NOT_FOUND "Python is not installed on this system. $\nPlease install Python first. $\n$\nClick OK to download python"
 !define STRING_PYTHON_CURRENT_USER_FOUND "Python is installed for the current user only. $\n$\n${PRODUCT_NAME} does not support use with Python so configured. $\n$\nClick OK to cancel installation and remove installation Files."
 
+; Refer to leo's python detection code
 ; Location where the Installer finds a Pythonw.exe
 ; set by the .onInit function
 var PythonExecutable
@@ -139,8 +143,8 @@ FunctionEnd
 
 Function InstallZhpy
 	Call UnzipFile
-	Exec "cd $INSTDIR\${PRODUCT_NAME}-${PRODUCT_VERSION}"
-	Exec "python setup.py install"
+	ExecScript "cd $INSTDIR\${PRODUCT_NAME}-${PRODUCT_VERSION}"
+	ExecScript "python setup.py install"
 FunctionEnd
 
 Function DownloadFile
