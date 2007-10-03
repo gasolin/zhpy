@@ -8,14 +8,16 @@
 ;	3. Right-click on the zhpy.nsi file and choose "Compile"
 ;
 
-XPStyle on
-
 ;--------------------------------
 !define PRODUCT_VERSION "1.0"
 
 !define PRODUCT_NAME "zhpy"
 !define PRODUCT_PUBLISHER "Fred Lin"
 !define PRODUCT_WEB_SITE "http://code.google.com/p/zhpy"
+!define BUILD "10"
+
+XPStyle on
+SetCompressor lzma
 
 ; The name of the installer
 Name "zhpy ${PRODUCT_VERSION}"
@@ -25,6 +27,7 @@ OutFile "${PRODUCT_NAME}-${PRODUCT_VERSION}-installer.exe"
 LoadLanguageFile "${NSISDIR}\Contrib\Language files\English.nlf"
 ; The default installation directory
 InstallDir $DESKTOP\${PRODUCT_NAME}temp
+
 DirText "Install Assistant will download $(^Name) in the following folder.$\r$\n$\r$\nTo download in a different folder, click Browse and select another folder."
 InstallButtonText "Download"
 
@@ -130,7 +133,7 @@ Function DownloadPython
 FunctionEnd
 
 Function InstallPython
-	Exec '"$INSTDIR\python-2.5.1.msi"'
+	ExecWait '"$INSTDIR\python-2.5.1.msi"'
 	ExpandEnvStrings $0 "Path=%Path%;c:\python25;c:\python25\Scripts;"
 FunctionEnd
 
@@ -143,8 +146,8 @@ FunctionEnd
 
 Function InstallZhpy
 	Call UnzipFile
-	ExecScript "cd $INSTDIR\${PRODUCT_NAME}-${PRODUCT_VERSION}"
-	ExecScript "python setup.py install"
+	Exec 'cd "$INSTDIR\${PRODUCT_NAME}-${PRODUCT_VERSION}"'
+	Exec "python setup.py install"
 FunctionEnd
 
 Function DownloadFile
