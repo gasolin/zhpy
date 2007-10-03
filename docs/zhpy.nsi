@@ -14,7 +14,7 @@
 !define PRODUCT_NAME "zhpy"
 !define PRODUCT_PUBLISHER "Fred Lin"
 !define PRODUCT_WEB_SITE "http://code.google.com/p/zhpy"
-!define BUILD "12"
+!define BUILD "14"
 
 XPStyle on
 SetCompressor lzma
@@ -28,7 +28,7 @@ LoadLanguageFile "${NSISDIR}\Contrib\Language files\English.nlf"
 ; The default installation directory
 InstallDir $DESKTOP\${PRODUCT_NAME}temp
 
-DirText "Install Assistant will download $(^Name) to the following folder.$\r$\nClick "Download" button to start the procedure.$\r$\n$\r$\nTo download in a different folder, click Browse and select another folder."
+DirText "Install Assistant will download $(^Name) to the following folder.$\r$\nClick 'Download' button to start the procedure.$\r$\n$\r$\nTo download in a different folder, click Browse and select another folder."
 InstallButtonText "Download"
 
 ShowInstDetails show
