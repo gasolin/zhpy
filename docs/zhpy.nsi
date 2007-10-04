@@ -14,17 +14,52 @@
 !define PRODUCT_NAME "zhpy"
 !define PRODUCT_PUBLISHER "Fred Lin"
 !define PRODUCT_WEB_SITE "http://code.google.com/p/zhpy"
-!define BUILD "16"
+!define BUILD "29"
 
 XPStyle on
 SetCompressor lzma
+
+!include "MUI.nsh"
+!include "Sections.nsh"
+!include "StrFunc.nsh"
+
+; MUI Settings
+!define MUI_HEADERIMAGE
+; !define MUI_HEADERIMAGE_BITMAP "zhpy.bmp" ; optional
+!define MUI_ABORTWARNING "Are you sure you want to quit ${PRODUCT_NAME} ${PRODUCT_VERSION}?"
+!define MUI_COMPONENTSPAGE_SMALLDESC
+
+; Welcome page
+!define MUI_WELCOMEPAGE_TITLE "Welcome to ${PRODUCT_NAME}\r\nVersion ${PRODUCT_VERSION}"
+!define MUI_WELCOMEPAGE_TEXT "${PRODUCT_NAME} automates the process of downloading, installing python and zhpy Components.\r\n\nClick Next to continue."
+!insertmacro MUI_PAGE_WELCOME
+
+var ChooseMessage
+ 
+; Components page
+!define MUI_PAGE_HEADER_SUBTEXT $ChooseMessage
+!define MUI_PAGE_CUSTOMFUNCTION_PRE AbortComponents
+!insertmacro MUI_PAGE_COMPONENTS
+
+; Directory page
+!define MUI_PAGE_HEADER_SUBTEXT "Choose the folder in which to install zhpy."
+!define MUI_DIRECTORYPAGE_TEXT_TOP "${PRODUCT_NAME} will install zhpy components in the following directory. To install in a different folder click Browse and select another folder. Click Next to continue."
+!define MUI_PAGE_CUSTOMFUNCTION_PRE AbortPage
+!insertmacro MUI_PAGE_DIRECTORY
+
+; Language files
+!insertmacro MUI_LANGUAGE "English"
+
+; MUI end ------
+   
+;--------------------------------
 
 ; The name of the installer
 Name "zhpy ${PRODUCT_VERSION}"
 
 ; The file to write
 OutFile "${PRODUCT_NAME}-${PRODUCT_VERSION}-installer${BUILD}.exe"
-LoadLanguageFile "${NSISDIR}\Contrib\Language files\English.nlf"
+; LoadLanguageFile "${NSISDIR}\Contrib\Language files\English.nlf"
 ; The default installation directory
 InstallDir $DESKTOP\${PRODUCT_NAME}temp
 
@@ -46,6 +81,8 @@ var PythonExecutable
 var StrNoUsablePythonFound
 
 Function .onInit
+    StrCpy $ChooseMessage "Choose the zhpy components you would like to install."
+    
 	ReadRegStr $9 HKEY_LOCAL_MACHINE "SOFTWARE\Classes\Python.NoConFile\shell\open\command" ""
 	StrCpy $8 $9 -8
 	IfFileExists $8 ok tryagain
@@ -91,10 +128,9 @@ Function .onInit
 	      goto oops
 	    !endif
 	oops:
-	    MessageBox MB_OK "$StrNoUsablePythonFound"
-		Call DownloadPython
-		MessageBox MB_OK "Python was downloaded.$\r$\nClick OK to install Python"
-		Call InstallPython
+	    ; MessageBox MB_OK "${STRING_PYTHON_NOT_FOUND}"
+	    MessageBox MB_ICONQUESTION|MB_YESNO "${STRING_PYTHON_NOT_FOUND} " IDYES +5
+        Abort
 	ok:
 	    MessageBox MB_OK "Found Python executable at '$8'"
 	    StrCpy $PythonExecutable $8
@@ -103,6 +139,7 @@ FunctionEnd
 
 ; Pages
 
+Page components
 Page directory
 Page instfiles
 
@@ -111,21 +148,34 @@ Var local_file
  
 ;--------------------------------
 
-; The stuff to install
-Section "DownloadZhpy" ;No components page, name is not important
-
+Section "Python 2.5.1" SecPython
   ; Set output path to the installation directory.
   SetOutPath $INSTDIR
   
-  ; Download file
-  ; Call DownloadPython
-  Call DownloadZhpy
-  Call InstallZhpy
-  ; Put file there
-  ; File example1.nsi
+  ; Download python
+  ;Call DownloadPython
+  ;MessageBox MB_OK "Python was downloaded.$\r$\nClick OK to install Python"
+  ;Call InstallPython
   
 SectionEnd ; end the section
 
+Section "Zhpy 1.0" SecZhpy
+  ; Set output path to the installation directory.
+  SetOutPath $INSTDIR
+  
+  ; Download zhpy
+  ;Call DownloadZhpy
+  ;Call InstallZhpy
+SectionEnd ; end the section
+
+; Section descriptions
+
+!insertmacro MUI_FUNCTION_DESCRIPTION_BEGIN
+!insertmacro MUI_DESCRIPTION_TEXT ${SecPython} "Python"
+!insertmacro MUI_DESCRIPTION_TEXT ${SecZhpy} "zhpy"
+!insertmacro MUI_FUNCTION_DESCRIPTION_END
+
+; The stuff to install
 Function DownloadPython
     StrCpy $remote_file "http://www.python.org/ftp/python/2.5.1/python-2.5.1.msi"
 	StrCpy $local_file "${PRODUCT_NAME}-${PRODUCT_VERSION}.zip"
@@ -171,4 +221,33 @@ Function UnzipFile
 	unzip_ok:
 	    DetailPrint "งนฆจ"
 		;Delete "$INSTDIR\$local_file"
+FunctionEnd
+
+;-----------------------------------------------------------------------------------------------------------------------
+Function AbortComponents
+;-----------------------------------------------------------------------------------------------------------------------
+ 
+    ;IntCmp $Updating 1 +1 ShowPage ShowPage
+ 
+    ;IntCmp $Updates 0 +1 Showpage Showpage
+ 
+    ;StrCpy $FINISH_TEXT "${PRODUCT_NAME} found no updates to install."
+    Abort
+ 
+ShowPage:
+ 
+FunctionEnd
+
+;-----------------------------------------------------------------------------------------------------------------------
+ Function AbortPage
+;-----------------------------------------------------------------------------------------------------------------------
+  
+   ;IntCmp $Updating 1 +1 TestInstall TestInstall
+   Abort
+
+;TestInstall:
+   ;IntCmp $Install 1 ShowPage +1 +1
+   ;Abort
+ 
+ShowPage:
 FunctionEnd
