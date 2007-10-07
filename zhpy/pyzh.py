@@ -39,7 +39,7 @@ rev_twdict = revert_dict(twdict)
 # make reverse simplified chinese dicts
 rev_cndict = revert_dict(cndict)
     
-def rev_merger(anno_dict, use_dict, verbose=True):
+def rev_merger(anno_dict, use_dict, verbose=False):
     """
     merge extra bindings into reverse dict
 
@@ -52,28 +52,28 @@ Accept args:
         show detail message, default: True
     
     >>> keys = [('遊戲', 'pygame'), ('系統', 'sys')]
-    >>> rev_merger(keys, rev_twdict)
+    >>> rev_merger(keys, rev_twdict, True)
     add pygame=遊戲
     add sys=系統
     >>> 'pygame' in rev_twdict
     True
     
     >>> keys = [('游戏', 'pygame'), ('系统', 'sys')]
-    >>> rev_merger(keys, rev_cndict)
+    >>> rev_merger(keys, rev_cndict, True)
     add pygame=游戏
     add sys=系统
     >>> 'pygame' in rev_cndict
     True
     
     >>> keys = {"作業系統":"os", "選項解析":"optparse"}
-    >>> rev_merger(keys, rev_twdict)
+    >>> rev_merger(keys, rev_twdict, True)
     add optparse=選項解析
     add os=作業系統
     >>> 'os' in rev_twdict
     True
     
     >>> keys = {"作业系统":"os", "选项解析":"optparse"}
-    >>> rev_merger(keys, rev_cndict)
+    >>> rev_merger(keys, rev_cndict, True)
     add os=作业系统
     add optparse=选项解析
     >>> 'os' in rev_cndict
@@ -96,8 +96,8 @@ Accept args:
                     print "add %s=%s"%(tmp, anno_dict.keys()[num])
             else:
                 if verbose:
-                    print "already has key: %s, %s" % (tmp, anno_dict.keys()[num]) 
-                
+                    print "already has key: %s:%s" % (tmp, anno_dict.keys()[num]) 
+
 def rev_ini_annotator(use_dict, verbose=True):
     """
     update revert dict by ini files
@@ -111,6 +111,7 @@ Accept args:
     """
     # ini
     inifiles = []
+    import os
     for x in os.listdir("."):
         if x.endswith(".ini"):
             inifiles.append(x)
@@ -118,12 +119,17 @@ Accept args:
         if verbose:
             print "file", f
         conf = ConfigParser.ConfigParser()
-        conf.read(f)
-        sects = conf.sections()
-        for sect in sects:
-            if verbose:
-                print "sect:", sect
-            rev_merger(conf.items(sect), use_dict)
+        try:
+            conf.read(f)
+            sects = conf.sections()
+            for sect in sects:
+                if verbose:
+                    print "sect:", sect
+                rev_merger(conf.items(sect), use_dict)
+        except:
+            print "!%s is not a valid keyword file"%f
+
+import pkg_resources
 
 def rev_py_annotator(use_dict, entry_point, verbose=False):
     """
@@ -131,7 +137,7 @@ def rev_py_annotator(use_dict, entry_point, verbose=False):
     
     'verbose' argument is only for debug(will generate too mush messages).
     """
-    for entrypoints in pkg_resources.iter_entry_points():
+    for entrypoints in pkg_resources.iter_entry_points(entry_point):
         tool = entrypoints.load()
         if verbose:
             print tool.title
@@ -170,19 +176,21 @@ def number_to_variable(tmp):
     """
     convert number back to variable
     
-    >>> number_to_variable('7bc4_4f8b')
+    >>> number_to_variable('p_7bc4_4f8b_v')
     u'\u7bc4\u4f8b'
     """
     word_list = tmp.split('_')
     term = ''
-    for i in word_list:
+    for word in word_list[1:-1]:
         ori = 0
-        for a, b in enumerate(i[::-1]):
-            for i, s in enumerate(hexval):
+        for a, b in enumerate(word[::-1]):
+            for j, s in enumerate(hexval):
                 if b == s:
-                    ori += i*16**a
+                    ori += j*16**a
+        #print 'convert '+word+ ' to '+ str(ori)
         term +=  unichr(ori)
-    return term
+    #print term.encode('utf-8')
+    return term.encode('utf-8')
 
 from pyparsing import srange, Word, quotedString, pythonStyleComment
 
@@ -191,14 +199,16 @@ def convertToTW(s,l,t):
     """
     search rev_twdict to match keywords
     """
+    #print t
     tmp = t[0]
     if tmp in rev_twdict:
         return rev_twdict[tmp]
-    elif re.match(r'^p_[_\d]*_v\d?$', tmp):
+    elif re.match(r'^p_[_a-f\d]*_v\d?$', tmp):
+        #print 'convert', tmp
         return number_to_variable(tmp)
     else:
         return tmp
-
+    
 def convertToCN(s,l,t):
     """
     search rev_cndict to match keywords
@@ -206,7 +216,7 @@ def convertToCN(s,l,t):
     tmp = t[0]
     if tmp in rev_cndict:
         return rev_cndict[tmp]
-    elif re.match(r'^p_[_\d]*_v\d?$', tmp):
+    elif re.match(r'^p_[_a-f\d]*_v\d?$', tmp):
         return number_to_variable(tmp)
     else:
         return tmp
