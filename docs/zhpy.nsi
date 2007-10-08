@@ -14,7 +14,7 @@
 !define PRODUCT_NAME "zhpy"
 !define PRODUCT_PUBLISHER "Fred Lin"
 !define PRODUCT_WEB_SITE "http://code.google.com/p/zhpy"
-!define BUILD "29"
+!define BUILD "46"
 
 XPStyle on
 SetCompressor lzma
@@ -23,10 +23,16 @@ SetCompressor lzma
 !include "Sections.nsh"
 !include "StrFunc.nsh"
 
+!define MUI_WELCOMEPAGE ;
+!define MUI_COMPONENTSPAGE ;
+!define MUI_DIRECTORYPAGE ;
+;!define MUI_INSTFILESPAGE ;instfiles
+!define MUI_ABORTWARNING "Are you sure you want to quit ${PRODUCT_NAME} ${PRODUCT_VERSION}?"
+!define MUI_FINISHPAGE ;
+
 ; MUI Settings
 !define MUI_HEADERIMAGE
 ; !define MUI_HEADERIMAGE_BITMAP "zhpy.bmp" ; optional
-!define MUI_ABORTWARNING "Are you sure you want to quit ${PRODUCT_NAME} ${PRODUCT_VERSION}?"
 !define MUI_COMPONENTSPAGE_SMALLDESC
 
 ; Welcome page
@@ -47,8 +53,17 @@ var ChooseMessage
 !define MUI_PAGE_CUSTOMFUNCTION_PRE AbortPage
 !insertmacro MUI_PAGE_DIRECTORY
 
+; Install page
+!define MUI_PAGE_HEADER_SUBTEXT "Install zhpy"
+!define MUI_INSTFILESPAGE_ABORTHEADER_TEXT "Installation Aborted"
+!define MUI_INSTFILESPAGE_ABORTHEADER_SUBTEXT "The installation was not completed successfully."
+!insertmacro MUI_PAGE_INSTFILES
+
 ; Language files
 !insertmacro MUI_LANGUAGE "English"
+!insertmacro MUI_LANGUAGE "SimpChinese"
+!insertmacro MUI_LANGUAGE "TradChinese"
+!insertmacro MUI_RESERVEFILE_LANGDLL
 
 ; MUI end ------
    
@@ -59,14 +74,97 @@ Name "zhpy ${PRODUCT_VERSION}"
 
 ; The file to write
 OutFile "${PRODUCT_NAME}-${PRODUCT_VERSION}-installer${BUILD}.exe"
-; LoadLanguageFile "${NSISDIR}\Contrib\Language files\English.nlf"
+
 ; The default installation directory
 InstallDir $DESKTOP\${PRODUCT_NAME}temp
 
 DirText "Install Assistant will download $(^Name) to the following folder.$\r$\nClick 'Download' button to start the procedure.$\r$\n$\r$\nTo download in a different folder, click Browse and select another folder."
 InstallButtonText "Download"
 
-ShowInstDetails show
+
+;--------------------------------
+
+Section "Python 2.5.1" SecPython
+  ; Set output path to the installation directory.
+  SetOutPath $INSTDIR
+  
+  ; Download python
+  ;Call DownloadPython
+  ;MessageBox MB_OK "Python was downloaded.$\r$\nClick OK to install Python"
+  ;Call InstallPython
+  
+SectionEnd ; end the section
+
+Section "Zhpy 1.0" SecZhpy
+  ; Set output path to the installation directory.
+  SetOutPath $INSTDIR
+  
+  ; Download zhpy
+  ;Call DownloadZhpy
+  ;Call InstallZhpy
+SectionEnd ; end the section
+
+; Section descriptions
+
+!insertmacro MUI_FUNCTION_DESCRIPTION_BEGIN
+!insertmacro MUI_DESCRIPTION_TEXT ${SecPython} "Python"
+!insertmacro MUI_DESCRIPTION_TEXT ${SecZhpy} "zhpy"
+!insertmacro MUI_FUNCTION_DESCRIPTION_END
+
+
+;--------------------------------
+
+Function .onInit
+    StrCpy $ChooseMessage "Choose the zhpy components you would like to install."
+    
+    !insertmacro MUI_LANGDLL_DISPLAY
+
+	LangDLL::LangDialog "Installer Language" "Please select a language."
+
+	Pop $LANGUAGE
+	StrCmp $LANGUAGE "cancel" 0 +2
+	Abort
+
+FunctionEnd
+
+Function .onInstSuccess
+FunctionEnd
+
+;--------------------------------
+; Pages
+
+Page components
+Page directory
+Page instfiles
+
+Var remote_file
+Var local_file
+
+;--------------------------------
+; Custom functions
+
+Function DownloadFile
+    NSISdl::download $remote_file "$INSTDIR\$local_file"
+	Pop $R0 ; Get the return value
+	StrCmp $R0 "success" download_ok
+	    SetDetailsView show
+		DetailPrint "下載 $R0 失敗"
+		Abort
+	download_ok:
+	    DetailPrint "下載 $R0 完成"
+FunctionEnd
+
+Function UnzipFile
+    DetailPrint " 解壓縮 $R0..."
+	nsisunz::UnzipToLog "$INSTDIR\$local_file" "$INSTDIR"
+    Pop $R0
+    StrCmp $R0 "success" unzip_ok
+		DetailPrint "失敗"
+		Abort
+	unzip_ok:
+	    DetailPrint "完成"
+		;Delete "$INSTDIR\$local_file"
+FunctionEnd
 
 ;--------------------------------
 
@@ -80,9 +178,7 @@ ShowInstDetails show
 var PythonExecutable
 var StrNoUsablePythonFound
 
-Function .onInit
-    StrCpy $ChooseMessage "Choose the zhpy components you would like to install."
-    
+Function DetectPython
 	ReadRegStr $9 HKEY_LOCAL_MACHINE "SOFTWARE\Classes\Python.NoConFile\shell\open\command" ""
 	StrCpy $8 $9 -8
 	IfFileExists $8 ok tryagain
@@ -135,48 +231,12 @@ Function .onInit
 	    MessageBox MB_OK "Found Python executable at '$8'"
 	    StrCpy $PythonExecutable $8
 FunctionEnd
-;--------------------------------
 
-; Pages
-
-Page components
-Page directory
-Page instfiles
-
-Var remote_file
-Var local_file
- 
-;--------------------------------
-
-Section "Python 2.5.1" SecPython
-  ; Set output path to the installation directory.
-  SetOutPath $INSTDIR
-  
-  ; Download python
-  ;Call DownloadPython
-  ;MessageBox MB_OK "Python was downloaded.$\r$\nClick OK to install Python"
-  ;Call InstallPython
-  
-SectionEnd ; end the section
-
-Section "Zhpy 1.0" SecZhpy
-  ; Set output path to the installation directory.
-  SetOutPath $INSTDIR
-  
-  ; Download zhpy
-  ;Call DownloadZhpy
-  ;Call InstallZhpy
-SectionEnd ; end the section
-
-; Section descriptions
-
-!insertmacro MUI_FUNCTION_DESCRIPTION_BEGIN
-!insertmacro MUI_DESCRIPTION_TEXT ${SecPython} "Python"
-!insertmacro MUI_DESCRIPTION_TEXT ${SecZhpy} "zhpy"
-!insertmacro MUI_FUNCTION_DESCRIPTION_END
+ShowInstDetails show
 
 ; The stuff to install
 Function DownloadPython
+    Call DetectPython
     StrCpy $remote_file "http://www.python.org/ftp/python/2.5.1/python-2.5.1.msi"
 	StrCpy $local_file "${PRODUCT_NAME}-${PRODUCT_VERSION}.zip"
 	Call DownloadFile
@@ -198,29 +258,6 @@ Function InstallZhpy
 	Call UnzipFile
 	Exec 'cd "$INSTDIR\${PRODUCT_NAME}-${PRODUCT_VERSION}"'
 	Exec "python setup.py install"
-FunctionEnd
-
-Function DownloadFile
-    NSISdl::download $remote_file "$INSTDIR\$local_file"
-	Pop $R0 ; Get the return value
-	StrCmp $R0 "success" download_ok
-	    SetDetailsView show
-		DetailPrint "下載 $R0 失敗"
-		Abort
-	download_ok:
-	    DetailPrint "下載 $R0 完成"
-FunctionEnd
-
-Function UnzipFile
-    DetailPrint " 解壓縮 $R0..."
-	nsisunz::UnzipToLog "$INSTDIR\$local_file" "$INSTDIR"
-    Pop $R0
-    StrCmp $R0 "success" unzip_ok
-		DetailPrint "失敗"
-		Abort
-	unzip_ok:
-	    DetailPrint "完成"
-		;Delete "$INSTDIR\$local_file"
 FunctionEnd
 
 ;-----------------------------------------------------------------------------------------------------------------------
