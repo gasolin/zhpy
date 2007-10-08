@@ -44,7 +44,7 @@ setup(
     cnzhpy = zhpy.zhdc:cn_zhpy
     """,
     classifiers = [
-        'Development Status :: 4 - Beta',
+        'Development Status :: 5 - Production/Stable',
         'Environment :: Console',
         'Intended Audience :: Education',
         'Intended Audience :: Developers',

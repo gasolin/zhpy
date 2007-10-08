@@ -20,6 +20,7 @@ code name: Echoes
 *Project Updates*
 
 * update installer code
+* update project status to Production/Stable
 
 *Contributors*
 
