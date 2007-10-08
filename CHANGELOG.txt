@@ -1,13 +1,16 @@
 zhpy Changelog
 ====================
 
-1.1 (10/10/2007):
+1.1 (10/8/2007):
 --------------------
 code name: Echoes
 
 *Changes*
 
 *Features*
+
+* add commandline option '--tw' to convert python code to twpy
+* add commandline option '--cn' to convert python code to cnpy
 
 *Fixes*
 

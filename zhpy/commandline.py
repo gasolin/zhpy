@@ -34,8 +34,8 @@ from release import version
 from zhpy import annotator, convertor, try_run
 
 def commandline():
-    """zhpy, the python language on chinese
-    
+    """zhpy, the python language in chinese
+
 Accept options:
     -i --input:
         speficy the input source
@@ -51,27 +51,20 @@ Accept options:
         zhpy information
     -v --verbose:
         show zhpy progress in detail
-    --tw
+    --tw:
         convert python to twpy
-    --cn
+    --cn:
         convert python to cnpy
+
 help:
     get information:
-        
-    ::
-    
-        $ zhpy --info
+        zhpy --info
 
     interpreter usage:
-
-    ::
-          
-        $ zhpy
-        $ zhpy --tw
-        $ zhpy --cn
+        zhpy [--tw | --cn]
 
     command usage:
-        zhpy [-i|-p] input [-o] [output] [-e] [encoding] [-v]
+        zhpy [-i | -p] input [-o] [output] [-e] [encoding] [-v]
 
     ::
     
@@ -84,6 +77,10 @@ help:
         zhpy [-c] source [-e] [encoding] [-v]
 
     convertor usage:
+        zhpy [--tw | --cn] input.py [-v]
+    
+    ::
+    
         $ zhpy --tw input.py [-v]
         $ zhpy --cn input.py [-v]
 
