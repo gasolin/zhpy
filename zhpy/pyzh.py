@@ -178,11 +178,17 @@ def number_to_variable(tmp):
     
     >>> print number_to_variable('p_7bc4_4f8b_v')
     範例
+    >>> print number_to_variable('p_7bc4_4f8b_v_1')
+    範例_1
     
+    #>>> print number_to_variable('p_7bc4_4f8b_v1')
+    #範例1
     """
     word_list = tmp.split('_')
     term = ''
-    for word in word_list[1:-1]:
+    var_end = word_list.index('v')
+    #re.match(r'^v\w*$')
+    for word in word_list[1:var_end]:
         ori = 0
         for a, b in enumerate(word[::-1]):
             for j, s in enumerate(hexval):
@@ -190,6 +196,8 @@ def number_to_variable(tmp):
                     ori += j*16**a
         #print 'convert '+word+ ' to '+ str(ori)
         term +=  unichr(ori)
+    if len(word_list)-1!=var_end:
+        term += '_'+'_'.join(word_list[(var_end+1)::])
     #print term.encode('utf-8')
     return term.encode('utf-8')
 
@@ -204,7 +212,7 @@ def convertToTW(s,l,t):
     tmp = t[0]
     if tmp in rev_twdict:
         return rev_twdict[tmp]
-    elif re.match(r'^p_[_a-f\d]*_v\d?$', tmp):
+    elif re.match(r'^p_[_a-f\d]*_v\w*$', tmp):
         #print 'convert', tmp
         return number_to_variable(tmp)
     else:
@@ -217,7 +225,7 @@ def convertToCN(s,l,t):
     tmp = t[0]
     if tmp in rev_cndict:
         return rev_cndict[tmp]
-    elif re.match(r'^p_[_a-f\d]*_v\d?$', tmp):
+    elif re.match(r'^p_[_a-f\d]*_v\w*$', tmp):
         return number_to_variable(tmp)
     else:
         return tmp
