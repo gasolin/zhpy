@@ -51,7 +51,10 @@ Accept options:
         zhpy information
     -v --verbose:
         show zhpy progress in detail
-    
+    --tw
+        convert python to twpy
+    --cn
+        convert python to cnpy
 help:
     get information:
         
@@ -79,7 +82,11 @@ help:
 
     script usage:
         zhpy [-c] source [-e] [encoding] [-v]
-    
+
+    convertor usage:
+        $ zhpy --tw input.py [-v]
+        $ zhpy --cn input.py [-v]
+
     """
     argv = sys.argv[1:]
     os.chdir(os.getcwd())
