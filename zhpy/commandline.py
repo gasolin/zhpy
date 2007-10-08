@@ -90,7 +90,8 @@ help:
     raw_source = None
     verbose = False
     python = False
-    
+    tw = False
+    cn = False
     # run as interpreter
     if len(argv) == 0:
         from interpreter import interpreter
@@ -122,7 +123,7 @@ help:
         else:
            print commandline.__doc__
            sys.exit()
-    # accept "-c -e -v" or "-i -o -e -v" or "-p -e" or "-c -e -v"
+    # accept "-c -e -v"
     elif len(argv)>=2:
         if argv[0] == '-c' or argv[0] == '--cmp':
             raw_source = argv[1]
@@ -130,9 +131,27 @@ help:
             if len(argv)>=2 and (argv[0] == '-e' or argv[0] == '--encoding'):
                 encoding = argv[1]
                 del(argv[:2])
-                if not len(argv) and (argv[0] == '-v' or argv[0] == '--verbose'):
+                if (len(argv)!=0) and (argv[0] == '-v' or argv[0] == '--verbose'):
                     verbose = True
-
+        # python to twpy
+        elif argv[0] == '--tw':
+            source = argv[1]
+            filename = os.path.splitext(source)[0]
+            del(argv[:2])
+            tw = True
+            target = "v_"+filename+".twpy"
+            if (len(argv)!=0) and (argv[0] == '-v' or argv[0] == '--verbose'):
+                verbose = True
+        # python to cnpy
+        elif argv[0] == '--cn':
+            source = argv[1]
+            filename = os.path.splitext(source)[0]
+            del(argv[:2])
+            cn = True
+            target = "v_"+filename+".cnpy"
+            if (len(argv)!=0) and (argv[0] == '-v' or argv[0] == '--verbose'):
+                verbose = True
+        # accept "-i -o -e -v" or "-p -e" or "-c -e -v"
         elif argv[0] == '-i' or argv[0] == '--input':
             source = argv[1]
             del(argv[:2])
@@ -187,16 +206,38 @@ help:
         if verbose:
             print "input", source
         # convertor
-        try:
-            test = file(source, "r").read()
-            annotator()
-            if encoding:
-                result = convertor(test, verbose, encoding)
-            else:
-                result = convertor(test, verbose)
-        except:
-            print "zhpy Exception: you may input unproper source"
-            sys.exit() 
+        if(tw or cn):
+            if verbose:
+                print "convert python code to",
+            try:
+                from pyzh import rev_annotator, python_convertor
+                test = file(source, "r").read()
+                if tw:
+                    print "twpy"
+                    rev_annotator('tw', verbose)
+                    result = python_convertor(test, lang='tw')
+                if cn:
+                    print "cnpy"
+                    rev_annotator('cn', verbose)
+                    result = python_convertor(test, lang='cn')
+            except Exception, e:
+                print "zhpy Exception: you may input unproper source"
+                if verbose:
+                    print e
+                sys.exit()
+        else:
+            try:
+                test = file(source, "r").read()
+                annotator()
+                if encoding:
+                    result = convertor(test, verbose, encoding)
+                else:
+                    result = convertor(test, verbose)
+            except Exception, e:
+                print "zhpy Exception: you may input unproper source"
+                if verbose:
+                    print e
+                sys.exit()
     if target:
         if verbose:
             print "output", target
