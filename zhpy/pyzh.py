@@ -182,13 +182,23 @@ def number_to_variable(tmp):
     範例
     >>> print number_to_variable('p_7bc4_4f8b_v_1')
     範例_1
-    
-    #>>> print number_to_variable('p_7bc4_4f8b_v1')
-    #範例1
+    >>> print number_to_variable('p_7bc4_4f8b_v1')
+    範例1
     """
     word_list = tmp.split('_')
     term = ''
-    var_end = word_list.index('v')
+    profix = None
+    
+    try:
+        var_end = word_list.index('v')
+    except:
+        # solve 'v' with profix case
+        for num, word in enumerate(word_list):
+            if 'v' in word:
+                var_end = num
+                profix = word[1::]
+                break
+
     for word in word_list[1:var_end]:
         ori = 0
         for a, b in enumerate(word[::-1]):
@@ -198,6 +208,8 @@ def number_to_variable(tmp):
         term +=  unichr(ori)
     if len(word_list)-1!=var_end:
         term += '_'+'_'.join(word_list[(var_end+1)::])
+    if profix:
+        term += profix
     return term.encode('utf-8')
 
 from pyparsing import srange, Word, alphanums, \
