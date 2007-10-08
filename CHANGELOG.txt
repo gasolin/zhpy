@@ -1,17 +1,22 @@
 zhpy Changelog
 ====================
 
-1.0.1 (10/*/2007):
+1.1 (10/10/2007):
 --------------------
-code name: Cat Plant
+code name: Echoes
 
 *Changes*
+
+*Features*
 
 *Fixes*
 
 * fix verbose options in commandline tool
+* fix zhpy to python function
 
 *Project Updates*
+
+* update installer code
 
 *Contributors*
 
