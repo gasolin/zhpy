@@ -176,8 +176,9 @@ def number_to_variable(tmp):
     """
     convert number back to variable
     
-    >>> number_to_variable('p_7bc4_4f8b_v')
-    u'\u7bc4\u4f8b'
+    >>> print number_to_variable('p_7bc4_4f8b_v')
+    範例
+    
     """
     word_list = tmp.split('_')
     term = ''
