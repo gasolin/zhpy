@@ -171,6 +171,8 @@ Accept args:
         rev_py_annotator(use_dict, entry_point, verbose=False)
     # ini
     rev_ini_annotator(use_dict, verbose)
+
+import re
     
 def number_to_variable(tmp):
     """
@@ -187,23 +189,20 @@ def number_to_variable(tmp):
     word_list = tmp.split('_')
     term = ''
     var_end = word_list.index('v')
-    #re.match(r'^v\w*$')
     for word in word_list[1:var_end]:
         ori = 0
         for a, b in enumerate(word[::-1]):
             for j, s in enumerate(hexval):
                 if b == s:
                     ori += j*16**a
-        #print 'convert '+word+ ' to '+ str(ori)
         term +=  unichr(ori)
     if len(word_list)-1!=var_end:
         term += '_'+'_'.join(word_list[(var_end+1)::])
-    #print term.encode('utf-8')
     return term.encode('utf-8')
 
-from pyparsing import srange, Word, quotedString, pythonStyleComment
+from pyparsing import srange, Word, alphanums, \
+                      quotedString, pythonStyleComment
 
-import re
 def convertToTW(s,l,t):
     """
     search rev_twdict to match keywords
@@ -230,14 +229,11 @@ def convertToCN(s,l,t):
     else:
         return tmp
 
-#esworddict = _indict(seworddict)
-englishChars = srange('[0-z]')
-
-twenWord = Word(englishChars)
+twenWord = Word(alphanums+"_")
 twenWord.setParseAction(convertToTW)
 twpyWord = quotedString | pythonStyleComment | twenWord
 
-cnenWord = Word(englishChars)
+cnenWord = Word(alphanums+"_")
 cnenWord.setParseAction(convertToCN)
 cnpyWord = quotedString | pythonStyleComment | cnenWord 
 
