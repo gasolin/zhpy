@@ -1,6 +1,24 @@
 zhpy Changelog
 ====================
 
+1.1.1 (10/*/2007):
+--------------------
+code name: Dark Blue Moon
+
+*Changes*
+
+*Features*
+
+*Fixes*
+
+* interpreter able to import modules in current directory
+
+*Project Updates*
+
+*Contributors*
+
+Fred Lin
+
 1.1 (10/8/2007):
 --------------------
 code name: Echoes
