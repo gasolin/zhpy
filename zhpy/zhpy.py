@@ -256,6 +256,8 @@ Accept args:
     result = result.encode("utf8")
     return result
 
+import sys
+
 def try_run(result):
     """
     execute result and catch exceptions
@@ -269,6 +271,8 @@ Accept args:
     """
     try:
         locals = {"__name__": "__main__", "__doc__": None}
+        # able to import modules in current directory
+        sys.path.insert(0, '')
         exec result in locals
     except Exception, e:
         print result
