@@ -11,14 +11,14 @@ code name: Dark Blue Moon
 
 *Fixes*
 
-* Able to import modules in current directory with interpreter or script
-* fix python to zhpy command with any ini file in current directory
+* Able to import modules in current directory with interpreter or script, thanks renhbo
+* fix python to zhpy command with any ini file in current directory, thanks renhbo
 
 *Project Updates*
 
 *Contributors*
 
-Fred Lin
+Fred Lin, renhbo
 
 1.1 (10/8/2007):
 --------------------
