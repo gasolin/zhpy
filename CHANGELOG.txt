@@ -11,7 +11,8 @@ code name: Dark Blue Moon
 
 *Fixes*
 
-* Able to import modules in current directory
+* Able to import modules in current directory with interpreter or script
+* fix python to zhpy command with any ini file in current directory
 
 *Project Updates*
 

@@ -112,6 +112,7 @@ Accept args:
     # ini
     inifiles = []
     import os
+    import ConfigParser
     for x in os.listdir("."):
         if x.endswith(".ini"):
             inifiles.append(x)
