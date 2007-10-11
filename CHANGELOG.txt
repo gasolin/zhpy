@@ -35,6 +35,7 @@ code name: Echoes
 
 * fix verbose options in commandline tool
 * fix zhpy to python function
+* remove extra .tw, .cn in reverted filename of python to zhpy
 
 *Project Updates*
 
