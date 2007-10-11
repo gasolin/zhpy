@@ -141,6 +141,10 @@ help:
         elif argv[0] == '--tw':
             source = argv[1]
             filename = os.path.splitext(source)[0]
+            # remove extra .tw in filename
+            profix = os.path.splitext(filename)[-1]
+            if profix =='.tw':
+                filename = os.path.splitext(filename)[0]
             del(argv[:2])
             tw = True
             target = "v_"+filename+".twpy"
@@ -150,6 +154,10 @@ help:
         elif argv[0] == '--cn':
             source = argv[1]
             filename = os.path.splitext(source)[0]
+            # remove extra .cn in filename
+            profix = os.path.splitext(filename)[-1]
+            if profix == '.cn':
+                filename = os.path.splitext(filename)[0]
             del(argv[:2])
             cn = True
             target = "v_"+filename+".cnpy"
