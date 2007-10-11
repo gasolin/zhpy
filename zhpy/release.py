@@ -11,7 +11,14 @@ license = "MIT <http://www.opensource.org/licenses/mit-license.php>"
 url = "http://code.google.com/p/zhpy/"
 download_url="http://code.google.com/p/zhpy/"
 description="Write python language in chinese"
-long_description = """zhpy is the full feature python language with 
+long_description = """
+.. contents::
+  :depth: 2
+
+Introduction
+-------------
+
+zhpy is the full feature python language with 
 fully tested chinese keywords, variables, and parameters support, 
 independent on python version,
 bundle with command line tool, interpreter, pluggable keyword system and 
@@ -39,8 +46,8 @@ shell as well.
 Check examples here.
 http://code.google.com/p/zhpy/wiki/ZhpyExample
 
-Install zhpy
---------------
+Install
+--------
 
 You could use easy_install command to install zhpy::
 
@@ -62,16 +69,16 @@ Browse project homepage to get examples in chinese.
   * http://code.google.com/p/zhpy/
 
 check the BasicUsage for detail.
-http://code.google.com/p/zhpy/wiki/BasicUsage
+  * http://code.google.com/p/zhpy/wiki/BasicUsage
 
 Programming Guide
 -------------------
 
-An C.C licensed zhpy book "A Byte of Zhpy" is in progress.
+An C.C licensed zhpy book "A Byte of Zhpy" is available on site.
 You could freely view it online.
-The book is based on "A Byte of python".
-
   * http://code.google.com/p/zhpy/wiki/ByteOfZhpy
+
+The book is based on "A Byte of python".
   * http://swaroopch.info/text/Byte_of_Python:Main_Page
 
 There's the API document available in zhpy download list
