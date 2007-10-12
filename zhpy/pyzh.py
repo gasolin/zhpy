@@ -201,12 +201,7 @@ def number_to_variable(tmp):
                 break
 
     for word in word_list[1:var_end]:
-        ori = 0
-        for a, b in enumerate(word[::-1]):
-            for j, s in enumerate(hexval):
-                if b == s:
-                    ori += j*16**a
-        term +=  unichr(ori)
+        term += unichr(int(i, 16))
     if len(word_list)-1!=var_end:
         term += '_'+'_'.join(word_list[(var_end+1)::])
     if profix:
