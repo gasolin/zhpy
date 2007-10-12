@@ -31,8 +31,6 @@ THE SOFTWARE.
 from zhpy import annotator
 from zhdc import twdict, cndict, revert_dict
 
-hexval = '0123456789abcdef'
-
 annotator()
 # make reverse traditional chinese dicts
 rev_twdict = revert_dict(twdict)
@@ -201,7 +199,7 @@ def number_to_variable(tmp):
                 break
 
     for word in word_list[1:var_end]:
-        term += unichr(int(i, 16))
+        term += unichr(int(word, 16))
     if len(word_list)-1!=var_end:
         term += '_'+'_'.join(word_list[(var_end+1)::])
     if profix:
