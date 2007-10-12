@@ -8,12 +8,12 @@ code name: Requiem
 *Changes*
 
 * Use build-in int function to convert hex string, thanks Jiahua Huang
-* clean repeative tripleQuote pattern to single place (zhpy)
-* replace 'number_to_variable' function with 'zhchr' function (pyzh)
+* refactor repeative tripleQuote pattern to single place (zhpy)
+* refactor 'number_to_variable' function to 'zhchr' function (pyzh)
 
 *Features*
 
-* support import chinese file name, thanks Jiahua Huang
+* add zhimport module to support import chinese file name, thanks Jiahua Huang
 
 *Fixes*
 
