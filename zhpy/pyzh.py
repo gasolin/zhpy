@@ -257,6 +257,8 @@ Accept args:
     打印 'hello'
     >>> print python_convertor("# print 'hello'", 'tw')
     # print 'hello'
+    >>> print python_convertor("print '''哈囉, 世界'''", 'tw')
+    印出 '''哈囉, 世界'''
     """
     if lang == 'tw':
         result = twpyWord.transformString(test)
