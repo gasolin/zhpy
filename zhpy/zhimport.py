@@ -64,8 +64,8 @@ def zhchr(tmp):
     else:
         return tmp
 
-def myimport(*arg):
-    """myimport
+def chinese_import(*arg):
+    """chinese_import
     """
     arg = list(arg)
     modname = arg[0]
@@ -73,5 +73,5 @@ def myimport(*arg):
     return apply(trueimport, arg)
 
 if not imported:
-    __builtin__.__import__  = myimport
+    __builtin__.__import__  = chinese_import
 imported = 1
