@@ -105,3 +105,10 @@ def test_file():
     assert convertor('temp = fd.读取()') == 'temp = fd.read()'
     assert convertor('fd.写入(temp)') == 'fd.write(temp)'
     assert convertor('fd.关闭()') == 'fd.close()'
+
+def test_docstring():
+    """
+    test docstring
+    """
+    assert convertor('印出 """哈啰, 世界"""') == 'print """哈啰, 世界"""'
+    assert convertor("印出 '''哈啰, 世界'''") == "print '''哈啰, 世界'''"
