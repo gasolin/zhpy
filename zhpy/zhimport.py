@@ -1,17 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
-"""zhpy import handle
-
-zhpy is the python language with chinese native keywords, variables, and 
-parameters support, independent on python's version.
-
-zhpy's core function is a convertor to translate chinese python code to nature python
-code (english) and vice versa.
-
-zhpy is motivated by HYRY's origin code.
-
-gasolin+zhpy@gmail.com
+"""zhpy import handler
 
 This is the MIT license:
 http://www.opensource.org/licenses/mit-license.php
@@ -58,11 +48,11 @@ imported = 0
 import __builtin__
 trueimport = __builtin__.__import__
 
-def nu2zh(tmp):
+def zhchr(tmp):
     """
-    convert number back to zh
+    convert hex number back to chinese charactor
 
-    >>> nu2zh('p_7bc4_4f8b_v')
+    >>> zhchr('p_7bc4_4f8b_v')
     "範例"
     """
     if tmp.startswith("p_") and tmp.endswith("_v"):
@@ -79,7 +69,7 @@ def myimport(*arg):
     """
     arg = list(arg)
     modname = arg[0]
-    arg[0] = nu2zh(modname)
+    arg[0] = zhchr(modname)
     return apply(trueimport, arg)
 
 if not imported:
