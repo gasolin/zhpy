@@ -7,17 +7,22 @@ code name: Requiem
 
 *Changes*
 
+* Use build-in int function to convert hex string, thanks Jiahua Huang
+* clean repeative tripleQuote pattern to single place (zhpy)
+
 *Features*
+
+* support import chinese file name, thanks Jiahua Huang
 
 *Fixes*
 
-* Use build-in int function to convert hex string
+* support multilines comments with triple single quote, thanks renhbo
 
 *Project Updates*
 
 *Contributors*
 
-Fred Lin
+Fred Lin, Jiahua Huang, renhbo
 
 1.1.1 (10/12/2007):
 --------------------
