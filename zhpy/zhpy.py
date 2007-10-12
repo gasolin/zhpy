@@ -202,8 +202,8 @@ def convertToEnglish(s,l,t):
 chineseChars = srange(r"[\0x0080-\0xfe00]")
 chineseWord = Word(chineseChars)
 chineseWord.setParseAction(convertToEnglish)
-triQuote = QuotedString('"""', multiline=True, unquoteResults=False)
-pythonWord = triQuote | quotedString | pythonStyleComment | chineseWord
+tripleQuote = QuotedString('"""', multiline=True, unquoteResults=False)
+pythonWord = tripleQuote | quotedString | pythonStyleComment | chineseWord
 
 try:
     import chardet

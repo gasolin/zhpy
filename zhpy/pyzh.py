@@ -214,7 +214,8 @@ def number_to_variable(tmp):
     return term.encode('utf-8')
 
 from pyparsing import srange, Word, alphanums, \
-                      quotedString, pythonStyleComment
+                      quotedString, pythonStyleComment, \
+                      QuotedString
 
 def convertToTW(s,l,t):
     """
@@ -242,13 +243,15 @@ def convertToCN(s,l,t):
     else:
         return tmp
 
+tripleQuote = QuotedString('"""', multiline=True, unquoteResults=False)
+
 twenWord = Word(alphanums+"_")
 twenWord.setParseAction(convertToTW)
-twpyWord = quotedString | pythonStyleComment | twenWord
+twpyWord = tripleQuote | quotedString | pythonStyleComment | twenWord
 
 cnenWord = Word(alphanums+"_")
 cnenWord.setParseAction(convertToCN)
-cnpyWord = quotedString | pythonStyleComment | cnenWord 
+cnpyWord = tripleQuote | quotedString | pythonStyleComment | cnenWord 
 
 def python_convertor(test, lang='tw'):
     """

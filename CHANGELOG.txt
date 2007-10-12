@@ -13,8 +13,11 @@ code name: Dark Blue Moon
 
 * Able to import modules in current directory with interpreter or script, thanks renhbo
 * fix python to zhpy command with any ini file in current directory, thanks renhbo
+* fix docstring miss tranlated
 
 *Project Updates*
+
+* update release note
 
 *Contributors*
 
