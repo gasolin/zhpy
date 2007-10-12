@@ -183,7 +183,8 @@ def variable_to_number(tmp):
         word_list.append(ori)
     return "_".join(word_list)
 
-from pyparsing import srange, Word, quotedString, pythonStyleComment
+from pyparsing import srange, Word, quotedString, pythonStyleComment, \
+     QuotedString
 
 def convertToEnglish(s,l,t):
     """search worddict to match keywords
@@ -201,7 +202,8 @@ def convertToEnglish(s,l,t):
 chineseChars = srange(r"[\0x0080-\0xfe00]")
 chineseWord = Word(chineseChars)
 chineseWord.setParseAction(convertToEnglish)
-pythonWord = quotedString | pythonStyleComment | chineseWord
+triQuote = QuotedString('"""', multiline=True, unquoteResults=False)
+pythonWord = triQuote | quotedString | pythonStyleComment | chineseWord
 
 try:
     import chardet
