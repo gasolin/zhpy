@@ -28,7 +28,7 @@ THE SOFTWARE.
 """
 
  
-from zhpy import annotator
+from zhpy import annotator, tripleQuote
 from zhdc import twdict, cndict, revert_dict
 
 annotator()
@@ -207,8 +207,7 @@ def number_to_variable(tmp):
     return term.encode('utf-8')
 
 from pyparsing import srange, Word, alphanums, \
-                      quotedString, pythonStyleComment, \
-                      QuotedString
+                      quotedString, pythonStyleComment
 
 def convertToTW(s,l,t):
     """
@@ -235,8 +234,6 @@ def convertToCN(s,l,t):
         return number_to_variable(tmp)
     else:
         return tmp
-
-tripleQuote = QuotedString('"""', multiline=True, unquoteResults=False)
 
 twenWord = Word(alphanums+"_")
 twenWord.setParseAction(convertToTW)
