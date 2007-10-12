@@ -52,8 +52,8 @@ def zhchr(tmp):
     """
     convert hex number back to chinese charactor
 
-    >>> zhchr('p_7bc4_4f8b_v')
-    "範例"
+    >>> print zhchr('p_7bc4_4f8b_v')
+    範例
     """
     if tmp.startswith("p_") and tmp.endswith("_v"):
         tmp2 = ''
