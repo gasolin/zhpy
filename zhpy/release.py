@@ -81,7 +81,7 @@ You could freely view it online.
 The book is based on "A Byte of python".
   * http://swaroopch.info/text/Byte_of_Python:Main_Page
 
-There's the API document available in zhpy download list
+There's the API document available in zhpy download list, too.
   * http://code.google.com/p/zhpy/downloads/list
 
 Change Log
