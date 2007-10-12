@@ -20,6 +20,8 @@ code name: Requiem
 
 *Project Updates*
 
+* set svn:external to update ez_setup script automaticaly
+
 *Contributors*
 
 Fred Lin, Jiahua Huang, renhbo

@@ -54,6 +54,10 @@ def zhchr(tmp):
 
     >>> print zhchr('p_7bc4_4f8b_v')
     範例
+    >>> print zhchr('p_7bc4_4f8b_v_3')
+    範例_3
+    >>> print zhchr('p_7bc4_4f8b_v3')
+    範例3
     """
     if tmp.startswith("p_") and "_v" in tmp:
         tmp, profix = tmp.split('_v', 1)
