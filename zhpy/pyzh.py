@@ -204,12 +204,10 @@ def convertToTW(s,l,t):
     """
     search rev_twdict to match keywords
     """
-    #print t
     tmp = t[0]
     if tmp in rev_twdict:
         return rev_twdict[tmp]
     elif re.match(r'^p_[_a-f\d]*_v\w*$', tmp):
-        #print 'convert', tmp
         return zhchr(tmp)
     else:
         return tmp

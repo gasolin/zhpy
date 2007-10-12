@@ -105,7 +105,6 @@ Accept args:
         show detail message, default: True
     
     """
-    #inifiles = [x for x in os.listdir(".") if x.endswith(".ini")]
     inifiles = []
     for x in os.listdir("."):
         if x.endswith(".ini"):
@@ -176,7 +175,6 @@ def variable_to_number(tmp):
     >>> variable_to_number(s)
     '7bc4_4f8b'
     """
-    #return '_'.join(map(lambda i:str(ord(i)), t[0]))
     word_list=[]
     for i in tmp:
         ori = str(hex(ord(i)))[2:]
@@ -246,14 +244,16 @@ Accept args:
             if det['confidence'] >= 0.8:
                 encoding = chardet.detect(test)['encoding']
             else :
-                #print 'low confidence encoding detection, use utf8 encoding'
+                if verbose:
+                    print 'low confidence encoding detection, use utf8 encoding'
                 encoding = 'utf8'
             utest = test.decode(encoding)
         except UnicodeDecodeError, e:
             print "can't recognize your language, set to utf-8"
             utest = test.decode('utf8')
         except ImportError, e:
-            #no chardet mode
+            if verbose:
+                print "proceed no chardet mode"
             utest = test.decode('utf8')
     
     result = pythonWord.transformString(utest)
