@@ -173,7 +173,7 @@ Accept args:
 
 import re
     
-def number_to_variable(tmp):
+def zhchr(tmp):
     """
     convert number back to variable
     
@@ -194,7 +194,8 @@ def number_to_variable(tmp):
     else:
         return tmp
 
-zhchr = number_to_variable
+# backward compatibility
+number_to_variable = zhchr
 
 from pyparsing import srange, Word, alphanums, \
                       quotedString, pythonStyleComment
@@ -209,7 +210,7 @@ def convertToTW(s,l,t):
         return rev_twdict[tmp]
     elif re.match(r'^p_[_a-f\d]*_v\w*$', tmp):
         #print 'convert', tmp
-        return number_to_variable(tmp)
+        return zhchr(tmp)
     else:
         return tmp
     
@@ -221,7 +222,7 @@ def convertToCN(s,l,t):
     if tmp in rev_cndict:
         return rev_cndict[tmp]
     elif re.match(r'^p_[_a-f\d]*_v\w*$', tmp):
-        return number_to_variable(tmp)
+        return zhchr(tmp)
     else:
         return tmp
 
