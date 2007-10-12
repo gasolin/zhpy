@@ -32,10 +32,11 @@ import imputil
 
 def handle_zhpy(fullpath, fileinfo, name):
     """
-    zhpy handle
+    zhpy import handler
     """
     data = convertor(open(fullpath).read())
     return 0, compile(data,fullpath,'exec'),{}
+
 im = imputil.ImportManager()
 im.add_suffix('.zhpy',handle_zhpy)
 im.add_suffix('.cnpy',handle_zhpy)
