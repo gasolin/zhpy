@@ -9,6 +9,7 @@ code name: Requiem
 
 * Use build-in int function to convert hex string, thanks Jiahua Huang
 * clean repeative tripleQuote pattern to single place (zhpy)
+* move 'number_to_variable' function to 'zhchr' function (pyzh)
 
 *Features*
 

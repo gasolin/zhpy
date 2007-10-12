@@ -184,27 +184,17 @@ def number_to_variable(tmp):
     >>> print number_to_variable('p_7bc4_4f8b_v1')
     範例1
     """
-    word_list = tmp.split('_')
-    term = ''
-    profix = None
-    
-    try:
-        var_end = word_list.index('v')
-    except:
-        # solve 'v' with profix case
-        for num, word in enumerate(word_list):
-            if 'v' in word:
-                var_end = num
-                profix = word[1::]
-                break
+    if tmp.startswith("p_") and "_v" in tmp:
+        tmp, profix = tmp.split('_v', 1)
+        tmp2 = ''
+        for word in tmp.split('_')[1:]:
+            if not ('v' in word and 'p' in word):
+                tmp2 += unichr(int(word, 16)).encode('utf8')
+        return tmp2 + profix
+    else:
+        return tmp
 
-    for word in word_list[1:var_end]:
-        term += unichr(int(word, 16))
-    if len(word_list)-1!=var_end:
-        term += '_'+'_'.join(word_list[(var_end+1)::])
-    if profix:
-        term += profix
-    return term.encode('utf-8')
+zhchr = number_to_variable
 
 from pyparsing import srange, Word, alphanums, \
                       quotedString, pythonStyleComment

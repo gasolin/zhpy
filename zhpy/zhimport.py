@@ -28,6 +28,7 @@ THE SOFTWARE.
 """
 
 from zhpy import convertor
+from pyzh import zhchr
 import imputil
 
 def handle_zhpy(fullpath, fileinfo, name):
@@ -48,27 +49,6 @@ im.install()
 imported = 0
 import __builtin__
 trueimport = __builtin__.__import__
-
-def zhchr(tmp):
-    """
-    convert hex number back to chinese charactor
-
-    >>> print zhchr('p_7bc4_4f8b_v')
-    範例
-    >>> print zhchr('p_7bc4_4f8b_v_3')
-    範例_3
-    >>> print zhchr('p_7bc4_4f8b_v3')
-    範例3
-    """
-    if tmp.startswith("p_") and "_v" in tmp:
-        tmp, profix = tmp.split('_v', 1)
-        tmp2 = ''
-        for i in tmp.split('_')[1:]:
-            if not ('v' in i and 'p' in i):
-                tmp2 += unichr(int(i, 16)).encode('utf8')
-        return tmp2 + profix
-    else:
-        return tmp
 
 def chinese_import(*arg):
     """chinese_import
