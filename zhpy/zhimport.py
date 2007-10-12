@@ -51,12 +51,9 @@ trueimport = __builtin__.__import__
 def zhchr(tmp):
     """
     convert hex number back to chinese charactor
-<<<<<<< .mine
-=======
 
     >>> print zhchr('p_7bc4_4f8b_v')
     範例
->>>>>>> .r532
     """
     if tmp.startswith("p_") and "_v" in tmp:
         tmp, profix = tmp.split('_v', 1)
