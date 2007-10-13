@@ -10,6 +10,7 @@ code name: Requiem
 * Use build-in int function to convert hex string, thanks Jiahua Huang
 * refactor repeative tripleQuote pattern to single place (zhpy)
 * refactor 'number_to_variable' function to 'zhchr' function (pyzh)
+* refactor 'variable_to_number' function to 'zhord' function (zhpy)
 
 *Features*
 

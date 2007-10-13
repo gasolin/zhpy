@@ -175,13 +175,13 @@ import re
     
 def zhchr(tmp):
     """
-    convert number back to variable
+    convert number back to chinese variable
     
-    >>> print number_to_variable('p_7bc4_4f8b_v')
+    >>> print zhchr('p_7bc4_4f8b_v')
     範例
-    >>> print number_to_variable('p_7bc4_4f8b_v_1')
+    >>> print zhchr('p_7bc4_4f8b_v_1')
     範例_1
-    >>> print number_to_variable('p_7bc4_4f8b_v1')
+    >>> print zhchr('p_7bc4_4f8b_v1')
     範例1
     """
     if tmp.startswith("p_") and "_v" in tmp:
