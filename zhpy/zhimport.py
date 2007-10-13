@@ -29,7 +29,7 @@ THE SOFTWARE.
 
 
 from zhpy import convertor
-from pyzh import zhchr
+from pyzh import zh_chr
 import imputil
 
 def handle_zhpy(fullpath, fileinfo, name):
@@ -56,7 +56,7 @@ def chinese_import(*arg):
     """
     arg = list(arg)
     modname = arg[0]
-    arg[0] = zhchr(modname)
+    arg[0] = zh_chr(modname)
     return apply(trueimport, arg)
 
 if not imported:

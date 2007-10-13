@@ -165,14 +165,14 @@ Accept args:
     ini_annotator(verbose)
     py_annotator(verbose=False)
 
-def zhord(tmp):
+def zh_ord(tmp):
     """
     convert chinese variable to hex number
     
     >>> '範例'.decode("utf8")
     u'\u7bc4\u4f8b'
     >>> s = '範例'.decode("utf8")
-    >>> zhord(s)
+    >>> zh_ord(s)
     '7bc4_4f8b'
     """
     word_list=[]
@@ -182,7 +182,7 @@ def zhord(tmp):
     return "_".join(word_list)
 
 # backward compatibility
-variable_to_number = zhord
+variable_to_number = zh_ord
 
 from pyparsing import srange, Word, quotedString, pythonStyleComment, \
      QuotedString
@@ -197,7 +197,7 @@ def convertToEnglish(s,l,t):
     if tmp in worddict:
         word = worddict[tmp].decode("utf8")
     else:
-        word = 'p_' + zhord(t[0]) + '_v'
+        word = 'p_' + zh_ord(t[0]) + '_v'
     return word
 
 chineseChars = srange(r"[\0x0080-\0xfe00]")

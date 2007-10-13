@@ -173,15 +173,15 @@ Accept args:
 
 import re
     
-def zhchr(tmp):
+def zh_chr(tmp):
     """
     convert number back to chinese variable
     
-    >>> print zhchr('p_7bc4_4f8b_v')
+    >>> print zh_chr('p_7bc4_4f8b_v')
     範例
-    >>> print zhchr('p_7bc4_4f8b_v_1')
+    >>> print zh_chr('p_7bc4_4f8b_v_1')
     範例_1
-    >>> print zhchr('p_7bc4_4f8b_v1')
+    >>> print zh_chr('p_7bc4_4f8b_v1')
     範例1
     """
     if tmp.startswith("p_") and "_v" in tmp:
@@ -195,7 +195,7 @@ def zhchr(tmp):
         return tmp
 
 # backward compatibility
-number_to_variable = zhchr
+number_to_variable = zh_chr
 
 from pyparsing import srange, Word, alphanums, \
                       quotedString, pythonStyleComment
@@ -208,7 +208,7 @@ def convertToTW(s,l,t):
     if tmp in rev_twdict:
         return rev_twdict[tmp]
     elif re.match(r'^p_[_a-f\d]*_v\w*$', tmp):
-        return zhchr(tmp)
+        return zh_chr(tmp)
     else:
         return tmp
     
@@ -220,7 +220,7 @@ def convertToCN(s,l,t):
     if tmp in rev_cndict:
         return rev_cndict[tmp]
     elif re.match(r'^p_[_a-f\d]*_v\w*$', tmp):
-        return zhchr(tmp)
+        return zh_chr(tmp)
     else:
         return tmp
 
