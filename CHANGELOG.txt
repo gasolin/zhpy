@@ -23,6 +23,7 @@ code name: Requiem
 *Project Updates*
 
 * set svn:external to update ez_setup script automaticaly
+* renhbo joined as the project member
 
 *Contributors*
 
