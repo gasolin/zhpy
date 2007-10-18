@@ -12,6 +12,7 @@ code name: Requiem
 * refactor 'number_to_variable' function to 'zh_chr' function (pyzh)
 * refactor 'variable_to_number' function to 'zh_ord' function (zhpy)
 * support chinese filename to uri filename while convert with '-p' option
+* zh_ord and zh_chr are bi-direction convertable now
 * change keyword:
   * '最大值' instead of '最大':'max'
   * '最小值' instead of '最小':'min'

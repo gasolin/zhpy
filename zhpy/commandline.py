@@ -140,7 +140,8 @@ help:
             if len(argv)>=2 and (argv[0] == '-e' or argv[0] == '--encoding'):
                 encoding = argv[1]
                 del(argv[:2])
-                if (len(argv)!=0) and (argv[0] == '-v' or argv[0] == '--verbose'):
+                if (len(argv)!=0) and (argv[0] == '-v' or \
+                                       argv[0] == '--verbose'):
                     verbose = True
         # python to twpy
         elif argv[0] == '--tw':
@@ -177,15 +178,18 @@ help:
             if len(argv)>=2 and (argv[0] == '-e' or argv[0] == '--encoding'):
                 encoding = argv[1]
                 del(argv[:2])
-                if (len(argv)!=0) and (argv[0] == '-v' or argv[0] == '--verbose'):
+                if (len(argv)!=0) and (argv[0] == '-v' or \
+                                       argv[0] == '--verbose'):
                     verbose = True
             if len(argv)>=2 and (argv[0] == '-o' or argv[0] == '--output'):
                 target = argv[1]
                 del(argv[:2])
-                if len(argv)>=2 and (argv[0] == '-e' or argv[0] == '--encoding'):
+                if len(argv)>=2 and (argv[0] == '-e' or \
+                                     argv[0] == '--encoding'):
                     encoding = argv[1]
                     del(argv[:2])
-                    if (len(argv)!=0) and (argv[0] == '-v' or argv[0] == '--verbose'):
+                    if (len(argv)!=0) and (argv[0] == '-v' or \
+                                           argv[0] == '--verbose'):
                         verbose = True
         elif argv[0] == '-p' or argv[0] == '--python':
             source = argv[1]
@@ -193,7 +197,8 @@ help:
             del(argv[:2])
             # chinese filename to uri filename
             for i in filename:
-                if i not in list('abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_.'):
+                if i not in \
+                list('abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_.'):
                     NonEnglish = True
                     print i, "file name is not in english"
                     break
@@ -211,7 +216,8 @@ help:
             if len(argv)>=2 and (argv[0] == '-e' or argv[0] == '--encoding'):
                 encoding = argv[1]
                 del(argv[:2])
-                if (len(argv)!=0) and (argv[0] == '-v' or argv[0] == '--verbose'):
+                if (len(argv)!=0) and (argv[0] == '-v' or \
+                                       argv[0] == '--verbose'):
                     verbose = True
     else:
         print commandline.__doc__
