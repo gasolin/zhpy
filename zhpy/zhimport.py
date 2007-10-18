@@ -32,19 +32,19 @@ from zhpy import convertor
 from pyzh import zh_chr
 import imputil
 
-def handle_zhpy(fullpath, fileinfo, name):
-    """
-    zhpy import handler
-    
-    directly import zhpy module with cnpy, twpy subname.
-    """
-    data = convertor(open(fullpath).read())
-    return 0, compile(data,fullpath,'exec'),{}
-
-im = imputil.ImportManager()
-im.add_suffix('.cnpy',handle_zhpy)
-im.add_suffix('.twpy',handle_zhpy)
-im.install()
+#def handle_zhpy(fullpath, fileinfo, name):
+#    """
+#    zhpy import handler
+#    
+#    directly import zhpy module with cnpy, twpy subname.
+#    """
+#    data = convertor(open(fullpath).read())
+#    return 0, compile(data,fullpath,'exec'),{}
+#
+#im = imputil.ImportManager()
+#im.add_suffix('.cnpy',handle_zhpy)
+#im.add_suffix('.twpy',handle_zhpy)
+#im.install()
 
 imported = 0
 import __builtin__
