@@ -16,10 +16,12 @@ code name: Requiem
   * '最小值' instead of '最小':'min'
   * '最大值' instead of '最大':'max'
   * '最小值' instead of '最小':'min'
-  
+  * '反转' instead of '逆转':'reverse',
+
 *Features*
 
 * add zhimport module to support import chinese file name, thanks Jiahua Huang
+* add build-in sys module keyword plugin
 
 *Fixes*
 

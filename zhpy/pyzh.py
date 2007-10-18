@@ -49,17 +49,17 @@ Accept args:
     verbose:
         show detail message, default: True
     
-    >>> keys = [('遊戲', 'pygame'), ('系統', 'sys')]
+    >>> keys = [('遊戲', 'pygame'), ('螢幕', 'screen')]
     >>> rev_merger(keys, rev_twdict, True)
     add pygame=遊戲
-    add sys=系統
+    add screen=螢幕
     >>> 'pygame' in rev_twdict
     True
     
-    >>> keys = [('游戏', 'pygame'), ('系统', 'sys')]
+    >>> keys = [('游戏', 'pygame'), ('螢幕', 'screen')]
     >>> rev_merger(keys, rev_cndict, True)
     add pygame=游戏
-    add sys=系统
+    add screen=螢幕
     >>> 'pygame' in rev_cndict
     True
     

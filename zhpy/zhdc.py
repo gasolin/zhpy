@@ -153,6 +153,7 @@ class tw_buildin_method(ZhpyPlugin):
           "彈出":"pop",
           "下一筆":"next",
           "移除":"remove",
+          "反轉":"reverse",
           "計數":"count",
           "索引":"index",
           "排序":"sort",
@@ -266,6 +267,26 @@ class tw_zhpy(ZhpyPlugin):
           "描述":"repr",
           }
 
+#enter traditional chinese dict here
+class tw_sys(ZhpyPlugin):
+    """
+    zhpy sys module traditional chinese plugin
+    """
+    title = "系統"
+    description = "系統模組"
+    keyword = {"系統":"sys", 
+               "版本":"version",
+               "參數":"argv",
+               "結束":"exit",
+               "取得檔案系統編碼":"getfilesystemencoding",
+               "模組列表":"modules",
+               "平台":"platform",
+               "標準錯誤":"stderr",
+               "標準輸入":"stdin",
+               "標準輸出":"stdout",
+               # sys path with list methods
+               "路徑":"path",
+               }
 
 # Simplized chinese keywords
 class cn_keyword(ZhpyPlugin):
@@ -375,7 +396,7 @@ class cn_buildin_method(ZhpyPlugin):
           "弹出":"pop",
           "下一笔":"next",
           "移除":"remove",
-          "逆转":"reverse",
+          "反转":"reverse",
           "计数":"count",
           "索引":"index",
           "排序":"sort",
@@ -501,3 +522,24 @@ def revert_dict(lang_dict):
     for i in dict_keys:
         rev_dict.update({lang_dict[i]:i})
     return rev_dict
+
+#enter simplified chinese dict here
+class cn_sys(ZhpyPlugin):
+    """
+    zhpy sys module simplified chinese plugin
+    """
+    title = "系统"
+    description = "系统模块"
+    keyword = {"系统":"sys",
+               "版本":"version",
+               "参数":"argv",
+               "结束":"exit",
+               "取得档案系统编码":"getfilesystemencoding",
+               "模块列表":"modules",
+               "平台":"platform",
+               "标准错误":"stderr",
+               "标准输入":"stdin",
+               "标准输出":"stdout",
+               # sys path with list methods
+               "路径":"path",
+               }

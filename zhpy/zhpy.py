@@ -54,20 +54,20 @@ Accept args:
 
     merger could accept list input:
     
-    >>> keys = [('遊戲', 'pygame'), ('系統', 'sys')]
+    >>> keys = [('遊戲', 'pygame'), ('螢幕', 'screen')]
     >>> merger(keys)
     add 遊戲=pygame
-    add 系統=sys
+    add 螢幕=screen
     >>> '遊戲' in worddict
     True
     
     merger could accept dict input:
     
-    >>> keydic = {'作業系統':'os', '路徑':'path'}
+    >>> keydic = {'作業系統':'os', '分支':'fork'}
     >>> merger(keydic)
-    add 路徑=path
+    add 分支=fork
     add 作業系統=os
-    >>> '系統' in worddict
+    >>> '作業系統' in worddict
     True
     """
     if type(anno_dict) == type([]):
