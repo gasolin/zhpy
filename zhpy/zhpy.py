@@ -173,13 +173,13 @@ def zh_ord(tmp):
     u'\u7bc4\u4f8b'
     >>> s = '範例'.decode("utf8")
     >>> zh_ord(s)
-    '7bc4_4f8b'
+    'p_7bc4_4f8b_v'
     """
     word_list=[]
     for i in tmp:
         ori = str(hex(ord(i)))[2:]
         word_list.append(ori)
-    return "_".join(word_list)
+    return 'p_' + "_".join(word_list) + '_v'
 
 # backward compatibility
 variable_to_number = zh_ord
@@ -197,7 +197,7 @@ def convertToEnglish(s,l,t):
     if tmp in worddict:
         word = worddict[tmp].decode("utf8")
     else:
-        word = 'p_' + zh_ord(t[0]) + '_v'
+        word = zh_ord(t[0])
     return word
 
 chineseChars = srange(r"[\0x0080-\0xfe00]")

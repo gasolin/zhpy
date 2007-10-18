@@ -96,6 +96,8 @@ help:
     python = False
     tw = False
     cn = False
+    NonEnglish = False
+    
     # run as interpreter
     if len(argv) == 0:
         from interpreter import interpreter
@@ -190,9 +192,15 @@ help:
             filename = os.path.splitext(source)[0]
             del(argv[:2])
             # chinese filename to uri filename
-            if zh_ord(filename) != filename:
-                target = "n_"+zh_ord(filename)+".py"
-                print "compile to python and run: %s"%("n_"+zh_ord(filename)+"_v.py")
+            for i in filename:
+                if i not in list('abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_.'):
+                    NonEnglish = True
+                    print i, "file name is not in english"
+                    break
+            
+            if NonEnglish:
+                target = zh_ord(filename)+".py"
+                print "compile to python and run: %s"%(zh_ord(filename)+".py")
             else:
                 target = "n_"+filename+".py"
                 print "compile to python and run: %s"%("n_"+filename+".py")
