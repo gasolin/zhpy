@@ -31,7 +31,7 @@ import os
 import sys
 from optparse import OptionParser
 from release import version
-from zhpy import annotator, convertor, try_run
+from zhpy import annotator, convertor, try_run, zh_ord
 
 def commandline():
     """zhpy, the python language in chinese
@@ -188,10 +188,16 @@ help:
         elif argv[0] == '-p' or argv[0] == '--python':
             source = argv[1]
             filename = os.path.splitext(source)[0]
-            del(argv[:2])            
-            target = "n_"+filename+".py"
+            del(argv[:2])
+            # chinese filename to uri filename
+            if zh_ord(filename) != filename:
+                target = "n_"+zh_ord(filename)+".py"
+                print "compile to python and run: %s"%("n_"+zh_ord(filename)+"_v.py")
+            else:
+                target = "n_"+filename+".py"
+                print "compile to python and run: %s"%("n_"+filename+".py")
             python = True
-            print "compile to python and run: %s"%("n_"+filename+".py")
+            
             if (len(argv)!=0) and (argv[0] == '-v' or argv[0] == '--verbose'):
                 verbose = True
             if len(argv)>=2 and (argv[0] == '-e' or argv[0] == '--encoding'):
