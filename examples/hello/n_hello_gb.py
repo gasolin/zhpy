@@ -1,5 +1,5 @@
-p_53c2_6570_v=1
-print p_53c2_6570_v
+argv=1
+print argv
 
 for i in range(10):
     print i

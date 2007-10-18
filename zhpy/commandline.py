@@ -145,6 +145,9 @@ help:
                     verbose = True
         # python to twpy
         elif argv[0] == '--tw':
+            from pyzh import zh_chr, rev_annotator
+            rev_annotator()
+            
             source = argv[1]
             filename = os.path.splitext(source)[0]
             # remove extra .tw in filename
@@ -153,11 +156,14 @@ help:
                 filename = os.path.splitext(filename)[0]
             del(argv[:2])
             tw = True
-            target = "v_"+filename+".twpy"
+            target = "v_"+zh_chr(filename)+".twpy"
             if (len(argv)!=0) and (argv[0] == '-v' or argv[0] == '--verbose'):
                 verbose = True
         # python to cnpy
         elif argv[0] == '--cn':
+            from pyzh import zh_chr, rev_annotator
+            rev_annotator()
+            
             source = argv[1]
             filename = os.path.splitext(source)[0]
             # remove extra .cn in filename
@@ -166,7 +172,7 @@ help:
                 filename = os.path.splitext(filename)[0]
             del(argv[:2])
             cn = True
-            target = "v_"+filename+".cnpy"
+            target = "v_"+zh_chr(filename)+".cnpy"
             if (len(argv)!=0) and (argv[0] == '-v' or argv[0] == '--verbose'):
                 verbose = True
         # accept "-i -o -e -v" or "-p -e" or "-c -e -v"
@@ -204,8 +210,8 @@ help:
                     break
             
             if NonEnglish:
-                target = zh_ord(filename)+".py"
-                print "compile to python and run: %s"%(zh_ord(filename)+".py")
+                target = zh_ord(filename.decode('utf8'))+".py"
+                print "compile to python and run: %s"%(zh_ord(filename.decode('utf8'))+".py")
             else:
                 target = "n_"+filename+".py"
                 print "compile to python and run: %s"%("n_"+filename+".py")

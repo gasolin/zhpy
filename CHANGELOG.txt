@@ -1,7 +1,7 @@
 zhpy Changelog
 ====================
 
-1.2 (10/*/2007):
+1.2 (10/19/2007):
 --------------------
 code name: Requiem
 
@@ -22,7 +22,8 @@ code name: Requiem
 
 *Features*
 
-* add zhimport module to support import chinese file name, thanks Jiahua Huang
+* add zhimport module to support chinese file name import, thanks Jiahua Huang
+* checked in experimental direct zhpy module import(disabled), thanks Jiahua Huang 
 * add build-in sys module keyword plugin
 
 *Fixes*
