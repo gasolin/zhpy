@@ -135,8 +135,8 @@ class tw_buildin_method(ZhpyPlugin):
           "十六進位":"hex",
           "絕對值":"abs",
           "比較":"cmp",
-          "最大":"max",
-          "最小":"min",
+          "最大值":"max",
+          "最小值":"min",
           # string methods
           "開頭為":"startswith",
           "結尾為":"endswith",
@@ -357,8 +357,8 @@ class cn_buildin_method(ZhpyPlugin):
           "十六进制":"hex",
           "绝对值":"abs",
           "比较":"cmp",
-          "最大":"max",
-          "最小":"min",
+          "最大值":"max",
+          "最小值":"min",
           # string methods
           "开头为":"startswith",
           "结尾为":"endswith",
