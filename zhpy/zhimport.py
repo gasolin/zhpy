@@ -35,16 +35,15 @@ import imputil
 def handle_zhpy(fullpath, fileinfo, name):
     """
     zhpy import handler
+    
+    directly import zhpy module with cnpy, twpy subname.
     """
     data = convertor(open(fullpath).read())
     return 0, compile(data,fullpath,'exec'),{}
 
 im = imputil.ImportManager()
-im.add_suffix('.zhpy',handle_zhpy)
 im.add_suffix('.cnpy',handle_zhpy)
 im.add_suffix('.twpy',handle_zhpy)
-im.add_suffix('.cn',handle_zhpy)
-im.add_suffix('.tw',handle_zhpy)
 im.install()
 
 imported = 0
@@ -52,7 +51,9 @@ import __builtin__
 trueimport = __builtin__.__import__
 
 def chinese_import(*arg):
-    """chinese_import
+    """chinese import 
+    
+    convert uri file name back to chinese filename
     """
     arg = list(arg)
     modname = arg[0]
