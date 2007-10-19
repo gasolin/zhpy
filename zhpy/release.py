@@ -21,21 +21,15 @@ Introduction
 "If it walks like a duck and quacks like a duck, I would call it a duck."
 
 Zhpy acts like python and play like python, you (chinese users)
-
 could use it as python.
 
 Zhpy is the full feature python language with fully tested chinese
-
 keywords, variables, and parameters support. Independent on python
-
 version, bundle with command line tool, chinese shell script capability,
-
 interpreter, pluggable keyword system,
-
 bi-directional zhpy <-> python code translation, and great document.
 
 Zhpy on python is good for Taiwan and China beginners to learn python in
-
 our native language (Traditional and Simplified chinese).
 
 The core of zhpy is a lightweight python module and a chinese
@@ -67,9 +61,9 @@ Check examples here.
 Install
 ----------
 
-You could use easy_install command to install zhpy::
+You could use easy_install command to install or upgrade zhpy::
 
-    $ easy_install zhpy
+    $ easy_install -U zhpy
 
 or check instructions for detail.
 
@@ -81,6 +75,7 @@ Usage
 You could use zhpy interpreter to test zhpy::
 
     $ zhpy
+    zhpy [version] in [platform] on top of Python [py_version]
     >>> print 'hello in chinese'
     hello in chinese
 
