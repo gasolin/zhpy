@@ -33,17 +33,17 @@ setup(
     [console_scripts]
     zhpy = zhpy.commandline:commandline
     [zhpy.twdict]
-    twkeyword = zhpy.zhdc:tw_keyword
-    twmethod = zhpy.zhdc:tw_buildin_method
-    twexception = zhpy.zhdc:tw_exception
-    twzhpy= zhpy.zhdc:tw_zhpy
-    twsys = zhpy.zhdc:tw_sys
+    twkeyword = zhpy.plugtw:tw_keyword
+    twmethod = zhpy.plugtw:tw_buildin_method
+    twexception = zhpy.plugtw:tw_exception
+    twzhpy= zhpy.plugtw:tw_zhpy
+    twsys = zhpy.plugtw:tw_sys
     [zhpy.cndict]
-    cnkeyword = zhpy.zhdc:cn_keyword
-    cnmethod = zhpy.zhdc:cn_buildin_method
-    cnexception = zhpy.zhdc:cn_exception
-    cnzhpy = zhpy.zhdc:cn_zhpy
-    cnsys = zhpy.zhdc:cn_sys
+    cnkeyword = zhpy.plugcn:cn_keyword
+    cnmethod = zhpy.plugcn:cn_buildin_method
+    cnexception = zhpy.plugcn:cn_exception
+    cnzhpy = zhpy.plugcn:cn_zhpy
+    cnsys = zhpy.plugcn:cn_sys
     """,
     classifiers = [
         'Development Status :: 5 - Production/Stable',

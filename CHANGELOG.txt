@@ -1,6 +1,24 @@
 zhpy Changelog
 ====================
 
+1.3 (11/*/2007):
+--------------------
+code name: Requiem
+
+*Changes*
+
+* Separate traditional and simplified chinese keywords from zhdc to plug[lang].py
+
+*Features*
+
+*Fixes*
+
+*Project Updates*
+
+*Contributors*
+
+Fred Lin
+
 1.2 (10/19/2007):
 --------------------
 code name: Requiem
