@@ -265,22 +265,28 @@ Accept args:
 
 import sys
 
-def try_run(result):
+def try_run(result, global_ns={}, local_ns={}):
     """
-    execute result and catch exceptions
+    execute result and catch exceptions in specified namespace
     
 Accept args:
     result:
         the converted source to be executed
 
-    >>> try_run("print 'hello'")
+    >>> global_ns = {'x':'g'}
+    >>> local_ns = {'x':'l'}
+    >>> global_ns.update( {"__name__": "__main__", "__doc__": None})
+    >>> try_run("print 'hello'", {}, {})
     hello
+    >>> try_run("print x", global_ns, local_ns)
+    l
+    >>> try_run("print x", global_ns)
+    g
     """
     try:
-        locals = {"__name__": "__main__", "__doc__": None}
         # able to import modules in current directory
         sys.path.insert(0, '')
-        exec result in locals
+        exec result in global_ns, local_ns
     except Exception, e:
         print result
         s = str(e)
@@ -291,17 +297,20 @@ Accept args:
             if '"' + v + '"' in s:
                 print unicode(k,"utf8"), v
 
-def zh_exec(content):
+def zh_exec(content, global_ns={"__name__": "__main__", "__doc__": None}, local_ns={}):
     """
     the zhpy exec
-    
+    Global deafult namespace: {"__name__": "__main__", "__doc__": None}
+    Local default namespace: {}
 Accept args:
     content:
-        the source to be converted and executed with zhpy
+        the source to be converted and executed with zhpy in specified namespace
         
     >>> zh_exec("印出 'hello'")
     hello
     """
     annotator()
     result = convertor(content)
-    try_run(result)
+    if local_ns == {}:
+        local_ns = global_ns
+    try_run(result, global_ns, local_ns)
