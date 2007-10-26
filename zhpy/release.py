@@ -21,7 +21,7 @@ Introduction
 "If it walks like a duck and quacks like a duck, I would call it a duck."
 
 Zhpy acts like python and play like python, you (chinese users)
-could use it as python.
+could use it as python (plus with your native language).
 
 Zhpy is the full feature python language with fully tested chinese
 keywords, variables, and parameters support. Independent on python

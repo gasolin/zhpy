@@ -300,12 +300,15 @@ Accept args:
 def zh_exec(content, global_ns={"__name__": "__main__", "__doc__": None}, local_ns={}):
     """
     the zhpy exec
-    Global deafult namespace: {"__name__": "__main__", "__doc__": None}
-    Local default namespace: {}
+    
 Accept args:
     content:
         the source to be converted and executed with zhpy in specified namespace
-        
+    global_ns:
+        Global namespace, deafult is {"__name__": "__main__", "__doc__": None}
+    local_ns:
+        Local namespace, default is: {}
+    
     >>> zh_exec("印出 'hello'")
     hello
     """
