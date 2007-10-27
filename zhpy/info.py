@@ -28,22 +28,23 @@ THE SOFTWARE.
 import pkg_resources
 import sys
     
-entrypoints = {"Traditional Chinese Keywords":"zhpy.twdict",
-                "Simplified Chinese Keywords":"zhpy.cndict"}
+entrypoints = {"Traditional Chinese Keywords":"plugtw.tools",
+                "Simplified Chinese Keywords":"plugcn.tools"}
     
 def retrieve_info():
     """
     retrieve package and plugins info
     """
     packages=['%s' % i for i in pkg_resources.require("zhpy")]
-    plugins = {}
-    for name, pointname in entrypoints.items():
-        plugins[name] = ["%s (%s) - %d" % (entrypoint.name, \
-                                           str(entrypoint.dist), \
-                                           len(entrypoint.load().keyword))
-            for entrypoint in pkg_resources.iter_entry_points(pointname)
-        ]
-    return packages, plugins
+    #plugins = {}
+    #for name, pointname in entrypoints.items():
+#        plugins[name] = ["%s (%s) - %d" % (entrypoint.name, \
+#                                           str(entrypoint.dist), \
+#                                           len(entrypoint.load().keyword))
+#            for entrypoint in pkg_resources.iter_entry_points(pointname)
+#        ]
+    
+    return packages#, plugins
 
 def info():
     """
@@ -57,13 +58,14 @@ Complete zhpy Version Information
 zhpy requires:
 """
     print "  * python",sys.version.split()[0] 
-    packages, plugins = retrieve_info()
+    #packages, plugins = retrieve_info()
+    packages = retrieve_info()
     for p in packages:
         print '  *', p
     
-    print """\nzhpy extends:"""
-    for name, pluginlist in plugins.items():
-        print "\n", name, "\n"
-        for plugin in pluginlist:
-            print '  *', plugin
+#    print """\nzhpy extends:"""
+#    for name, pluginlist in plugins.items():
+#        print "\n", name, "\n"
+#        for plugin in pluginlist:
+#            print '  *', plugin
     print ""
