@@ -264,6 +264,7 @@ Accept args:
             utest = test.decode('utf8')
     
     result = pythonWord.transformString(utest)
+    #TODO: allow different output encoding?
     result = result.encode("utf8")
     return result
 
@@ -276,6 +277,10 @@ def try_run(result, global_ns={}, local_ns={}):
 Accept args:
     result:
         the converted source to be executed
+    global_ns:
+        Global namespace, deafult is {}
+    local_ns:
+        Local namespace, default is: {}
 
     >>> global_ns = {'x':'g'}
     >>> local_ns = {'x':'l'}
