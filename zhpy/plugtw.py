@@ -273,3 +273,12 @@ class tw_sys(ZhpyPlugin):
                # sys path with list methods
                "路徑":"path",
                }
+
+#    [zhpy.twdict]
+twkeyword = tw_keyword()
+twmethod = tw_buildin_method()
+twexception = tw_exception()
+twzhpy= tw_zhpy()
+twsys = tw_sys()
+
+tools = [twkeyword, twmethod, twexception, twzhpy, twsys]

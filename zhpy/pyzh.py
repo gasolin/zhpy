@@ -136,8 +136,9 @@ def rev_py_annotator(use_dict, entry_point, verbose=False):
     
     'verbose' argument is only for debug(will generate too mush messages).
     """
-    for entrypoints in pkg_resources.iter_entry_points(entry_point):
-        tool = entrypoints.load()
+    #for entrypoints in pkg_resources.iter_entry_points(entry_point):
+    #    tool = entrypoints.load()
+    for tool in entry_point:
         if verbose:
             print tool.title
         rev_merger(tool.keyword, use_dict)
@@ -159,15 +160,17 @@ Accept args:
     """
     if lang == 'tw':
         use_dict = rev_twdict
-        entry_point = "zhpy.twdict"
+        #entry_point = "zhpy.twdict"
+        from plugtw import tools
         # tw plugin
-        rev_py_annotator(use_dict, entry_point, verbose=False)
+        rev_py_annotator(use_dict, entry_point=tools, verbose=False)
 
     if lang == 'cn':
         use_dict = rev_cndict
-        entry_point = "zhpy.cndict"
+        #entry_point = "zhpy.cndict"
+        from plugcn import tools
         # cn plugin
-        rev_py_annotator(use_dict, entry_point, verbose=False)
+        rev_py_annotator(use_dict, entry_point=tools, verbose=False)
     # ini
     rev_ini_annotator(use_dict, verbose)
 

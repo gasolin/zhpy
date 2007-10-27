@@ -74,3 +74,8 @@ Accept args:
     # able to import modules in current directory
     sys.path.insert(0, '')
     con.interact(banner)
+
+
+if __name__=="__main__":
+    import zhimport
+    interpreter()

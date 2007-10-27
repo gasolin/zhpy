@@ -8,8 +8,11 @@ code name: Requiem
 *Changes*
 
 * Separate traditional and simplified chinese keywords from zhdc to plug[lang].py
+* moveout setuptools dependency
 
 *Features*
+
+* support custom name space in zh_exec, thanks renhbo
 
 *Fixes*
 

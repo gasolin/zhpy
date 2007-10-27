@@ -134,16 +134,20 @@ Accept args:
     'verbose' argument is only for debug(will generate too mush messages).
     """
     # tw plugin
-    for entrypoints in pkg_resources.iter_entry_points("zhpy.twdict"):
-        tool = entrypoints.load()
+#    for entrypoints in pkg_resources.iter_entry_points("zhpy.twdict"):
+#        tool = entrypoints.load()
+    from plugtw import tools as twtools
+    for tool in twtools:
         if verbose:
             print tool.title
         merger(tool.keyword, use_dict=twdict, verbose=verbose)
     merger(twdict, verbose=verbose)
     
     # cn plugin
-    for entrypoints in pkg_resources.iter_entry_points("zhpy.cndict"):
-        tool = entrypoints.load()
+#    for entrypoints in pkg_resources.iter_entry_points("zhpy.cndict"):
+#        tool = entrypoints.load()
+    from plugcn import tools as cntools
+    for tool in cntools:
         if verbose:
             print tool.title
         merger(tool.keyword, use_dict=cndict, verbose=verbose)

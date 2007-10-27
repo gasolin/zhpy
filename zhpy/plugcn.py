@@ -92,7 +92,7 @@ class cn_keyword(ZhpyPlugin):
           "打印":"print",
           "伴隨":"with",
           "产生":"yield",
-         }
+          }
 
 
 class cn_buildin_method(ZhpyPlugin):
@@ -175,7 +175,7 @@ class cn_buildin_method(ZhpyPlugin):
           "说明":"help",
           "区域变量":"local",
           "类方法":"classmethod",
-         }
+          }
 
 
 class cn_exception(ZhpyPlugin):
@@ -228,7 +228,7 @@ class cn_exception(ZhpyPlugin):
           "Windows错误":"WindowsError",
           "除零错误":"ZeroDivisionError",
           "解码错误":"UnicodeDecodeError",
-         }
+          }
 
 
 class cn_zhpy(ZhpyPlugin):
@@ -250,7 +250,7 @@ class cn_zhpy(ZhpyPlugin):
           "初始化":"init",
           "刪除":"del",
           "描述":"repr",
-         }
+          }
 
 #enter simplified chinese dict here
 class cn_sys(ZhpyPlugin):
@@ -272,3 +272,12 @@ class cn_sys(ZhpyPlugin):
                # sys path with list methods
                "路径":"path",
                }
+
+#    [zhpy.cndict]
+cnkeyword = cn_keyword()
+cnmethod = cn_buildin_method()
+cnexception = cn_exception()
+cnzhpy= cn_zhpy()
+cnsys = cn_sys()
+
+tools = [cnkeyword, cnmethod, cnexception, cnzhpy, cnsys]
