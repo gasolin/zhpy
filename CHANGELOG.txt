@@ -8,7 +8,7 @@ code name: Requiem
 *Changes*
 
 * Separate traditional and simplified chinese keywords from zhdc to plug[lang].py
-* moveout setuptools dependency
+* moveout plugins' setuptools dependency, now you can try zhpy without install.
 
 *Features*
 
@@ -18,9 +18,11 @@ code name: Requiem
 
 *Project Updates*
 
+* include pyparsing in distribution
+
 *Contributors*
 
-Fred Lin
+Fred Lin, renhbo
 
 1.2 (10/19/2007):
 --------------------
