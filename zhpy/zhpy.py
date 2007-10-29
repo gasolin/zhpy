@@ -93,7 +93,7 @@ Accept args:
 
 import os
 import ConfigParser
-import pkg_resources
+#import pkg_resources
 
 def ini_annotator(verbose=True):
     """

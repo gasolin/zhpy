@@ -128,7 +128,7 @@ Accept args:
         except:
             print "!%s is not a valid keyword file"%f
 
-import pkg_resources
+#import pkg_resources
 
 def rev_py_annotator(use_dict, entry_point, verbose=False):
     """
