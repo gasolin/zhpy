@@ -210,7 +210,7 @@ class tw_exception(ZhpyPlugin):
           "作業系統錯誤":"OSError",
           "溢值錯誤":"OverflowError",
           "溢值警告":"OverflowWarning",
-          "參考錯誤":"ReferenceError",
+          "引用錯誤":"ReferenceError",
           "運行期錯誤":"RuntimeError",
           "運行期警告":"RuntimeWarning",
           "標準錯誤":"StandardError",

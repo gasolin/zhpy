@@ -209,7 +209,7 @@ class cn_exception(ZhpyPlugin):
           "作业系统错误":"OSError",
           "溢值错误":"OverflowError",
           "溢值警告":"OverflowWarning",
-          "参考错误":"ReferenceError",
+          "引用错误":"ReferenceError",
           "运行期错误":"RuntimeError",
           "运行期警告":"RuntimeWarning",
           "标准错误":"StandardError",

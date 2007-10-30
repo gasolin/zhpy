@@ -9,6 +9,9 @@ code name: Requiem
 
 * Separate traditional and simplified chinese keywords from zhdc to plug[lang].py
 * moveout plugins' setuptools dependency, now you can try zhpy without install.
+* change keyword:
+  * "引用错误" instead of "参考错误":"ReferenceError"
+  * "引用錯誤" instead of "参考错误":"ReferenceError"
 
 *Features*
 
