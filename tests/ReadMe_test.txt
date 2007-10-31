@@ -4,4 +4,4 @@ install nose testtool to test::
 
 to test zhpy, enter the top zhpy directory and execute the command::
 
-    $ nosetest --with-doctest
+    $ nosetests --with-doctest
