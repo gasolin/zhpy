@@ -43,7 +43,10 @@ class ZhPyConsole(InteractiveConsole):
         return more
 
 import sys
-from release import version
+try:
+    from release import version
+except:
+    version = 'core'
 
 def interpreter(lang=None):
     """
@@ -77,5 +80,8 @@ Accept args:
 
 
 if __name__=="__main__":
-    import zhimport
+    try:
+        import zhimport
+    except:
+        print "There's no zhimport support"
     interpreter()

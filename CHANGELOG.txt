@@ -11,11 +11,14 @@ code name: White Snake
 * moveout plugins' setuptools dependency, now you can try zhpy without install.
 * change keyword:
   * "引用错误", "引用錯誤" instead of "参考错误":"ReferenceError"
-* make py_annotator works while only plugtw or plugcn exists.
+* make py_annotator work while only plugtw or plugcn exists.
 
 *Features*
 
 * support custom name space in zh_exec, thanks renhbo
+* able to run the commandline without install
+* able to run the interpreter with 4 module ["interpreter", "zhpy", "zhdc", "plug[lang]"]
+without install (core mode)
 
 *Fixes*
 
