@@ -3,15 +3,15 @@ zhpy Changelog
 
 1.3 (11/*/2007):
 --------------------
-code name: Requiem
+code name: White Snake
 
 *Changes*
 
 * Separate traditional and simplified chinese keywords from zhdc to plug[lang].py
 * moveout plugins' setuptools dependency, now you can try zhpy without install.
 * change keyword:
-  * "引用错误" instead of "参考错误":"ReferenceError"
-  * "引用錯誤" instead of "参考错误":"ReferenceError"
+  * "引用错误", "引用錯誤" instead of "参考错误":"ReferenceError"
+* make py_annotator works while only plugtw or plugcn exists.
 
 *Features*
 

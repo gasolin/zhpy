@@ -93,7 +93,6 @@ Accept args:
 
 import os
 import ConfigParser
-#import pkg_resources
 
 def ini_annotator(verbose=True):
     """
@@ -133,26 +132,36 @@ Accept args:
 
     'verbose' argument is only for debug(will generate too mush messages).
     """
+    # parameter to check if there's any plugin available
+    has_annotator = False
     # tw plugin
-#    for entrypoints in pkg_resources.iter_entry_points("zhpy.twdict"):
-#        tool = entrypoints.load()
-    from plugtw import tools as twtools
-    for tool in twtools:
+    try:
+        from plugtw import tools as twtools
+        for tool in twtools:
+            if verbose:
+                print tool.title
+            merger(tool.keyword, use_dict=twdict, verbose=verbose)
+        merger(twdict, verbose=verbose)
+        has_annotator = True
+    except ImportError, e:
         if verbose:
-            print tool.title
-        merger(tool.keyword, use_dict=twdict, verbose=verbose)
-    merger(twdict, verbose=verbose)
-    
+            print "import plugtw error", e
     # cn plugin
-#    for entrypoints in pkg_resources.iter_entry_points("zhpy.cndict"):
-#        tool = entrypoints.load()
-    from plugcn import tools as cntools
-    for tool in cntools:
+    try:
+        from plugcn import tools as cntools
+        for tool in cntools:
+            if verbose:
+                print tool.title
+            merger(tool.keyword, use_dict=cndict, verbose=verbose)
+        merger(cndict, verbose=verbose)
+        has_annotator = True
+    except ImportError, e:
         if verbose:
-            print tool.title
-        merger(tool.keyword, use_dict=cndict, verbose=verbose)
-    merger(cndict, verbose=verbose)
+            print "import plugcn error", e
     
+    if not has_annotator:
+        raise ReferenceError("no plugin was referenced in annotator")
+
 def annotator(verbose=True):
     """
     provide two ways to expand the worddict:

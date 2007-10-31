@@ -128,16 +128,12 @@ Accept args:
         except:
             print "!%s is not a valid keyword file"%f
 
-#import pkg_resources
-
 def rev_py_annotator(use_dict, entry_point, verbose=False):
     """
     update revert dict by python plugins
     
     'verbose' argument is only for debug(will generate too mush messages).
     """
-    #for entrypoints in pkg_resources.iter_entry_points(entry_point):
-    #    tool = entrypoints.load()
     for tool in entry_point:
         if verbose:
             print tool.title
