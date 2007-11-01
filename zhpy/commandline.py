@@ -31,7 +31,7 @@ import os
 import sys
 from optparse import OptionParser
 from release import version
-from zhpy import annotator, convertor, try_run, zh_ord
+from zhpy import annotator, convertor, try_run, zh_ord, zh_exec
 
 def commandline():
     """zhpy, the python language in chinese
@@ -237,7 +237,7 @@ help:
             result = convertor(raw_source, verbose, encoding)
         else:
             result = convertor(raw_source, verbose)
-        try_run(result)
+        zh_exec(result)
         import zhimport
         sys.exit()
     
@@ -286,9 +286,9 @@ help:
             print "output", target
         file(target,"w").write(result)
         if python:
-            try_run(result)
+            zh_exec(result)
     else:
-        try_run(result)
+        zh_exec(result)
 
 if __name__=="__main__":
     commandline()
