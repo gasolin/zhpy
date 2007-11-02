@@ -19,12 +19,16 @@ code name: White Snake
 * able to run the commandline without install
 * able to run the interpreter with 4 module ["interpreter", "zhpy", "zhdc", "plug[lang]"]
 without install (core mode)
+* able to profiling standalone interpreter with "--profile" option
 
 *Fixes*
 
 *Project Updates*
 
 * include pyparsing in distribution
+* doc update
+* add official zhpy blog: http://zhpy.blogspot.com/
+* remove zhpy_ext sample
 
 *Contributors*
 
