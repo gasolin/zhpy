@@ -84,4 +84,16 @@ if __name__=="__main__":
         import zhimport
     except:
         print "There's no zhimport support"
-    interpreter()
+    
+    import sys
+    argv = sys.argv[1:]
+
+    #profiling
+    if len(argv)!=0 and argv[0] =="--profile":
+        import profile
+        profile.run("interpreter()", "prof.txt")
+        import pstats
+        p = pstats.Stats("prof.txt")
+        p.sort_stats("time").print_stats()
+    else:
+        interpreter()
