@@ -173,7 +173,7 @@ class cn_buildin_method(ZhpyPlugin):
           "打包":"zip",
           "帮助":"help",
           "说明":"help",
-          "区域变量":"local",
+          "区域变量":"locals",
           "类方法":"classmethod",
           }
 

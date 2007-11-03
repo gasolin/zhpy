@@ -23,6 +23,8 @@ without install (core mode)
 
 *Fixes*
 
+* fix keyword "locals" instead of "local"
+
 *Project Updates*
 
 * include pyparsing in distribution

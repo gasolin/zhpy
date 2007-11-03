@@ -174,7 +174,7 @@ class tw_buildin_method(ZhpyPlugin):
           "打包":"zip",
           "說明":"help",
           "幫助":"help",
-          "區域變量":"local",
+          "區域變量":"locals",
           "類別方法":"classmethod",
           }
 
