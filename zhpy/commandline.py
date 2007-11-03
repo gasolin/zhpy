@@ -200,6 +200,10 @@ help:
         elif argv[0] == '-p' or argv[0] == '--python':
             source = argv[1]
             filename = os.path.splitext(source)[0]
+            # remove extra .tw in filename
+            profix = os.path.splitext(filename)[-1]
+            if (profix =='.tw') or (profix =='.cn'):
+                filename = os.path.splitext(filename)[0]
             del(argv[:2])
             # chinese filename to uri filename
             for i in filename:

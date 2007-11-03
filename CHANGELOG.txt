@@ -24,6 +24,7 @@ without install (core mode)
 *Fixes*
 
 * fix keyword "locals" instead of "local"
+* generate proper profix while the origin source is suffixed with '.tw.py' or '.cn.py'
 
 *Project Updates*
 
