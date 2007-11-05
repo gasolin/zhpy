@@ -57,7 +57,7 @@ shell script as well.
 
 Check examples here.
 
-  * http://code.google.com/p/zhpy/wiki/ZhpyExample
+  * http://zhpy.googlecode.com/svn/trunk/examples
 
 Play before Install
 --------------------
