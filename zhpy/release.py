@@ -36,7 +36,7 @@ The core of zhpy is a lightweight python module and a chinese
 source convertor based on python, which provides interpreter and
 command line tool to translate zhpy code to python.
 
-zhpy integrated a setuptools-based plugin system and in-place ini reference
+zhpy integrated a plugin system and in-place ini reference
 feature for keyword reuse.
 
 The zhpy code written in traditional and simplified chinese could be
@@ -44,6 +44,7 @@ translated and converted to natual python code.
 Thus it could be execute as nature python code and be used in
 normal python programs.
 
+Bidirectional python-zhpy translation is possible.
 Normal python programs could be translated to traditional(.twpy) or
 simplified(.cnpy) chinese zhpy source via 'zhpy' command line tool.
 
@@ -58,8 +59,25 @@ Check examples here.
 
   * http://code.google.com/p/zhpy/wiki/ZhpyExample
 
+Play before Install
+--------------------
+
+To play zhpy you even don't need to install it.
+
+All you need to do is follow the 3 steps guide:
+
+  1. Download the source pack
+  2. Extract the pack with zip tool
+  3. Run::
+
+      $ python interpreter.py
+
+Then you got the usable zhpy interpreter!
+
 Install
 ----------
+
+If you'd like play zhpy with more features, you should install zhpy.
 
 You could use easy_install command to install or upgrade zhpy::
 
