@@ -6,6 +6,8 @@ zhpy Changelog
 code name: Yellow Temperance
 
 *Changes*
+* change keyword:
+  * '操作系统错误' instead of '作业系统错误':"OSError"
 
 *Features*
 

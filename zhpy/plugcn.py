@@ -206,7 +206,7 @@ class cn_exception(ZhpyPlugin):
           "名称错误":"NameError",
           "尚未实作":"NotImplemented",
           "尚未实作错误":"NotImplementedError",
-          "作业系统错误":"OSError",
+          "操作系统错误":"OSError",
           "溢值错误":"OverflowError",
           "溢值警告":"OverflowWarning",
           "引用错误":"ReferenceError",
