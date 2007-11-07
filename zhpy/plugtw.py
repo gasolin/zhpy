@@ -85,7 +85,7 @@ class tw_keyword(ZhpyPlugin):
           "嘗試":"try",
           "異常":"except",
           "最後":"finally",
-          "宣告":"assert",
+          "申明":"assert",
           # build in methods
           "執行":"exec",
           "方程式":"lambda",
@@ -190,7 +190,7 @@ class tw_exception(ZhpyPlugin):
           "錯誤":"Error",
           # error
           "運算錯誤":"ArithmeticError",
-          "宣告錯誤":"AssertionError",
+          "申明錯誤":"AssertionError",
           "屬性錯誤":"AttributeError",
           "相容性警示":"DeprecationWarning",
           "空值錯誤":"EOFError",

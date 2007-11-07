@@ -85,7 +85,7 @@ class cn_keyword(ZhpyPlugin):
           "尝试":"try",
           "异常":"except",
           "最后":"finally",
-          "宣告":"assert",
+          "申明":"assert",
           # build in methods
           "执行":"exec",
           "函数":"lambda",
@@ -189,7 +189,7 @@ class cn_exception(ZhpyPlugin):
           "错误":"Error",
           # error
           "运算错误":"ArithmeticError",
-          "宣告错误":"AssertionError",
+          "申明错误":"AssertionError",
           "属性错误":"AttributeError",
           "相容性警示":"DeprecationWarning",
           "空值错误":"EOFError",
