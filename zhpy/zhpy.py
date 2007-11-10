@@ -277,7 +277,10 @@ Accept args:
     result = result.encode("utf8")
     return result
 
+import os
 import sys
+import traceback
+from pyzh import python_convertor
 
 def try_run(result, global_ns={}, local_ns={}):
     """
@@ -306,14 +309,30 @@ Accept args:
         sys.path.insert(0, '')
         exec result in global_ns, local_ns
     except Exception, e:
-        print result
+        # Print error and track back.
+        lang = os.getenv("LANG")
+        if "zh_CN" in lang:
+            display = "cn"
+        elif "zh_TW" in lang:
+            display = "tw"
+        else:
+            display = "tw"
+        stack = traceback.format_exc()
+        # Have a try on this way. 
+        # But there are some Engish words used but not Python key words.
+        # We may need a translation file.
+        print python_convertor(stack, display).decode("utf-8")
+        # Standard English output
+        #print stack
+        """#comment out
         s = str(e)
-        print s
+        #print s
         for k, v in worddict.items():
             if "'" + v + "'" in s:
                 print unicode(k,"utf8"), v
             if '"' + v + '"' in s:
                 print unicode(k,"utf8"), v
+        """
 
 def zh_exec(content, global_ns={"__name__": "__main__", "__doc__": None}, local_ns={}):
     """
