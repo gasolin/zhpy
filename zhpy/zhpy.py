@@ -277,11 +277,18 @@ Accept args:
     result = result.encode("utf8")
     return result
 
-import os
 import sys
-import traceback
-from pyzh import python_convertor
-
+# parameter to control if support chinese traceback
+zh_traceback=None
+try:
+    import os
+    import traceback
+    from pyzh import python_convertor
+    zh_traceback=True
+except:
+    print "not support chinese traceback"
+    zh_traceback=None
+    
 def try_run(result, global_ns={}, local_ns={}):
     """
     execute result and catch exceptions in specified namespace
@@ -310,29 +317,23 @@ Accept args:
         exec result in global_ns, local_ns
     except Exception, e:
         # Print error and track back.
-        lang = os.getenv("LANG")
-        if "zh_CN" in lang:
-            display = "cn"
-        elif "zh_TW" in lang:
-            display = "tw"
+        if zh_traceback:
+            lang = os.getenv("LANG")
+            if "zh_CN" in lang:
+                display = "cn"
+            elif "zh_TW" in lang:
+                display = "tw"
+            else:
+                display = "tw"
+            stack = traceback.format_exc()
+            # Have a try on this way. 
+            # But there are some Engish words used but not Python key words.
+            # We may need a translation file.
+            print python_convertor(stack, display).decode("utf-8")
+            # Standard English output
+            #print stack
         else:
-            display = "tw"
-        stack = traceback.format_exc()
-        # Have a try on this way. 
-        # But there are some Engish words used but not Python key words.
-        # We may need a translation file.
-        print python_convertor(stack, display).decode("utf-8")
-        # Standard English output
-        #print stack
-        """#comment out
-        s = str(e)
-        #print s
-        for k, v in worddict.items():
-            if "'" + v + "'" in s:
-                print unicode(k,"utf8"), v
-            if '"' + v + '"' in s:
-                print unicode(k,"utf8"), v
-        """
+            print e
 
 def zh_exec(content, global_ns={"__name__": "__main__", "__doc__": None}, local_ns={}):
     """
