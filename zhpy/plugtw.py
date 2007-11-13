@@ -58,6 +58,7 @@ class tw_keyword(ZhpyPlugin):
           "其":"self",
           "我":"self",
           "共用":"global",
+          "全域":"global",
           # import
           "從":"from",
           "導入":"import",
@@ -175,6 +176,7 @@ class tw_buildin_method(ZhpyPlugin):
           "說明":"help",
           "幫助":"help",
           "區域變量":"locals",
+          "全域變量":"globals",
           "類別方法":"classmethod",
           }
 

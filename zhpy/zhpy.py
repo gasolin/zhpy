@@ -247,6 +247,9 @@ Accept args:
     >>> convertor("印出 'hello'", encoding="utf8")
     "print 'hello'"
     
+    >>> convertor('測試_範例')
+    'p_6e2c_8a66_v_p_7bc4_4f8b_v'
+    
     more keyword test cases are in /tests folder.
     """
     if encoding:

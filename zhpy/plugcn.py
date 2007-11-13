@@ -58,6 +58,7 @@ class cn_keyword(ZhpyPlugin):
           "其":"self",
           "我":"self",
           "共用":"global",
+          "全域":"global",
           # import
           "从":"from",
           "导入":"import",
@@ -174,6 +175,7 @@ class cn_buildin_method(ZhpyPlugin):
           "帮助":"help",
           "说明":"help",
           "区域变量":"locals",
+          "全域变量":"globals",
           "类方法":"classmethod",
           }
 

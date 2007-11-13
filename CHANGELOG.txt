@@ -14,6 +14,10 @@ code name: Yellow Temperance
 
 *Features*
 
+* add keyword:
+  * "全域":"global"
+  * "全域變量":"globals","全域变量":"locals"
+
 *Fixes*
 
 * fix triple quote bug, thanks renhbo
