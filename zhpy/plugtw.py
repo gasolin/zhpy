@@ -253,6 +253,7 @@ class tw_zhpy(ZhpyPlugin):
           "初始化":"init",
           "刪除":"del",
           "描述":"repr",
+          "測試":"test",
           }
 
 #enter traditional chinese dict here

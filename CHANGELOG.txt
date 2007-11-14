@@ -16,7 +16,8 @@ code name: Yellow Temperance
 
 * add keyword:
   * "全域":"global"
-  * "全域變量":"globals","全域变量":"locals"
+  * "全域變量":"globals","全域变量":"globals"
+  * "測試":"test", "测试":"test"
 
 *Fixes*
 

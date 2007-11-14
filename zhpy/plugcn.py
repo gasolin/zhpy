@@ -252,6 +252,7 @@ class cn_zhpy(ZhpyPlugin):
           "初始化":"init",
           "刪除":"del",
           "描述":"repr",
+          "测试":"test",
           }
 
 #enter simplified chinese dict here
