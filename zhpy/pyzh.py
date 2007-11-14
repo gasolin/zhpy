@@ -173,7 +173,9 @@ Accept args:
 import re
 
 def val_matching(tmp):
-    
+    """
+    match and convert the identifiers
+    """
     tmp2 = ''
     for word in tmp.split('_')[1:]:
         if not ('v' in word and 'p' in word):
