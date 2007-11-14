@@ -21,6 +21,7 @@ code name: Yellow Temperance
 *Fixes*
 
 * fix triple quote bug, thanks renhbo
+* allow 2 cascade identifiers
 
 *Project Updates*
 

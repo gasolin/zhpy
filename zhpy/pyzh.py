@@ -171,7 +171,15 @@ Accept args:
     rev_ini_annotator(use_dict, verbose)
 
 import re
+
+def val_matching(tmp):
     
+    tmp2 = ''
+    for word in tmp.split('_')[1:]:
+        if not ('v' in word and 'p' in word):
+            tmp2 += unichr(int(word, 16)).encode('utf8')
+    return tmp2
+
 def zh_chr(tmp):
     """
     convert number back to chinese variable
@@ -186,14 +194,18 @@ def zh_chr(tmp):
     測試_範例
     >>> print zh_chr("p_6e2c_8a66_v_p_7bc4_4f8b_v2")
     測試_範例2
-    """
+    """ 
     if tmp.startswith("p_") and "_v" in tmp:
         tmp, profix = tmp.split('_v', 1)
-        tmp2 = ''
-        for word in tmp.split('_')[1:]:
-            if not ('v' in word and 'p' in word):
-                tmp2 += unichr(int(word, 16)).encode('utf8')
-        return tmp2 + profix
+        tmp2 = val_matching(tmp)
+        if not ('v' in profix and 'p' in profix):
+            return tmp2 + profix
+        else: # allow 2 cascade identifiers
+            sep = profix[0:profix.index('p_')]
+            tmp = profix[profix.index('p_')::]
+            tmp, profix = tmp.split('_v', 1)
+            tmp2 += sep + val_matching(tmp)
+            return tmp2 +profix
     else:
         return tmp
 
@@ -251,6 +263,12 @@ Accept args:
     # print 'hello'
     >>> print python_convertor("print '''哈囉, 世界'''", 'tw')
     印出 '''哈囉, 世界'''
+    >>> print python_convertor("p_6e2c_8a66_v_p_7bc4_4f8b_v2")
+    測試_範例2
+    >>> print python_convertor("p_6e2c_8a66_v2p_7bc4_4f8b_v")
+    測試2範例
+    >>> print python_convertor("p_6e2c_8a66_v2p_7bc4_4f8b_v2")
+    測試2範例2
     """
     if lang == 'tw':
         result = twpyWord.transformString(test)

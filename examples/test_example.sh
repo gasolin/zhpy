@@ -25,7 +25,7 @@ zhpy -p hello_big5.twpy
 echo "gbk example:"
 zhpy -p hello_gb.cnpy
 echo "run hello as script with arguments:"
-./hello_arg.py hello world
+./hello_arg.twpy hello world
 cd ..
 
 echo "zhpy in/out example..."
