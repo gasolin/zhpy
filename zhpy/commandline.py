@@ -102,7 +102,13 @@ help:
     if len(argv) == 0:
         from interpreter import interpreter
         import zhimport
-        interpreter()
+        display = os.getenv("LANG")
+        if "zh_TW" in display:
+            interpreter('tw')
+        elif "zh_CN" in display:
+            interpreter('cn')
+        else:
+            interpreter()
         sys.exit()
     # run as script
     # not accept any option
