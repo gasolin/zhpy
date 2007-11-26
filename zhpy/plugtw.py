@@ -42,11 +42,6 @@ class tw_keyword(ZhpyPlugin):
           "和":"and",
           "且":"and",
           "或":"or",
-          "非":"not",
-          "是":"is",
-          "為":"is",
-          "不是":"is not",
-          "不為":"is not",
           "真":"True",
           "假":"False",
           "實":"True",
@@ -172,6 +167,7 @@ class tw_buildin_method(ZhpyPlugin):
           "快速範圍":"xrange",
           "總和":"sum",
           "型別":"type",
+          "物件":"object",
           "打包":"zip",
           "說明":"help",
           "幫助":"help",
@@ -248,6 +244,11 @@ class tw_zhpy(ZhpyPlugin):
           # logic
           "等於":"==",
           "不等於":"!=",
+          "非":"not",
+          "是":"is",
+          "為":"is",
+          "不是":"is not",
+          "不為":"is not",
           # private
           "文件":"doc",
           "初始化":"init",
@@ -277,11 +278,25 @@ class tw_sys(ZhpyPlugin):
                "路徑":"path",
                }
 
+class tw_traceback(ZhpyPlugin):
+    """
+    zhpy traceback traditional chinese plugin
+    """
+    title = "系統"
+    description = "系統模組"
+    keyword = {"未定義":"is not defined",
+               "名稱":"name",
+               "行":"line",
+               "檔案":"File",
+               }    
+    
 #    [zhpy.twdict]
 twkeyword = tw_keyword()
 twmethod = tw_buildin_method()
 twexception = tw_exception()
 twzhpy= tw_zhpy()
 twsys = tw_sys()
+twtrace = tw_traceback()
 
 tools = [twkeyword, twmethod, twexception, twzhpy, twsys]
+trace = [twkeyword, twmethod, twexception, twtrace, twsys]
