@@ -42,11 +42,6 @@ class cn_keyword(ZhpyPlugin):
           "和":"and",
           "且":"and",
           "或":"or",
-          "非": "not",
-          "是":"is",
-          "为":"is",
-          "不是":"is not",
-          "不为":"is not",
           "真": "True",
           "假":"False",
           "实":"True",
@@ -171,6 +166,7 @@ class cn_buildin_method(ZhpyPlugin):
           "快速范围":"xrange",
           "总和":"sum",
           "类型":"type",
+          "对象":"object",
           "打包":"zip",
           "帮助":"help",
           "说明":"help",
@@ -247,6 +243,11 @@ class cn_zhpy(ZhpyPlugin):
           # logic
           "等于":"==",
           "不等于":"!=",
+          "非": "not",
+          "是":"is",
+          "为":"is",
+          "不是":"is not",
+          "不为":"is not",
           # private
           "文件":"doc",
           "初始化":"init",
@@ -276,11 +277,25 @@ class cn_sys(ZhpyPlugin):
                "路径":"path",
                }
 
+class cn_traceback(ZhpyPlugin):
+    """
+    zhpy traceback simplified chinese plugin
+    """
+    title = "系统"
+    description = "系统模组"
+    keyword = {"未定义":"is not defined",
+               "名称":"name",
+               "行":"line",
+               "档案":"File",
+               }
+
 #    [zhpy.cndict]
 cnkeyword = cn_keyword()
 cnmethod = cn_buildin_method()
 cnexception = cn_exception()
 cnzhpy= cn_zhpy()
 cnsys = cn_sys()
+cntrace = cn_traceback()
 
 tools = [cnkeyword, cnmethod, cnexception, cnzhpy, cnsys]
+trace = [cnkeyword, cnmethod, cnexception, cntrace, cnsys]
