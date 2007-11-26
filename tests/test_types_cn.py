@@ -59,7 +59,7 @@ def test_list():
     """
     assert convertor("列表((1,2,3,4)) == [1,2,3,4]") == \
                     "list((1,2,3,4)) == [1,2,3,4]"
-    assert convertor("a = []; a.加入(2); 宣告 a == [2]") == \
+    assert convertor("a = []; a.加入(2); 申明 a == [2]") == \
                     "a = []; a.append(2); assert a == [2]"
     p = "h,e,l,l,o"
     assert convertor('p.分离(",")') == 'p.split(",")'
