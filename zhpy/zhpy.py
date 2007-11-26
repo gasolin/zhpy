@@ -248,7 +248,7 @@ Accept args:
     "print 'hello'"
     
     >>> convertor('測試_範例')
-    'p_6e2c_8a66_v_p_7bc4_4f8b_v'
+    'test_p_7bc4_4f8b_v'
     
     more keyword test cases are in /tests folder.
     """
@@ -282,17 +282,17 @@ Accept args:
 
 import sys
 # parameter to control if support chinese traceback
-zh_traceback=None
+has_zhtraceback=None
 try:
     import os
     import traceback
     from pyzh import python_convertor
-    zh_traceback=True
+    has_zhtraceback=True
 except:
     print "not support chinese traceback"
-    zh_traceback=None
-    
-def try_run(result, global_ns={}, local_ns={}):
+    has_zhtraceback=None
+   
+def try_run(result, global_ns={}, local_ns={}, zhtrace=True):
     """
     execute result and catch exceptions in specified namespace
     
@@ -320,21 +320,21 @@ Accept args:
         exec result in global_ns, local_ns
     except Exception, e:
         # Print error and track back.
-        if zh_traceback:
-            lang = os.getenv("LANG")
-            if "zh_CN" in lang:
-                display = "cn"
-            elif "zh_TW" in lang:
-                display = "tw"
+        if has_zhtraceback:
+            display = os.getenv("LANG")
+            if "zh_TW" in display:
+                lang = "tw"
+            elif "zh_CN" in display:
+                lang = "cn"
             else:
-                display = "tw"
+                lang = None
             stack = traceback.format_exc()
-            # Have a try on this way. 
-            # But there are some Engish words used but not Python key words.
-            # We may need a translation file.
-            print python_convertor(stack, display).decode("utf-8")
-            # Standard English output
-            #print stack
+            #TODO: replaced by zhtraceback module.
+            if lang:
+                print python_convertor(stack, lang).decode("utf-8")
+            else:
+                # Standard English output
+                print stack
         else:
             print e
 
