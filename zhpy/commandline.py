@@ -103,7 +103,9 @@ help:
         from interpreter import interpreter
         import zhimport
         display = os.getenv("LANG")
-        if "zh_TW" in display:
+        if display == None:
+            interpreter()
+        elif "zh_TW" in display:
             interpreter('tw')
         elif "zh_CN" in display:
             interpreter('cn')

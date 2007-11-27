@@ -322,7 +322,9 @@ Accept args:
         # Print error and track back.
         if has_zhtraceback:
             display = os.getenv("LANG")
-            if "zh_TW" in display:
+            if display == None:
+                lang = None
+            elif "zh_TW" in display:
                 lang = "tw"
             elif "zh_CN" in display:
                 lang = "cn"

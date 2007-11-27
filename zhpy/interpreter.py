@@ -67,9 +67,13 @@ Accept args:
     if lang == 'tw':
         banner = '周蟒 %s 於 %s 基於 Python %s'%(version, sys.platform,
                                                   sys.version.split()[0])
+        if sys.platform == 'win32':
+            banner = unicode(banner, 'utf-8').encode('BIG5')
     elif lang == 'cn':
         banner = '周蟒 %s 于 %s 基于 Python %s'%(version, sys.platform,
                                                   sys.version.split()[0])
+        if sys.platform == 'win32':
+            banner = unicode(banner, 'utf-8').encode('GBK')
     else:
         banner = 'zhpy %s in %s on top of Python %s'%(version, sys.platform,
                                                   sys.version.split()[0])
