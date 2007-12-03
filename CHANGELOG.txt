@@ -1,7 +1,7 @@
 zhpy Changelog
 ====================
 
-1.4 (12/*/2007):
+1.4b1 (12/3/2007):
 --------------------
 code name: Yellow Temperance
 
