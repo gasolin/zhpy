@@ -11,7 +11,7 @@ code name: Yellow Temperance
   * '申明' instead of "宣告":"assert"
   * "申明錯誤" instead of "宣告錯誤":"AssertionError"
   * "申明错误" instead of "宣告错误":"AssertionError"
-* add traceback term plugins (not function)
+* add traceback term plugins (not functional yet)
 
 *Features*
 

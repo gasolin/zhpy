@@ -17,6 +17,7 @@ execfile(os.path.join('zhpy', 'release.py'))
 # it's possible to remove chardet dependency while porting
 required_modules = ["pyparsing >=1.4.7",
                     "chardet >=1.0"]
+extra_modules = {'nose':  ["nose>=0.9"]}
 
 setup(
     name="zhpy",
@@ -31,6 +32,7 @@ setup(
     url=url,
     zip_safe=False,
     install_requires = required_modules,
+    extras_require = extra_modules,
     include_package_data = True,
     packages=find_packages(exclude=["ez_setup"]),
     entry_points = """
