@@ -277,7 +277,9 @@ Accept args:
     
     result = pythonWord.transformString(utest)
     #TODO: allow different output encoding?
-    result = result.encode("utf8")
+    #Use the provided encoding, if not exist select utf-8 as default.
+    #result = result.encode(encoding)
+    result = result.encode("utf-8")
     return result
 
 import sys
