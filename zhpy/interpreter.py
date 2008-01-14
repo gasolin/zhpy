@@ -29,6 +29,7 @@ THE SOFTWARE.
 
 from code import InteractiveConsole
 from zhpy import convertor, annotator
+import sys
 
 class ZhPyConsole(InteractiveConsole):
     """
@@ -37,7 +38,7 @@ class ZhPyConsole(InteractiveConsole):
     def push(self, line):
         self.buffer.append(line)
         source = "\n".join(self.buffer)
-        more = self.runsource(convertor(source), self.filename)
+        more = self.runsource(convertor(source, encoding=sys.stdout.encoding), self.filename)
         if not more:
             self.resetbuffer()
         return more

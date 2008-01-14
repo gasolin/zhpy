@@ -268,7 +268,7 @@ Accept args:
                 encoding = 'utf8'
             utest = test.decode(encoding)
         except UnicodeDecodeError, e:
-            print "can't recognize your language, set to utf-8"
+            print "can't recognize your language, set to sys.stdout.encoding"
             utest = test.decode('utf8')
         except ImportError, e:
             if verbose:
