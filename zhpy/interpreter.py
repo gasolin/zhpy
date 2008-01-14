@@ -58,7 +58,7 @@ class ZhPyConsole(InteractiveConsole):
             # proceed no chardet mode
             utest = source.decode('utf8')
             
-        more = self.runsource(convertor(source), self.filename)
+        more = self.runsource(convertor(utest), self.filename)
         if not more:
             self.resetbuffer()
         return more
