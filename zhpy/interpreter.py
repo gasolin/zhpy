@@ -29,10 +29,6 @@ THE SOFTWARE.
 
 from code import InteractiveConsole
 from zhpy import convertor, annotator
-try:
-    import chardet
-except:
-    pass
 
 class ZhPyConsole(InteractiveConsole):
     """
@@ -41,24 +37,7 @@ class ZhPyConsole(InteractiveConsole):
     def push(self, line):
         self.buffer.append(line)
         source = "\n".join(self.buffer)
-        #decoding
-        try:
-            #detect encoding
-            det = chardet.detect(source)
-            if det['confidence'] >= 0.8:
-                encoding = chardet.detect(source)['encoding']
-            else :
-                # low confidence encoding detection, use utf8 encoding
-                encoding = 'utf8'
-            utest = source.decode(encoding)
-        except UnicodeDecodeError, e:
-            print "can't recognize your language, set to utf-8"
-            utest = source.decode('utf8')
-        except ImportError, e:
-            # proceed no chardet mode
-            utest = source.decode('utf8')
-            
-        more = self.runsource(convertor(utest), self.filename)
+        more = self.runsource(convertor(source), self.filename)
         if not more:
             self.resetbuffer()
         return more
