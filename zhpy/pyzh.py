@@ -138,7 +138,13 @@ def rev_py_annotator(use_dict, entry_point, verbose=False):
         if verbose:
             print tool.title
         rev_merger(tool.keyword, use_dict)
-               
+
+def trace_annotator(verbose=False):
+    """
+    find python traceback keyword plugins and update to dicts
+    """
+    pass
+                
 def rev_annotator(lang='tw', verbose=True):
     """
     To expand the reverse dict
@@ -160,6 +166,7 @@ Accept args:
         from plugtw import tools
         # tw plugin
         rev_py_annotator(use_dict, entry_point=tools, verbose=False)
+        trace_annotator(verbose=False)
 
     if lang == 'cn':
         use_dict = rev_cndict
@@ -167,6 +174,7 @@ Accept args:
         from plugcn import tools
         # cn plugin
         rev_py_annotator(use_dict, entry_point=tools, verbose=False)
+        trace_annotator(verbose=False)
     # ini
     rev_ini_annotator(use_dict, verbose)
 

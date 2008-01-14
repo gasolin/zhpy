@@ -331,8 +331,8 @@ Accept args:
             else:
                 lang = None
             stack = traceback.format_exc()
-            #TODO: replaced by zhtraceback module.
             if lang:
+                #TODO: replaced by zhtraceback module.
                 print python_convertor(stack, lang).decode("utf-8")
             else:
                 # Standard English output
