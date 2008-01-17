@@ -36,7 +36,6 @@ twdict = {}
 # Simplified Chinese keywords repository
 cndict = {}
 
-
 class ZhpyPlugin(object):
     """
     basic plugin class

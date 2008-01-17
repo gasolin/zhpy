@@ -36,7 +36,9 @@ annotator()
 rev_twdict = revert_dict(twdict)
 # make reverse simplified chinese dicts
 rev_cndict = revert_dict(cndict)
-    
+# Traceback keywords repository
+rev_tbdict = {}
+
 def rev_merger(anno_dict, use_dict, verbose=False):
     """
     merge extra bindings into reverse dict
@@ -139,11 +141,14 @@ def rev_py_annotator(use_dict, entry_point, verbose=False):
             print tool.title
         rev_merger(tool.keyword, use_dict)
 
-def trace_annotator(verbose=False):
+def trace_annotator(use_dict, entry_point, verbose=False):
     """
     find python traceback keyword plugins and update to dicts
     """
-    pass
+    for trace in entry_point:
+        if verbose:
+            print trace.title
+        rev_merger(trace.keyword, use_dict)
                 
 def rev_annotator(lang='tw', verbose=True):
     """
@@ -163,18 +168,18 @@ Accept args:
     if lang == 'tw':
         use_dict = rev_twdict
         #entry_point = "zhpy.twdict"
-        from plugtw import tools
+        from plugtw import tools, trace
         # tw plugin
         rev_py_annotator(use_dict, entry_point=tools, verbose=False)
-        trace_annotator(verbose=False)
+        trace_annotator(rev_tbdict, entry_point=trace, verbose=False)
 
     if lang == 'cn':
         use_dict = rev_cndict
         #entry_point = "zhpy.cndict"
-        from plugcn import tools
+        from plugcn import tools, trace
         # cn plugin
         rev_py_annotator(use_dict, entry_point=tools, verbose=False)
-        trace_annotator(verbose=False)
+        trace_annotator(rev_tbdict, entry_point=trace, verbose=False)
     # ini
     rev_ini_annotator(use_dict, verbose)
 
@@ -221,6 +226,7 @@ def zh_chr(tmp):
 
 # backward compatibility
 number_to_variable = zh_chr
+pattern = r'^p_[_a-f\d]*_v\w*$'
 
 from pyparsing import srange, Word, alphanums, \
                       quotedString, pythonStyleComment
@@ -232,7 +238,7 @@ def convertToTW(s,l,t):
     tmp = t[0]
     if tmp in rev_twdict:
         return rev_twdict[tmp]
-    elif re.match(r'^p_[_a-f\d]*_v\w*$', tmp):
+    elif re.match(pattern, tmp):
         return zh_chr(tmp)
     else:
         return tmp
@@ -244,7 +250,19 @@ def convertToCN(s,l,t):
     tmp = t[0]
     if tmp in rev_cndict:
         return rev_cndict[tmp]
-    elif re.match(r'^p_[_a-f\d]*_v\w*$', tmp):
+    elif re.match(pattern, tmp):
+        return zh_chr(tmp)
+    else:
+        return tmp
+
+def convertToTraceBack(s,l,t):
+    """
+    search rev_tbdict to match keywords
+    """
+    tmp = t[0]
+    if tmp in rev_tbdict:
+        return rev_tbdict[tmp]
+    elif re.match(pattern, tmp):
         return zh_chr(tmp)
     else:
         return tmp
@@ -253,11 +271,15 @@ twenWord = Word(alphanums+"_")
 twenWord.setParseAction(convertToTW)
 twpyWord = tripleQuote | quotedString | pythonStyleComment | twenWord
 
+tbWord = Word(alphanums+"_")
+tbWord.setParseAction(convertToTraceBack)
+tbpyWord = tripleQuote | quotedString | pythonStyleComment | tbWord
+
 cnenWord = Word(alphanums+"_")
 cnenWord.setParseAction(convertToCN)
 cnpyWord = tripleQuote | quotedString | pythonStyleComment | cnenWord 
 
-def python_convertor(test, lang='tw'):
+def python_convertor(test, lang='tw', traceback=False):
     """
     convert python source to zhpy source
 
@@ -280,10 +302,18 @@ Accept args:
     >>> print python_convertor("p_6e2c_8a66_v2p_7bc4_4f8b_v2")
     測試2範例2
     """
+    if type(test)==type(u''):
+        test = test.encode('utf8')
     if lang == 'tw':
-        result = twpyWord.transformString(test)
+        if traceback==False:
+            result = twpyWord.transformString(test)
+        else:
+            result = tbpyWord.transformString(test)#+str(rev_tbdict)     
     elif lang == 'cn':
-        result = cnpyWord.transformString(test)
+        if traceback==False:
+            result = cnpyWord.transformString(test)
+        else:
+            result = tbpyWord.transformString(test)
     else:
         #TODO: auto detect coding
         print "not valid lang option in python_convertor"

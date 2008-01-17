@@ -287,6 +287,7 @@ class cn_traceback(ZhpyPlugin):
                "名称":"name",
                "行":"line",
                "档案":"File",
+               "不合法":"invalid",               "语句":"syntax",
                }
 
 #    [zhpy.cndict]

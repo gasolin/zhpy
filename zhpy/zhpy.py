@@ -267,7 +267,11 @@ Accept args:
                 if verbose:
                     print 'low confidence encoding detection, use utf8 encoding'
                 encoding = 'utf8'
+            #prepare for unicode type support
+            #if type(test)!=type(u''):
             utest = test.decode(encoding)
+            #else:
+            #    utest = test
         except UnicodeDecodeError, e:
             print "can't recognize your language, set to sys.stdout.encoding"
             utest = test.decode('utf8')
@@ -277,8 +281,8 @@ Accept args:
             utest = test.decode('utf8')
     
     result = pythonWord.transformString(utest)
-    if type(result)!=types.UnicodeType
-        result = result.encode(encoding)
+    #if type(result)!=type(u''):
+    result = result.encode(encoding)
     return result
 
 import sys
@@ -287,7 +291,7 @@ has_zhtraceback=None
 try:
     import os
     import traceback
-    from pyzh import python_convertor
+    from pyzh import python_convertor, rev_annotator
     has_zhtraceback=True
 except:
     print "not support chinese traceback"
@@ -334,7 +338,8 @@ Accept args:
             stack = traceback.format_exc()
             if lang:
                 #TODO: replaced by zhtraceback module.
-                print python_convertor(stack, lang).decode("utf-8")
+                rev_annotator(lang)
+                print python_convertor(stack, lang, traceback=True).decode("utf-8")
             else:
                 # Standard English output
                 print stack

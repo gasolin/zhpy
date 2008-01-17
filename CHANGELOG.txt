@@ -1,7 +1,7 @@
 zhpy Changelog
 ====================
 
-1.4b2 (1//2008):
+1.4 (1/20/2008):
 --------------------
 code name: Hang Man
 
@@ -12,6 +12,8 @@ code name: Hang Man
   * "元组" instead of "组合":"tuple",
 
 *Features*
+
+* Real chinese traceback support
 
 *Fixes*
 
