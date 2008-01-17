@@ -252,6 +252,7 @@ Accept args:
     
     more keyword test cases are in /tests folder.
     """
+    #Use the provided encoding, if not exist select utf-8 as default.
     if encoding:
         utest = test.decode(encoding)
     else:
@@ -276,10 +277,8 @@ Accept args:
             utest = test.decode('utf8')
     
     result = pythonWord.transformString(utest)
-    #TODO: allow different output encoding?
-    #Use the provided encoding, if not exist select utf-8 as default.
-    #result = result.encode("utf-8")
-    result = result.encode(encoding)
+    if type(result)!=types.UnicodeType
+        result = result.encode(encoding)
     return result
 
 import sys

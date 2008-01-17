@@ -104,7 +104,7 @@ class cn_buildin_method(ZhpyPlugin):
           "布尔":"bool",
           "列表": "list",
           "字典":"dict",
-          "组合":"tuple",
+          "元组":"tuple",
           "集合":"set",
           "符号":"chr",
           "符号转整数":"ord",

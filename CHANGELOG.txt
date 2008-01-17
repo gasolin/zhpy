@@ -1,11 +1,34 @@
 zhpy Changelog
 ====================
 
+1.4b2 (1//2008):
+--------------------
+code name: Hang Man
+
+*Changes*
+
+* change keyword:
+  * "元組" instead of "組合":"tuple",
+  * "元组" instead of "组合":"tuple",
+
+*Features*
+
+*Fixes*
+
+* Fix interpreter unicode issue mainly occured on Windows, thanks renhbo
+
+*Project Updates*
+
+*Contributors*
+
+Fred Lin, renhbo
+
 1.4b1 (12/3/2007):
 --------------------
 code name: Yellow Temperance
 
 *Changes*
+
 * change keyword:
   * '操作系统错误' instead of '作业系统错误':"OSError"
   * '申明' instead of "宣告":"assert"

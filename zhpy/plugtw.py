@@ -105,7 +105,7 @@ class tw_buildin_method(ZhpyPlugin):
           "布林":"bool",
           "列表":"list",
           "字典":"dict",
-          "組合":"tuple",
+          "元組":"tuple",
           "集合":"set",
           "符號":"chr",
           "符號轉整數":"ord",
