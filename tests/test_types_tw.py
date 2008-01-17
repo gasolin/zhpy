@@ -112,5 +112,5 @@ def test_docstring():
     """
     test docstring
     """
-    assert convertor('印出 """哈囉, 世界"""') == 'print """哈囉, 世界"""'
-    assert convertor("印出 '''哈囉, 世界'''") == "print '''哈囉, 世界'''"
+    assert convertor('印出 """哈囉, 世界"""') == u'print """\u54c8\u56c9, \u4e16\u754c"""'
+    assert convertor("印出 '''哈囉, 世界'''") == u"print '''\u54c8\u56c9, \u4e16\u754c'''"
