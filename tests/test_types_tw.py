@@ -83,7 +83,7 @@ def test_tuple():
     >>> tuple([1,2,3,4]) == (1,2,3,4)
     True
     """
-    assert convertor("組合([1,2,3,4]) == (1,2,3,4)") == \
+    assert convertor("元組([1,2,3,4]) == (1,2,3,4)") == \
                     "tuple([1,2,3,4]) == (1,2,3,4)"
 
 def test_set():
