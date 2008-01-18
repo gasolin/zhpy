@@ -1,7 +1,7 @@
 zhpy Changelog
 ====================
 
-1.4 (1/20/2008):
+1.4 (1/18/2008):
 --------------------
 code name: Hang Man
 
@@ -10,10 +10,11 @@ code name: Hang Man
 * change keyword:
   * "元組" instead of "組合":"tuple",
   * "元组" instead of "组合":"tuple",
+* update example n_tabl.twpy
 
 *Features*
 
-* Real chinese traceback support
+* Introdure real chinese traceback support, currently works in compiler mode
 
 *Fixes*
 

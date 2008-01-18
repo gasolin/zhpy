@@ -288,8 +288,8 @@ class tw_traceback(ZhpyPlugin):
                "名稱":"name",
                "行":"line",
                "檔案":"File",
-               "不合法":"invalid",
-               "語句":"syntax",
+               "不合法的":"invalid",
+               "語法":"syntax",
                }    
     
 #    [zhpy.twdict]
