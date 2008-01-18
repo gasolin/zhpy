@@ -22,6 +22,8 @@ code name: Hang Man
 
 *Project Updates*
 
+* use setup.cfg to generate docs
+
 *Contributors*
 
 Fred Lin, renhbo
