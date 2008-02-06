@@ -106,6 +106,7 @@ class cn_buildin_method(ZhpyPlugin):
           "字典":"dict",
           "元组":"tuple",
           "集合":"set",
+          "定集合":"frozenset"
           "符号":"chr",
           "符号转整数":"ord",
           "档案":"file",
@@ -116,8 +117,6 @@ class cn_buildin_method(ZhpyPlugin):
           "十六进制":"hex",
           "绝对值":"abs",
           "比较":"cmp",
-          "最大值":"max",
-          "最小值":"min",
           # string methods
           "开头为":"startswith",
           "结尾为":"endswith",
@@ -138,6 +137,18 @@ class cn_buildin_method(ZhpyPlugin):
           "计数":"count",
           "索引":"index",
           "排序":"sort",
+          # dict methods
+          "键列表":"keys",
+          "值列表":"values",
+          "项目列表":"items",
+          "更新":"update",
+          "拷贝":"copy",
+          # set methods
+          "清除":"clear",
+          "加":"add",
+          "丢弃":"discard",
+          "联集":"union",
+          "交集":"intersection",          "差集":"difference",          "对称差集":"symmetric_difference",
           # file methods
           "打开":"open",
           "读取":"read",
@@ -145,22 +156,20 @@ class cn_buildin_method(ZhpyPlugin):
           "读一行":"readline",
           "读多行":"readlines",
           "关闭":"close",
-          # dict methods
-          "键列表":"keys",
-          "值列表":"values",
-          "项目列表":"items",
-          "更新":"update",
           # OO
           "可调用":"callable",
           "列出属性":"dir",
           "取属性":"getattr",
           "有属性":"hasattr",
           "设定属性":"setattr",
+          # build in functions
+          "长度":"len",
+          "最大值":"max",
+          "最小值":"min",
           # build in methods
           "列举":"enumerate",
           "评估":"eval",
           "过滤":"filter",
-          "长度":"len",
           "映射":"map",
           "范围":"range",
           "快速范围":"xrange",

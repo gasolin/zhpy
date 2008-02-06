@@ -171,6 +171,7 @@ Accept args:
         from plugtw import tools, trace
         # tw plugin
         rev_py_annotator(use_dict, entry_point=tools, verbose=False)
+        # tw trace
         trace_annotator(rev_tbdict, entry_point=trace, verbose=False)
 
     if lang == 'cn':
@@ -179,6 +180,7 @@ Accept args:
         from plugcn import tools, trace
         # cn plugin
         rev_py_annotator(use_dict, entry_point=tools, verbose=False)
+        # cn trace
         trace_annotator(rev_tbdict, entry_point=trace, verbose=False)
     # ini
     rev_ini_annotator(use_dict, verbose)

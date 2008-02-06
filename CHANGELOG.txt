@@ -1,6 +1,33 @@
 zhpy Changelog
 ====================
 
+1.4.1 (2//2008)
+--------------------
+code name: Emperor
+
+*Changes*
+
+*Features*
+
+* add set methods keyword:
+  * "定集合":"frozenset",
+  * "清除":"clear",
+  * "複製":"copy","拷贝":"copy",
+  * "加":"add",
+  * "丟棄":"discard","丢弃":"discard",
+  * "聯集":"union","联集":"union",
+  * "交集":"intersection",
+  * "差集":"difference",
+  * "對稱差集":"symmetric_difference", "对称差集":"symmetric_difference",
+
+*Fixes*
+
+*Project Updates*
+
+*Contributors*
+
+Fred Lin
+
 1.4 (1/18/2008):
 --------------------
 code name: Hang Man
