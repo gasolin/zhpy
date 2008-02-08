@@ -114,8 +114,7 @@ Accept args:
         conf = ConfigParser.ConfigParser()
         try:
             conf.read(f)
-            sects = conf.sections()
-            for sect in sects:
+            for sect in conf.sections():
                 if verbose:
                     print "sect:", sect
                 merger(conf.items(sect))
