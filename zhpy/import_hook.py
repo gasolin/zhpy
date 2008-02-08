@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
-"""zhpy import handler
+"""zhpy import hook
 
 This is the MIT license:
 http://www.opensource.org/licenses/mit-license.php
@@ -28,9 +28,9 @@ THE SOFTWARE.
 """
 
 
-from zhpy import convertor
 from pyzh import zh_chr
-import imputil
+#from zhpy import convertor
+#import imputil
 
 #def handle_zhpy(fullpath, fileinfo, name):
 #    """

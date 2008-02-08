@@ -106,7 +106,7 @@ class cn_buildin_method(ZhpyPlugin):
           "字典":"dict",
           "元组":"tuple",
           "集合":"set",
-          "定集合":"frozenset"
+          "定集合":"frozenset",
           "符号":"chr",
           "符号转整数":"ord",
           "档案":"file",

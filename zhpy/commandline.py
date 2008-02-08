@@ -101,7 +101,7 @@ help:
     # run as interpreter
     if len(argv) == 0:
         from interpreter import interpreter
-        import zhimport
+        import import_hook
         display = os.getenv("LANG")
         if display == None:
             interpreter()
@@ -129,12 +129,12 @@ help:
         # run as native interpreter
         elif argv[0] == '--tw':
             from interpreter import interpreter
-            import zhimport
+            import import_hook
             interpreter('tw')
             sys.exit()
         elif argv[0] == '--cn':
             from interpreter import interpreter
-            import zhimport
+            import import_hook
             interpreter('cn')
             sys.exit()
         else:
@@ -250,7 +250,7 @@ help:
         else:
             result = convertor(raw_source, verbose)
         zh_exec(result)
-        import zhimport
+        import import_hook
         sys.exit()
     
     if encoding:
@@ -283,7 +283,7 @@ help:
             try:
                 test = file(source, "r").read()
                 annotator()
-                import zhimport
+                import import_hook
                 if encoding:
                     result = convertor(test, verbose, encoding)
                 else:
