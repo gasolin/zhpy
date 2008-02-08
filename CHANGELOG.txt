@@ -1,11 +1,15 @@
 zhpy Changelog
 ====================
 
-1.4.1 (2//2008)
+1.5 (2//2008)
 --------------------
 code name: Emperor
 
 *Changes*
+
+* rename zhimport.py to import_hook.py
+* rewrite import_hook from magiccodec
+http://weijr-note.blogspot.com/2008/02/python-magiccodec-01.html
 
 *Features*
 
@@ -26,7 +30,7 @@ code name: Emperor
 
 *Contributors*
 
-Fred Lin
+Fred Lin, weijr
 
 1.4 (1/18/2008):
 --------------------

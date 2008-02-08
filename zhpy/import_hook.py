@@ -28,7 +28,6 @@ THE SOFTWARE.
 """
 
 
-from pyzh import zh_chr
 #from zhpy import convertor
 #import imputil
 
@@ -46,20 +45,27 @@ from pyzh import zh_chr
 #im.add_suffix('.twpy',handle_zhpy)
 #im.install()
 
-imported = 0
 import __builtin__
-trueimport = __builtin__.__import__
+try:
+	if setup:
+		import sys
+		sys.stderr.write("reload(zhpy.import_hook) won't work!\n")
+except:
+    from pyzh import zh_chr
+    __trueimport__ = __builtin__.__import__
 
-def chinese_import(*arg):
-    """chinese import 
-    
-    convert uri file name back to chinese filename
-    """
-    arg = list(arg)
-    modname = arg[0]
-    arg[0] = zh_chr(modname)
-    return apply(trueimport, arg)
+    def chinese_import(modname, *arg):
+        """chinese import
 
-if not imported:
-    __builtin__.__import__  = chinese_import
-imported = 1
+        convert uri file name back to chinese filename
+        """
+        __builtin__.__import__ = __trueimport__
+        modname = zh_chr(modname).encode("utf8")
+        __builtin__.__import__  = chinese_import
+        return __trueimport__(modname, *arg)
+
+    def setup():
+        if not getattr(chinese_import, "hooked", False):
+            __builtin__.__import__  = chinese_import
+            chinese_import.hooked=True
+
