@@ -79,24 +79,24 @@ Accept args:
     >>> 'os' in rev_cndict
     True
     """
-    if type(anno_dict) == type([]):
-        for k,v in anno_dict:
-            if v not in use_dict:
-                use_dict[v] = k
-                if verbose:
-                    print "add %s=%s"%(v, k)
-            else:
-                if verbose:
-                    print "already has key: %s, %s" % (v, k)
     if type(anno_dict) == type({}):
-        for num, tmp in enumerate(anno_dict.values()):
-            if tmp not in use_dict:
-                use_dict[tmp] = anno_dict.keys()[num]
-                if verbose:
-                    print "add %s=%s"%(tmp, anno_dict.keys()[num])
-            else:
-                if verbose:
-                    print "already has key: %s:%s" % (tmp, anno_dict.keys()[num]) 
+        data_iter = anno_dict.iteritems()
+    else:
+        data_iter = anno_dict
+
+    #data_iter=((v,k) for (k,v) in data_iter)
+    #data_iter = ()
+    #for (k,v) in data_iter:
+    #    data_iter.append((v,k))
+
+    for k,v in data_iter:
+        if v not in use_dict:
+            use_dict[v] = k
+            if verbose:
+                print "add %s=%s"%(v, k)
+        else:
+            if verbose:
+                print "already has key: %s, %s" % (v, k)
 
 def rev_ini_annotator(use_dict, verbose=True):
     """

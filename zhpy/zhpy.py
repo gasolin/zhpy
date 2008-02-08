@@ -70,26 +70,19 @@ Accept args:
     >>> '作業系統' in worddict
     True
     """
-    if type(anno_dict) == type([]):
-        for k,v in anno_dict:
-            #worddict.update({k:v})
-            if k not in use_dict:
-                use_dict[k] = v
-                if verbose:
-                    print "add %s=%s"%(k, v)
-            else:
-                if verbose:
-                    print "already has key: %s, %s" % (k, v)
-
     if type(anno_dict) == type({}):
-        for tmp in anno_dict.keys():
-            if tmp not in use_dict:
-                use_dict[tmp] = anno_dict[tmp]
-                if verbose:
-                    print "add %s=%s"%(tmp, anno_dict[tmp])
-            else:
-                if verbose:
-                    print "already has key: %s, %s" % (tmp, anno_dict[tmp])
+        data_iter = anno_dict.iteritems()
+    else:
+        data_iter = anno_dict
+
+    for k,v in data_iter:
+        if k not in use_dict:
+            use_dict[k] = v
+            if verbose:
+                print "add %s=%s"%(k, v)
+        else:
+            if verbose:
+                print "already has key: %s, %s" % (k, v)
 
 import os
 import ConfigParser
