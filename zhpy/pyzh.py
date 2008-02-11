@@ -28,7 +28,7 @@ THE SOFTWARE.
 """
 
  
-from zhpy import annotator, tripleQuote
+from zhpy import annotator, merger, tripleQuote
 from zhdc import twdict, cndict, revert_dict
 
 annotator()
@@ -38,65 +38,6 @@ rev_twdict = revert_dict(twdict)
 rev_cndict = revert_dict(cndict)
 # Traceback keywords repository
 rev_tbdict = {}
-
-def rev_merger(anno_dict, use_dict, verbose=False):
-    """
-    merge extra bindings into reverse dict
-
-Accept args:
-    anno_dict:
-        source dict
-    use_dict:
-        target dict to be merged
-    verbose:
-        show detail message, default: True
-    
-    >>> keys = [('遊戲', 'pygame'), ('螢幕', 'screen')]
-    >>> rev_merger(keys, rev_twdict, True)
-    add pygame=遊戲
-    add screen=螢幕
-    >>> 'pygame' in rev_twdict
-    True
-    
-    >>> keys = [('游戏', 'pygame'), ('螢幕', 'screen')]
-    >>> rev_merger(keys, rev_cndict, True)
-    add pygame=游戏
-    add screen=螢幕
-    >>> 'pygame' in rev_cndict
-    True
-    
-    >>> keys = {"作業系統":"os", "選項解析":"optparse"}
-    >>> rev_merger(keys, rev_twdict, True)
-    add optparse=選項解析
-    add os=作業系統
-    >>> 'os' in rev_twdict
-    True
-    
-    >>> keys = {"作业系统":"os", "选项解析":"optparse"}
-    >>> rev_merger(keys, rev_cndict, True)
-    add os=作业系统
-    add optparse=选项解析
-    >>> 'os' in rev_cndict
-    True
-    """
-    if isinstance(anno_dict, dict):
-        data_iter = anno_dict.iteritems()
-    else:
-        data_iter = anno_dict
-
-    #data_iter=((v,k) for (k,v) in data_iter)
-    #data_iter = ()
-    #for (k,v) in data_iter:
-    #    data_iter.append((v,k))
-
-    for k,v in data_iter:
-        if v not in use_dict:
-            use_dict[v] = k
-            if verbose:
-                print "add %s=%s"%(v, k)
-        else:
-            if verbose:
-                print "already has key: %s, %s" % (v, k)
 
 def rev_ini_annotator(use_dict, verbose=True):
     """
@@ -125,7 +66,7 @@ Accept args:
             for sect in conf.sections():
                 if verbose:
                     print "sect:", sect
-                rev_merger(conf.items(sect), use_dict)
+                merger(conf.items(sect), use_dict)
         except:
             print "!%s is not a valid keyword file"%f
 
@@ -138,7 +79,7 @@ def rev_py_annotator(use_dict, entry_point, verbose=False):
     for tool in entry_point:
         if verbose:
             print tool.title
-        rev_merger(tool.keyword, use_dict)
+        merger(tool.keyword, use_dict)
 
 def trace_annotator(use_dict, entry_point, verbose=False):
     """
@@ -147,7 +88,7 @@ def trace_annotator(use_dict, entry_point, verbose=False):
     for trace in entry_point:
         if verbose:
             print trace.title
-        rev_merger(trace.keyword, use_dict)
+        merger(trace.keyword, use_dict)
                 
 def rev_annotator(lang='tw', verbose=True):
     """

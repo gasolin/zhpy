@@ -11,6 +11,8 @@ code name: Emperor
 * rewrite import_hook from magiccodec
 http://weijr-note.blogspot.com/2008/02/python-magiccodec-01.html
 * use isinstance(target,dict) instead of type({})
+* refactor merger
+* merge rev_merger to merger
 
 *Features*
 
