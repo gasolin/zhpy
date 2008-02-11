@@ -66,7 +66,7 @@ Accept args:
             for sect in conf.sections():
                 if verbose:
                     print "sect:", sect
-                merger(conf.items(sect), use_dict)
+                merger(conf.items(sect), use_dict, reverse=True)
         except:
             print "!%s is not a valid keyword file"%f
 
@@ -79,7 +79,7 @@ def _rev_py_annotator(use_dict, entry_point, verbose=False):
     for tool in entry_point:
         if verbose:
             print tool.title
-        merger(tool.keyword, use_dict)
+        merger(tool.keyword, use_dict, reverse=True)
 
 def _trace_annotator(use_dict, entry_point, verbose=False):
     """
@@ -88,7 +88,7 @@ def _trace_annotator(use_dict, entry_point, verbose=False):
     for trace in entry_point:
         if verbose:
             print trace.title
-        merger(trace.keyword, use_dict)
+        merger(trace.keyword, use_dict, reverse=True)
                 
 def rev_annotator(lang='tw', verbose=True):
     """

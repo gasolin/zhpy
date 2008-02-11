@@ -40,7 +40,7 @@ THE SOFTWARE.
 
 from zhdc import worddict, twdict, cndict
 
-def merger(anno_dict, use_dict=worddict, verbose=True):
+def merger(anno_dict, use_dict=worddict, verbose=True, reverse=False):
     """
     merge extra bindings into worddict
 
@@ -74,6 +74,13 @@ Accept args:
         data_iter = anno_dict.iteritems()
     else:
         data_iter = anno_dict
+
+    if reverse:
+        #data_iter=((v,k) for (k,v) in data_iter)
+        rev_iter = []
+        for (k,v) in data_iter:
+            rev_iter.append((v,k))
+        data_iter = rev_iter
 
     for k,v in data_iter:
         if k not in use_dict:
