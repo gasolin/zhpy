@@ -162,6 +162,7 @@ class cn_buildin_method(ZhpyPlugin):
           "取属性":"getattr",
           "有属性":"hasattr",
           "设定属性":"setattr",
+          "属性":"property",
           # build in functions
           "长度":"len",
           "最大值":"max",

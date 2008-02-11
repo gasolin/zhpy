@@ -86,7 +86,6 @@ class tw_keyword(ZhpyPlugin):
           "執行":"exec",
           "方程式":"lambda",
           "印出":"print",
-          
           "伴隨":"with",
           "產生":"yield",
           }
@@ -165,6 +164,7 @@ class tw_buildin_method(ZhpyPlugin):
           "取屬性":"getattr",
           "有屬性":"hasattr",
           "設定屬性":"setattr",
+          "屬性":"property",
           # build in functions
           "長度":"len",
           "最大值":"max",

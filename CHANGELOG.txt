@@ -19,6 +19,8 @@ http://weijr-note.blogspot.com/2008/02/python-magiccodec-01.html
 
 *Features*
 
+* add keywords:
+  * "屬性":"property", "属性":"property",
 * add set methods keyword:
   * "定集合":"frozenset",
   * "清除":"clear",
