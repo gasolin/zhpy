@@ -10,6 +10,7 @@ code name: Emperor
 * rename zhimport.py to import_hook.py
 * rewrite import_hook from magiccodec
 http://weijr-note.blogspot.com/2008/02/python-magiccodec-01.html
+* use isinstance(target,dict) instead of type({})
 
 *Features*
 

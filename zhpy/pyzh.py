@@ -79,7 +79,7 @@ Accept args:
     >>> 'os' in rev_cndict
     True
     """
-    if type(anno_dict) == type({}):
+    if isinstance(anno_dict, dict):
         data_iter = anno_dict.iteritems()
     else:
         data_iter = anno_dict
