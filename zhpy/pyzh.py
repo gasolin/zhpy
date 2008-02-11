@@ -39,7 +39,7 @@ rev_cndict = revert_dict(cndict)
 # Traceback keywords repository
 rev_tbdict = {}
 
-def rev_ini_annotator(use_dict, verbose=True):
+def _rev_ini_annotator(use_dict, verbose=True):
     """
     update revert dict by ini files
     
@@ -70,7 +70,7 @@ Accept args:
         except:
             print "!%s is not a valid keyword file"%f
 
-def rev_py_annotator(use_dict, entry_point, verbose=False):
+def _rev_py_annotator(use_dict, entry_point, verbose=False):
     """
     update revert dict by python plugins
     
@@ -81,7 +81,7 @@ def rev_py_annotator(use_dict, entry_point, verbose=False):
             print tool.title
         merger(tool.keyword, use_dict)
 
-def trace_annotator(use_dict, entry_point, verbose=False):
+def _trace_annotator(use_dict, entry_point, verbose=False):
     """
     find python traceback keyword plugins and update to dicts
     """
@@ -110,24 +110,24 @@ Accept args:
         #entry_point = "zhpy.twdict"
         from plugtw import tools, trace
         # tw plugin
-        rev_py_annotator(use_dict, entry_point=tools, verbose=False)
+        _rev_py_annotator(use_dict, entry_point=tools, verbose=False)
         # tw trace
-        trace_annotator(rev_tbdict, entry_point=trace, verbose=False)
+        _trace_annotator(rev_tbdict, entry_point=trace, verbose=False)
 
     if lang == 'cn':
         use_dict = rev_cndict
         #entry_point = "zhpy.cndict"
         from plugcn import tools, trace
         # cn plugin
-        rev_py_annotator(use_dict, entry_point=tools, verbose=False)
+        _rev_py_annotator(use_dict, entry_point=tools, verbose=False)
         # cn trace
-        trace_annotator(rev_tbdict, entry_point=trace, verbose=False)
+        _trace_annotator(rev_tbdict, entry_point=trace, verbose=False)
     # ini
-    rev_ini_annotator(use_dict, verbose)
+    _rev_ini_annotator(use_dict, verbose)
 
 import re
 
-def val_matching(tmp):
+def _val_matching(tmp):
     """
     match and convert the identifiers
     """
@@ -154,21 +154,21 @@ def zh_chr(tmp):
     """ 
     if tmp.startswith("p_") and "_v" in tmp:
         tmp, profix = tmp.split('_v', 1)
-        tmp2 = val_matching(tmp)
+        tmp2 = _val_matching(tmp)
         if not ('v' in profix and 'p' in profix):
             return tmp2 + profix
         else: # allow 2 cascade identifiers
             sep = profix[0:profix.index('p_')]
             tmp = profix[profix.index('p_')::]
             tmp, profix = tmp.split('_v', 1)
-            tmp2 += sep + val_matching(tmp)
+            tmp2 += sep + _val_matching(tmp)
             return tmp2 +profix
     else:
         return tmp
 
 # backward compatibility
 number_to_variable = zh_chr
-pattern = r'^p_[_a-f\d]*_v\w*$'
+_pattern = r'^p_[_a-f\d]*_v\w*$'
 
 from pyparsing import srange, Word, alphanums, \
                       quotedString, pythonStyleComment
@@ -180,7 +180,7 @@ def convertToTW(s,l,t):
     tmp = t[0]
     if tmp in rev_twdict:
         return rev_twdict[tmp]
-    elif re.match(pattern, tmp):
+    elif re.match(_pattern, tmp):
         return zh_chr(tmp)
     else:
         return tmp

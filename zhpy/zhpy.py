@@ -87,7 +87,7 @@ Accept args:
 import os
 import ConfigParser
 
-def ini_annotator(verbose=True):
+def _ini_annotator(verbose=True):
     """
     find ini files and use keywords defined in ini during 
     convertion progress.
@@ -114,7 +114,7 @@ Accept args:
         except:
             print "!%s is not a valid keyword file"%f
 
-def py_annotator(verbose=False):
+def _py_annotator(verbose=False):
     """
     find python keyword plugins and update to dicts
     
@@ -167,8 +167,8 @@ Accept args:
         show detail message, default: True
 
     """
-    ini_annotator(verbose)
-    py_annotator(verbose=False)
+    _ini_annotator(verbose)
+    _py_annotator(verbose=False)
 
 def zh_ord(tmp):
     """
