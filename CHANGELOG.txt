@@ -36,6 +36,8 @@ http://weijr-note.blogspot.com/2008/02/python-magiccodec-01.html
 
 *Project Updates*
 
+* update to pyparsing 1.4.11
+
 *Contributors*
 
 Fred Lin, weijr

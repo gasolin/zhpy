@@ -15,9 +15,10 @@ execfile(os.path.join('zhpy', 'release.py'))
 
 # setup params
 # it's possible to remove chardet dependency while porting
-required_modules = ["pyparsing >=1.4.7",
-                    "chardet >=1.0"]
-extra_modules = {'nose':  ["nose>=0.9"]}
+required_modules = ["chardet >=1.0"]
+# pyparsing already included in release
+# nose is used for test
+extra_modules = {'pyparsing': ["pyparsing >=1.4.7"], 'nose':  ["nose>=0.9"]}
 
 setup(
     name="zhpy",
