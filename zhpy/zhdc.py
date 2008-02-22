@@ -29,11 +29,11 @@ THE SOFTWARE.
 
 
 # Universal keywords repository
-# always run annotator before access worddict
+#: always run annotator before access worddict
 worddict = {}
-# Traditional Chinese keywords repository
+#: Traditional Chinese keywords repository
 twdict = {}
-# Simplified Chinese keywords repository
+#: Simplified Chinese keywords repository
 cndict = {}
 
 class ZhpyPlugin(object):

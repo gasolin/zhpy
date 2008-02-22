@@ -8,14 +8,16 @@ code name: Emperor
 *Changes*
 
 * rename zhimport.py to import_hook.py
-* rewrite import_hook from magiccodec
+* rewrite import_hook from magiccodec, thanks weijr
 http://weijr-note.blogspot.com/2008/02/python-magiccodec-01.html
-* use isinstance(target,dict) instead of type({})
+* use isinstance(target,dict) instead of type({}), thanks weijr
 * refactor merger
 * merge rev_merger to merger
 * refactor ini_annotator, py_annotator,
   pattern, val_matching, rev_ini_annotator, 
   rev_py_annotator, trace_annotator to private method
+* refactor to distill baseWord
+* add some variable docstrings
 
 *Features*
 
@@ -37,6 +39,8 @@ http://weijr-note.blogspot.com/2008/02/python-magiccodec-01.html
 *Project Updates*
 
 * update to pyparsing 1.4.11
+* update setuptools to 0.6.8
+* update epydoc to 3.0.1
 
 *Contributors*
 

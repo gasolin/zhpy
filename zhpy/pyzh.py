@@ -32,11 +32,11 @@ from zhpy import annotator, merger, tripleQuote
 from zhdc import twdict, cndict, revert_dict
 
 annotator()
-# make reverse traditional chinese dicts
+#: make reverse traditional chinese dicts
 rev_twdict = revert_dict(twdict)
-# make reverse simplified chinese dicts
+#: make reverse simplified chinese dicts
 rev_cndict = revert_dict(cndict)
-# Traceback keywords repository
+#: Traceback keywords repository
 rev_tbdict = {}
 
 def _rev_ini_annotator(use_dict, verbose=True):
@@ -107,7 +107,6 @@ Accept args:
     """
     if lang == 'tw':
         use_dict = rev_twdict
-        #entry_point = "zhpy.twdict"
         from plugtw import tools, trace
         # tw plugin
         _rev_py_annotator(use_dict, entry_point=tools, verbose=False)
@@ -116,7 +115,6 @@ Accept args:
 
     if lang == 'cn':
         use_dict = rev_cndict
-        #entry_point = "zhpy.cndict"
         from plugcn import tools, trace
         # cn plugin
         _rev_py_annotator(use_dict, entry_point=tools, verbose=False)
@@ -209,17 +207,23 @@ def convertToTraceBack(s,l,t):
     else:
         return tmp
 
+#: basic parsing pattern
+baseWord = tripleQuote | quotedString | pythonStyleComment
+
 twenWord = Word(alphanums+"_")
 twenWord.setParseAction(convertToTW)
-twpyWord = tripleQuote | quotedString | pythonStyleComment | twenWord
+#: Traditional Chinese parsing pattern
+twpyWord = baseWord | twenWord
 
 tbWord = Word(alphanums+"_")
 tbWord.setParseAction(convertToTraceBack)
-tbpyWord = tripleQuote | quotedString | pythonStyleComment | tbWord
+#: Traceback parsing pattern
+tbpyWord = baseWord | tbWord
 
 cnenWord = Word(alphanums+"_")
 cnenWord.setParseAction(convertToCN)
-cnpyWord = tripleQuote | quotedString | pythonStyleComment | cnenWord 
+#: Simplified Chinese parsing pattern
+cnpyWord = baseWord | cnenWord 
 
 def python_convertor(test, lang='tw', traceback=False):
     """
