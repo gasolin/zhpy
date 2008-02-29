@@ -1,7 +1,7 @@
 zhpy Changelog
 ====================
 
-1.5 (2//2008)
+1.5 (2/29/2008)
 --------------------
 code name: Emperor
 
@@ -14,8 +14,8 @@ http://weijr-note.blogspot.com/2008/02/python-magiccodec-01.html
 * refactor merger
 * merge rev_merger to merger
 * refactor ini_annotator, py_annotator,
-  pattern, val_matching, rev_ini_annotator, 
-  rev_py_annotator, trace_annotator to private method
+    pattern, val_matching, rev_ini_annotator, 
+    rev_py_annotator, trace_annotator to private method
 * refactor to distill baseWord
 * add some variable docstrings
 
