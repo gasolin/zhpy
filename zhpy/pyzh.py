@@ -190,7 +190,7 @@ def convertToCN(s,l,t):
     tmp = t[0]
     if tmp in rev_cndict:
         return rev_cndict[tmp]
-    elif re.match(pattern, tmp):
+    elif re.match(_pattern, tmp):
         return zh_chr(tmp)
     else:
         return tmp
@@ -202,7 +202,7 @@ def convertToTraceBack(s,l,t):
     tmp = t[0]
     if tmp in rev_tbdict:
         return rev_tbdict[tmp]
-    elif re.match(pattern, tmp):
+    elif re.match(_pattern, tmp):
         return zh_chr(tmp)
     else:
         return tmp

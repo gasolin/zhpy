@@ -1,6 +1,24 @@
 zhpy Changelog
 ====================
 
+1.5.1 (3/x/2008)
+--------------------
+code name: Emperee
+
+*Changes*
+
+*Features*
+
+*Fixes*
+
+* fix pyzh pattern missing
+
+*Project Updates*
+
+*Contributors*
+
+Fred Lin
+
 1.5 (2/29/2008)
 --------------------
 code name: Emperor
