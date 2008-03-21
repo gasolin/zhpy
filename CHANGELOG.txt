@@ -1,9 +1,9 @@
 zhpy Changelog
 ====================
 
-1.5.1 (3/x/2008)
+1.5.1 (3/21/2008)
 --------------------
-code name: Emperee
+code name: Empress
 
 *Changes*
 

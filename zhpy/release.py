@@ -3,7 +3,7 @@
 """Release information"""
 
 
-version = "1.5"
+version = "1.5.1"
 author = "Fred Lin"
 email = "gasolin+zhpy@gmail.com"
 copyright = "Copyright 2007 Fred Lin and contributors"
@@ -108,7 +108,7 @@ check the BasicUsage for detail.
 Programming Guide
 -------------------
 
-You could freely view the C.C. licensed zhpy book "A Byte of Zhpy" on zhpy website.
+You could freely view the C.C. licensed zhpy book "A Byte of python (Zhpy)" on zhpy website.
 
   * http://code.google.com/p/zhpy/wiki/ByteOfZhpy
 
@@ -116,7 +116,7 @@ There's the API document available in zhpy download list, too.
 
   * http://code.google.com/p/zhpy/downloads/list
 
-PS: The book is based on "A Byte of python".
+PS: The book is based on "A Byte of Python".
 
   * http://swaroopch.info/text/Byte_of_Python:Main_Page
 
