@@ -8,30 +8,29 @@ http://www.opensource.org/licenses/mit-license.php
 
 Copyright (c) 2007 Fred Lin and contributors. zhpy is a trademark of Fred Lin.
 
-Permission is hereby granted, free of charge, to any person obtaining a copy 
-of this software and associated documentation files (the "Software"), to 
-deal in the Software without restriction, including without limitation the 
-rights to use, copy, modify, merge, publish, distribute, sublicense, and/or 
-sell copies of the Software, and to permit persons to whom the Software is 
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to
+deal in the Software without restriction, including without limitation the
+rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+sell copies of the Software, and to permit persons to whom the Software is
 furnished to do so, subject to the following conditions:
 
-The above copyright notice and this permission notice shall be included in 
+The above copyright notice and this permission notice shall be included in
 all copies or substantial portions of the Software.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR 
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, 
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE 
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER 
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN 
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 """
 
 import os
 import sys
-from optparse import OptionParser
-from release import version
-from zhpy import annotator, convertor, try_run, zh_ord, zh_exec
+from zhpy import annotator, convertor, zh_ord, zh_exec
+
 
 def commandline():
     """zhpy, the python language in chinese
@@ -67,27 +66,27 @@ help:
         zhpy [-i | -p] input [-o] [output] [-e] [encoding] [-v]
 
     ::
-    
+
         $ zhpy input.py (.twpy, .cnpy) [arguments]
         $ zhpy -i input.py (.twpy, .cnpy)
         $ zhpy -i input.py -o output.py (.twpy, .cnpy)
-        $ zhpy -p input.py   
+        $ zhpy -p input.py
 
     script usage:
         zhpy [-c] source [-e] [encoding] [-v]
 
     convertor usage:
         zhpy [--tw | --cn] input.py [-v]
-    
+
     ::
-    
+
         $ zhpy --tw input.py [-v]
         $ zhpy --cn input.py [-v]
 
     """
     argv = sys.argv[1:]
     os.chdir(os.getcwd())
-    
+
     source = None
     target = None
     encoding = None
@@ -97,7 +96,7 @@ help:
     tw = False
     cn = False
     NonEnglish = False
-    
+
     # run as interpreter
     if len(argv) == 0:
         from interpreter import interpreter
@@ -138,8 +137,8 @@ help:
             interpreter('cn')
             sys.exit()
         else:
-           print commandline.__doc__
-           sys.exit()
+            print commandline.__doc__
+            sys.exit()
     # accept "-c -e -v"
     elif len(argv)>=2:
         if argv[0] == '-c' or argv[0] == '--cmp':
@@ -155,7 +154,7 @@ help:
         elif argv[0] == '--tw':
             from pyzh import zh_chr, rev_annotator
             rev_annotator()
-            
+
             source = argv[1]
             filename = os.path.splitext(source)[0]
             # remove extra .tw in filename
@@ -171,7 +170,7 @@ help:
         elif argv[0] == '--cn':
             from pyzh import zh_chr, rev_annotator
             rev_annotator()
-            
+
             source = argv[1]
             filename = os.path.splitext(source)[0]
             # remove extra .cn in filename
@@ -220,7 +219,7 @@ help:
                     NonEnglish = True
                     print i, "file name is not in english"
                     break
-            
+
             if NonEnglish:
                 target = zh_ord(filename.decode('utf8'))+".py"
                 print "compile to python and run: %s"%(zh_ord(filename.decode('utf8'))+".py")
@@ -228,7 +227,7 @@ help:
                 target = "n_"+filename+".py"
                 print "compile to python and run: %s"%("n_"+filename+".py")
             python = True
-            
+
             if (len(argv)!=0) and (argv[0] == '-v' or argv[0] == '--verbose'):
                 verbose = True
             if len(argv)>=2 and (argv[0] == '-e' or argv[0] == '--encoding'):
@@ -252,7 +251,7 @@ help:
         zh_exec(result)
         import import_hook
         sys.exit()
-    
+
     if encoding:
         print "encoding", encoding
 

@@ -8,26 +8,26 @@ http://www.opensource.org/licenses/mit-license.php
 
 Copyright (c) 2007 Fred Lin and contributors. zhpy is a trademark of Fred Lin.
 
-Permission is hereby granted, free of charge, to any person obtaining a copy 
-of this software and associated documentation files (the "Software"), to 
-deal in the Software without restriction, including without limitation the 
-rights to use, copy, modify, merge, publish, distribute, sublicense, and/or 
-sell copies of the Software, and to permit persons to whom the Software is 
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to
+deal in the Software without restriction, including without limitation the
+rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+sell copies of the Software, and to permit persons to whom the Software is
 furnished to do so, subject to the following conditions:
 
-The above copyright notice and this permission notice shall be included in 
+The above copyright notice and this permission notice shall be included in
 all copies or substantial portions of the Software.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR 
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, 
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE 
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER 
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN 
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 """
 
- 
+
 from zhpy import annotator, merger, tripleQuote
 from zhdc import twdict, cndict, revert_dict
 
@@ -39,10 +39,11 @@ rev_cndict = revert_dict(cndict)
 #: Traceback keywords repository
 rev_tbdict = {}
 
+
 def _rev_ini_annotator(use_dict, verbose=True):
     """
     update revert dict by ini files
-    
+
 Accept args:
     use_dict:
         target dict to be merged
@@ -70,16 +71,18 @@ Accept args:
         except:
             print "!%s is not a valid keyword file"%f
 
+
 def _rev_py_annotator(use_dict, entry_point, verbose=False):
     """
     update revert dict by python plugins
-    
+
     'verbose' argument is only for debug(will generate too mush messages).
     """
     for tool in entry_point:
         if verbose:
             print tool.title
         merger(tool.keyword, use_dict, reverse=True)
+
 
 def _trace_annotator(use_dict, entry_point, verbose=False):
     """
@@ -89,7 +92,8 @@ def _trace_annotator(use_dict, entry_point, verbose=False):
         if verbose:
             print trace.title
         merger(trace.keyword, use_dict, reverse=True)
-                
+
+
 def rev_annotator(lang='tw', verbose=True):
     """
     To expand the reverse dict
@@ -125,6 +129,7 @@ Accept args:
 
 import re
 
+
 def _val_matching(tmp):
     """
     match and convert the identifiers
@@ -135,10 +140,11 @@ def _val_matching(tmp):
             tmp2 += unichr(int(word, 16)).encode('utf8')
     return tmp2
 
+
 def zh_chr(tmp):
     """
     convert number back to chinese variable
-    
+
     >>> print zh_chr('p_7bc4_4f8b_v')
     範例
     >>> print zh_chr('p_7bc4_4f8b_v_1')
@@ -149,7 +155,7 @@ def zh_chr(tmp):
     測試_範例
     >>> print zh_chr("p_6e2c_8a66_v_p_7bc4_4f8b_v2")
     測試_範例2
-    """ 
+    """
     if tmp.startswith("p_") and "_v" in tmp:
         tmp, profix = tmp.split('_v', 1)
         tmp2 = _val_matching(tmp)
@@ -168,8 +174,9 @@ def zh_chr(tmp):
 number_to_variable = zh_chr
 _pattern = r'^p_[_a-f\d]*_v\w*$'
 
-from pyparsing import srange, Word, alphanums, \
+from pyparsing import Word, alphanums, \
                       quotedString, pythonStyleComment
+
 
 def convertToTW(s,l,t):
     """
@@ -182,7 +189,8 @@ def convertToTW(s,l,t):
         return zh_chr(tmp)
     else:
         return tmp
-    
+
+
 def convertToCN(s,l,t):
     """
     search rev_cndict to match keywords
@@ -194,6 +202,7 @@ def convertToCN(s,l,t):
         return zh_chr(tmp)
     else:
         return tmp
+
 
 def convertToTraceBack(s,l,t):
     """
@@ -223,7 +232,8 @@ tbpyWord = baseWord | tbWord
 cnenWord = Word(alphanums+"_")
 cnenWord.setParseAction(convertToCN)
 #: Simplified Chinese parsing pattern
-cnpyWord = baseWord | cnenWord 
+cnpyWord = baseWord | cnenWord
+
 
 def python_convertor(test, lang='tw', traceback=False):
     """
@@ -232,7 +242,7 @@ def python_convertor(test, lang='tw', traceback=False):
 Accept args:
     lang:
         'tw' or 'cn'
-    
+
     >>> print python_convertor("print 'hello'", 'tw')
     印出 'hello'
     >>> print python_convertor("print 'hello'", 'cn')
@@ -254,7 +264,7 @@ Accept args:
         if traceback==False:
             result = twpyWord.transformString(test)
         else:
-            result = tbpyWord.transformString(test)#+str(rev_tbdict)     
+            result = tbpyWord.transformString(test)#+str(rev_tbdict)
     elif lang == 'cn':
         if traceback==False:
             result = cnpyWord.transformString(test)

@@ -35,7 +35,7 @@ setup(
     install_requires = required_modules,
     extras_require = extra_modules,
     include_package_data = True,
-    packages=find_packages(exclude=["ez_setup"]),
+    packages=find_packages(exclude=["ez_setup", 'examples']),
     entry_points = """
     [console_scripts]
     zhpy = zhpy.commandline:commandline

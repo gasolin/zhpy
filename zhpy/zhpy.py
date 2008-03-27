@@ -3,11 +3,11 @@
 
 """Transform zhpy source to python source
 
-zhpy is the python language with chinese native keywords, variables, and 
+zhpy is the python language with chinese native keywords, variables, and
 parameters support, independent on python's version.
 
-zhpy's core function is a convertor to translate chinese python code to nature python
-code (english) and vice versa.
+zhpy's core function is a convertor to translate chinese python code to
+nature python code (english) and vice versa.
 
 zhpy is motivated by HYRY's origin code.
 
@@ -18,27 +18,28 @@ http://www.opensource.org/licenses/mit-license.php
 
 Copyright (c) 2007 Fred Lin and contributors. zhpy is a trademark of Fred Lin.
 
-Permission is hereby granted, free of charge, to any person obtaining a copy 
-of this software and associated documentation files (the "Software"), to 
-deal in the Software without restriction, including without limitation the 
-rights to use, copy, modify, merge, publish, distribute, sublicense, and/or 
-sell copies of the Software, and to permit persons to whom the Software is 
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to
+deal in the Software without restriction, including without limitation the
+rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+sell copies of the Software, and to permit persons to whom the Software is
 furnished to do so, subject to the following conditions:
 
-The above copyright notice and this permission notice shall be included in 
+The above copyright notice and this permission notice shall be included in
 all copies or substantial portions of the Software.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR 
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, 
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE 
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER 
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN 
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 """
 
 
 from zhdc import worddict, twdict, cndict
+
 
 def merger(anno_dict, use_dict=worddict, verbose=True, reverse=False):
     """
@@ -53,16 +54,16 @@ Accept args:
         show detail message, default: True
 
     merger could accept list input:
-    
+
     >>> keys = [('遊戲', 'pygame'), ('螢幕', 'screen')]
     >>> merger(keys)
     add 遊戲=pygame
     add 螢幕=screen
     >>> '遊戲' in worddict
     True
-    
+
     merger could accept dict input:
-    
+
     >>> keydic = {'作業系統':'os', '分支':'fork'}
     >>> merger(keydic)
     add 分支=fork
@@ -94,15 +95,16 @@ Accept args:
 import os
 import ConfigParser
 
+
 def _ini_annotator(verbose=True):
     """
-    find ini files and use keywords defined in ini during 
+    find ini files and use keywords defined in ini during
     convertion progress.
-    
+
 Accept args:
     verbose:
         show detail message, default: True
-    
+
     """
     inifiles = []
     for x in os.listdir("."):
@@ -121,10 +123,11 @@ Accept args:
         except:
             print "!%s is not a valid keyword file"%f
 
+
 def _py_annotator(verbose=False):
     """
     find python keyword plugins and update to dicts
-    
+
 Accept args:
     verbose:
         show detail message, default: False
@@ -157,16 +160,17 @@ Accept args:
     except ImportError, e:
         if verbose:
             print "import plugcn error", e
-    
+
     if not has_annotator:
         raise ReferenceError("no plugin was referenced in annotator")
+
 
 def annotator(verbose=True):
     """
     provide two ways to expand the worddict:
-    
+
       1. ini files
-        
+
       2. python plugin system.
 
 Accept args:
@@ -177,10 +181,11 @@ Accept args:
     _ini_annotator(verbose)
     _py_annotator(verbose=False)
 
+
 def zh_ord(tmp):
     """
     convert chinese variable to hex number
-    
+
     >>> '範例'.decode("utf8")
     u'\u7bc4\u4f8b'
     >>> s = '範例'.decode("utf8")
@@ -199,9 +204,10 @@ variable_to_number = zh_ord
 from pyparsing import srange, Word, quotedString, pythonStyleComment, \
      QuotedString
 
+
 def convertToEnglish(s,l,t):
     """search worddict to match keywords
-    
+
     if not in keyword, replace the chinese variable/argument/
     function name/class name/method name to a variable with prefix 'p'
     """
@@ -225,12 +231,13 @@ try:
 except:
     pass
 
+
 def convertor(test, verbose=False, encoding=""):
     """
     convert zhpy source (Chinese) to Python Source.
-    
+
     always run annotator before access convertor
-    
+
 Accept args:
     test:
         source to be converted
@@ -242,13 +249,13 @@ Accept args:
     >>> annotator()
     >>> convertor("印出 'hello'")
     "print 'hello'"
-    
+
     >>> convertor("印出 'hello'", encoding="utf8")
     "print 'hello'"
-    
+
     >>> convertor('測試_範例')
     'test_p_7bc4_4f8b_v'
-    
+
     more keyword test cases are in /tests folder.
     """
     #Use the provided encoding, if not exist select utf-8 as default.
@@ -262,7 +269,7 @@ Accept args:
                 print "chardet", det
             if det['confidence'] >= 0.8:
                 encoding = chardet.detect(test)['encoding']
-            else :
+            else:
                 if verbose:
                     print 'low confidence encoding detection, use utf8 encoding'
                 encoding = 'utf8'
@@ -278,7 +285,7 @@ Accept args:
             if verbose:
                 print "proceed no chardet mode"
             utest = test.decode('utf8')
-    
+
     result = pythonWord.transformString(utest)
     #if type(result)!=type(u''):
     result = result.encode(encoding)
@@ -295,11 +302,12 @@ try:
 except:
     print "not support chinese traceback"
     has_zhtraceback=None
-   
+
+
 def try_run(result, global_ns={}, local_ns={}, zhtrace=True):
     """
     execute result and catch exceptions in specified namespace
-    
+
 Accept args:
     result:
         the converted source to be executed
@@ -345,18 +353,21 @@ Accept args:
         else:
             print e
 
-def zh_exec(content, global_ns={"__name__": "__main__", "__doc__": None}, local_ns={}):
+
+def zh_exec(content, global_ns={"__name__": "__main__", "__doc__": None},
+            local_ns={}):
     """
     the zhpy exec
-    
+
 Accept args:
     content:
-        the source to be converted and executed with zhpy in specified namespace
+        the source to be converted and executed with zhpy in specified
+        namespace
     global_ns:
         Global namespace, deafult is {"__name__": "__main__", "__doc__": None}
     local_ns:
         Local namespace, default is: {}
-    
+
     >>> zh_exec("印出 'hello'")
     hello
     """

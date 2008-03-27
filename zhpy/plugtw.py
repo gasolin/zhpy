@@ -8,22 +8,22 @@ http://www.opensource.org/licenses/mit-license.php
 
 Copyright (c) 2007 Fred Lin and contributors. zhpy is a trademark of Fred Lin.
 
-Permission is hereby granted, free of charge, to any person obtaining a copy 
-of this software and associated documentation files (the "Software"), to 
-deal in the Software without restriction, including without limitation the 
-rights to use, copy, modify, merge, publish, distribute, sublicense, and/or 
-sell copies of the Software, and to permit persons to whom the Software is 
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to
+deal in the Software without restriction, including without limitation the
+rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+sell copies of the Software, and to permit persons to whom the Software is
 furnished to do so, subject to the following conditions:
 
-The above copyright notice and this permission notice shall be included in 
+The above copyright notice and this permission notice shall be included in
 all copies or substantial portions of the Software.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR 
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, 
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE 
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER 
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN 
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 """
 
@@ -60,7 +60,7 @@ class tw_keyword(ZhpyPlugin):
           "作為":"as",
           # flow
           "返回":"return",
-          "略過":"pass", 
+          "略過":"pass",
           "引發":"raise",
           "繼續":"continue",
           # control
@@ -275,7 +275,7 @@ class tw_sys(ZhpyPlugin):
     """
     title = "系統"
     description = "系統模組"
-    keyword = {"系統":"sys", 
+    keyword = {"系統":"sys",
                "版本":"version",
                "參數":"argv",
                "結束":"exit",
@@ -301,8 +301,8 @@ class tw_traceback(ZhpyPlugin):
                "檔案":"File",
                "不合法的":"invalid",
                "語法":"syntax",
-               }    
-    
+               }
+
 #    [zhpy.twdict]
 twkeyword = tw_keyword()
 twmethod = tw_buildin_method()

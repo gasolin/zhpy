@@ -29,7 +29,7 @@ our native language (Traditional and Simplified chinese).
 Zhpy is the full feature python language with fully tested chinese
 keywords, variables, and parameters support. Zhpy is INDEPENDENT on python
 version(2.4, 2.5....), bundle with command line tool, interpreter,
-bi-directional zhpy <-> python code translation, 
+bi-directional zhpy <-> python code translation,
 chinese shell script capability, in-place ini reference
 feature for keyword reuse, and great document.
 
@@ -108,7 +108,8 @@ check the BasicUsage for detail.
 Programming Guide
 -------------------
 
-You could freely view the C.C. licensed zhpy book "A Byte of python (Zhpy)" on zhpy website.
+You could freely view the C.C. licensed zhpy book "A Byte of python (Zhpy)"
+on zhpy website.
 
   * http://code.google.com/p/zhpy/wiki/ByteOfZhpy
 

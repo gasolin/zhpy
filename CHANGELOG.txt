@@ -1,6 +1,22 @@
 zhpy Changelog
 ====================
 
+1.6 (4/*/2008)
+--------------------
+code name: Wheel of Fortune
+
+*Changes*
+
+*Features*
+
+*Fixes*
+
+*Project Updates*
+
+*Contributors*
+
+Fred Lin
+
 1.5.1 (3/21/2008)
 --------------------
 code name: Empress
