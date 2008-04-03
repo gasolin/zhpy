@@ -260,6 +260,7 @@ Accept args:
     """
     if isinstance(text, unicode):
         text = text.encode('utf8')
+
     if lang == 'tw':
         if traceback==False:
             result = twpyWord.transformString(text)
@@ -274,4 +275,5 @@ Accept args:
         #TODO: auto detect coding
         print "not valid lang option in python_convertor"
         return text
+
     return result

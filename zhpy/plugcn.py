@@ -148,7 +148,9 @@ class cn_buildin_method(ZhpyPlugin):
           "加":"add",
           "丢弃":"discard",
           "联集":"union",
-          "交集":"intersection",          "差集":"difference",          "对称差集":"symmetric_difference",
+          "交集":"intersection",
+          "差集":"difference",
+          "对称差集":"symmetric_difference",
           # file methods
           "打开":"open",
           "读取":"read",
@@ -297,7 +299,8 @@ class cn_traceback(ZhpyPlugin):
                "名称":"name",
                "行":"line",
                "档案":"File",
-               "不合法的":"invalid",               "语法":"syntax",
+               "不合法的":"invalid",
+               "语法":"syntax",
                }
 
 #    [zhpy.cndict]
