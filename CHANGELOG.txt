@@ -24,6 +24,8 @@ code name: Wheel of Fortune
 
 *Project Updates*
 
+* update license years
+
 *Contributors*
 
 Fred Lin, weijr

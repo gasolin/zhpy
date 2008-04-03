@@ -6,7 +6,7 @@
 version = "1.6"
 author = "Fred Lin"
 email = "gasolin+zhpy@gmail.com"
-copyright = "Copyright 2007 Fred Lin and contributors"
+copyright = "Copyright 2007~ Fred Lin and contributors"
 license = "MIT <http://www.opensource.org/licenses/mit-license.php>"
 url = "http://code.google.com/p/zhpy/"
 download_url="http://code.google.com/p/zhpy/"

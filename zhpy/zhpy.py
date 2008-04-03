@@ -16,7 +16,7 @@ gasolin+zhpy@gmail.com
 This is the MIT license:
 http://www.opensource.org/licenses/mit-license.php
 
-Copyright (c) 2007 Fred Lin and contributors. zhpy is a trademark of Fred Lin.
+Copyright (c) 2007~ Fred Lin and contributors. zhpy is a trademark of Fred Lin.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to
