@@ -96,7 +96,7 @@ import os
 import ConfigParser
 
 
-def _ini_annotator(verbose=True):
+def _ini_annotator(verbose=True, force=False):
     """
     find ini files and use keywords defined in ini during
     convertion progress.
@@ -106,6 +106,10 @@ Accept args:
         show detail message, default: True
 
     """
+    if not force and getattr(_ini_annotator, "already", False):
+        return
+    _ini_annotator.already=True
+
     inifiles = []
     for x in os.listdir("."):
         if x.endswith(".ini"):
@@ -124,7 +128,7 @@ Accept args:
             print "!%s is not a valid keyword file"%f
 
 
-def _py_annotator(verbose=False):
+def _py_annotator(verbose=False,force=False):
     """
     find python keyword plugins and update to dicts
 
@@ -134,38 +138,31 @@ Accept args:
 
     'verbose' argument is only for debug(will generate too mush messages).
     """
+    if not force and getattr(_py_annotator, "already", False):
+        return
+    _py_annotator.already=True
     # parameter to check if there's any plugin available
     has_annotator = False
-    # tw plugin
-    try:
-        from plugtw import tools as twtools
-        for tool in twtools:
-            if verbose:
-                print tool.title
-            merger(tool.keyword, use_dict=twdict, verbose=verbose)
-        merger(twdict, verbose=verbose)
-        has_annotator = True
-    except ImportError, e:
-        if verbose:
-            print "import plugtw error", e
-    # cn plugin
-    try:
-        from plugcn import tools as cntools
-        for tool in cntools:
-            if verbose:
-                print tool.title
-            merger(tool.keyword, use_dict=cndict, verbose=verbose)
-        merger(cndict, verbose=verbose)
-        has_annotator = True
-    except ImportError, e:
-        if verbose:
-            print "import plugcn error", e
 
+    # plugins
+    for plugin, use_dict in [("plugtw", twdict), ("plugcn", cndict)]:
+        try:
+            load_dict=__import__(plugin, globals(), locals(), ['tools'], -1)
+            for tool in load_dict.tools:
+                if verbose:
+                    print tool.title
+                merger(tool.keyword, use_dict=use_dict, verbose=verbose)
+            merger(use_dict, verbose=verbose)
+            has_annotator = True
+        except ImportError, e:
+            if verbose:
+                print "import plug%s error"%plugin, e
     if not has_annotator:
         raise ReferenceError("no plugin was referenced in annotator")
+_py_annotator.__loaded=False
 
 
-def annotator(verbose=True):
+def annotator(verbose=True, force=False):
     """
     provide two ways to expand the worddict:
 
@@ -178,8 +175,8 @@ Accept args:
         show detail message, default: True
 
     """
-    _ini_annotator(verbose)
-    _py_annotator(verbose=False)
+    _ini_annotator(verbose, force)
+    _py_annotator(False, force)
 
 
 def zh_ord(tmp):
@@ -271,7 +268,8 @@ Accept args:
                 encoding = chardet.detect(test)['encoding']
             else:
                 if verbose:
-                    print 'low confidence encoding detection, use utf8 encoding'
+                    print """low confidence encoding detection,
+                            use utf8 encoding"""
                 encoding = 'utf8'
             #prepare for unicode type support
             #if type(test)!=type(u''):
@@ -344,9 +342,9 @@ Accept args:
                 lang = None
             stack = traceback.format_exc()
             if lang:
-                #TODO: replaced by zhtraceback module.
                 rev_annotator(lang)
-                print python_convertor(stack, lang, traceback=True).decode("utf-8")
+                print python_convertor(stack, lang,
+                                traceback=True).decode("utf-8")
             else:
                 # Standard English output
                 print stack

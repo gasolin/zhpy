@@ -8,8 +8,11 @@ code name: Wheel of Fortune
 *Changes*
 
 * PEP8 update, thanks ulipad :)
+* refactor py_annotator
 
 *Features*
+
+* reduce unnecessary annotator reload
 
 *Fixes*
 
