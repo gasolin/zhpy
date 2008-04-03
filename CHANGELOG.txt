@@ -13,6 +13,7 @@ code name: Wheel of Fortune
 *Features*
 
 * reduce unnecessary annotator reload
+* add outcoding (output encoding) option in convertor
 
 *Fixes*
 

@@ -184,7 +184,7 @@ Accept args:
 
 def zh_ord(tmp):
     """
-    convert chinese variable to hex number
+    convert chinese variable to pseudo hex identifer
 
     >>> '範例'.decode("utf8")
     u'\u7bc4\u4f8b'
@@ -229,10 +229,10 @@ pythonWord = tripleQuote | quotedString | pythonStyleComment | chineseWord
 try:
     import chardet
 except:
-    pass
+    print "chardet module is not installed"
 
 
-def convertor(test, verbose=False, encoding=""):
+def convertor(test, verbose=False, encoding="", outcoding=""):
     """
     convert zhpy source (Chinese) to Python Source.
 
@@ -245,6 +245,8 @@ Accept args:
         show detail message, default: False
     encoding:
         codec for encoding
+    outcoding:
+        codec for output encoding
 
     >>> annotator()
     >>> convertor("印出 'hello'")
@@ -258,6 +260,8 @@ Accept args:
 
     more keyword test cases are in /tests folder.
     """
+    # annotate if necessary
+    #annotator(force=False)
     #Use the provided encoding, if not exist select utf-8 as default.
     if encoding:
         utest = test.decode(encoding)
@@ -289,8 +293,10 @@ Accept args:
 
     result = pythonWord.transformString(utest)
     #if type(result)!=type(u''):
-    result = result.encode(encoding)
-    return result
+    if outcoding:
+        return result.encode(outcoding)
+    else:
+        return result.encode(encoding)
 
 import sys
 # parameter to control if support chinese traceback
