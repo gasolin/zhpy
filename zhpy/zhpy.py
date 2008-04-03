@@ -40,6 +40,9 @@ THE SOFTWARE.
 
 from zhdc import worddict, twdict, cndict
 
+supported_dicts = [("plugtw", twdict),
+                   ("plugcn", cndict)]
+
 
 def merger(anno_dict, use_dict=worddict, verbose=True, reverse=False):
     """
@@ -145,7 +148,7 @@ Accept args:
     has_annotator = False
 
     # plugins
-    for plugin, use_dict in [("plugtw", twdict), ("plugcn", cndict)]:
+    for plugin, use_dict in supported_dicts:
         try:
             load_dict=__import__(plugin, globals(), locals(), ['tools'], -1)
             for tool in load_dict.tools:
