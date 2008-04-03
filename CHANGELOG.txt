@@ -20,6 +20,8 @@ code name: Wheel of Fortune
 
 *Fixes*
 
+* fix import_hook
+
 *Project Updates*
 
 *Contributors*

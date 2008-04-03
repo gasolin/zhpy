@@ -27,24 +27,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 """
 
-
-#from zhpy import convertor
-#import imputil
-
-#def handle_zhpy(fullpath, fileinfo, name):
-#    """
-#    zhpy import handler
-#
-#    directly import zhpy module with cnpy, twpy subname.
-#    """
-#    data = convertor(open(fullpath).read())
-#    return 0, compile(data,fullpath,'exec'),{}
-#
-#im = imputil.ImportManager()
-#im.add_suffix('.cnpy',handle_zhpy)
-#im.add_suffix('.twpy',handle_zhpy)
-#im.install()
-
 import __builtin__
 try:
     if setup:
@@ -69,3 +51,4 @@ except:
             __builtin__.__import__ = chinese_import
             chinese_import.hooked=True
 
+setup()
