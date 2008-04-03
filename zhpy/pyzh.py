@@ -235,7 +235,7 @@ cnenWord.setParseAction(convertToCN)
 cnpyWord = baseWord | cnenWord
 
 
-def python_convertor(test, lang='tw', traceback=False):
+def python_convertor(text, lang='tw', traceback=False):
     """
     convert python source to zhpy source
 
@@ -258,20 +258,20 @@ Accept args:
     >>> print python_convertor("p_6e2c_8a66_v2p_7bc4_4f8b_v2")
     測試2範例2
     """
-    if type(test)==type(u''):
-        test = test.encode('utf8')
+    if isinstance(text, unicode):
+        text = text.encode('utf8')
     if lang == 'tw':
         if traceback==False:
-            result = twpyWord.transformString(test)
+            result = twpyWord.transformString(text)
         else:
-            result = tbpyWord.transformString(test)#+str(rev_tbdict)
+            result = tbpyWord.transformString(text)#+str(rev_tbdict)
     elif lang == 'cn':
         if traceback==False:
-            result = cnpyWord.transformString(test)
+            result = cnpyWord.transformString(text)
         else:
-            result = tbpyWord.transformString(test)
+            result = tbpyWord.transformString(text)
     else:
         #TODO: auto detect coding
         print "not valid lang option in python_convertor"
-        return
+        return text
     return result

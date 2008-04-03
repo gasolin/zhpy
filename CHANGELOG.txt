@@ -9,6 +9,7 @@ code name: Wheel of Fortune
 
 * PEP8 update, thanks ulipad :)
 * refactor py_annotator, thanks weijr
+* refactor python_convertor
 
 *Features*
 

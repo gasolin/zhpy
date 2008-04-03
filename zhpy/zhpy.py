@@ -109,6 +109,7 @@ Accept args:
         show detail message, default: True
 
     """
+    #lazy load
     if not force and getattr(_ini_annotator, "already", False):
         return
     _ini_annotator.already=True
@@ -141,9 +142,11 @@ Accept args:
 
     'verbose' argument is only for debug(will generate too mush messages).
     """
+    #lazy load
     if not force and getattr(_py_annotator, "already", False):
         return
     _py_annotator.already=True
+
     # parameter to check if there's any plugin available
     has_annotator = False
 
