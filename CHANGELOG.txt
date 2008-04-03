@@ -1,13 +1,13 @@
 zhpy Changelog
 ====================
 
-1.6 (4/*/2008)
+1.5.2 (4/3/2008)
 --------------------
 code name: Wheel of Fortune
 
 *Changes*
 
-* PEP8 update, thanks ulipad :)
+* PEP8 cleanup, thanks ulipad :)
 * refactor py_annotator, thanks weijr
 * refactor python_convertor
 
