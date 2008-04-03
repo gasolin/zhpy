@@ -7,6 +7,6 @@ test with command::
 
 
 #always run annotator before access worddict
-from zhpy import annotator
+#from zhpy import annotator
 
-annotator()
+#annotator()

@@ -8,11 +8,13 @@ code name: Wheel of Fortune
 *Changes*
 
 * PEP8 update, thanks ulipad :)
-* refactor py_annotator
+* refactor py_annotator, thanks weijr
 
 *Features*
 
-* reduce unnecessary annotator reload
+* no need calling annotator before calling convertor,
+  annotator will be called automatically
+* reduce unnecessary annotator reload, thanks weijr
 * add outcoding (output encoding) option in convertor
 
 *Fixes*
@@ -21,7 +23,7 @@ code name: Wheel of Fortune
 
 *Contributors*
 
-Fred Lin
+Fred Lin, weijr
 
 1.5.1 (3/21/2008)
 --------------------

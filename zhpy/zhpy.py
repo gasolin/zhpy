@@ -236,7 +236,7 @@ def convertor(test, verbose=False, encoding="", outcoding=""):
     """
     convert zhpy source (Chinese) to Python Source.
 
-    always run annotator before access convertor
+    annotator will be called automatically.
 
 Accept args:
     test:
@@ -248,7 +248,6 @@ Accept args:
     outcoding:
         codec for output encoding
 
-    >>> annotator()
     >>> convertor("印出 'hello'")
     "print 'hello'"
 
@@ -261,7 +260,7 @@ Accept args:
     more keyword test cases are in /tests folder.
     """
     # annotate if necessary
-    #annotator(force=False)
+    annotator(force=False)
     #Use the provided encoding, if not exist select utf-8 as default.
     if encoding:
         utest = test.decode(encoding)
@@ -378,7 +377,7 @@ Accept args:
     >>> zh_exec("印出 'hello'")
     hello
     """
-    annotator()
+    #annotator()
     result = convertor(content)
     if local_ns == {}:
         local_ns = global_ns

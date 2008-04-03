@@ -29,7 +29,7 @@ THE SOFTWARE.
 
 import os
 import sys
-from zhpy import annotator, convertor, zh_ord, zh_exec
+from zhpy import convertor, zh_ord, zh_exec
 
 
 def commandline():
@@ -243,7 +243,7 @@ help:
     if raw_source:
         if verbose:
             print "run raw_source", raw_source
-        annotator()
+        #annotator()
         if encoding:
             result = convertor(raw_source, verbose, encoding)
         else:
@@ -281,7 +281,7 @@ help:
         else:
             try:
                 test = file(source, "r").read()
-                annotator()
+                #annotator()
                 import import_hook
                 if encoding:
                     result = convertor(test, verbose, encoding)

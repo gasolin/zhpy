@@ -28,7 +28,7 @@ THE SOFTWARE.
 
 
 from code import InteractiveConsole
-from zhpy import convertor, annotator
+from zhpy import convertor
 import sys
 
 class ZhPyConsole(InteractiveConsole):
@@ -80,7 +80,7 @@ Accept args:
     else:
         banner = 'zhpy %s in %s on top of Python %s'%(version, sys.platform,
                                                   sys.version.split()[0])
-    annotator()
+    #annotator()
     # able to import modules in current directory
     sys.path.insert(0, '')
     con.interact(banner)
