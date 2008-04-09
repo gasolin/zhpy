@@ -1,6 +1,26 @@
 zhpy Changelog
 ====================
 
+1.6 (4/*/2008)
+--------------------
+code name: Justice
+
+*Changes*
+
+* modify banner string
+
+*Features*
+
+* add psyco support for performance
+
+*Fixes*
+
+*Project Updates*
+
+*Contributors*
+
+Fred Lin
+
 1.5.2 (4/3/2008)
 --------------------
 code name: Wheel of Fortune
