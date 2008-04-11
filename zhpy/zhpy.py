@@ -251,6 +251,7 @@ Accept args:
     outcoding:
         codec for output encoding
 
+    #annotator()
     >>> convertor("印出 'hello'")
     "print 'hello'"
 
@@ -304,7 +305,6 @@ import sys
 # parameter to control if support chinese traceback
 has_zhtraceback=None
 try:
-    import os
     import traceback
     from pyzh import python_convertor, rev_annotator
     has_zhtraceback=True
