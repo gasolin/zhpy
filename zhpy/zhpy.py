@@ -149,11 +149,11 @@ Accept args:
 
     # parameter to check if there's any plugin available
     has_annotator = False
-
-    # plugins
+    # process plugins
     for plugin, use_dict in supported_dicts:
         try:
-            load_dict=__import__(plugin, globals(), locals(), ['tools'], -1)
+            #py2.4 doesn't have level argument
+            load_dict=__import__(plugin, globals(), locals(), ['tools'])
             for tool in load_dict.tools:
                 if verbose:
                     print tool.title
