@@ -231,11 +231,13 @@ pythonWord = tripleQuote | quotedString | pythonStyleComment | chineseWord
 
 try:
     import chardet
+    has_chardet = True
 except:
+    has_chardet = False
     print "chardet module is not installed"
 
 
-def convertor(test, verbose=False, encoding="", outcoding=""):
+def convertor(text, verbose=False, encoding="", outcoding=""):
     """
     convert zhpy source (Chinese) to Python Source.
 
@@ -267,34 +269,37 @@ Accept args:
     annotator(force=False)
     #Use the provided encoding, if not exist select utf-8 as default.
     if encoding:
-        utest = test.decode(encoding)
+        utext = text.decode(encoding)
     else:
-        try:
-            #detect encoding
-            det = chardet.detect(test)
-            if verbose:
-                print "chardet", det
-            if det['confidence'] >= 0.8:
-                encoding = chardet.detect(test)['encoding']
-            else:
+        if has_chardet:
+            try:
+                #detect encoding
+                det = chardet.detect(text)
                 if verbose:
-                    print """low confidence encoding detection,
-                            use utf8 encoding"""
-                encoding = 'utf8'
-            #prepare for unicode type support
-            #if type(test)!=type(u''):
-            utest = test.decode(encoding)
-            #else:
-            #    utest = test
-        except UnicodeDecodeError, e:
-            print "can't recognize your language, set to sys.stdout.encoding"
-            utest = test.decode('utf8')
-        except ImportError, e:
-            if verbose:
-                print "proceed no chardet mode"
-            utest = test.decode('utf8')
-
-    result = pythonWord.transformString(utest)
+                    print "chardet", det
+                if det['confidence'] >= 0.8:
+                    encoding = chardet.detect(text)['encoding']
+                else:
+                    if verbose:
+                        print """low confidence encoding detection,
+                                use utf8 encoding"""
+                    encoding = 'utf8'
+                #prepare for unicode type support
+                #if type(test)!=type(u''):
+                utext = text.decode(encoding)
+                #else:
+                #    utest = test
+            except UnicodeDecodeError, e:
+                print "can't recognize your language, \
+                        set to sys.stdout.encoding"
+                utext = text.decode('utf8')
+            except ImportError, e:
+                if verbose:
+                    print "proceed no chardet mode"
+                utext = text.decode('utf8')
+        else:
+            utext = text
+    result = pythonWord.transformString(utext)
     #if type(result)!=type(u''):
     if outcoding:
         return result.encode(outcoding)

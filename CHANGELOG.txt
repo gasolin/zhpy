@@ -16,6 +16,7 @@ code name: Justice
 *Fixes*
 
 * fix python 2.4 compatibility occurred in 1.5.2, thanks DreamerC's report
+* fix if no chardet support case
 
 *Project Updates*
 
