@@ -222,7 +222,8 @@ help:
 
             if NonEnglish:
                 target = zh_ord(filename.decode('utf8'))+".py"
-                print "compile to python and run: %s"%(zh_ord(filename.decode('utf8'))+".py")
+                print "compile to python and run: %s"%(
+                        zh_ord(filename.decode('utf8'))+".py")
             else:
                 target = "n_"+filename+".py"
                 print "compile to python and run: %s"%("n_"+filename+".py")

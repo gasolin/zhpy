@@ -8,17 +8,23 @@ code name: Justice
 *Changes*
 
 * modify banner string
+* able to pass 'outcoding' param in zh_exec to control output encoding
+* able to pass 'zhtrace' param in try_run to control
+  if enable chinese traceback
+* make try_run support verbose option
 
 *Features*
 
-* add psyco support for performance
+* add optional psyco support to gain performance for free
 
 *Fixes*
 
 * fix python 2.4 compatibility occurred in 1.5.2, thanks DreamerC's report
-* fix if no chardet support case
+* fix no chardet support case
 
 *Project Updates*
+
+* online zhpy shell in zhpy.appspot.com!
 
 *Contributors*
 

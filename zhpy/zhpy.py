@@ -195,6 +195,8 @@ def zh_ord(tmp):
     >>> zh_ord(s)
     'p_7bc4_4f8b_v'
     """
+    #if not isinstance(tmp, unicode):
+    #    tmp = tmp.decode("utf8")
     word_list=[]
     for i in tmp:
         ori = str(hex(ord(i)))[2:]
@@ -214,6 +216,9 @@ def convertToEnglish(s,l,t):
     if not in keyword, replace the chinese variable/argument/
     function name/class name/method name to a variable with prefix 'p'
     """
+    #if isinstance(t[0], unicode):
+    #    tmp = t[0]
+    #else:
     tmp = t[0].encode("utf8")
     if tmp in worddict:
         word = worddict[tmp].decode("utf8")
@@ -285,10 +290,10 @@ Accept args:
                                 use utf8 encoding"""
                     encoding = 'utf8'
                 #prepare for unicode type support
-                #if type(test)!=type(u''):
-                utext = text.decode(encoding)
-                #else:
-                #    utest = test
+                if isinstance(text, unicode):
+                    utext = text
+                else:
+                    utext = text.decode(encoding)
             except UnicodeDecodeError, e:
                 print "can't recognize your language, \
                         set to sys.stdout.encoding"
@@ -300,9 +305,10 @@ Accept args:
         else:
             utext = text
     result = pythonWord.transformString(utext)
-    #if type(result)!=type(u''):
     if outcoding:
         return result.encode(outcoding)
+    elif isinstance(text, unicode):
+        return result
     else:
         return result.encode(encoding)
 
@@ -318,7 +324,7 @@ except:
     has_zhtraceback=None
 
 
-def try_run(result, global_ns={}, local_ns={}, zhtrace=True):
+def try_run(result, global_ns={}, local_ns={}, verbose=True, zhtrace=False):
     """
     execute result and catch exceptions in specified namespace
 
@@ -346,7 +352,7 @@ Accept args:
         exec result in global_ns, local_ns
     except Exception, e:
         # Print error and track back.
-        if has_zhtraceback:
+        if has_zhtraceback and zhtrace:
             display = os.getenv("LANG")
             if display == None:
                 lang = None
@@ -365,11 +371,15 @@ Accept args:
                 # Standard English output
                 print stack
         else:
+            if verbose:
+                print result
             print e
 
 
-def zh_exec(content, global_ns={"__name__": "__main__", "__doc__": None},
-            local_ns={}):
+def zh_exec(content,
+            global_ns={"__name__": "__main__", "__doc__": None},
+            local_ns={},
+            outcoding=""):
     """
     the zhpy exec
 
@@ -386,7 +396,7 @@ Accept args:
     hello
     """
     #annotator()
-    result = convertor(content)
+    result = convertor(content, outcoding=outcoding)
     if local_ns == {}:
         local_ns = global_ns
     try_run(result, global_ns, local_ns)
