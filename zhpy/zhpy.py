@@ -195,8 +195,6 @@ def zh_ord(tmp):
     >>> zh_ord(s)
     'p_7bc4_4f8b_v'
     """
-    #if not isinstance(tmp, unicode):
-    #    tmp = tmp.decode("utf8")
     word_list=[]
     for i in tmp:
         ori = str(hex(ord(i)))[2:]
@@ -216,9 +214,6 @@ def convertToEnglish(s,l,t):
     if not in keyword, replace the chinese variable/argument/
     function name/class name/method name to a variable with prefix 'p'
     """
-    #if isinstance(t[0], unicode):
-    #    tmp = t[0]
-    #else:
     tmp = t[0].encode("utf8")
     if tmp in worddict:
         word = worddict[tmp].decode("utf8")
@@ -324,7 +319,7 @@ except:
     has_zhtraceback=None
 
 
-def try_run(result, global_ns={}, local_ns={}, verbose=True, zhtrace=False):
+def try_run(result, global_ns={}, local_ns={}, verbose=True, zhtrace=True):
     """
     execute result and catch exceptions in specified namespace
 

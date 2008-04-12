@@ -15,7 +15,7 @@ code name: Justice
 
 *Features*
 
-* add optional psyco support to gain performance for free
+* online zhpy shell in zhpy.appspot.com!
 
 *Fixes*
 
@@ -23,8 +23,6 @@ code name: Justice
 * fix no chardet support case
 
 *Project Updates*
-
-* online zhpy shell in zhpy.appspot.com!
 
 *Contributors*
 
