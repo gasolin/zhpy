@@ -61,11 +61,44 @@ Accept args:
     """
     try:
         import readline
-        import rlcompleter
-        readline.parse_and_bind("tab: complete")
     except ImportError:
         pass
+    else:
+        import rlcompleter
+        """Indentable rlcompleter"""
+        class irlcompleter(rlcompleter.Completer):
+            def complete(self, text, state):
+                #print text, state, str(type(text))
+                if text == "":
+                    #replace tab to 4 spaces
+                    return ['    ', None][state]
+                elif lang == 'tw':
+                    if text in ["印","pri","prin","print"]:
+                        print 'match'
+                        return ['印出'][state]
+                    elif text in ["定","def"]:
+                        return ['定義'][state]
+                    elif text in ["類", "cla", "clas", "class"]:
+                        return ['類別'][state]
+                    elif text == "導":
+                        return ['導入'][state]
+                    elif text == "作":
+                        return ['作為'][state]
+                    elif text == "返":
+                        return ['返回'][state]
+                    elif text == "導":
+                        return ['導入'][state]
+                    elif text == "導":
+                        return ['導入'][state]
+                elif lang == 'cn':
+                    if text == "定":
+                        return ['定义'][state]
+                else:
+                    return rlcompleter.Completer.complete(self,text,state)
 
+        #you could change this line to bind another key instead tab.
+        readline.parse_and_bind("tab: complete")
+        readline.set_completer(irlcompleter().complete)
     con = ZhPyConsole()
     if lang == 'tw':
         banner = '周蟒 %s 在 %s 基於 Python %s'%(version, sys.platform,
