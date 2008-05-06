@@ -80,16 +80,28 @@ Accept args:
                         return ['定義'][state]
                     elif text in ["類", "cla", "clas", "class"]:
                         return ['類別'][state]
-                    elif text == "導":
+                    elif text in ["導", "imp", "impo", "impor", "import"]:
                         return ['導入'][state]
-                    elif text == "作":
-                        return ['作為'][state]
-                    elif text == "返":
+                    elif text in ["返", "ret", "retu", "retur", "return"]:
                         return ['返回'][state]
-                    elif text == "導":
-                        return ['導入'][state]
-                    elif text == "導":
-                        return ['導入'][state]
+                    elif text in ["fro", "from"]:
+                        return ['從'][state]
+                    elif text in ["作", "as"]:
+                        return ['作為'][state]
+                    elif text == "for":
+                        return ['取'][state]
+                    elif text == 'in':
+                        return ['自'][state]
+                    elif text in ['範', 'ran', 'rang', 'range']:
+                        return ['範圍'][state]
+                    elif text in ['如', 'if']:
+                        return ['如果'][state]
+                    elif text in ['假', 'eli', 'elif']:
+                        return ['假使'][state]
+                    elif text in ['否', 'els', 'else']:
+                        return ['否則'][state]
+                    elif text in ['Non', 'None']:
+                        return ['空'][state]
                 elif lang == 'cn':
                     if text == "定":
                         return ['定义'][state]
