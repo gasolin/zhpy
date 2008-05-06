@@ -31,32 +31,35 @@ Check examples here.
 
   * http://zhpy.googlecode.com/svn/trunk/examples
 
-
-Play before Install
+Play Zhpy Online
 --------------------
 
-To play zhpy you even don't need to install it.
+Zhpy has online version (with limited feature) running
+with google app engine!
+
+ * http://zhpy.appspot.com
+
+
+Play locally
+--------------
+
+To play zhpy locally, you even don't need to install it.
 
 All you need to do is follow the 3 steps guide:
 
-  1. Download the source pack
-  2. Extract the pack with zip tool
+  1. Download the source pack (the zip file)
+  2. Extract the pack with zip tool. Enter the folder
   3. Run::
 
       $ python interpreter.py
 
 Then you got the usable zhpy interpreter!
 
-Or even easier, zhpy has online version (limited) running
-with google app engine!
-
- * http://zhpy.appspot.com
-
 
 Install
 ----------
 
-If you'd like play zhpy with more features, you should install zhpy.
+If you'd like to play zhpy with full features, you should install zhpy.
 
 You could use easy_install command to install or upgrade zhpy::
 
@@ -89,8 +92,8 @@ check the BasicUsage for detail.
 Programming Guide
 -------------------
 
-You could freely view the C.C. licensed zhpy book "A Byte of python (Zhpy)"
-on zhpy website.
+You could freely view the C.C. licensed book "A Byte of python (Zhpy)"
+on zhpy website, which contained zhpy example codes as well.
 
   * http://code.google.com/p/zhpy/wiki/ByteOfZhpy
 
@@ -104,7 +107,7 @@ PS: The book is based on "A Byte of Python".
 
 
 What is Zhpy
-------------
+--------------
 
 Zhpy is the full feature python language with fully tested chinese
 keywords, variables, and parameters support. Zhpy is INDEPENDENT on python
