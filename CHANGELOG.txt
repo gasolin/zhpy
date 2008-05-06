@@ -1,6 +1,27 @@
 zhpy Changelog
 ====================
 
+1.7 (5/*/2008)
+--------------------
+code name: Lovers
+
+*Changes*
+
+*Features*
+
+* pygments syntax highlighter placeholder with 'zhpy' for '.py', '.twpy', '.cnpy'
+* intentable interpreter autocomplete in *nix
+http://aspn.activestate.com/ASPN/Cookbook/Python/Recipe/496812
+* chinese keyword autocomplete in *nix
+
+*Fixes*
+
+*Project Updates*
+
+*Contributors*
+
+Fred Lin
+
 1.6 (4/12/2008)
 --------------------
 code name: Justice

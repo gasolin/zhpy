@@ -39,6 +39,8 @@ setup(
     entry_points = """
     [console_scripts]
     zhpy = zhpy.commandline:commandline
+    [pygments.lexers]
+    zhpy = zhpy.ext.pygmentplugin:ZhpyLexer
     """,
     classifiers = [
         'Development Status :: 5 - Production/Stable',

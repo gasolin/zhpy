@@ -50,8 +50,8 @@ class tw_keyword(ZhpyPlugin):
           # def
           "定義":"def",
           "類別":"class",
-          "其":"self",
           "我":"self",
+          "其":"self",
           "共用":"global",
           "全域":"global",
           # import
@@ -70,8 +70,8 @@ class tw_keyword(ZhpyPlugin):
           "否則":"else",
           # for loop
           "取":"for",
-          "在":"in",
           "自":"in",
+          "在":"in",
           "不在":"not in",
           # while loop
           "當":"while",

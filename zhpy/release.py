@@ -3,7 +3,7 @@
 """Release information"""
 
 
-version = "1.6"
+version = "1.7a"
 author = "Fred Lin"
 email = "gasolin+zhpy@gmail.com"
 copyright = "Copyright 2007~ Fred Lin and contributors"
@@ -74,6 +74,11 @@ All you need to do is follow the 3 steps guide:
 
 Then you got the usable zhpy interpreter!
 
+Or even easier, zhpy has online version (limited) running
+with google app engine!
+
+ * http://zhpy.appspot.com
+ 
 Install
 ----------
 
