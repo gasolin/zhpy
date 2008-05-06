@@ -13,7 +13,6 @@ deal in the Software without restriction, including without limitation the
 rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
 sell copies of the Software, and to permit persons to whom the Software is
 furnished to do so, subject to the following conditions:
-
 The above copyright notice and this permission notice shall be included in
 all copies or substantial portions of the Software.
 
@@ -74,8 +73,13 @@ Accept args:
                     return ['    ', None][state]
                 elif lang == 'tw':
                     if text in ["印","pri","prin","print"]:
-                        print 'match'
                         return ['印出'][state]
+                    elif text == "for":
+                        return ['取'][state]
+                    elif text == 'in':
+                        return ['自'][state]
+                    elif text in ['範', 'ran', 'rang', 'range']:
+                        return ['範圍'][state]
                     elif text in ["定","def"]:
                         return ['定義'][state]
                     elif text in ["類", "cla", "clas", "class"]:
@@ -88,12 +92,6 @@ Accept args:
                         return ['從'][state]
                     elif text in ["作", "as"]:
                         return ['作為'][state]
-                    elif text == "for":
-                        return ['取'][state]
-                    elif text == 'in':
-                        return ['自'][state]
-                    elif text in ['範', 'ran', 'rang', 'range']:
-                        return ['範圍'][state]
                     elif text in ['如', 'if']:
                         return ['如果'][state]
                     elif text in ['假', 'eli', 'elif']:
@@ -103,8 +101,34 @@ Accept args:
                     elif text in ['Non', 'None']:
                         return ['空'][state]
                 elif lang == 'cn':
-                    if text == "定":
+                    if text in ["打","pri","prin","print"]:
+                        return ['打印'][state]
+                    elif text == "for":
+                        return ['取'][state]
+                    elif text == 'in':
+                        return ['自'][state]
+                    elif text in ['范', 'ran', 'rang', 'range']:
+                        return ['范围'][state]
+                    elif text in ["定","def"]:
                         return ['定义'][state]
+                    elif text in ["类", "cla", "clas", "class"]:
+                        return ['类'][state]
+                    elif text in ["导", "imp", "impo", "impor", "import"]:
+                        return ['导入'][state]
+                    elif text in ["返", "ret", "retu", "retur", "return"]:
+                        return ['返回'][state]
+                    elif text in ["fro", "from"]:
+                        return ['从'][state]
+                    elif text in ["作", "as"]:
+                        return ['作为'][state]
+                    elif text in ['如', 'if']:
+                        return ['如果'][state]
+                    elif text in ['假', 'eli', 'elif']:
+                        return ['假使'][state]
+                    elif text in ['否', 'els', 'else']:
+                        return ['否则'][state]
+                    elif text in ['Non', 'None']:
+                        return ['空'][state]
                 else:
                     return rlcompleter.Completer.complete(self,text,state)
 
