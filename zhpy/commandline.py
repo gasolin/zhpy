@@ -50,6 +50,8 @@ Accept options:
         zhpy information
     -v --verbose:
         show zhpy progress in detail
+    -V --version
+        show zhpy version
     --tw:
         convert python to twpy
     --cn:
@@ -121,6 +123,10 @@ help:
         if argv[0] == '--info':
             from info import info
             info()
+            sys.exit()
+        if argv[0] == '-V' or argv[0] == '--version':
+            from release import version
+            print "zhpy %s on python %s"%(version, sys.version.split()[0])
             sys.exit()
         elif argv[0] == '-h' or argv[0] == '--help':
             print commandline.__doc__

@@ -13,6 +13,7 @@ code name: Lovers
 * intentable interpreter autocomplete in *nix
 http://aspn.activestate.com/ASPN/Cookbook/Python/Recipe/496812
 * chinese keyword autocomplete in *nix
+* able to view zhpy version by 'zhpy -V' or 'zhpy --version' command
 
 *Fixes*
 
