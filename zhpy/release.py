@@ -3,7 +3,7 @@
 """Release information"""
 
 
-version = "1.7a"
+version = "1.7"
 author = "Fred Lin"
 email = "gasolin+zhpy@gmail.com"
 copyright = "Copyright 2007~ Fred Lin and contributors"
@@ -20,44 +20,17 @@ Introduction
 
 "If it walks like a duck and quacks like a duck, I would call it a duck."
 
-Zhpy acts like python and play like python, you (chinese users)
-could use it as python (plus with your native language).
-
 Zhpy on python is good for Taiwan and China beginners to learn python in
-our native language (Traditional and Simplified chinese).
+our native language (Currently support Traditional and Simplified chinese).
 
-Zhpy is the full feature python language with fully tested chinese
-keywords, variables, and parameters support. Zhpy is INDEPENDENT on python
-version(2.4, 2.5....), bundle with command line tool, interpreter,
-bi-directional zhpy <-> python code translation,
-chinese shell script capability, in-place ini reference
-feature for keyword reuse, and great document.
-
-The core of zhpy is a lightweight python module and a chinese
-source convertor based on python, which provides interpreter and
-command line tool to translate zhpy code to python.
-
-See http://www.flickr.com/photos/gasolin/2064120327
-
-You could use 'zhpy' command instead of "python" in command line to execute
-source code wrote in either Chinese or English.
-
-Zhpy also provide a method 'zh_exec' that allow you to embed
-chinese script in python; Zhpy could be used as the chinese
-shell script as well.
-
-The zhpy code written in traditional and simplified chinese could be
-translated and converted to natual python code.
-Thus it could be execute as nature python code and be used in
-normal python programs.
-
-Bidirectional python-zhpy translation is possible.
-Normal python programs could be translated to traditional(.twpy) or
-simplified(.cnpy) chinese zhpy source via 'zhpy' command line tool.
+Zhpy acts like python and play like python, you (chinese users)
+could use it as python to educate yourself the program skills
+plus with your native language.
 
 Check examples here.
 
   * http://zhpy.googlecode.com/svn/trunk/examples
+
 
 Play before Install
 --------------------
@@ -78,7 +51,8 @@ Or even easier, zhpy has online version (limited) running
 with google app engine!
 
  * http://zhpy.appspot.com
- 
+
+
 Install
 ----------
 
@@ -91,6 +65,7 @@ You could use easy_install command to install or upgrade zhpy::
 or check instructions for detail.
 
   * http://code.google.com/p/zhpy/wiki/DownloadInstall
+
 
 Usage
 -------
@@ -110,6 +85,7 @@ check the BasicUsage for detail.
 
   * http://code.google.com/p/zhpy/wiki/BasicUsage
 
+
 Programming Guide
 -------------------
 
@@ -125,6 +101,42 @@ There's the API document available in zhpy download list, too.
 PS: The book is based on "A Byte of Python".
 
   * http://swaroopch.info/text/Byte_of_Python:Main_Page
+
+
+What is Zhpy
+------------
+
+Zhpy is the full feature python language with fully tested chinese
+keywords, variables, and parameters support. Zhpy is INDEPENDENT on python
+version(2.4, 2.5....), bundle with command line tool, interpreter,
+bi-directional zhpy <-> python code translation,
+chinese shell script capability, in-place ini reference feature
+for keyword reuse, and great document (the book Byte of Python with chinese examples).
+
+The core of zhpy is a lightweight python module and a chinese
+source convertor based on python, which provides interpreter and
+command line tool to translate zhpy code to python.
+
+See http://www.flickr.com/photos/gasolin/2064120327
+
+You could invoke interpreter with 'zhpy' command instead of "python" in command line to execute source code wrote in either Chinese or English.
+The zhpy interpreter also support autocomplete function to save your typing.
+
+Zhpy provide a method 'zh_exec' that allow you to embed
+chinese script in python; Zhpy could be used as the chinese
+shell script as well.
+
+The zhpy code written in traditional and simplified chinese could be
+translated and converted to natual python code.
+Thus it could be execute as nature python code and be used in
+normal python programs.
+
+Bidirectional python-zhpy translation is possible.
+Normal python programs could be translated to traditional(.twpy) or
+simplified(.cnpy) chinese zhpy source via 'zhpy' command line tool.
+
+The framework is not hard to extend to another languages such as japenese or korean.
+
 
 Change Log
 -------------
