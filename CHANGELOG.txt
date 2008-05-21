@@ -1,23 +1,29 @@
 zhpy Changelog
 ====================
 
-1.7 (5/*/2008)
+1.7 (5/21/2008)
 --------------------
 code name: Lovers
 
 *Changes*
 
+remove keywords:
+  * "其":"self"
+
 *Features*
 
-* pygments syntax highlighter placeholder with 'zhpy' for '.py', '.twpy', '.cnpy'
+* able to view zhpy version by 'zhpy -V' or 'zhpy --version' command
 * intentable interpreter autocomplete in *nix
 http://aspn.activestate.com/ASPN/Cookbook/Python/Recipe/496812
 * chinese keyword autocomplete in *nix
-* able to view zhpy version by 'zhpy -V' or 'zhpy --version' command
+* pygments syntax highlighter placeholder with 'zhpy' for '.py', '.twpy', '.cnpy' (not work properly)
+* ODF/PDF version of byte of zhpy book
 
 *Fixes*
 
 *Project Updates*
+
+* Bob Chao joined as the project member
 
 *Contributors*
 

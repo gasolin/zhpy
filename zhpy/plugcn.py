@@ -51,7 +51,6 @@ class cn_keyword(ZhpyPlugin):
           "定义":"def",
           "类":"class",
           "我":"self",
-          "其":"self",
           "共用":"global",
           "全域":"global",
           # import

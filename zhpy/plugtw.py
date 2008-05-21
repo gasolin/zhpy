@@ -51,7 +51,6 @@ class tw_keyword(ZhpyPlugin):
           "定義":"def",
           "類別":"class",
           "我":"self",
-          "其":"self",
           "共用":"global",
           "全域":"global",
           # import
