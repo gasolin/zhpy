@@ -1,6 +1,24 @@
 zhpy Changelog
 ====================
 
+1.8 (6/*/2008)
+--------------------
+code name: Sun
+
+*Changes*
+
+*Features*
+
+*Fixes*
+
+*Project Updates*
+
+* update to pyparsing 1.5
+
+*Contributors*
+
+Fred Lin
+
 1.7 (5/21/2008)
 --------------------
 code name: Lovers
