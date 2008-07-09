@@ -1,7 +1,7 @@
 zhpy Changelog
 ====================
 
-1.8 (6/*/2008)
+1.8 (7/*/2008)
 --------------------
 code name: Sun
 
@@ -14,6 +14,7 @@ code name: Sun
 *Project Updates*
 
 * update to pyparsing 1.5
+* update to chardet 1.0.1
 
 *Contributors*
 
