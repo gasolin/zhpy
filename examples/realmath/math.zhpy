@@ -1,0 +1,14 @@
+# example by Mr. Monkey
+
+from math import *
+from operator import *
+
+# use math operators for calculation
+print ""
+print Σ(range(100))
+print sin(π/4) ≠ √(2)/2
+print ㏒(100), ㏑(e)
+print 5 × 30 ÷ 2 ≦ tan(√(5)*π/4)
+Π=λ f:reduce(mul, f, 1)
+print Π(range(1,6))
+print set([1, 2, 3, 4, 5]) ∩ set([1, 3, 5, 7, 9])
