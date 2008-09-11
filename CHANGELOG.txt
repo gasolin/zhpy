@@ -1,13 +1,17 @@
 zhpy Changelog
 ====================
 
-1.8 (7/*/2008)
+1.7.1 (9/11/2008)
 --------------------
 code name: Sun
 
 *Changes*
 
+* updating "A byte of zhpy" book
+
 *Features*
+
+* add realmath example by weijr(Mr. Monkey)
 
 *Fixes*
 
@@ -18,7 +22,7 @@ code name: Sun
 
 *Contributors*
 
-Fred Lin
+Fred Lin, weijr
 
 1.7 (5/21/2008)
 --------------------
@@ -35,8 +39,7 @@ remove keywords:
 * intentable interpreter autocomplete in *nix
 http://aspn.activestate.com/ASPN/Cookbook/Python/Recipe/496812
 * chinese keyword autocomplete in *nix
-* pygments syntax highlighter placeholder with 'zhpy' for '.py', '.twpy', '.cnpy' (not work properly)
-* ODF/PDF version of byte of zhpy book
+* pygments syntax highlighter placeholder with 'zhpy' for '.py', '.twpy', '.cnpy' (not work properly yet)
 
 *Fixes*
 

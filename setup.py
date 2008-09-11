@@ -25,7 +25,7 @@ setup(
     version=version,
     author=author,
     author_email=email,
-    download_url="http://code.google.com/p/zhpy/downloads/list",
+    download_url=download_url,
     license=license,
     keywords = "traditional, simplified, chinese",
     description=description,

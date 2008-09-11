@@ -6,8 +6,8 @@
 zhpy is the python language with chinese native keywords, variables, and
 parameters support, independent on python's version.
 
-zhpy's core function is a convertor to translate chinese python code to
-nature python code (english) and vice versa.
+zhpy's core function is a convertor/pre-processor to translate chinese
+python code to nature python code (english) and vice versa.
 
 zhpy is motivated by HYRY's origin code.
 
