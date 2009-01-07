@@ -1,6 +1,24 @@
 zhpy Changelog
 ====================
 
+1.7.2 (1/*/2008)
+--------------------
+code name: Death Thirteen 
+
+*Changes*
+
+*Features*
+
+*Fixes*
+
+*Project Updates*
+
+* update to pyparsing 1.5.1
+
+*Contributors*
+
+Fred Lin
+
 1.7.1 (9/11/2008)
 --------------------
 code name: Sun
