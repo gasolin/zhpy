@@ -38,7 +38,11 @@ class ZhPyConsole(InteractiveConsole):
     def push(self, line):
         self.buffer.append(line)
         source = "\n".join(self.buffer)
-        more = self.runsource(convertor(source, encoding=sys.stdout.encoding),
+        #windows patch
+        if sys.stdout.encoding == 'cp950':
+            encoding = ''
+
+        more = self.runsource(convertor(source, encoding=encoding),
                             self.filename)
         if not more:
             self.resetbuffer()
