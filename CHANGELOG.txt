@@ -13,7 +13,7 @@ code name: Death Thirteen
 
 *Project Updates*
 
-* update to pyparsing 1.5.1
+* update to pyparsing 1.5.2
 
 *Contributors*
 

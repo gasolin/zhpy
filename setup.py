@@ -18,7 +18,7 @@ execfile(os.path.join('zhpy', 'release.py'))
 required_modules = ["chardet >=1.0.1"]
 # pyparsing already included in release
 # nose is used for test
-extra_modules = {'pyparsing': ["pyparsing >=1.5.1"], 'nose':  ["nose>=0.9"]}
+extra_modules = {'pyparsing': ["pyparsing >=1.5.2"], 'nose':  ["nose>=0.9"]}
 
 setup(
     name="zhpy",
