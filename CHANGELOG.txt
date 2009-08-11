@@ -1,7 +1,7 @@
 zhpy Changelog
 ====================
 
-1.7.2 (8/*/2009)
+1.7.2 (8/11/2009)
 --------------------
 code name: Death Thirteen 
 
@@ -16,6 +16,7 @@ code name: Death Thirteen
 *Project Updates*
 
 * update to pyparsing 1.5.2
+* update setuptools to date
 * test via nose 0.11
 
 *Contributors*
