@@ -268,7 +268,7 @@ Accept args:
     # annotate if necessary
     annotator(force=False)
     #Use the provided encoding, if not exist select utf-8 as default.
-    if encoding:
+    if encoding and encoding.lower() != 'utf-8':
         utext = text.decode(encoding)
     else:
         if has_chardet:
