@@ -6,6 +6,18 @@ class Android(object):
     def __init__(self):
         print "Create Android instance"
     
-    def ScanBarcode(self):
+    def makeToast(self, text):
+        print "message: " + text
+    
+    def getInput(self, text):
+        print "get input: "
+    
+    def Speak(self, text):
+        print "speak: " + text
+        
+    def scanBarcode(self):
         print "Start barcode scaning ..."
         return "1234567890123"
+    
+    def captureImage(self):
+        print "get image"
