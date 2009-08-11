@@ -305,7 +305,10 @@ Accept args:
     elif isinstance(text, unicode):
         return result
     else:
-        return result.encode(encoding)
+        if encoding:
+            return result.encode(encoding)
+        else:
+            return result
 
 import sys
 # parameter to control if support chinese traceback
