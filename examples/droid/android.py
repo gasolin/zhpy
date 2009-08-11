@@ -4,7 +4,8 @@ class Android(object):
     http://code.google.com/p/android-scripting/source/browse/python/ase/android.py
     """
     def __init__(self):
-        print "create Android ok"
+        print "Create Android instance"
     
     def ScanBarcode(self):
-        print "scan barcode"
+        print "Start barcode scaning ..."
+        return "1234567890123"
