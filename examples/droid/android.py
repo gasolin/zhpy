@@ -17,7 +17,9 @@ class Android(object):
         
     def scanBarcode(self):
         print "Start barcode scaning ..."
-        return "1234567890123"
+        return {"SCAN_RESULT_FORMAT":"EAN_13",
+                  "data":"#intent;action=com.google.zxing.client.android.SCAN;S.SCAN_RESULT_FORMAT=EAN_13;S.SCAN_RESULT=1234567890123",
+                  "SCAN_RESULT":"1234567890123"}
     
     def captureImage(self):
         print "get image"
