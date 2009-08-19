@@ -1,5 +1,9 @@
 class Android(object):
     """
+    __author__: fredlin
+    __version__: 0.11_1
+    __date__: 2009/8/19
+    
     The mock up of 
     http://code.google.com/p/android-scripting/source/browse/python/ase/android.py
     """
