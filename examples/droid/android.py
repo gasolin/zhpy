@@ -9,8 +9,11 @@ class Android(object):
     def makeToast(self, text):
         print "message: " + text
     
-    def getInput(self, text):
-        print "get input: "
+    def getInput(self, title, message=""):
+        if not message.endswith(": ") or not message.endswith(":"):
+            message+=": "
+        input = raw_input(message)
+        return {"result":input}
     
     def Speak(self, text):
         print "speak: " + text
