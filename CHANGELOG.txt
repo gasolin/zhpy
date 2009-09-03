@@ -1,6 +1,25 @@
 zhpy Changelog
 ====================
 
+1.7.3 (8/11/2009)
+--------------------
+code name: Justice
+
+*Changes*
+
+
+*Features*
+
+* Compatible with Android Scripting Environment
+
+*Fixes*
+
+*Project Updates*
+
+*Contributors*
+
+Fred Lin
+
 1.7.2 (8/11/2009)
 --------------------
 code name: Death Thirteen 
