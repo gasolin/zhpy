@@ -1,16 +1,19 @@
 zhpy Changelog
 ====================
 
-1.7.3 (8/11/2009)
+1.7.3 (9/3/2009)
 --------------------
 code name: Justice
 
 *Changes*
 
+* Add droid example for Android Scripting Environment
+* exclude "tests" folder for 
 
 *Features*
 
-* Compatible with Android Scripting Environment
+* Partially Compatible with Android Scripting Environment
+* Provide an android.py mockup for desktop development
 
 *Fixes*
 
@@ -18,7 +21,7 @@ code name: Justice
 
 *Contributors*
 
-Fred Lin
+Fred Lin, DreamerC
 
 1.7.2 (8/11/2009)
 --------------------
