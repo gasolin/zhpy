@@ -1,7 +1,7 @@
 try:
     from setuptools import setup, find_packages
 except ImportError:
-    from ez_setup import use_setuptools
+    from distribute_setup import use_setuptools
     use_setuptools()
     from setuptools import setup, find_packages
 
@@ -15,7 +15,11 @@ execfile(os.path.join('zhpy', 'release.py'))
 
 # setup params
 # it's possible to remove chardet dependency while porting
-required_modules = ["chardet >=1.0.1"]
+required_modules = ["distribute", "chardet >=1.0.1"]
+#if mac, install readline
+if(sys.platform=="darwin"):
+    required_modules.append("readline >= 2.6.4")
+
 # pyparsing already included in release
 # nose is used for test
 extra_modules = {'pyparsing': ["pyparsing >=1.5.2"], 'nose':  ["nose>=0.9"]}
@@ -35,7 +39,7 @@ setup(
     install_requires = required_modules,
     extras_require = extra_modules,
     include_package_data = True,
-    packages=find_packages(exclude=["ez_setup", 'examples', 'apidocs', "tests"]),
+    packages=find_packages(exclude=['examples', 'apidocs', "tests"]),
     entry_points = """
     [console_scripts]
     zhpy = zhpy.commandline:commandline
