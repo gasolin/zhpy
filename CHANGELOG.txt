@@ -20,7 +20,7 @@ code name: Justice
 
 *Project Updates*
 * Move to Mercurial for version control
-* Use distribute instead of setuptools
+* NOT TO USE distribute instead of setuptools
 
 *Contributors*
 

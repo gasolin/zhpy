@@ -1,2 +1,5 @@
 .pyc
 zhpy.egg*
+build*
+dist*
+ez_setup*
