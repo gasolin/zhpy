@@ -15,10 +15,10 @@ execfile(os.path.join('zhpy', 'release.py'))
 
 # setup params
 # it's possible to remove chardet dependency while porting
-required_modules = ["distribute", "chardet >=1.0.1"]
+required_modules = ["chardet >=1.0.1"]
 #if mac, install readline
-if(sys.platform=="darwin"):
-    required_modules.append("readline >= 2.6.4")
+#if(sys.platform=="darwin"):
+#    required_modules.append("readline >= 2.6.4")
 
 # pyparsing already included in release
 # nose is used for test
