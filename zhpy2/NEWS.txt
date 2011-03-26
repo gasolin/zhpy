@@ -1,0 +1,8 @@
+NEWS
+------
+
+check news on
+http://code.google.com/p/zhpy/wiki/RoadMap
+
+or view the ZHPY official blog
+http://zhpy.blogspot.com

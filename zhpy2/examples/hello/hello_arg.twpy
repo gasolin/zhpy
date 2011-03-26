@@ -1,0 +1,6 @@
+#!/usr/bin/env zhpy
+# -*- coding: utf-8 -*-
+
+導入 系統
+
+印出 系統.參數
