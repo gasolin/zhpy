@@ -1,6 +1,24 @@
 zhpy Changelog
 ====================
 
+1.7.4 
+--------------------
+code name: 
+
+*Changes*
+
+*Features*
+
+*Fixes*
+
+* fix zhpy work in 64, thanks T.C.Chou
+
+*Project Updates*
+
+*Contributors*
+
+Fred Lin, T.C.Chou
+
 1.7.3 (12/7/2009)
 --------------------
 code name: Justice
