@@ -1,0 +1,971 @@
+zhpy Changelog
+====================
+
+1.7.4 
+--------------------
+code name: 
+
+*Changes*
+
+*Features*
+
+*Fixes*
+
+* fix zhpy work in 64, thanks T.C.Chou
+
+*Project Updates*
+
+*Contributors*
+
+Fred Lin, T.C.Chou
+
+1.7.3 (12/7/2009)
+--------------------
+code name: Justice
+
+*Changes*
+
+* Add droid example for Android Scripting Environment
+* exclude "tests" folder 
+* install readline module on Mac
+
+*Features*
+
+* Partially Compatible with Android Scripting Environment
+* Provide an android.py mockup for desktop development
+
+*Fixes*
+
+*Project Updates*
+* Move to Mercurial for version control
+* NOT TO USE distribute instead of setuptools
+
+*Contributors*
+
+Fred Lin, DreamerC
+
+1.7.2 (8/11/2009)
+--------------------
+code name: Death Thirteen 
+
+*Changes*
+
+*Features*
+
+*Fixes*
+
+* Compatibility with python 2.6
+
+*Project Updates*
+
+* update to pyparsing 1.5.2
+* update setuptools to date
+* test via nose 0.11
+
+*Contributors*
+
+Fred Lin
+
+1.7.1 (9/11/2008)
+--------------------
+code name: Sun
+
+*Changes*
+
+* updating "A byte of zhpy" book
+
+*Features*
+
+* add realmath example by weijr(Mr. Monkey)
+
+*Fixes*
+
+*Project Updates*
+
+* update to pyparsing 1.5
+* update to chardet 1.0.1
+
+*Contributors*
+
+Fred Lin, weijr
+
+1.7 (5/21/2008)
+--------------------
+code name: Lovers
+
+*Changes*
+
+remove keywords:
+  * "其":"self"
+
+*Features*
+
+* able to view zhpy version by 'zhpy -V' or 'zhpy --version' command
+* intentable interpreter autocomplete in *nix
+http://aspn.activestate.com/ASPN/Cookbook/Python/Recipe/496812
+* chinese keyword autocomplete in *nix
+* pygments syntax highlighter placeholder with 'zhpy' for '.py', '.twpy', '.cnpy' (not work properly yet)
+
+*Fixes*
+
+*Project Updates*
+
+* Bob Chao joined as the project member
+
+*Contributors*
+
+Fred Lin
+
+1.6 (4/12/2008)
+--------------------
+code name: Justice
+
+*Changes*
+
+* modify banner string
+* able to pass 'outcoding' param in zh_exec to control output encoding
+* able to pass 'zhtrace' param in try_run to control
+  if enable chinese traceback
+* make try_run support verbose option
+
+*Features*
+
+* online zhpy shell in zhpy.appspot.com!
+
+*Fixes*
+
+* fix python 2.4 compatibility occurred in 1.5.2, thanks DreamerC's report
+* fix no chardet support case
+
+*Project Updates*
+
+*Contributors*
+
+Fred Lin
+
+1.5.2 (4/3/2008)
+--------------------
+code name: Wheel of Fortune
+
+*Changes*
+
+* PEP8 cleanup, thanks ulipad :)
+* refactor py_annotator, thanks weijr
+* refactor python_convertor
+
+*Features*
+
+* no need calling annotator before calling convertor,
+  annotator will be called automatically
+* reduce unnecessary annotator reload, thanks weijr
+* add outcoding (output encoding) option in convertor
+
+*Fixes*
+
+* fix import_hook
+
+*Project Updates*
+
+* update license years
+
+*Contributors*
+
+Fred Lin, weijr
+
+1.5.1 (3/21/2008)
+--------------------
+code name: Empress
+
+*Changes*
+
+*Features*
+
+*Fixes*
+
+* fix pyzh pattern missing
+
+*Project Updates*
+
+*Contributors*
+
+Fred Lin
+
+1.5 (2/29/2008)
+--------------------
+code name: Emperor
+
+*Changes*
+
+* rename zhimport.py to import_hook.py
+* rewrite import_hook from magiccodec, thanks weijr
+http://weijr-note.blogspot.com/2008/02/python-magiccodec-01.html
+* use isinstance(target,dict) instead of type({}), thanks weijr
+* refactor merger
+* merge rev_merger to merger
+* refactor ini_annotator, py_annotator,
+    pattern, val_matching, rev_ini_annotator, 
+    rev_py_annotator, trace_annotator to private method
+* refactor to distill baseWord
+* add some variable docstrings
+
+*Features*
+
+* add keywords:
+  * "屬性":"property", "属性":"property",
+* add set methods keyword:
+  * "定集合":"frozenset",
+  * "清除":"clear",
+  * "複製":"copy","拷贝":"copy",
+  * "加":"add",
+  * "丟棄":"discard","丢弃":"discard",
+  * "聯集":"union","联集":"union",
+  * "交集":"intersection",
+  * "差集":"difference",
+  * "對稱差集":"symmetric_difference", "对称差集":"symmetric_difference",
+
+*Fixes*
+
+*Project Updates*
+
+* update to pyparsing 1.4.11
+* update setuptools to 0.6.8
+* update epydoc to 3.0.1
+
+*Contributors*
+
+Fred Lin, weijr
+
+1.4 (1/18/2008):
+--------------------
+code name: Hang Man
+
+*Changes*
+
+* change keyword:
+  * "元組" instead of "組合":"tuple",
+  * "元组" instead of "组合":"tuple",
+* update example n_tabl.twpy
+
+*Features*
+
+* Introdure real chinese traceback support, currently works in compiler mode
+
+*Fixes*
+
+* Fix interpreter unicode issue mainly occured on Windows, thanks renhbo
+
+*Project Updates*
+
+* use setup.cfg to generate docs
+
+*Contributors*
+
+Fred Lin, renhbo
+
+1.4b1 (12/3/2007):
+--------------------
+code name: Yellow Temperance
+
+*Changes*
+
+* change keyword:
+  * '操作系统错误' instead of '作业系统错误':"OSError"
+  * '申明' instead of "宣告":"assert"
+  * "申明錯誤" instead of "宣告錯誤":"AssertionError"
+  * "申明错误" instead of "宣告错误":"AssertionError"
+* add traceback term plugins (not functional yet)
+
+*Features*
+
+* while open interpreter, autodetect and show the localized banner
+* experimental chinese traceback support in convertor (not support in interpreter)
+* add keyword:
+  * "全域":"global"
+  * "全域變量":"globals","全域变量":"globals"
+  * "測試":"test", "测试":"test"
+  * "物件":"object", "对象":"object"
+* able to test though generated python file ($ nosetests n_xxx.py)
+
+*Fixes*
+
+* fix triple quote bug, thanks renhbo
+* allow cascading 2 identifiers (cascade 3 or more identifiers is not support)
+
+*Project Updates*
+
+*Contributors*
+
+Fred Lin, renhbo
+
+1.3 (11/5/2007):
+--------------------
+code name: White Snake
+
+*Changes*
+
+* Separate traditional and simplified chinese keywords from zhdc to plug[lang].py
+* moveout plugins' setuptools dependency, now you can try zhpy without install.
+* change keyword:
+  * "引用錯誤", "引用错误" instead of "参考错误":"ReferenceError"
+* make py_annotator work while only plugtw or plugcn exists.
+
+*Features*
+
+* support custom name space in zh_exec, thanks renhbo
+* able to run the commandline without install
+* able to run the interpreter with 4 module ["interpreter", "zhpy", "zhdc", "plug[lang]"]
+without install (core mode)
+* able to profiling standalone interpreter with "--profile" option
+
+*Fixes*
+
+* fix keyword "locals" instead of "local"
+* generate proper profix while the origin source is suffixed with '.tw.py' or '.cn.py'
+
+*Project Updates*
+
+* include pyparsing in distribution
+* doc update
+* add official zhpy blog: http://zhpy.blogspot.com/
+* remove zhpy_ext sample
+
+*Contributors*
+
+Fred Lin, renhbo
+
+1.2 (10/19/2007):
+--------------------
+code name: Requiem
+
+*Changes*
+
+* Use build-in int function to convert hex string, thanks Jiahua Huang
+* refactor repeative tripleQuote pattern to single place (zhpy)
+* refactor 'number_to_variable' function to 'zh_chr' function (pyzh)
+* refactor 'variable_to_number' function to 'zh_ord' function (zhpy)
+* support chinese filename to uri filename while convert with '-p' option
+* zh_ord and zh_chr are bi-direction convertable now
+* change keyword:
+  * '最大值' instead of '最大':'max'
+  * '最小值' instead of '最小':'min'
+  * '最大值' instead of '最大':'max'
+  * '最小值' instead of '最小':'min'
+  * '反转' instead of '逆转':'reverse',
+
+*Features*
+
+* add zhimport module to support chinese file name import, thanks Jiahua Huang
+* checked in experimental direct zhpy module import(disabled), thanks Jiahua Huang 
+* add build-in sys module keyword plugin
+* add pyzh and bi-directional translation tests
+
+*Fixes*
+
+* support multilines comments with triple single quote, thanks renhbo
+
+*Project Updates*
+
+* set svn:external to update ez_setup script automaticaly
+* renhbo joined as the project member
+
+*Contributors*
+
+Fred Lin, Jiahua Huang, renhbo
+
+1.1.1 (10/12/2007):
+--------------------
+code name: Dark Blue Moon
+
+*Changes*
+
+*Features*
+
+*Fixes*
+
+* Able to import modules in current directory with interpreter or script, thanks renhbo
+* fix python to zhpy command with any ini file in current directory, thanks renhbo
+* fix multilines comments translated incorrectly
+
+*Project Updates*
+
+* update release note
+
+*Contributors*
+
+Fred Lin, renhbo
+
+1.1 (10/8/2007):
+--------------------
+code name: Echoes
+
+*Changes*
+
+*Features*
+
+* add commandline option '--tw' to convert python code to twpy
+* add commandline option '--cn' to convert python code to cnpy
+
+*Fixes*
+
+* fix verbose options in commandline tool
+* fix zhpy to python function
+* remove extra .tw, .cn in reverted filename of python to zhpy
+
+*Project Updates*
+
+* update installer code
+* update project status to Production/Stable
+
+*Contributors*
+
+Fred Lin
+
+1.0 (10/3/2007):
+--------------------
+code name: Killer Queen
+
+*Changes*
+
+* replace keyword
+  * "鍵列表" instead of "關鍵字列表":"keys"
+  * "键列表" instead of "关键字列表":"keys"
+  * "引發","引发" instead of "示警":"raise"
+  * "評估","评估" instead of "求值":"eval"
+
+*Features*
+
+* complete "Byte of Zhpy" book
+* add native interpreter banner "zhpy --tw" or "zhpy --cn"
+* show keyword number of each plugin in "zhpy --info" command
+* add keyword
+  * "代換":"replace"
+  * "代换":"replace"
+  * "初始化":"init",
+  * "類別方法":"classmethod"
+  * "类方法":"classmethod"
+  * "錯誤":"Error"
+  * "错误":"Error"
+  * "描述":"repr"
+
+*Fixes*
+
+*Project Updates*
+
+* update Download Install doc
+* format inline docs for APIDOC
+
+*Contributors*
+
+Fred Lin
+
+0.9.4 (9/28/2007):
+--------------------
+code name: Silver Chariot
+
+*Changes*
+
+* remove chinese punctuations support
+* change keyword
+  * use "檔案", "档案" instead of "文件":"file"
+  * use "返回" instead of "传回":"return"
+  * use "組合", "组合" instead of "數組":"tuple"
+
+*Features*
+
+* allow zhpy script with commandline arguments
+* add keyword:
+  * "其":"self"
+  * "我":"self"
+
+*Fixes*
+
+* fixed comment shouldn't be translated
+* 'byte of zhpy' doc update
+
+*Project Updates*
+
+* rename zhpy_interpreter.py to interpreter.py
+* rename zhpy_cmd.py to commandline.py
+* rename zhpy_info.py to info.py
+* new commandline utility
+* remove command shortcut: "zhpy [input] [output]", use "zhpy -i [input] -o [output]" or
+   "zhpy -p [input]"
+
+*Contributors*
+
+Fred Lin
+
+0.9.3 (09/15/2007):
+--------------------
+code name: Gray Tower
+
+*Changes*
+
+*Features*
+
+* catch up exception definitions http://www.chinesepython.org/doc/ref.html
+* make chinese punctuation be a plugin
+* add keyword:
+  * "區域變量":"local", "区域变量":"local"
+* Downloadable API Doc
+
+*Fixes*
+
+* make incorrect ini file not cause exception
+* fix replacedict, thanks renhbo
+* fix miss-replaced punctuations in quotestring
+
+*Project Updates*
+
+* update ez_setup.py to 0.6c7
+
+*Contributors*
+
+Fred Lin, renhbo
+
+0.9.2 (09/10/2007):
+--------------------
+code name: Hierophant Green
+
+*Changes*
+
+* move twdict, cndict keyword into plugins
+* plugin use object instead of dict to contain more information
+* refactory annotator
+* update zhpy_ext plugin sample
+* keyword change
+  * "和":"and", "且":"and" instead of "并且":"and"
+  *"或":"or" instead of "或者":"or"
+  * "輸入":"raw_input" instead of "输入字符串":"raw_input"
+  * "浮点数":"float" instead of "小数":"float"
+* remove keyword
+  * "傳回":"return"
+  * "全局":"global"
+
+*Features*
+
+* add keyword
+  * "非":"not"
+  * "可調用":"callable", "可调用":"callable"
+  * "符號":"chr", "符号":"chr"
+  * "符號轉整數":"ord", "符号转整数":"ord"
+  * "比較":"cmp","比较":"cmp"
+  * "複數":"complex","复数":"complex"
+  * "十六進位":"hex", "十六进制":"hex"
+  * "列出屬性":"dir", "列出属性":"dir"
+  * "求值":"eval"
+  * "文件":"file"
+  * "输入":"input"
+  * "取屬性":"getattr", "取属性":"getattr"
+  * "有屬性":"hasattr", "有属性":"hasattr"
+  * "設定屬性":"setattr", "设定属性":"setattr"
+  * "映射":"map"
+  * "最大":"max",
+  * "最小":"min",
+  * "總和":"sum", "总和":"sum"
+  * "快速範圍":"xrange", "快速范围":"xrange"
+  * "計數":"count", "计数":"count"
+  * "索引":"index"
+  
+*Fixes*
+
+*Project Updates*
+
+register "twkeyword", "twmethod", "tw_exception", "twzhpy",
+"cnkeyword", "cnmethod", "cn_exception", "cnzhpy" as plugin
+
+*Contributors*
+
+Fred Lin
+
+0.9.1 (09/08/2007):
+--------------------
+code name: Magician Red
+
+*Changes*
+
+* twdict, cndict now shown in plugin
+* worddict formed dynamically without exceptions
+* keyword changes
+  * "中斷" instead of "中止"
+  
+*Features*
+
+* add keyword:
+  * "假使":"elif"
+  * "周蟒":"zhpy"
+  * "中文執行":"zh_exec", "中文执行":"zh_exec"
+
+*Fixes*
+
+* better formatted "zhpy --info" command
+* 'byte of zhpy' doc update
+
+*Project Updates*
+
+* add download url
+
+*Contributors*
+
+Fred Lin
+
+0.9 (09/05/2007):
+------------------
+code name: The World
+
+*Changes*
+
+* able to pass target dict to merger function
+
+*Features*
+
+* module keyword library plug-in system by annotator
+* plug-in support for rev_annotator
+* annotation support in interpreter
+* add command line option '-V/info' for zhpy complete information
+* add zhpy_ext as sample plugin template
+* add keyword
+  * "幫助":"help", "帮助":"help"
+  * "说明":"help"
+* Start 'byte of zhpy' doc
+
+*Fixes*
+
+* use encoding utf8 as default encoding while auto detection in low confidence(<0.8)
+* fix tests cases' doctest
+* able to run as script without subname
+
+*Project Updates*
+
+*Contributors*
+
+Fred Lin
+
+0.8.1 (09/03/2007):
+------------------
+code name: Hermit Purple
+
+*Changes*
+
+* rename zhpyi.py to zhpy_interpreter.py
+* update example test cases
+* update interpreter banner
+
+*Features*
+
+
+*Fixes*
+
+* fix interpreter multiline exception bug
+
+*Project Updates*
+
+* Jiahwa Huang joined as the project member
+
+*Contributors*
+
+Fred Lin
+
+0.8 (08/30/2007):
+------------------
+code name: Stone Free
+
+*Changes*
+
+* move all dictionaries to zhdc.py
+* move command line tool to zhpy_cmd.py
+* use implicit imports
+* remove -r option, use -c instead
+* keyword changes
+ * "開頭為" instead of "開始字串", 
+ * "开头为" instead of "开始为"
+ * "结尾为" instead of "结束为"
+ * "結尾為" instead of "結束字串"
+
+*Features*
+
+* zhpy interpreter, thanks Jiahua Huang
+* implement zhpy -> python libraries in pyzh.py
+  * bi-directional uri variable <-> number function, prototype by Jiahua Huang
+* auto detect encodings, now interpreter works on tw/cn windows
+* add "-e/--encoding" option to customize the encoding for parsing
+* add keyword:
+  * "執行":"exec", "执行":"exec"
+  * "布林":"bool", "布尔":"bool"
+  * "絕對值":"abs", "绝对值":"abs"
+  * "列舉":"enumerate", "列举":"enumerate"
+  * "過濾":"filter", "过滤":"filter"
+  * "打包":"zip"
+  * "擴展":"extend", "扩展":"extend"
+  * "插入":"insert", "移除":"remove","排序":"sort"
+  * "彈出":"pop", "弹出":"pop"
+  * "列舉":"enumerate", "列举":"enumerate"
+  * "過濾":"filter", "过滤":"filter"
+  * "打包":"zip", "打包":"zip", thanks HYRY
+  * "型別錯誤":"TypeError", "类型错误":"TypeError"
+  * "下一筆":"next", "下一笔":"next"
+  * "例外":"Exception"
+  * "停止迭代":"StopIteration"
+  * "解碼錯誤":"UnicodeDecodeError","解码错误":"UnicodeDecodeError",
+  * "導入錯誤":"ImportError","导入错误":"ImportError"
+
+* add zhpy featured keyword
+  * "主程式":'if __name__=="__main__"', "主程序":'if __name__=="__main__"'
+
+*Fixes*
+
+* keep twdict clean, worddict now real copy from twdict
+
+*Project Updates*
+
+* use .tw.py, .cn.py as another zhpy subname to distinguish the coding
+* add chardet dependency
+
+*Contributors*
+
+Fred Lin, HYRY, Jiahua Huang
+
+0.7 (08/25/2007):
+------------------
+code name: Gold Experience
+
+*Changes*
+
+* keyword changes
+  * "全局" instead of "全局变量"
+  * "导入" instead of "载入"
+  * "作為" instead of "取名"
+  * "尝试" instead of "试运行"
+  * "异常" instead of "错误处理"
+  * "集合" instead of , "类组"
+  * "連接" instead of "接合"
+  * "關鍵字列表" instead of "列出關鍵字"
+  * "值列表" instead of "列出值"
+  * "項目列表" instead of "列出項目"
+* variables are changed to "p_[var]_v" syntax instead of p[num],
+  thanks Jiahua Huang
+* .has_key() is deprecated, use 'in'
+* remove keyword
+  * "有關鍵字":"has_key", "有关键字":"has_key"
+  * "若":"if"
+  * "開啟":"open", "开启":"open"
+* remove trail space for pep8
+* rename run.sh to test_example.sh
+* maintain tw, cn keyword in seperate dict
+* Online documents update
+
+*Features*
+
+* use universe reference identifier (uri) for
+  variable/constant/class/methods instead of vnum, thanks Jiahua Huang
+* add keyword:
+  * "作为":"as"
+  * "最后":"finally"
+  * "宣告":"assert", "刪除":"del", "执行":"exec"
+  * "或者":"or","并且":"and",
+  * "不在":"not in"
+  * "不為":"is not", "为":"is", "不为":"is not"
+  
+* add "-c/--cmd" option instead of "-r/--raw" to correspond the python command,
+  "-r/--raw" will be deprecate in next release.
+* also test command line options (test_example.sh)
+* add contact example (cn) in loop/
+
+*Fixes*
+
+* able to run zhpy in __main__, thanks Jiahua Huang
+
+*Project Updates*
+
+* use .twpy, .cnpy as zhpy subname to distinguish the coding
+
+*Contributors*
+
+Fred Lin, Jiahua Huang
+
+0.6 (08/22/2007):
+------------------
+code name: Crazy Diomand
+
+*Changes*
+
+* internal refactor the try_run method
+* rename traditional chinese test cases
+* Online documents update
+
+*Features*
+
+* add "-r/--raw": "input raw zhpy source and run" option for
+  scripting usage, idea from Jiahua Huang
+* add simplified chinese test cases
+* Add doctests
+* add keyword:
+  * "实": "True"
+  * "类型":"type"
+  * "读取":"read", "写入":"write"
+  * "读一行":"readline", "读多行":"readlines"
+  * "开启":"open", "打开":"open",
+  * "關閉":"close", "关闭":"close"
+  
+*Fixes*
+
+* "不是":"is not" instead of "不是":"not"
+* zhpy.py use normal unix \n instead of mac \r, thanks Jiahua Huang
+
+*Project Updates*
+
+* Increase cheesecake_ rating
+  * Add license statement
+  * Add todo list
+  * Add authors list
+  * Add docs/
+* Add example test runner
+* Remove redundent files
+* Update setup information
+
+.. _cheesecake: http://www.pycheesecake.org/
+
+*Contributors*
+
+Fred Lin, Jiahua Huang
+
+0.5 (08/19/2007):
+------------------
+code name: Star Platinum
+
+*Changes*
+
+*Features*
+
+* implement zh_exec, now it's possible to test zhpy in interpretor, or
+  embeded zhpy in python source
+* add test cases
+
+*Fixes*
+
+* Now parser matches all quotes (single quote, double quote, triple quote)
+* fix game example
+
+*Project Updates*
+
+* Add README file
+* Add tests folder
+
+*Contributors*
+
+Fred Lin
+
+0.4 (08/16/2007):
+------------------
+code name: Dio
+
+*Changes*
+
+* keywords changes
+"浮點數":"float" instead of "小數"
+
+*Features*
+
+* Enhanced command parser with 2 basic option
+  * add "-i": input option
+  * add "-o": output option
+* add "-p": "compile to python and run" option, which generate 
+  python source with 'n_' prefix.
+* More keywords
+  * "數組":"tuple", "類組":"set"
+  * "数组":"tuple", "类组":"set"
+  * "編碼":"encoding", "解碼":"decoding"
+  * "编码":"encoding", "解码":"decoding"
+  * "開啟":"open", "讀取":"read", "寫入":"write" 
+  * "讀一行":"readline", "讀多行":"readlines"
+  * "接合":"join", "分離":"split"
+  * "分离":"split"
+                 
+*Fixes*
+
+*Project Updates*
+
+* update classifiers information
+* move to beta phase
+
+*Contributors*
+
+Fred Lin
+
+0.3 (08/13/2007):
+------------------
+code name: JoJo
+
+*Changes*
+
+* Trad keyword changes: 
+  * "傳回":"return"
+  * "假使":"elif" and "否則如果":"elif" instead of '不然'
+  * "中止":"break"
+  * "方程式":"lambda" instead of "函式"
+  * "產生":"yield" instead of  "圈"
+  * "示警":"raise" instead of "舉出"
+  * "共用":"global" instead of "全域"
+
+* Smpl keyword changes:
+  * "函数":"lambda"
+  * "产生":"yield",
+  * "继续":"continue"
+  ＊ "传回":"return"
+
+* Removed keywords:
+  * "加":"+", "減":"-", "乘":"*", "除":"/","取餘數":"%"
+  * "一":"1", "百":"100", # numbers
+  
+*Features*
+
+* allow to dynamic add keywords by append ini files in same folder
+* catalog keywords
+* More keywords
+  * "真": "True", "假":"False" 
+  * "實": "True", "虛":"False" 
+  * "空":"None"
+  * "是":"is", "為":"is", "不是":"not"
+  * "或":"or", "和":"and", "且":"and"
+  * "開始字串":"startswith", "結束字串":"endswith"
+  * "开始为":"startswith","结束为":"endswith"
+
+* More Documents
+
+*Fixes*
+
+*Project Updates*
+
+* Removed python version requirement
+* Add ez_setup.py in project incase user haven't installed easy_install command
+* Add module version info while import
+* Zoom Quiet joined as the project member
+
+*Contributors*
+
+Fred Lin
+
+0.2 (08/9/2007):
+------------------
+code name: zhou
+
+*Changes*
+
+* Refactored from HYRY's original script
+* Add Traditional Chinese keywords
+
+*Features*
+
+* easy_install-abled
+* executable command line
+* export python source from zhpy
+
+*Fixes*
+
+*Project Updates*
+
+* host on google code project
+
+*Contributors*
+
+Fred Lin, HYRY
