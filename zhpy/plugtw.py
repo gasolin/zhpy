@@ -303,17 +303,17 @@ class tw_traceback(ZhpyPlugin):
                }
 
 #    [zhpy.twdict]
-twkeyword = tw_keyword()
-twmethod = tw_buildin_method()
-twexception = tw_exception()
-twzhpy= tw_zhpy()
-twsys = tw_sys()
-twtrace = tw_traceback()
+keyword = tw_keyword()
+method = tw_buildin_method()
+exception = tw_exception()
+zhpy= tw_zhpy()
+sys = tw_sys()
+trace = tw_traceback()
 
 #tools = [twkeyword, twmethod, twexception, twzhpy, twsys]
 #trace = [twkeyword, twmethod, twexception, twtrace, twsys]
-trans = dict(twkeyword.keyword, **twmethod.keyword)
-trans = dict(trans, **twexception.keyword)
-trans = dict(trans, **twzhpy.keyword)
-trans = dict(trans, **twsys.keyword)
-trans = dict(trans, **twtrace.keyword)
+trans = dict(keyword.keyword, **method.keyword)
+trans = dict(trans, **exception.keyword)
+trans = dict(trans, **zhpy.keyword)
+trans = dict(trans, **sys.keyword)
+trans = dict(trans, **trace.keyword)
