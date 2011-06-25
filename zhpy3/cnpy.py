@@ -7,10 +7,12 @@ import tokenize
 import plugcn
 import runpy
 
+translations = plugcn.trans
+
 def translate_code(readline):
     for type, name, _,_,_ in tokenize.generate_tokens(readline):
-        if type == tokenize.NAME and name in plugcn.trans:
-            yield tokenize.NAME, plugcn.trans[name]
+        if type == tokenize.NAME and name in translations:
+            yield tokenize.NAME, translations[name]
         else:
             yield type, name
             
