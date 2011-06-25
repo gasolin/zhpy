@@ -36,7 +36,7 @@ except:
     from pyzh import zh_chr
     __trueimport__ = __builtin__.__import__
 
-    def chinese_import(modname, *arg):
+    def chinese_import(modname, *arg, **kw):
         """chinese import
 
         convert uri file name back to chinese filename
@@ -44,7 +44,7 @@ except:
         __builtin__.__import__ = __trueimport__
         modname = zh_chr(modname).encode("utf8")
         __builtin__.__import__ = chinese_import
-        return __trueimport__(modname, *arg)
+        return __trueimport__(modname, *arg, **kw)
 
     def setup():
         if not getattr(chinese_import, "hooked", False):

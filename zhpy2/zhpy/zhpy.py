@@ -348,6 +348,7 @@ Accept args:
         # able to import modules in current directory
         sys.path.insert(0, '')
         exec result in global_ns, local_ns
+        #compile(result, os.getcwd(), "exec")
     except Exception, e:
         # Print error and track back.
         if has_zhtraceback and zhtrace:

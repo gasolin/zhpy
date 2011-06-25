@@ -79,6 +79,8 @@ Accept args:
                 elif lang == 'tw':
                     if text in ["印","pri","prin","print"]:
                         return ['印出'][state]
+                    elif text in ["sel", "self"]:
+                        return ['我'][state]
                     elif text == "for":
                         return ['取'][state]
                     elif text == 'in':
@@ -108,6 +110,8 @@ Accept args:
                 elif lang == 'cn':
                     if text in ["打","pri","prin","print"]:
                         return ['打印'][state]
+                    elif text in ["sel", "self"]:
+                        return ['我'][state]
                     elif text == "for":
                         return ['取'][state]
                     elif text == 'in':
