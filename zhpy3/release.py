@@ -3,7 +3,7 @@
 """Release information"""
 
 
-version = "3.0.0"
+version = "3.0.0a1"
 author = "Fred Lin"
 email = "gasolin+zhpy@gmail.com"
 copyright = "Copyright 2007~ Fred Lin and contributors"

@@ -9,14 +9,7 @@ import runpy
 from core import translate_code
 
 translations = plugtw.trans
-
-#def translate_code(readline):
-#    for type, name, _,_,_ in tokenize.generate_tokens(readline):
-#        if type == tokenize.NAME and name in translations:
-#            yield tokenize.NAME, translations[name]
-#        else:
-#            yield type, name
-            
+        
 def commandline():
     """zhpy3, the python language in Traditional Chinese
 
