@@ -1,6 +1,18 @@
 zhpy Changelog
 ====================
 
+3.0.0
+--------------------
+
+*Features*
+
+* initial Python 3 support
+
+*Contributors*
+
+Fred Lin, Xin Wang
+
+
 1.7.3 (12/7/2009)
 --------------------
 code name: Justice
