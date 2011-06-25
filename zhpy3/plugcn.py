@@ -50,6 +50,7 @@ class cn_keyword(ZhpyPlugin):
           # def
           "定义":"def",
           "类":"class",
+          "类別":"class",
           "我":"self",
           "自个儿":"self",
           "共用":"global",
@@ -98,7 +99,7 @@ class cn_buildin_method(ZhpyPlugin):
     title = "内部函数"
     description = "Python 内部函数"
     keyword = {
-          "输入":"raw_input",
+          "输入":"input",
           # build-in types
           "字符串":"str",
           "布尔":"bool",
