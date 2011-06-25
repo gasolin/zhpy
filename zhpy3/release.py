@@ -39,6 +39,14 @@ You could use easy_install command to install or upgrade zhpy3::
 
     $ easy_install -U zhpy3
 
+to use easy_install command, you should install distribute module for python 3 first:
+
+http://pypi.python.org/pypi/distribute/
+
+And check your system path params if it contains python3.x/bin path.
+
+ex: edit .bashrc to include "/Library/Frameworks/Python.framework/Versions/3.x/bin" in your PATH parameter. 
+
 What is Zhpy3
 ---------------
 
