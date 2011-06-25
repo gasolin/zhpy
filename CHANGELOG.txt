@@ -1,6 +1,27 @@
 zhpy Changelog
 ====================
 
+3.0.0 
+--------------------
+code name: Tusk
+
+*Changes*
+
+*Features*
+
+* Support python 3!
+
+*Fixes*
+
+*Project Updates*
+
+* use distribute instead of setuptools
+
+*Contributors*
+
+Fred Lin, Xin Wang
+
+
 1.7.4 
 --------------------
 code name: 
