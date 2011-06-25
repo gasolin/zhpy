@@ -3,3 +3,4 @@ zhpy.egg*
 build*
 dist*
 ez_setup*
+.DS_Store
