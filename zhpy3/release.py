@@ -50,7 +50,7 @@ ex: edit .bashrc to include "/Library/Frameworks/Python.framework/Versions/3.x/b
 What is Zhpy3
 ---------------
 
-Zhpy3 is the successor of zhpy, to provider the python 3 language translator with fully tested chinese keywords, variables, and parameters support. Zhpy is INDEPENDENT on python 3 version(3.x….).
+Zhpy3 is the successor of zhpy, to provide the python 3 language translator with fully tested chinese keywords, variables, and parameters support. Zhpy is INDEPENDENT on python 3 versions(3.x….).
 
 The core of zhpy3 is a lightweight python module and a language
 source convertor based on python3, which provides
