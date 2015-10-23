@@ -12,6 +12,17 @@ zhpy Changelog
 
 Fred Lin, Xin Wang
 
+1.7.4 (10/23/2015)
+--------------------
+code name: Back to the future
+
+*Changes*
+
+* Migrate project to github and update links to pypi
+
+*Contributors*
+
+Fred Lin
 
 1.7.3 (12/7/2009)
 --------------------
@@ -20,7 +31,7 @@ code name: Justice
 *Changes*
 
 * Add droid example for Android Scripting Environment
-* exclude "tests" folder 
+* exclude "tests" folder
 * install readline module on Mac
 
 *Features*
@@ -40,7 +51,7 @@ Fred Lin, DreamerC
 
 1.7.2 (8/11/2009)
 --------------------
-code name: Death Thirteen 
+code name: Death Thirteen
 
 *Changes*
 
@@ -197,7 +208,7 @@ http://weijr-note.blogspot.com/2008/02/python-magiccodec-01.html
 * refactor merger
 * merge rev_merger to merger
 * refactor ini_annotator, py_annotator,
-    pattern, val_matching, rev_ini_annotator, 
+    pattern, val_matching, rev_ini_annotator,
     rev_py_annotator, trace_annotator to private method
 * refactor to distill baseWord
 * add some variable docstrings
@@ -349,7 +360,7 @@ code name: Requiem
 *Features*
 
 * add zhimport module to support chinese file name import, thanks Jiahua Huang
-* checked in experimental direct zhpy module import(disabled), thanks Jiahua Huang 
+* checked in experimental direct zhpy module import(disabled), thanks Jiahua Huang
 * add build-in sys module keyword plugin
 * add pyzh and bi-directional translation tests
 
@@ -560,7 +571,7 @@ code name: Hierophant Green
   * "快速範圍":"xrange", "快速范围":"xrange"
   * "計數":"count", "计数":"count"
   * "索引":"index"
-  
+
 *Fixes*
 
 *Project Updates*
@@ -582,7 +593,7 @@ code name: Magician Red
 * worddict formed dynamically without exceptions
 * keyword changes
   * "中斷" instead of "中止"
-  
+
 *Features*
 
 * add keyword:
@@ -671,7 +682,7 @@ code name: Stone Free
 * use implicit imports
 * remove -r option, use -c instead
 * keyword changes
- * "開頭為" instead of "開始字串", 
+ * "開頭為" instead of "開始字串",
  * "开头为" instead of "开始为"
  * "结尾为" instead of "结束为"
  * "結尾為" instead of "結束字串"
@@ -759,7 +770,7 @@ code name: Gold Experience
   * "或者":"or","并且":"and",
   * "不在":"not in"
   * "不為":"is not", "为":"is", "不为":"is not"
-  
+
 * add "-c/--cmd" option instead of "-r/--raw" to correspond the python command,
   "-r/--raw" will be deprecate in next release.
 * also test command line options (test_example.sh)
@@ -800,7 +811,7 @@ code name: Crazy Diomand
   * "读一行":"readline", "读多行":"readlines"
   * "开启":"open", "打开":"open",
   * "關閉":"close", "关闭":"close"
-  
+
 *Fixes*
 
 * "不是":"is not" instead of "不是":"not"
@@ -863,18 +874,18 @@ code name: Dio
 * Enhanced command parser with 2 basic option
   * add "-i": input option
   * add "-o": output option
-* add "-p": "compile to python and run" option, which generate 
+* add "-p": "compile to python and run" option, which generate
   python source with 'n_' prefix.
 * More keywords
   * "數組":"tuple", "類組":"set"
   * "数组":"tuple", "类组":"set"
   * "編碼":"encoding", "解碼":"decoding"
   * "编码":"encoding", "解码":"decoding"
-  * "開啟":"open", "讀取":"read", "寫入":"write" 
+  * "開啟":"open", "讀取":"read", "寫入":"write"
   * "讀一行":"readline", "讀多行":"readlines"
   * "接合":"join", "分離":"split"
   * "分离":"split"
-                 
+
 *Fixes*
 
 *Project Updates*
@@ -892,7 +903,7 @@ code name: JoJo
 
 *Changes*
 
-* Trad keyword changes: 
+* Trad keyword changes:
   * "傳回":"return"
   * "假使":"elif" and "否則如果":"elif" instead of '不然'
   * "中止":"break"
@@ -910,14 +921,14 @@ code name: JoJo
 * Removed keywords:
   * "加":"+", "減":"-", "乘":"*", "除":"/","取餘數":"%"
   * "一":"1", "百":"100", # numbers
-  
+
 *Features*
 
 * allow to dynamic add keywords by append ini files in same folder
 * catalog keywords
 * More keywords
-  * "真": "True", "假":"False" 
-  * "實": "True", "虛":"False" 
+  * "真": "True", "假":"False"
+  * "實": "True", "虛":"False"
   * "空":"None"
   * "是":"is", "為":"is", "不是":"not"
   * "或":"or", "和":"and", "且":"and"

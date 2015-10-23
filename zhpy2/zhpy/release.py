@@ -3,14 +3,14 @@
 """Release information"""
 
 
-version = "1.7.3.1"
+version = "1.7.4"
 author = "Fred Lin"
 email = "gasolin+zhpy@gmail.com"
 copyright = "Copyright 2007~ Fred Lin and contributors"
 license = "MIT <http://www.opensource.org/licenses/mit-license.php>"
-url = "http://zhpy.googlecode.com/"
-download_url="http://code.google.com/p/zhpy/"
-description="Write python language in chinese"
+url = "https://github.com/gasolin/zhpy"
+download_url="https://github.com/gasolin/zhpy"
+description="周蟒, Write python language in chinese"
 long_description = """
 .. contents::
   :depth: 2
@@ -21,7 +21,7 @@ Introduction
 "If it walks like a duck and quacks like a duck, I would call it a duck."
 
 Zhpy on python is good for Taiwan and China beginners to learn python in
-our native language (Currently support Traditional and Simplified chinese).
+our native language (Currently it support Traditional and Simplified chinese).
 
 Zhpy acts like python and play like python, you (chinese users)
 could use it as python to educate yourself the program skills
@@ -29,16 +29,9 @@ plus with your native language.
 
 Check examples here.
 
-  * http://zhpy.googlecode.com/svn/trunk/examples
+  * https://github.com/gasolin/zhpy/tree/master/zhpy2/examples
 
-Play Zhpy Online
---------------------
-
-Zhpy has online version (with limited feature) running
-with google app engine!
-
- * http://zhpy.appspot.com
-
+(Please install python 2.x to use this project)
 
 Play locally
 --------------
@@ -67,7 +60,7 @@ You could use easy_install command to install or upgrade zhpy::
 
 or check instructions for detail.
 
-  * http://code.google.com/p/zhpy/wiki/DownloadInstall
+  * https://github.com/gasolin/zhpy/blob/wiki/DownloadInstall.md
 
 
 Usage
@@ -82,11 +75,11 @@ You could use zhpy interpreter to test zhpy::
 
 Browse project homepage to get examples in chinese.
 
-  * http://code.google.com/p/zhpy/
+  * https://github.com/gasolin/zhpy
 
 check the BasicUsage for detail.
 
-  * http://code.google.com/p/zhpy/wiki/BasicUsage
+  * https://github.com/gasolin/zhpy/blob/wiki/BasicUsage.md
 
 
 Programming Guide
@@ -95,7 +88,7 @@ Programming Guide
 You could freely view the C.C. licensed book "A Byte of python (Zhpy)"
 on zhpy website, which contained zhpy example codes as well.
 
-  * http://code.google.com/p/zhpy/wiki/ByteOfZhpy
+  * https://github.com/gasolin/zhpy/blob/wiki/ByteOfZhpy.md
 
 There's the API document available in zhpy download list, too.
 
@@ -146,6 +139,6 @@ Change Log
 
 You could view the ChangeLog to see what's new in these version.
 
-  * http://zhpy.googlecode.com/svn/trunk/CHANGELOG.txt
+  * https://github.com/gasolin/zhpy/blob/master/CHANGELOG.txt
 
 """

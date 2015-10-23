@@ -4,7 +4,7 @@ zhpy
 zhpy is the python on Chinese, which is good for Taiwan and China beginners
 to learn python in our native language.
 
-Install: http://code.google.com/p/zhpy/wiki/DownloadInstall
+Install: https://github.com/gasolin/zhpy/blob/wiki/DownloadInstall.md
 
 Open the command line, enter the current source directory and type following
 command:
@@ -12,7 +12,7 @@ command:
 $ python setup.py install
 
 
-Basic Usage: http://code.google.com/p/zhpy/wiki/BasicUsage
+Basic Usage: https://github.com/gasolin/zhpy/blob/wiki/BasicUsage.md
 
 
 To play zhpy you even don't need to install it.
