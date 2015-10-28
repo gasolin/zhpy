@@ -9,12 +9,16 @@ $　pip install -U zhpy
 
 安裝好後你可以立即試用周蟒中文 Python 直譯器. 試著在直譯器上輸入
 
-    印出 '哈囉, 世界'
+```
+印出 '哈囉, 世界'
+```
 
+```
 $ python interpreter.py
 zhpy X.X in darwin on top of Python 2.X.X
 >>> 印出 '哈囉, 世界'
 哈囉
+```
 
 這樣你就完成了你的第一個中文程式囉!
 
