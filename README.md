@@ -17,7 +17,7 @@ $　pip install -U zhpy
 $ python interpreter.py
 zhpy X.X in darwin on top of Python 2.X.X
 >>> 印出 '哈囉, 世界'
-哈囉
+哈囉, 世界
 ```
 
 這樣你就完成了你的第一個中文程式囉!
